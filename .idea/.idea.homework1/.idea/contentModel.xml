@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Unity\homework1" t="IncludeRecursive">
-      <e p=".gitignore" t="Include" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="GameMechanics" t="Include">
+            <e p="GameMechanics.asmdef" t="Include" />
+            <e p="Player.cs" t="Include" />
+          </e>
           <e p="NewBehaviourScript.cs" t="Include" />
         </e>
       </e>
       <e p="homework1.sln" t="IncludeFlat" />
+      <e p="NewAssembly.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Temp\Bin" t="ExcludeRecursive" />
