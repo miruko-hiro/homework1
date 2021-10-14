@@ -14,6 +14,7 @@ namespace GameMechanics
         {
             MaxHealth = health;
             Health = health;
+            ChangeHealth?.Invoke();
         }
 
         public void TakeDamage(int hit)

@@ -10,6 +10,8 @@ namespace GameMechanics
     {
         private HealthEntity _healthEntity;
         private AttackEntity _attackEntity;
+
+        public static string Tag = "Planet";
         
         void Start()
         {
@@ -18,6 +20,11 @@ namespace GameMechanics
             
             _attackEntity = GetComponent<AttackEntity>();
             _attackEntity.SetAttackOfEntity(1);
+        }
+
+        public int GetAmountOfDamage()
+        {
+            return _attackEntity.Attack;
         }
     }
 }

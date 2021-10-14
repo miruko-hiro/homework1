@@ -19,15 +19,18 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Add asteroid">
+    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Add Entities Movement, Attack, Health, Scale">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Asteroid.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Asteroid.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Planet.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Planet.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthBar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +47,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/ScaleEntity.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Explosion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/AttackEntity.cs" root0="FORCE_HIGHLIGHTING" />
@@ -58,14 +62,15 @@
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HPEntity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthEntity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AttackEntity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MovementEntity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/ScaleEntity.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Explosion.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthEntity.cs" />
       </list>
     </option>
   </component>
@@ -113,7 +118,7 @@
       <updated>1634104696253</updated>
       <workItem from="1634104697984" duration="10879000" />
       <workItem from="1634147470917" duration="1828000" />
-      <workItem from="1634196124972" duration="9688000" />
+      <workItem from="1634196124972" duration="18491000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1634104804696</created>
@@ -143,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634127591557</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add Entities Movement, Attack, Health, Scale">
+      <created>1634208557448</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1634208557448</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,13 +180,14 @@
     <MESSAGE value="Init commit" />
     <MESSAGE value="Add planet" />
     <MESSAGE value="Add asteroid" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add asteroid" />
+    <MESSAGE value="Add Entities Movement, Attack, Health, Scale" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Entities Movement, Attack, Health, Scale" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1634127597691">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1634208563331">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1634127597691" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1634208563331" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1634199073779">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

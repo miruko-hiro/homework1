@@ -26,39 +26,65 @@ namespace GameMechanics
 
         public static string Tag = "Asteroid";
 
-        private MainMechanics _controller;
-        private Transform _transform;
+        public event Action DeathAsteroid;
+        
+        public bool Enable{ get; private set; }
 
         private void Start()
         {
+            _animation = GetComponent<Animation>();
 
-            _transform = GetComponent<Transform>();
-            _transform.localScale = new Vector2(0.1f, 0.1f);
-            _transform.position = new Vector2(Random.Range(-1.5f, 1.6f), Random.Range(1.5f, 4f));
-            
-            _healthEntity = GetComponent<HealthEntity>();
-            _healthEntity.SetHealthOfEntity(10);
-            
-            _attackEntity = GetComponent<AttackEntity>();
-            _attackEntity.SetAttackOfEntity(1);
-
-            _movementEntity = GetComponent<MovementEntity>();
-            _movementEntity.Move(new Vector2(-0.5f, -3f), 0.2f);
-
-            _scaleEntity = GetComponent<ScaleEntity>();
-            _scaleEntity.SetScale(0.005f, 0.005f);
-            _scaleEntity.SetMaxScale(1.7f, 1.7f);
-            _scaleEntity.ActiveScale(true);
+            DefiningEntities();
             
             spriteRenderer.sprite = asteroids[Random.Range(0, 10)];
 
-            _animation = GetComponent<Animation>();
-            
-            _controller = GetComponentInParent<MainMechanics>();
-            _controller.AsteroidClick += TakeDamage;
+            Enable = true;
+        }
+
+        public void SetPosition(Vector2 position)
+        {
+            transform.position = position;
+        }
+
+        public void SetLocalScale(Vector2 scale)
+        {
+            transform.localScale = scale;
+        }
+
+        public void SetHealth(int health)
+        {
+            _healthEntity.SetHealthOfEntity(health);
+        }
+
+        public void SetDamage(int damage)
+        {
+            _attackEntity.SetAttackOfEntity(damage);
+        }
+
+        public void Move(Vector2 pos, float speed)
+        {
+            _movementEntity.Move(pos, speed);
+        }
+
+        public void SetScale(float scaleX, float scaleY, float maxScaleX, float maxScaleY)
+        {
+            _scaleEntity.SetScale(scaleX, scaleY);
+            _scaleEntity.SetMaxScale(maxScaleX, maxScaleY);
+            _scaleEntity.ActiveScale(true);
         }
         
-        private void TakeDamage(int hit)
+        private void DefiningEntities()
+        {
+            _healthEntity = GetComponent<HealthEntity>();
+            
+            _attackEntity = GetComponent<AttackEntity>();
+
+            _movementEntity = GetComponent<MovementEntity>();
+
+            _scaleEntity = GetComponent<ScaleEntity>();
+        }
+        
+        public void TakeDamage(int hit)
         {
             if (_healthEntity.Health > 0)
             {
@@ -73,16 +99,20 @@ namespace GameMechanics
             }
         }
 
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag(Player.Tag))
+            {
+                Debug.Log("Bum");
+                DeathAsteroid?.Invoke();
+            }
+        }
+
         private IEnumerator Death()
         {
             yield return new WaitForSeconds(0.3f);
             _movementEntity.StopMove();
-            gameObject.SetActive(false);
-        }
-
-        private void OnDestroy()
-        {
-            _controller.AsteroidClick -= TakeDamage;
+            DeathAsteroid?.Invoke();
         }
     }
 }
