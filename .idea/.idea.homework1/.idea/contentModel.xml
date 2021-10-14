@@ -7,10 +7,14 @@
         <e p="Scripts" t="Include">
           <e p="GameMechanics" t="Include">
             <e p="Asteroid.cs" t="Include" />
+            <e p="AttackEntity.cs" t="Include" />
             <e p="GameMechanics.asmdef" t="Include" />
             <e p="HealthBar.cs" t="Include" />
+            <e p="HealthEntity.cs" t="Include" />
             <e p="MainMechanics.cs" t="Include" />
+            <e p="MovementEntity.cs" t="Include" />
             <e p="Player.cs" t="Include" />
+            <e p="ScaleEntity.cs" t="Include" />
           </e>
           <e p="NewBehaviourScript.cs" t="Include" />
         </e>

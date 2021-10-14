@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Add planet">
+    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Add asteroid">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Planet.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Planet/Planet.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Planet/Planet.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Planet/PlanetAnimation.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animation/Planet/PlanetAnimation.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Asteroid.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Asteroid.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/1329821010.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/1329821010.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthBar.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,20 +43,29 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/ScaleEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/AttackEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/a8/7892c479/RequireComponent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/MovementEntity.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/19/1670f7e6/Object.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HPEntity.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthEntity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AttackEntity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthBar.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MovementEntity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/ScaleEntity.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" />
       </list>
     </option>
   </component>
@@ -89,7 +111,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1634104696253</updated>
-      <workItem from="1634104697984" duration="8749000" />
+      <workItem from="1634104697984" duration="10879000" />
+      <workItem from="1634147470917" duration="1828000" />
+      <workItem from="1634196124972" duration="9688000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1634104804696</created>
@@ -112,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634109294420</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add asteroid">
+      <created>1634127591557</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1634127591557</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,16 +151,37 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Init commit" />
     <MESSAGE value="Add planet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add planet" />
+    <MESSAGE value="Add asteroid" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add asteroid" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1634109311963">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1634127597691">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1634109311963" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1634127597691" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1634199073779">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1634199073779" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1634199209165">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1634199209165" />
   </component>
 </project>

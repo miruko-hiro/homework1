@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace GameMechanics
@@ -7,31 +6,31 @@ namespace GameMechanics
     {
         [SerializeField] private Transform transformHealth;
         [SerializeField] private TextMesh textMeshHealth;
-        private Asteroid _asteroid;
+        private HealthEntity _healthEntity;
 
         private void Start()
         {
-            _asteroid = GetComponentInParent<Asteroid>();
+            _healthEntity = GetComponentInParent<HealthEntity>();
             SetTextInTextMeshHealth();
-            _asteroid.ChangeHealth += RefreshHealth;
+            _healthEntity.ChangeHealth += RefreshHealth;
         }
 
         private void RefreshHealth()
         {
             SetTextInTextMeshHealth();
             
-            float x = (float) _asteroid.Health / _asteroid.MaxHealth;
+            float x = (float) _healthEntity.Health / _healthEntity.MaxHealth;
             transformHealth.localScale = new Vector3(x, 1, 1);
         }
 
         private void SetTextInTextMeshHealth()
         {
-            textMeshHealth.text = _asteroid.Health + "/" + _asteroid.MaxHealth;
+            textMeshHealth.text = _healthEntity.Health + "/" + _healthEntity.MaxHealth;
         }
 
         private void OnDestroy()
         {
-            _asteroid.ChangeHealth -= RefreshHealth;
+            _healthEntity.ChangeHealth -= RefreshHealth;
         }
     }
 }
