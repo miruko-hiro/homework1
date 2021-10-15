@@ -14,7 +14,7 @@ TagManager:
   - Water
   - UI
   - HP Bar
-  - 
+  - Spaceship
   - 
   - 
   - 
@@ -45,4 +45,7 @@ TagManager:
     locked: 0
   - name: HP Bar
     uniqueID: 3527333075
+    locked: 0
+  - name: Spaceship
+    uniqueID: 2002387297
     locked: 0

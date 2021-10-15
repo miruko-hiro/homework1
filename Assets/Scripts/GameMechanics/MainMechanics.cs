@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace GameMechanics
 {
+    [RequireComponent(typeof(InputMechanics))]
     public class MainMechanics : MonoBehaviour
     {
         [SerializeField] private Camera mainCamera;
@@ -17,12 +19,37 @@ namespace GameMechanics
 
         [SerializeField] private GameObject explosionPrefab;
         private Explosion[] _explosionArray = new Explosion[3];
+
+        [SerializeField] private GameObject damageTextPrefab;
+        [SerializeField] private GameObject damageTextParent;
+        private DamageText[] _damageTextArray = new DamageText[15];
+
+        [SerializeField] private GameObject spaceshipPrefab;
+        private List<Spaceship> _spaceshipList = new List<Spaceship>();
+
+        private InputMechanics _inputMechanics;
         
         private int _asteroidIndex = 0;
         private int _explosionIndex = 0;
+        private int _damageTextIndex = 0;
 
         private IEnumerator Start()
         {
+            _inputMechanics = GetComponent<InputMechanics>();
+            _inputMechanics.OnTouch += CheckTouchPosition;
+            _inputMechanics.OnClick += CheckClickPosition;
+            _inputMechanics.OffTouch += StopAttack;
+            _inputMechanics.OffClick += StopAttack;
+            
+            _spaceshipList.Add(Instantiate(spaceshipPrefab).GetComponent<Spaceship>());
+            _spaceshipList[0].UpLvl();
+            _spaceshipList[0].SetPosition(new Vector2(-2f, -1.1f));
+
+            for (int i = 0; i < _damageTextArray.Length; i++)
+            {
+                _damageTextArray[i] = Instantiate(damageTextPrefab, damageTextParent.transform).GetComponent<DamageText>();
+            }
+            
             for (int i = 0; i < _asteroidArray.Length; i++)
             {
                 _asteroidArray[i] = Instantiate(asteroidPrefab, GetComponent<Transform>()).GetComponent<Asteroid>();
@@ -47,19 +74,6 @@ namespace GameMechanics
 
             _asteroidArray[_asteroidIndex].gameObject.SetActive(true);
             SetInitialStateOfAsteroid(_asteroidArray[_asteroidIndex]);
-        }
-
-        private void Update()
-        {
-            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
-            {
-                CheckTouchPosition(Input.GetTouch(0).position);
-            }
-
-            if (Input.GetMouseButtonDown(0))
-            {
-                CheckTouchPosition(Input.mousePosition);
-            }
         }
 
         private void SetInitialStateOfAsteroid(Asteroid asteroid)
@@ -100,14 +114,52 @@ namespace GameMechanics
             _explosionArray[index].gameObject.SetActive(false);
         }
 
-        private void CheckTouchPosition(Vector3 touchPos)
+        private void CheckTouchPosition()
         {
-            Vector3 touchWorldPos =  mainCamera.ScreenToWorldPoint(touchPos);
+            CheckPosition(Input.GetTouch(0).position);
+        }
+
+        private void CheckClickPosition()
+        {
+            CheckPosition(Input.mousePosition);
+        }
+
+        private void CheckPosition(Vector3 pos)
+        {
+            Vector3 touchWorldPos =  mainCamera.ScreenToWorldPoint(pos);
             RaycastHit2D hit = Physics2D.Raycast(touchWorldPos, Vector2.zero);
             
             if (hit && hit.collider.CompareTag(Asteroid.Tag))
             {
                 _asteroidArray[_asteroidIndex].TakeDamage(_player.GetAmountOfDamage());
+                ShowDamageText(_player.GetAmountOfDamage(), touchWorldPos);
+                
+                foreach (var spaceship in _spaceshipList)
+                {
+                    spaceship.LaserShot(touchWorldPos);
+                }
+            }
+        }
+
+        private void StopAttack()
+        {
+            foreach (var spaceship in _spaceshipList)
+            {
+                spaceship.LaserStop();
+            }
+        }
+
+        private void ShowDamageText(int damage, Vector2 pos)
+        {
+            _damageTextArray[_damageTextIndex].EnableAnimation(damage.ToString(), pos);
+
+            if (_damageTextIndex < _damageTextArray.Length - 1)
+            {
+                _damageTextIndex += 1;
+            }
+            else
+            {
+                _damageTextIndex = 0;
             }
         }
 
@@ -117,6 +169,11 @@ namespace GameMechanics
             {
                 asteroid.DeathAsteroid -= IncreaseAsteroidIndex;
             }
+            
+            _inputMechanics.OnTouch -= CheckTouchPosition;
+            _inputMechanics.OnClick -= CheckClickPosition;
+            _inputMechanics.OffTouch -= StopAttack;
+            _inputMechanics.OffClick -= StopAttack;
         }
     }
 }
