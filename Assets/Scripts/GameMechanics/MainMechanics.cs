@@ -38,8 +38,6 @@ namespace GameMechanics
             _inputMechanics = GetComponent<InputMechanics>();
             _inputMechanics.OnTouch += CheckTouchPosition;
             _inputMechanics.OnClick += CheckClickPosition;
-            _inputMechanics.OffTouch += StopAttack;
-            _inputMechanics.OffClick += StopAttack;
             
             _spaceshipList.Add(Instantiate(spaceshipPrefab).GetComponent<Spaceship>());
             _spaceshipList[0].UpLvl();
@@ -136,16 +134,8 @@ namespace GameMechanics
                 
                 foreach (var spaceship in _spaceshipList)
                 {
-                    spaceship.LaserShot(touchWorldPos);
+                    spaceship.ShotLaser(touchWorldPos);
                 }
-            }
-        }
-
-        private void StopAttack()
-        {
-            foreach (var spaceship in _spaceshipList)
-            {
-                spaceship.LaserStop();
             }
         }
 
@@ -172,8 +162,6 @@ namespace GameMechanics
             
             _inputMechanics.OnTouch -= CheckTouchPosition;
             _inputMechanics.OnClick -= CheckClickPosition;
-            _inputMechanics.OffTouch -= StopAttack;
-            _inputMechanics.OffClick -= StopAttack;
         }
     }
 }

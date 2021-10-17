@@ -17,6 +17,7 @@
             <e p="MainMechanics.cs" t="Include" />
             <e p="MovementEntity.cs" t="Include" />
             <e p="Player.cs" t="Include" />
+            <e p="RotatingObject.cs" t="Include" />
             <e p="ScaleEntity.cs" t="Include" />
             <e p="Spaceship.cs" t="Include" />
           </e>

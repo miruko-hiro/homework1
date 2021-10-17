@@ -38,7 +38,7 @@ namespace GameMechanics
         public void EnableAnimation(string damage, Vector2 pos)
         {
             _textMesh.text = "-" + damage;
-            _transformText.localPosition = pos;
+            _transformText.position = pos;
             _textMesh.color = _defaultColor;
             _percentColor = 0f;
             _randomVector = new Vector2(Random.Range(-0.7f, 0.7f), Random.Range(-0.7f, 0.7f));

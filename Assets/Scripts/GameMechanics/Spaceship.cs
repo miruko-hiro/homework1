@@ -1,19 +1,23 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace GameMechanics
 {
+    [RequireComponent(typeof(RotatingObject))]
     public class Spaceship : MonoBehaviour
     {
         [SerializeField] private GameObject[] spaceships = new GameObject[5];
-        [SerializeField] private LineRenderer laser;
+        [SerializeField] private LineRenderer laserRenderer;
         [SerializeField] private SpriteRenderer shotEffect;
+        private RotatingObject _rotatingObject;
         
         private int _lvlIndex = -1;
 
         private void Start()
         {
-            laser.useWorldSpace = true;
+            _rotatingObject = GetComponent<RotatingObject>();
+            laserRenderer.useWorldSpace = true;
             shotEffect.enabled = false;
         }
 
@@ -37,24 +41,27 @@ namespace GameMechanics
             transform.position = pos;
         }
 
-        public void LaserShot(Vector2 posEnemy)
+        public void ShotLaser(Vector2 posEnemy)
         {
-            if(!laser.enabled)
-                laser.enabled = true;
+            if(!laserRenderer.enabled)
+                laserRenderer.enabled = true;
             if (!shotEffect.enabled)
                 shotEffect.enabled = true;
             
-            laser.SetPositions(new Vector3[]{transform.position, posEnemy});
+            laserRenderer.SetPositions(new Vector3[]{transform.position, posEnemy});
+            
+            transform.rotation = _rotatingObject.GetRotationRelativeToAnotherObject(
+                transform.position,
+                posEnemy);
 
-            Vector3 v1 = transform.InverseTransformDirection(posEnemy);
-            Vector3 v2 = transform.position;
-            transform.up =  new Vector3(v1.x - v2.x, v1.y - v2.y, 0f);
+            StartCoroutine(StopLaser());
         }
 
-        public void LaserStop()
+        private IEnumerator StopLaser()
         {
-            if(laser.enabled)
-                laser.enabled = false;
+            yield return new WaitForSeconds(0.1f);
+            if(laserRenderer.enabled)
+                laserRenderer.enabled = false;
             if (shotEffect.enabled)
                 shotEffect.enabled = false;
         }
