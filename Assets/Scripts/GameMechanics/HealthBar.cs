@@ -7,31 +7,31 @@ namespace GameMechanics
     {
         [SerializeField] private Transform transformHealth;
         [SerializeField] private TextMesh textMeshHealth;
-        private HealthBehavior _healthBehavior;
+        private HealthBehavior health;
 
         private void Start()
         {
-            _healthBehavior = GetComponentInParent<HealthBehavior>();
+            health = GetComponentInParent<HealthBehavior>();
             SetTextInTextMeshHealth();
-            _healthBehavior.ChangeHealth += RefreshHealth;
+            health.ChangeHealth += RefreshHealth;
         }
 
         private void RefreshHealth()
         {
             SetTextInTextMeshHealth();
             
-            float x = (float) _healthBehavior.Health / _healthBehavior.MaxHealth;
+            float x = (float) health.Amount / health.MaxAmount;
             transformHealth.localScale = new Vector3(x, 1, 1);
         }
 
         private void SetTextInTextMeshHealth()
         {
-            textMeshHealth.text = _healthBehavior.Health + "/" + _healthBehavior.MaxHealth;
+            textMeshHealth.text = health.Amount + "/" + health.MaxAmount;
         }
 
         private void OnDestroy()
         {
-            _healthBehavior.ChangeHealth -= RefreshHealth;
+            health.ChangeHealth -= RefreshHealth;
         }
     }
 }

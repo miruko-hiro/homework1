@@ -20,10 +20,10 @@ namespace GameMechanics
         [Space(10)]
         [SerializeField] private Sprite[] asteroids = new Sprite[10];
 
-        public HealthBehavior HealthBehavior { get; private set; }
-        public AttackBehavior AttackBehavior { get; private set; }
-        public MovementBehavior MovementBehavior { get; private set; }
-        public ScaleBehavior ScaleBehavior  { get; private set; }
+        public HealthBehavior Health { get; private set; }
+        public AttackBehavior Attack { get; private set; }
+        public MovementBehavior Movement { get; private set; }
+        public ScaleBehavior Scale  { get; private set; }
 
         public static string Tag = "Asteroid";
 
@@ -54,24 +54,24 @@ namespace GameMechanics
         
         private void DefiningBehaviors()
         {
-            HealthBehavior = GetComponent<HealthBehavior>();
+            Health = GetComponent<HealthBehavior>();
             
-            AttackBehavior = GetComponent<AttackBehavior>();
+            Attack = GetComponent<AttackBehavior>();
 
-            MovementBehavior = GetComponent<MovementBehavior>();
+            Movement = GetComponent<MovementBehavior>();
 
-            ScaleBehavior = GetComponent<ScaleBehavior>();
+            Scale = GetComponent<ScaleBehavior>();
         }
         
         public void TakeDamage(int hit)
         {
-            if (HealthBehavior.Health > 0)
+            if (Health.Amount > 0)
             {
                 _animation.Stop();
                 _animation.Play();
-                HealthBehavior.TakeDamage(hit);
+                Health.TakeDamage(hit);
                 
-                if (HealthBehavior.Health == 0)
+                if (Health.Amount == 0)
                 {
                     StartCoroutine(Death());
                 }
@@ -90,7 +90,7 @@ namespace GameMechanics
         private IEnumerator Death()
         {
             yield return new WaitForSeconds(0.3f);
-            MovementBehavior.StopMove();
+            Movement.StopMove();
             DeathAsteroid?.Invoke();
         }
     }

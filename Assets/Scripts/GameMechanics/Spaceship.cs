@@ -11,13 +11,13 @@ namespace GameMechanics
         [SerializeField] private GameObject[] spaceships = new GameObject[5];
         [SerializeField] private LineRenderer laserRenderer;
         [SerializeField] private SpriteRenderer shotEffect;
-        private TurnBehavior _turnBehavior;
+        private TurnBehavior _turn;
         
         private int _lvlIndex = -1;
 
         private void Start()
         {
-            _turnBehavior = GetComponent<TurnBehavior>();
+            _turn = GetComponent<TurnBehavior>();
             laserRenderer.useWorldSpace = true;
             shotEffect.enabled = false;
         }
@@ -51,7 +51,7 @@ namespace GameMechanics
             
             laserRenderer.SetPositions(new Vector3[]{transform.position, posEnemy});
             
-            transform.rotation = _turnBehavior.GetRotationRelativeToAnotherObject(
+            transform.rotation = _turn.GetRotationRelativeToAnotherObject(
                 transform.position,
                 posEnemy);
 

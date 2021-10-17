@@ -11,22 +11,22 @@ namespace GameMechanics
     )]
     public class Player : MonoBehaviour
     {
-        public HealthBehavior HealthBehavior { get; private set; }
-        public AttackBehavior AttackBehavior { get; private set; }
-        public MoneyBehavior MoneyBehavior { get; private set; }
+        public HealthBehavior Health { get; private set; }
+        public AttackBehavior Attack { get; private set; }
+        public MoneyBehavior Money { get; private set; }
 
         public static string Tag = "Planet";
         
         void Start()
         {
-            MoneyBehavior = GetComponent<MoneyBehavior>();
-            MoneyBehavior.SetMoney(0);
+            Money = GetComponent<MoneyBehavior>();
+            Money.SetAmount(0);
             
-            HealthBehavior = GetComponent<HealthBehavior>();
-            HealthBehavior.SetHealthOfEntity(3);
+            Health = GetComponent<HealthBehavior>();
+            Health.SetAmount(3);
             
-            AttackBehavior = GetComponent<AttackBehavior>();
-            AttackBehavior.SetAttackOfEntity(1);
+            Attack = GetComponent<AttackBehavior>();
+            Attack.SetAmount(1);
         }
     }
 }

@@ -81,18 +81,18 @@ namespace GameMechanics
             asteroid.SetPosition(new Vector2(Random.Range(-1.5f, 1.6f), Random.Range(1.5f, 4f)));
             asteroid.SetLocalScale(new Vector2(0.1f, 0.1f));
             
-            asteroid.HealthBehavior.SetHealthOfEntity(10);
-            asteroid.AttackBehavior.SetAttackOfEntity(1);
-            asteroid.MovementBehavior.Move(new Vector2(-0.5f, -3f), 0.2f);
+            asteroid.Health.SetAmount(10);
+            asteroid.Attack.SetAmount(1);
+            asteroid.Movement.Move(new Vector2(-0.5f, -3f), 0.2f);
             
-            asteroid.ScaleBehavior.SetScale(0.005f, 0.005f);
-            asteroid.ScaleBehavior.SetMaxScale(1.7f, 1.7f);
-            asteroid.ScaleBehavior.ActiveScale(true);
+            asteroid.Scale.SetScale(0.005f, 0.005f);
+            asteroid.Scale.SetMaxScale(1.7f, 1.7f);
+            asteroid.Scale.ActiveScale(true);
         }
 
         private void IncreaseAsteroidIndex()
         {
-            _player.MoneyBehavior.IncreaseMoney(1);
+            _player.Money.IncreaseAmount(1);
             _explosionArray[_explosionIndex].gameObject.SetActive(true);
             _explosionArray[_explosionIndex].SetPosition(_asteroidArray[_asteroidIndex].transform.position);
             StartCoroutine(WaitForEndOfExplosion(_explosionIndex));
@@ -136,8 +136,8 @@ namespace GameMechanics
             
             if (hit && hit.collider.CompareTag(Asteroid.Tag))
             {
-                _asteroidArray[_asteroidIndex].TakeDamage(_player.AttackBehavior.Attack);
-                ShowDamageText(_player.AttackBehavior.Attack, touchWorldPos);
+                _asteroidArray[_asteroidIndex].TakeDamage(_player.Attack.Amount);
+                ShowDamageText(_player.Attack.Amount, touchWorldPos);
                 
                 foreach (var spaceship in _spaceshipList)
                 {

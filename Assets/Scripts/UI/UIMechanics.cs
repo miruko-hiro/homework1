@@ -18,20 +18,20 @@ namespace UI
             _moneyUI = Instantiate(moneyUIPrefab, transform).GetComponent<MoneyUI>();
             _mainMechanics = controller.GetComponent<MainMechanics>();
             
-            while (!_mainMechanics.Player || !_mainMechanics.Player.MoneyBehavior)
+            while (!_mainMechanics.Player || !_mainMechanics.Player.Money)
                 yield return null;
             
-            _mainMechanics.Player.MoneyBehavior.ChangeAmountOfMoney += SetAmountOfMoney;
+            _mainMechanics.Player.Money.ChangeAmountOfMoney += SetAmountOfMoney;
         }
 
         private void SetAmountOfMoney()
         {
-            _moneyUI.SetTextAmountOFMoney(_mainMechanics.Player.MoneyBehavior.Money.ToString());
+            _moneyUI.SetTextAmountOFMoney(_mainMechanics.Player.Money.Amount.ToString());
         }
 
         private void OnDestroy()
         {
-            _mainMechanics.Player.MoneyBehavior.ChangeAmountOfMoney -= SetAmountOfMoney;
+            _mainMechanics.Player.Money.ChangeAmountOfMoney -= SetAmountOfMoney;
         }
     }
 }

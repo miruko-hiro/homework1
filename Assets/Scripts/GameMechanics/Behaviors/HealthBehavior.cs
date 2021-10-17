@@ -5,23 +5,23 @@ namespace GameMechanics.Behaviors
 {
     public class HealthBehavior : MonoBehaviour
     {
-        public int MaxHealth { get; private set; }
-        public int Health { get; private set; }
+        public int MaxAmount { get; private set; }
+        public int Amount { get; private set; }
 
         public event Action ChangeHealth;
 
-        public void SetHealthOfEntity(int health)
+        public void SetAmount(int health)
         {
-            MaxHealth = health;
-            Health = health;
+            MaxAmount = health;
+            Amount = health;
             ChangeHealth?.Invoke();
         }
 
         public void TakeDamage(int hit)
         {
-            if (Health <= 0) return;
+            if (Amount <= 0) return;
             
-            Health -= hit;
+            Amount -= hit;
             ChangeHealth?.Invoke();
         }
     }
