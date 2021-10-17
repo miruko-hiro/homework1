@@ -27,7 +27,7 @@ namespace GameMechanics
 
         public static string Tag = "Asteroid";
 
-        public event Action DeathAsteroid;
+        public event Action Died;
         
         public bool Enable{ get; private set; }
 
@@ -82,8 +82,7 @@ namespace GameMechanics
         {
             if (other.CompareTag(Player.Tag))
             {
-                Debug.Log("Bum");
-                DeathAsteroid?.Invoke();
+                Died?.Invoke();
             }
         }
 
@@ -91,7 +90,7 @@ namespace GameMechanics
         {
             yield return new WaitForSeconds(0.3f);
             Movement.StopMove();
-            DeathAsteroid?.Invoke();
+            Died?.Invoke();
         }
     }
 }

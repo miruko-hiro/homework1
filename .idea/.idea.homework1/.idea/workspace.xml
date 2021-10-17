@@ -19,12 +19,16 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Добавлен UI, иконка и логика сбора денег за уничтожение метеоритов, рефактор кода свойств Player и Asteroid">
+    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Rename behaviors">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/HealthBehavior.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/HealthBehavior.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthBar.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +49,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Spaceship.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PlayerHealthUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/19/1670f7e6/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/AttackBehavior.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Explosion.cs" root0="FORCE_HIGHLIGHTING" />
@@ -66,20 +71,21 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/InputMechanics.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/DamageText.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/AttackEntity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/AttackBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/HealthEntity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/MovementEntity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/RotatingObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Spaceship.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/ScaleEntity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MoneyUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/AttackBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/MoneyBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthBar.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/HealthBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Spaceship.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/HealthBehavior.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerHealthUI.cs" />
       </list>
     </option>
   </component>
@@ -129,7 +135,7 @@
       <workItem from="1634147470917" duration="1828000" />
       <workItem from="1634196124972" duration="19156000" />
       <workItem from="1634282021848" duration="10694000" />
-      <workItem from="1634455990589" duration="7831000" />
+      <workItem from="1634455990589" duration="10801000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1634104804696</created>
@@ -201,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634463545400</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Rename behaviors">
+      <created>1634469737723</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1634469737723</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,13 +245,14 @@
     <MESSAGE value="Обновлена анимация поворота космического коробля" />
     <MESSAGE value="Behaviors выделены в одну папку" />
     <MESSAGE value="Добавлен UI, иконка и логика сбора денег за уничтожение метеоритов, рефактор кода свойств Player и Asteroid" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен UI, иконка и логика сбора денег за уничтожение метеоритов, рефактор кода свойств Player и Asteroid" />
+    <MESSAGE value="Rename behaviors" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename behaviors" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1634463554860">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1634469740262">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1634463554860" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1634469740262" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1634284755877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

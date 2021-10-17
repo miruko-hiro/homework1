@@ -13,7 +13,8 @@ namespace GameMechanics
         {
             health = GetComponentInParent<HealthBehavior>();
             SetTextInTextMeshHealth();
-            health.ChangeHealth += RefreshHealth;
+            health.HealthDecreased += RefreshHealth;
+            health.HealthIncreased += RefreshHealth;
         }
 
         private void RefreshHealth()
@@ -31,7 +32,8 @@ namespace GameMechanics
 
         private void OnDestroy()
         {
-            health.ChangeHealth -= RefreshHealth;
+            health.HealthDecreased -= RefreshHealth;
+            health.HealthIncreased -= RefreshHealth;
         }
     }
 }

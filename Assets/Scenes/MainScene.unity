@@ -385,6 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyUIPrefab: {fileID: 6149162015288212839, guid: ef5f70aabf9787945b7203160e7ccc3d, type: 3}
+  hpPlayerUIPrefab: {fileID: 8920555547061910434, guid: 07f4b0e06aac6fb4dbb18dd2e142a8c1, type: 3}
   controller: {fileID: 243379661}
 --- !u!114 &1124542829
 MonoBehaviour:

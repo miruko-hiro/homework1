@@ -16,6 +16,7 @@ namespace GameMechanics
         public MoneyBehavior Money { get; private set; }
 
         public static string Tag = "Planet";
+        public event Action Died;
         
         void Start()
         {
@@ -27,6 +28,14 @@ namespace GameMechanics
             
             Attack = GetComponent<AttackBehavior>();
             Attack.SetAmount(1);
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag(Asteroid.Tag))
+            {
+                Health.TakeDamage(1);
+            }
         }
     }
 }

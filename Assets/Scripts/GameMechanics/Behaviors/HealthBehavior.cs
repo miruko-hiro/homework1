@@ -8,13 +8,14 @@ namespace GameMechanics.Behaviors
         public int MaxAmount { get; private set; }
         public int Amount { get; private set; }
 
-        public event Action ChangeHealth;
+        public event Action HealthIncreased;
+        public event Action HealthDecreased;
 
         public void SetAmount(int health)
         {
             MaxAmount = health;
             Amount = health;
-            ChangeHealth?.Invoke();
+            HealthIncreased?.Invoke();
         }
 
         public void TakeDamage(int hit)
@@ -22,7 +23,7 @@ namespace GameMechanics.Behaviors
             if (Amount <= 0) return;
             
             Amount -= hit;
-            ChangeHealth?.Invoke();
+            HealthDecreased?.Invoke();
         }
     }
 }

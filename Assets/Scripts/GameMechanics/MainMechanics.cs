@@ -53,7 +53,7 @@ namespace GameMechanics
             {
                 _asteroidArray[i] = Instantiate(asteroidPrefab, GetComponent<Transform>()).GetComponent<Asteroid>();
                 _asteroidArray[i].SetPosition(new Vector2(-10f, 0f));
-                _asteroidArray[i].DeathAsteroid += IncreaseAsteroidIndex;
+                _asteroidArray[i].Died += IncreaseAsteroidIndex;
 
                 while (!_asteroidArray[i].Enable)
                     yield return null;
@@ -164,7 +164,7 @@ namespace GameMechanics
         {
             foreach (Asteroid asteroid in _asteroidArray)
             {
-                asteroid.DeathAsteroid -= IncreaseAsteroidIndex;
+                asteroid.Died -= IncreaseAsteroidIndex;
             }
             
             _inputMechanics.OnTouch -= CheckTouchPosition;
