@@ -239,6 +239,7 @@ MonoBehaviour:
   mainCamera: {fileID: 519420031}
   asteroidPrefab: {fileID: 3200001526204944396, guid: 2ade28757c60cd641a04d7a729cb9324, type: 3}
   planetPrefab: {fileID: 449306960137386474, guid: 396e1d0e651171a4b8f2d35f2e765f51, type: 3}
+  explosionPlanetPrefab: {fileID: 3717305693762005740, guid: 259419db911f9e94786431d9743b0a84, type: 3}
   explosionPrefab: {fileID: 1199573231871534244, guid: 4d25b34daa2c5f9448f8f952aea7f3e1, type: 3}
   damageTextPrefab: {fileID: 6284485679859940108, guid: c0a2d12bf9c7f1945a3ac96fe8fd3dc2, type: 3}
   damageTextParent: {fileID: 1348474652}
@@ -386,6 +387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyUIPrefab: {fileID: 6149162015288212839, guid: ef5f70aabf9787945b7203160e7ccc3d, type: 3}
   hpPlayerUIPrefab: {fileID: 8920555547061910434, guid: 07f4b0e06aac6fb4dbb18dd2e142a8c1, type: 3}
+  loserPanelPrefab: {fileID: 7136218374950275692, guid: b8b352412e21c0945bdd40434f2276f4, type: 3}
   controller: {fileID: 243379661}
 --- !u!114 &1124542829
 MonoBehaviour:

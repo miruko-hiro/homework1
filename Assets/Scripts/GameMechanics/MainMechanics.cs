@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 namespace GameMechanics
@@ -17,6 +18,9 @@ namespace GameMechanics
         [SerializeField] private GameObject planetPrefab;
         private Player _player;
         public Player Player { get; private set; }
+
+        [SerializeField] private GameObject explosionPlanetPrefab;
+        private GameObject _planet;
 
         [SerializeField] private GameObject explosionPrefab;
         private Explosion[] _explosionArray = new Explosion[3];
@@ -34,6 +38,7 @@ namespace GameMechanics
         private int _explosionIndex = 0;
         private int _damageTextIndex = 0;
 
+        public event Action GameOver;
         private IEnumerator Start()
         {
             _inputMechanics = GetComponent<InputMechanics>();
@@ -61,10 +66,11 @@ namespace GameMechanics
                 _asteroidArray[i].gameObject.SetActive(false);
             }
 
-            GameObject planet = Instantiate(planetPrefab);
-            planet.GetComponent<Transform>().position = new Vector2(-1.5f, -3.7f);
-            _player = planet.GetComponent<Player>();
+            _planet = Instantiate(planetPrefab);
+            _planet.GetComponent<Transform>().position = new Vector2(-1.5f, -3.7f);
+            _player = _planet.GetComponent<Player>();
             Player = _player;
+            _player.Died += StopGame;
 
             for (int i = 0; i < _explosionArray.Length; i++)
             {
@@ -160,12 +166,36 @@ namespace GameMechanics
             }
         }
 
+        private void StopGame()
+        {
+            StartCoroutine(ExplosionPlanet());
+        }
+
+        public void ReStart()
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        private IEnumerator ExplosionPlanet()
+        {
+            Instantiate(explosionPlanetPrefab).transform.position = new Vector2(-1.5f, -3.7f);
+            _planet.SetActive(false);
+            
+            yield return new WaitForSeconds(1.5f);
+            
+            GameOver?.Invoke();
+            Time.timeScale = 0;
+        }
+
         private void OnDestroy()
         {
             foreach (Asteroid asteroid in _asteroidArray)
             {
                 asteroid.Died -= IncreaseAsteroidIndex;
             }
+            
+            _player.Died -= StopGame;
             
             _inputMechanics.OnTouch -= CheckTouchPosition;
             _inputMechanics.OnClick -= CheckClickPosition;

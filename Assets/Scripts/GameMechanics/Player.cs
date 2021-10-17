@@ -35,6 +35,10 @@ namespace GameMechanics
             if (other.CompareTag(Asteroid.Tag))
             {
                 Health.TakeDamage(1);
+                if (Health.Amount == 0)
+                {
+                    Died?.Invoke();
+                }
             }
         }
     }
