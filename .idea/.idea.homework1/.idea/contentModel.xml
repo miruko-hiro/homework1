@@ -26,9 +26,14 @@
           </e>
           <e p="NewBehaviourScript.cs" t="Include" />
           <e p="UI" t="Include">
+            <e p="ComeBack.cs" t="Include" />
             <e p="ContinueButton.cs" t="Include" />
             <e p="ExitButton.cs" t="Include" />
+            <e p="ImprovementUI.cs" t="Include" />
             <e p="LoserPanel.cs" t="Include" />
+            <e p="LvlButton.cs" t="Include" />
+            <e p="LvlUpButton.cs" t="Include" />
+            <e p="LvlUpPanel.cs" t="Include" />
             <e p="MoneyUI.cs" t="Include" />
             <e p="PlayerHealthUI.cs" t="Include" />
             <e p="UI.asmdef" t="Include" />

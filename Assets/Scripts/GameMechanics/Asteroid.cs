@@ -24,8 +24,8 @@ namespace GameMechanics
         public AttackBehavior Attack { get; private set; }
         public MovementBehavior Movement { get; private set; }
         public ScaleBehavior Scale  { get; private set; }
-
-        public static string Tag = "Asteroid";
+        public int Count { get; set; }
+        public bool IsCollision { get; private set; }
 
         public event Action Died;
         
@@ -44,6 +44,7 @@ namespace GameMechanics
 
         public void SetPosition(Vector2 position)
         {
+            IsCollision = false;
             transform.position = position;
         }
 
@@ -82,6 +83,7 @@ namespace GameMechanics
         {
             if (other.CompareTag(Player.Tag))
             {
+                IsCollision = true;
                 Died?.Invoke();
             }
         }

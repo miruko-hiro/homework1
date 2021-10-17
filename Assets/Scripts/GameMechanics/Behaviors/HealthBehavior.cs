@@ -21,8 +21,8 @@ namespace GameMechanics.Behaviors
         public void TakeDamage(int hit)
         {
             if (Amount <= 0) return;
-            
-            Amount -= hit;
+            if (Amount - hit < 0) Amount = 0;
+            else Amount -= hit;
             HealthDecreased?.Invoke();
         }
     }

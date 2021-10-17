@@ -13,8 +13,14 @@ namespace UI
         [SerializeField] private GameObject hpPlayerUIPrefab;
         private PlayerHealthUI _playerHealthUI;
 
+        [SerializeField] private GameObject lvlUpButtonPrefab;
+        private LvlUpButton _lvlUpButton;
+
         [SerializeField] private GameObject loserPanelPrefab;
         private LoserPanel _loserPanel;
+
+        [SerializeField] private GameObject lvlUpPanelPrefab;
+        private LvlUpPanel _lvlUpPanel;
 
         [SerializeField] private GameObject controller;
         private MainMechanics _mainMechanics;
@@ -23,6 +29,9 @@ namespace UI
         {
             _moneyUI = Instantiate(moneyUIPrefab, transform).GetComponent<MoneyUI>();
             _playerHealthUI = Instantiate(hpPlayerUIPrefab, transform).GetComponent<PlayerHealthUI>();
+            
+            _lvlUpButton = Instantiate(lvlUpButtonPrefab, transform).GetComponent<LvlUpButton>();
+            _lvlUpButton.ClickLvlUp += ShowLvlUpPanel;
             
             _loserPanel = Instantiate(loserPanelPrefab, transform).GetComponent<LoserPanel>();
             
@@ -35,6 +44,15 @@ namespace UI
                 
             _mainMechanics = controller.GetComponent<MainMechanics>();
 
+            _lvlUpPanel = Instantiate(lvlUpPanelPrefab, transform).GetComponent<LvlUpPanel>();
+
+            while (!_lvlUpPanel.IsInit)
+                yield return null;
+            
+            _lvlUpPanel.ChangeLvl += ChangeDamage;
+            _lvlUpPanel.ComeBackButton.ClickComeBack += HideLvlUpPanel;
+            
+            _lvlUpPanel.gameObject.SetActive(false);
             
             while (!_mainMechanics.Player || !_mainMechanics.Player.Money)
                 yield return null;
@@ -46,6 +64,22 @@ namespace UI
             _mainMechanics.GameOver += ShowLoserPanel;
         }
 
+        private void ChangeDamage(int damage, int index, int money)
+        {
+            _mainMechanics.Player.Attack.Amount += damage;
+            _mainMechanics.Player.Money.Amount -= money;
+            if (_lvlUpPanel.enabled) _lvlUpPanel.SetMoney(_mainMechanics.Player.Money.Amount);
+            switch (index)
+            {
+                case 2:
+                    _mainMechanics.SpaceshipLvlUp();
+                    break;
+                case 3:
+                    _mainMechanics.AddSpaceship();
+                    break;
+            }
+        }
+
         private void SetAmountOfMoney()
         {
             _moneyUI.SetTextAmountOFMoney(_mainMechanics.Player.Money.Amount.ToString());
@@ -55,13 +89,13 @@ namespace UI
         {
             _playerHealthUI.TakeOneLifeAway();
         }
-        
-        public void RestoreOneLife()
+
+        private void RestoreOneLife()
         {
             _playerHealthUI.RestoreOneLife();
         }
 
-        public void RestoreAllLife()
+        private void RestoreAllLife()
         {
             _playerHealthUI.RestoreAllLife();
         }
@@ -69,6 +103,19 @@ namespace UI
         private void ShowLoserPanel()
         {
             _loserPanel.gameObject.SetActive(true);
+        }
+
+        private void ShowLvlUpPanel()
+        {
+            _mainMechanics.Pause();
+            _lvlUpPanel.gameObject.SetActive(true);
+            _lvlUpPanel.SetMoney(_mainMechanics.Player.Money.Amount);
+        }
+
+        private void HideLvlUpPanel()
+        {
+            _lvlUpPanel.gameObject.SetActive(false);
+            _mainMechanics.Play();
         }
 
         private void ReStart()
@@ -84,6 +131,10 @@ namespace UI
 
         private void OnDestroy()
         {
+            _lvlUpButton.ClickLvlUp -= ShowLvlUpPanel;
+            _lvlUpPanel.ChangeLvl -= ChangeDamage;
+            _lvlUpPanel.ComeBackButton.ClickComeBack -= HideLvlUpPanel;
+            
             _mainMechanics.Player.Money.ChangeAmountOfMoney -= SetAmountOfMoney;
             _mainMechanics.Player.Health.HealthDecreased -= TakeAwayOneLife;
             _mainMechanics.Player.Health.HealthIncreased -= RestoreOneLife;

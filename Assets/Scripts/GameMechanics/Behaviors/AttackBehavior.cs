@@ -5,16 +5,17 @@ namespace GameMechanics.Behaviors
 {
     public class AttackBehavior : MonoBehaviour
     {
-        public int Amount { get; private set; }
+        private int _amount;
+        public int Amount {
+            get => _amount;
+            set
+            {
+                if (value < 0) return;
+                _amount = value;
+                ChangeAttack?.Invoke();
+            }
+        }
 
         public event Action ChangeAttack;
-
-        public void SetAmount(int attack)
-        {
-            if (attack < 0) return;
-            
-            Amount = attack;
-            ChangeAttack?.Invoke();
-        }
     }
 }

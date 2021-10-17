@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Asteroid
   - Planet
+  - Asteroid0
+  - Asteroid1
+  - Asteroid2
   layers:
   - Default
   - TransparentFX

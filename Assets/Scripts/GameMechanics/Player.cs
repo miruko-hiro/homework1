@@ -21,18 +21,20 @@ namespace GameMechanics
         void Start()
         {
             Money = GetComponent<MoneyBehavior>();
-            Money.SetAmount(0);
+            Money.Amount = 0;
             
             Health = GetComponent<HealthBehavior>();
             Health.SetAmount(3);
             
             Attack = GetComponent<AttackBehavior>();
-            Attack.SetAmount(1);
+            Attack.Amount = 1;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag(Asteroid.Tag))
+            if (other.CompareTag(MainMechanics.Asteroid01Tag) 
+                || other.CompareTag(MainMechanics.Asteroid02Tag) 
+                || other.CompareTag(MainMechanics.Asteroid03Tag))
             {
                 Health.TakeDamage(1);
                 if (Health.Amount == 0)

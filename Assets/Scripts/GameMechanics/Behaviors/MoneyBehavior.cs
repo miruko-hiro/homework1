@@ -5,20 +5,19 @@ namespace GameMechanics.Behaviors
 {
     public class MoneyBehavior : MonoBehaviour
     {
-        public int Amount { get; private set; }
+        private int _amount;
+
+        public int Amount
+        {
+            get => _amount;
+            set
+            {
+                if (value < 0) return;
+                _amount = value;
+                ChangeAmountOfMoney?.Invoke();
+            }
+        }
 
         public event Action ChangeAmountOfMoney;
-
-        public void SetAmount(int money)
-        {
-            Amount = money;
-            ChangeAmountOfMoney?.Invoke();
-        }
-
-        public void IncreaseAmount(int increase)
-        {
-            Amount += increase;
-            ChangeAmountOfMoney?.Invoke();
-        }
     }
 }

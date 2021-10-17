@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &11928047
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -387,7 +387,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyUIPrefab: {fileID: 6149162015288212839, guid: ef5f70aabf9787945b7203160e7ccc3d, type: 3}
   hpPlayerUIPrefab: {fileID: 8920555547061910434, guid: 07f4b0e06aac6fb4dbb18dd2e142a8c1, type: 3}
+  lvlUpButtonPrefab: {fileID: 8188064454355000100, guid: 906c93208865e1a4994b928514b12a2e, type: 3}
   loserPanelPrefab: {fileID: 7136218374950275692, guid: b8b352412e21c0945bdd40434f2276f4, type: 3}
+  lvlUpPanelPrefab: {fileID: 7167043078368966139, guid: f951d63a80e5e3e45987968f2afe60c9, type: 3}
   controller: {fileID: 243379661}
 --- !u!114 &1124542829
 MonoBehaviour:
@@ -448,7 +450,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 200
   m_TargetDisplay: 0
 --- !u!224 &1124542832
 RectTransform:
