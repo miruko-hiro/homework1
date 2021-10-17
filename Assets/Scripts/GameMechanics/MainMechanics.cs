@@ -16,6 +16,7 @@ namespace GameMechanics
 
         [SerializeField] private GameObject planetPrefab;
         private Player _player;
+        public Player Player { get; private set; }
 
         [SerializeField] private GameObject explosionPrefab;
         private Explosion[] _explosionArray = new Explosion[3];
@@ -63,6 +64,7 @@ namespace GameMechanics
             GameObject planet = Instantiate(planetPrefab);
             planet.GetComponent<Transform>().position = new Vector2(-1.5f, -3.7f);
             _player = planet.GetComponent<Player>();
+            Player = _player;
 
             for (int i = 0; i < _explosionArray.Length; i++)
             {
@@ -78,14 +80,19 @@ namespace GameMechanics
         {
             asteroid.SetPosition(new Vector2(Random.Range(-1.5f, 1.6f), Random.Range(1.5f, 4f)));
             asteroid.SetLocalScale(new Vector2(0.1f, 0.1f));
-            asteroid.SetHealth(10);
-            asteroid.SetDamage(1);
-            asteroid.Move(new Vector2(-0.5f, -3f), 0.2f);
-            asteroid.SetScale(0.005f, 0.005f, 1.7f, 1.7f);
+            
+            asteroid.HealthBehavior.SetHealthOfEntity(10);
+            asteroid.AttackBehavior.SetAttackOfEntity(1);
+            asteroid.MovementBehavior.Move(new Vector2(-0.5f, -3f), 0.2f);
+            
+            asteroid.ScaleBehavior.SetScale(0.005f, 0.005f);
+            asteroid.ScaleBehavior.SetMaxScale(1.7f, 1.7f);
+            asteroid.ScaleBehavior.ActiveScale(true);
         }
 
         private void IncreaseAsteroidIndex()
         {
+            _player.MoneyBehavior.IncreaseMoney(1);
             _explosionArray[_explosionIndex].gameObject.SetActive(true);
             _explosionArray[_explosionIndex].SetPosition(_asteroidArray[_asteroidIndex].transform.position);
             StartCoroutine(WaitForEndOfExplosion(_explosionIndex));
@@ -129,8 +136,8 @@ namespace GameMechanics
             
             if (hit && hit.collider.CompareTag(Asteroid.Tag))
             {
-                _asteroidArray[_asteroidIndex].TakeDamage(_player.GetAmountOfDamage());
-                ShowDamageText(_player.GetAmountOfDamage(), touchWorldPos);
+                _asteroidArray[_asteroidIndex].TakeDamage(_player.AttackBehavior.Attack);
+                ShowDamageText(_player.AttackBehavior.Attack, touchWorldPos);
                 
                 foreach (var spaceship in _spaceshipList)
                 {

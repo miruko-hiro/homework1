@@ -20,10 +20,10 @@ namespace GameMechanics
         [Space(10)]
         [SerializeField] private Sprite[] asteroids = new Sprite[10];
 
-        private HealthBehavior _healthBehavior;
-        private AttackBehavior _attackBehavior;
-        private MovementBehavior _movementBehavior;
-        private ScaleBehavior _scaleBehavior;
+        public HealthBehavior HealthBehavior { get; private set; }
+        public AttackBehavior AttackBehavior { get; private set; }
+        public MovementBehavior MovementBehavior { get; private set; }
+        public ScaleBehavior ScaleBehavior  { get; private set; }
 
         public static string Tag = "Asteroid";
 
@@ -51,49 +51,27 @@ namespace GameMechanics
         {
             transform.localScale = scale;
         }
-
-        public void SetHealth(int health)
-        {
-            _healthBehavior.SetHealthOfEntity(health);
-        }
-
-        public void SetDamage(int damage)
-        {
-            _attackBehavior.SetAttackOfEntity(damage);
-        }
-
-        public void Move(Vector2 pos, float speed)
-        {
-            _movementBehavior.Move(pos, speed);
-        }
-
-        public void SetScale(float scaleX, float scaleY, float maxScaleX, float maxScaleY)
-        {
-            _scaleBehavior.SetScale(scaleX, scaleY);
-            _scaleBehavior.SetMaxScale(maxScaleX, maxScaleY);
-            _scaleBehavior.ActiveScale(true);
-        }
         
         private void DefiningBehaviors()
         {
-            _healthBehavior = GetComponent<HealthBehavior>();
+            HealthBehavior = GetComponent<HealthBehavior>();
             
-            _attackBehavior = GetComponent<AttackBehavior>();
+            AttackBehavior = GetComponent<AttackBehavior>();
 
-            _movementBehavior = GetComponent<MovementBehavior>();
+            MovementBehavior = GetComponent<MovementBehavior>();
 
-            _scaleBehavior = GetComponent<ScaleBehavior>();
+            ScaleBehavior = GetComponent<ScaleBehavior>();
         }
         
         public void TakeDamage(int hit)
         {
-            if (_healthBehavior.Health > 0)
+            if (HealthBehavior.Health > 0)
             {
                 _animation.Stop();
                 _animation.Play();
-                _healthBehavior.TakeDamage(hit);
+                HealthBehavior.TakeDamage(hit);
                 
-                if (_healthBehavior.Health == 0)
+                if (HealthBehavior.Health == 0)
                 {
                     StartCoroutine(Death());
                 }
@@ -112,7 +90,7 @@ namespace GameMechanics
         private IEnumerator Death()
         {
             yield return new WaitForSeconds(0.3f);
-            _movementBehavior.StopMove();
+            MovementBehavior.StopMove();
             DeathAsteroid?.Invoke();
         }
     }
