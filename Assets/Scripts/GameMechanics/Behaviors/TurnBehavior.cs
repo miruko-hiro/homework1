@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace GameMechanics
+namespace GameMechanics.Behaviors
 {
-    public class RotatingObject : MonoBehaviour
+    public class TurnBehavior : MonoBehaviour
     {
         public Quaternion GetRotationRelativeToAnotherObject(Vector3 positionRotatedObject, Vector3 positionRelativeToAnotherObject)
         {

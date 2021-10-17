@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 
-namespace GameMechanics
+namespace GameMechanics.Behaviors
 {
-    public class MovementEntity : MonoBehaviour
+    public class MovementBehavior : MonoBehaviour
     {
         private float _speed;
         private bool _isMove;

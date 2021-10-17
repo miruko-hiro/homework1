@@ -1,3 +1,4 @@
+using GameMechanics.Behaviors;
 using UnityEngine;
 
 namespace GameMechanics
@@ -6,31 +7,31 @@ namespace GameMechanics
     {
         [SerializeField] private Transform transformHealth;
         [SerializeField] private TextMesh textMeshHealth;
-        private HealthEntity _healthEntity;
+        private HealthBehavior _healthBehavior;
 
         private void Start()
         {
-            _healthEntity = GetComponentInParent<HealthEntity>();
+            _healthBehavior = GetComponentInParent<HealthBehavior>();
             SetTextInTextMeshHealth();
-            _healthEntity.ChangeHealth += RefreshHealth;
+            _healthBehavior.ChangeHealth += RefreshHealth;
         }
 
         private void RefreshHealth()
         {
             SetTextInTextMeshHealth();
             
-            float x = (float) _healthEntity.Health / _healthEntity.MaxHealth;
+            float x = (float) _healthBehavior.Health / _healthBehavior.MaxHealth;
             transformHealth.localScale = new Vector3(x, 1, 1);
         }
 
         private void SetTextInTextMeshHealth()
         {
-            textMeshHealth.text = _healthEntity.Health + "/" + _healthEntity.MaxHealth;
+            textMeshHealth.text = _healthBehavior.Health + "/" + _healthBehavior.MaxHealth;
         }
 
         private void OnDestroy()
         {
-            _healthEntity.ChangeHealth -= RefreshHealth;
+            _healthBehavior.ChangeHealth -= RefreshHealth;
         }
     }
 }

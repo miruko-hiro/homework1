@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-namespace GameMechanics
+namespace GameMechanics.Behaviors
 {
-    public class AttackEntity : MonoBehaviour
+    public class AttackBehavior : MonoBehaviour
     {
         public int Attack { get; private set; }
 

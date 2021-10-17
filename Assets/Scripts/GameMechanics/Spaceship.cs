@@ -1,22 +1,23 @@
 using System;
 using System.Collections;
+using GameMechanics.Behaviors;
 using UnityEngine;
 
 namespace GameMechanics
 {
-    [RequireComponent(typeof(RotatingObject))]
+    [RequireComponent(typeof(TurnBehavior))]
     public class Spaceship : MonoBehaviour
     {
         [SerializeField] private GameObject[] spaceships = new GameObject[5];
         [SerializeField] private LineRenderer laserRenderer;
         [SerializeField] private SpriteRenderer shotEffect;
-        private RotatingObject _rotatingObject;
+        private TurnBehavior _turnBehavior;
         
         private int _lvlIndex = -1;
 
         private void Start()
         {
-            _rotatingObject = GetComponent<RotatingObject>();
+            _turnBehavior = GetComponent<TurnBehavior>();
             laserRenderer.useWorldSpace = true;
             shotEffect.enabled = false;
         }
@@ -50,7 +51,7 @@ namespace GameMechanics
             
             laserRenderer.SetPositions(new Vector3[]{transform.position, posEnemy});
             
-            transform.rotation = _rotatingObject.GetRotationRelativeToAnotherObject(
+            transform.rotation = _turnBehavior.GetRotationRelativeToAnotherObject(
                 transform.position,
                 posEnemy);
 

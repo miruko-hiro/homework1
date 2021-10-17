@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 
-namespace GameMechanics
+namespace GameMechanics.Behaviors
 {
-    public class ScaleEntity : MonoBehaviour
+    public class ScaleBehavior : MonoBehaviour
     {
         private float _scalseX;
         private float _scalseY;

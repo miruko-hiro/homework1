@@ -1,16 +1,17 @@
 using System;
 using System.Collections;
+using GameMechanics.Behaviors;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace GameMechanics
 {
     [RequireComponent(
-        typeof(HealthEntity), 
-        typeof(AttackEntity),
-        typeof(MovementEntity)
+        typeof(HealthBehavior), 
+        typeof(AttackBehavior),
+        typeof(MovementBehavior)
     )]
-    [RequireComponent(typeof(ScaleEntity))]
+    [RequireComponent(typeof(ScaleBehavior))]
     public class Asteroid : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer spriteRenderer;
@@ -19,10 +20,10 @@ namespace GameMechanics
         [Space(10)]
         [SerializeField] private Sprite[] asteroids = new Sprite[10];
 
-        private HealthEntity _healthEntity;
-        private AttackEntity _attackEntity;
-        private MovementEntity _movementEntity;
-        private ScaleEntity _scaleEntity;
+        private HealthBehavior _healthBehavior;
+        private AttackBehavior _attackBehavior;
+        private MovementBehavior _movementBehavior;
+        private ScaleBehavior _scaleBehavior;
 
         public static string Tag = "Asteroid";
 
@@ -34,7 +35,7 @@ namespace GameMechanics
         {
             _animation = GetComponent<Animation>();
 
-            DefiningEntities();
+            DefiningBehaviors();
             
             spriteRenderer.sprite = asteroids[Random.Range(0, 10)];
 
@@ -53,46 +54,46 @@ namespace GameMechanics
 
         public void SetHealth(int health)
         {
-            _healthEntity.SetHealthOfEntity(health);
+            _healthBehavior.SetHealthOfEntity(health);
         }
 
         public void SetDamage(int damage)
         {
-            _attackEntity.SetAttackOfEntity(damage);
+            _attackBehavior.SetAttackOfEntity(damage);
         }
 
         public void Move(Vector2 pos, float speed)
         {
-            _movementEntity.Move(pos, speed);
+            _movementBehavior.Move(pos, speed);
         }
 
         public void SetScale(float scaleX, float scaleY, float maxScaleX, float maxScaleY)
         {
-            _scaleEntity.SetScale(scaleX, scaleY);
-            _scaleEntity.SetMaxScale(maxScaleX, maxScaleY);
-            _scaleEntity.ActiveScale(true);
+            _scaleBehavior.SetScale(scaleX, scaleY);
+            _scaleBehavior.SetMaxScale(maxScaleX, maxScaleY);
+            _scaleBehavior.ActiveScale(true);
         }
         
-        private void DefiningEntities()
+        private void DefiningBehaviors()
         {
-            _healthEntity = GetComponent<HealthEntity>();
+            _healthBehavior = GetComponent<HealthBehavior>();
             
-            _attackEntity = GetComponent<AttackEntity>();
+            _attackBehavior = GetComponent<AttackBehavior>();
 
-            _movementEntity = GetComponent<MovementEntity>();
+            _movementBehavior = GetComponent<MovementBehavior>();
 
-            _scaleEntity = GetComponent<ScaleEntity>();
+            _scaleBehavior = GetComponent<ScaleBehavior>();
         }
         
         public void TakeDamage(int hit)
         {
-            if (_healthEntity.Health > 0)
+            if (_healthBehavior.Health > 0)
             {
                 _animation.Stop();
                 _animation.Play();
-                _healthEntity.TakeDamage(hit);
+                _healthBehavior.TakeDamage(hit);
                 
-                if (_healthEntity.Health == 0)
+                if (_healthBehavior.Health == 0)
                 {
                     StartCoroutine(Death());
                 }
@@ -111,7 +112,7 @@ namespace GameMechanics
         private IEnumerator Death()
         {
             yield return new WaitForSeconds(0.3f);
-            _movementEntity.StopMove();
+            _movementBehavior.StopMove();
             DeathAsteroid?.Invoke();
         }
     }

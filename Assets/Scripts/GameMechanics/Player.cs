@@ -1,30 +1,31 @@
+using GameMechanics.Behaviors;
 using UnityEngine;
 
 namespace GameMechanics
 {
     [RequireComponent(
-        typeof(HealthEntity), 
-        typeof(AttackEntity)
+        typeof(HealthBehavior), 
+        typeof(AttackBehavior)
     )]
     public class Player : MonoBehaviour
     {
-        private HealthEntity _healthEntity;
-        private AttackEntity _attackEntity;
+        private HealthBehavior _healthBehavior;
+        private AttackBehavior _attackBehavior;
 
         public static string Tag = "Planet";
         
         void Start()
         {
-            _healthEntity = GetComponent<HealthEntity>();
-            _healthEntity.SetHealthOfEntity(3);
+            _healthBehavior = GetComponent<HealthBehavior>();
+            _healthBehavior.SetHealthOfEntity(3);
             
-            _attackEntity = GetComponent<AttackEntity>();
-            _attackEntity.SetAttackOfEntity(1);
+            _attackBehavior = GetComponent<AttackBehavior>();
+            _attackBehavior.SetAttackOfEntity(1);
         }
 
         public int GetAmountOfDamage()
         {
-            return _attackEntity.Attack;
+            return _attackBehavior.Attack;
         }
     }
 }
