@@ -19,38 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Обновлен .gitignore">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/IButton.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/IButton.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/UIButton.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/UIButton.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" afterDir="false" />
+    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Обновление структуры кода">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Spaceship.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/LoserPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/LoserPanel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUpPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUpPanel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/GameMechanics.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/GameMechanics.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NewBehaviourScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NewBehaviourScript.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ComeBack.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ComeBack.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ContinueButton.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ContinueButton.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ExitButton.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ExitButton.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ImprovementUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ImprovementUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LoserPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LoserPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LvlButton.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LvlButton.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LvlUpButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/LvlUpButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LvlUpButton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/LvlUpButton.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LvlUpPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LvlUpPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,18 +38,19 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/DamageText.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Spaceship.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/DamageText.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Spaceship.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PlayerHealthUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/19/1670f7e6/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/AttackBehavior.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Unity/homework1/Assets/Scripts/UI/UIMechanics.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ImprovementUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Explosion.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/Explosion.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/Asteroid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/a8/7892c479/RequireComponent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Buttons/LvlUpButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/fc/32adf37f/Component.cs" root0="SKIP_HIGHLIGHTING" />
@@ -88,7 +59,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HPEntity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AttackEntity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MovementEntity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/ScaleEntity.cs" />
@@ -132,6 +102,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/LvlUpButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/HealthBar.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Spaceship.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/Asteroid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/DamageText.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/Explosion.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/LvlUpAsteroidMechanics.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" />
       </list>
     </option>
@@ -183,7 +160,7 @@
       <workItem from="1634196124972" duration="19156000" />
       <workItem from="1634282021848" duration="10694000" />
       <workItem from="1634455990589" duration="31617000" />
-      <workItem from="1634544090426" duration="4331000" />
+      <workItem from="1634544090426" duration="6079000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1634104804696</created>
@@ -297,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634544323679</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Обновление структуры кода">
+      <created>1634548721780</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1634548721780</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,17 +318,18 @@
     <MESSAGE value="Добавлено меню улучшений и увеличение уровня игрока и астероидов" />
     <MESSAGE value="Добавлен задний фон" />
     <MESSAGE value="Обновлен .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обновлен .gitignore" />
+    <MESSAGE value="Обновление структуры кода" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновление структуры кода" />
   </component>
   <component name="WindowStateProjectService">
     <state x="794" y="220" key="RiderGenerateDialog" timestamp="1634548425215">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="220" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1634548425215" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1634544327688">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1634548726283">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1634544327688" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1634548726283" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1634284755877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

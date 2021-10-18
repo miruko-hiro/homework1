@@ -27,24 +27,13 @@ namespace UI
         [SerializeField] private GameObject controller;
         private MainMechanics _mainMechanics;
 
+        private bool _isFirstLoserPanel = true;
+        private bool _isFirstLvlUpPanel = true;
+
         private IEnumerator Start()
         {
             _mainMechanics = controller.GetComponent<MainMechanics>();
             InitMainUIElements();
-            
-            _loserPanel = Instantiate(loserPanelPrefab, transform).GetComponent<LoserPanel>();
-            while (!_loserPanel.ContinueButton || !_loserPanel.ExitButton)
-                yield return null;
-            _loserPanel.ContinueButton.Click += ReStart;
-            _loserPanel.ExitButton.Click += Exit;
-            _loserPanel.gameObject.SetActive(false);
-
-            _lvlUpPanel = Instantiate(lvlUpPanelPrefab, transform).GetComponent<LvlUpPanel>();
-            while (!_lvlUpPanel.IsInit)
-                yield return null;
-            _lvlUpPanel.ChangeLvl += ChangeDamage;
-            _lvlUpPanel.ComeBackButton.Click += HideLvlUpPanel;
-            _lvlUpPanel.gameObject.SetActive(false);
             
             while (!_mainMechanics.Player || !_mainMechanics.Player.Money)
                 yield return null;
@@ -60,6 +49,27 @@ namespace UI
             _playerHealthUI = Instantiate(hpPlayerUIPrefab, transform).GetComponent<PlayerHealthUI>();
             _lvlUpButton = Instantiate(lvlUpButtonPrefab, transform).GetComponent<LvlUpButton>();
             _lvlUpButton.Click += ShowLvlUpPanel;
+        }
+
+        private IEnumerator InitLoserPanel()
+        {
+            _loserPanel = Instantiate(loserPanelPrefab, transform).GetComponent<LoserPanel>();
+            _loserPanel.gameObject.SetActive(true);
+            while (!_loserPanel.ContinueButton || !_loserPanel.ExitButton)
+                yield return null;
+            _loserPanel.ContinueButton.Click += ReStart;
+            _loserPanel.ExitButton.Click += Exit;
+        }
+
+        private IEnumerator InitLvlUpPanel()
+        {
+            _lvlUpPanel = Instantiate(lvlUpPanelPrefab, transform).GetComponent<LvlUpPanel>();
+            _lvlUpPanel.gameObject.SetActive(true);
+            while (!_lvlUpPanel.IsInit)
+                yield return null;
+            _lvlUpPanel.ChangeLvl += ChangeDamage;
+            _lvlUpPanel.ComeBackButton.Click += HideLvlUpPanel;
+            _lvlUpPanel.SetMoney(_mainMechanics.Player.Money.Amount);
         }
 
         private void ChangeDamage(int damage, int index, int money)
@@ -100,14 +110,30 @@ namespace UI
 
         private void ShowLoserPanel()
         {
-            _loserPanel.gameObject.SetActive(true);
+            if (_isFirstLoserPanel)
+            {
+                StartCoroutine(InitLoserPanel());
+                _isFirstLoserPanel = false;
+            }
+            else
+            {
+                _loserPanel.gameObject.SetActive(true);
+            }
         }
 
         private void ShowLvlUpPanel()
         {
             _mainMechanics.Pause();
-            _lvlUpPanel.gameObject.SetActive(true);
-            _lvlUpPanel.SetMoney(_mainMechanics.Player.Money.Amount);
+            if (_isFirstLvlUpPanel)
+            {
+                StartCoroutine(InitLvlUpPanel());
+                _isFirstLvlUpPanel = false;
+            }
+            else
+            {
+                _lvlUpPanel.gameObject.SetActive(true);
+                _lvlUpPanel.SetMoney(_mainMechanics.Player.Money.Amount);
+            }
         }
 
         private void HideLvlUpPanel()
@@ -130,16 +156,23 @@ namespace UI
         private void OnDestroy()
         {
             _lvlUpButton.Click -= ShowLvlUpPanel;
-            _lvlUpPanel.ChangeLvl -= ChangeDamage;
-            _lvlUpPanel.ComeBackButton.Click -= HideLvlUpPanel;
+
+            if (!_isFirstLvlUpPanel)
+            {
+                _lvlUpPanel.ChangeLvl -= ChangeDamage;
+                _lvlUpPanel.ComeBackButton.Click -= HideLvlUpPanel;
+            }
             
             _mainMechanics.Player.Money.ChangeAmountOfMoney -= SetAmountOfMoney;
             _mainMechanics.Player.Health.HealthDecreased -= TakeAwayOneLife;
             _mainMechanics.Player.Health.HealthIncreased -= RestoreOneLife;
 
-            _loserPanel.ContinueButton.Click -= ReStart;
-            _loserPanel.ExitButton.Click -= Exit;
-            
+            if (!_isFirstLoserPanel)
+            {
+                _loserPanel.ContinueButton.Click -= ReStart;
+                _loserPanel.ExitButton.Click -= Exit;
+            }
+
             _mainMechanics.GameOver -= ShowLoserPanel;
         }
     }
