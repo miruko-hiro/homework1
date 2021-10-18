@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 7136218373307207082}
   - component: {fileID: 7136218373307207093}
   - component: {fileID: 7136218373307207092}
-  - component: {fileID: 2126565361228179587}
+  - component: {fileID: 6225198196763365870}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -200,9 +200,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2126565361228179587}
-        m_TargetAssemblyTypeName: UI.ExitButton, UI
-        m_MethodName: OnClickExit
+      - m_Target: {fileID: 6225198196763365870}
+        m_TargetAssemblyTypeName: UI.Buttons.UIButton, UI
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -212,7 +212,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2126565361228179587
+--- !u!114 &6225198196763365870
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7136218373307207094}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9519298a9cd34d45916d24f67218a72, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d1d6eba76aa415ca8aba1206078c9af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7136218374323391494
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 7136218374323391546}
   - component: {fileID: 7136218374323391493}
   - component: {fileID: 7136218374323391492}
-  - component: {fileID: 569446515659080668}
+  - component: {fileID: 7788978271001902758}
   m_Layer: 5
   m_Name: Continue
   m_TagString: Untagged
@@ -345,9 +345,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 569446515659080668}
-        m_TargetAssemblyTypeName: UI.LoserPanel, UI
-        m_MethodName: OnClickContinue
+      - m_Target: {fileID: 7788978271001902758}
+        m_TargetAssemblyTypeName: UI.Buttons.UIButton, UI
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -357,7 +357,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &569446515659080668
+--- !u!114 &7788978271001902758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -366,7 +366,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7136218374323391494}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6deed3e17c8a5d4db7093093a624ba6, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d1d6eba76aa415ca8aba1206078c9af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7136218374950275692

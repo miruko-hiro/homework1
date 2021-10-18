@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Unity\homework1" t="IncludeRecursive">
-      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="GameMechanics" t="Include">
-            <e p="Asteroid.cs" t="Include" />
+            <e p="AsteroidMechanics" t="Include">
+              <e p="Asteroid.cs" t="Include" />
+              <e p="DamageText.cs" t="Include" />
+              <e p="Explosion.cs" t="Include" />
+              <e p="LvlUpAsteroidMechanics.cs" t="Include" />
+            </e>
             <e p="Behaviors" t="Include">
               <e p="AttackBehavior.cs" t="Include" />
               <e p="HealthBehavior.cs" t="Include" />
@@ -15,34 +19,35 @@
               <e p="ScaleBehavior.cs" t="Include" />
               <e p="TurnBehavior.cs" t="Include" />
             </e>
-            <e p="DamageText.cs" t="Include" />
-            <e p="Explosion.cs" t="Include" />
             <e p="GameMechanics.asmdef" t="Include" />
-            <e p="HealthBar.cs" t="Include" />
             <e p="InputMechanics.cs" t="Include" />
             <e p="MainMechanics.cs" t="Include" />
-            <e p="Player.cs" t="Include" />
-            <e p="Spaceship.cs" t="Include" />
+            <e p="PlayerMechanics" t="Include">
+              <e p="HealthBar.cs" t="Include" />
+              <e p="Player.cs" t="Include" />
+              <e p="Spaceship.cs" t="Include" />
+            </e>
           </e>
-          <e p="NewBehaviourScript.cs" t="Include" />
           <e p="UI" t="Include">
-            <e p="ComeBack.cs" t="Include" />
-            <e p="ContinueButton.cs" t="Include" />
-            <e p="ExitButton.cs" t="Include" />
+            <e p="Buttons" t="Include">
+              <e p="IButton.cs" t="Include" />
+              <e p="LvlUpButton.cs" t="Include" />
+              <e p="UIButton.cs" t="Include" />
+            </e>
             <e p="ImprovementUI.cs" t="Include" />
-            <e p="LoserPanel.cs" t="Include" />
-            <e p="LvlButton.cs" t="Include" />
-            <e p="LvlUpButton.cs" t="Include" />
-            <e p="LvlUpPanel.cs" t="Include" />
             <e p="MoneyUI.cs" t="Include" />
+            <e p="Panels" t="Include">
+              <e p="LoserPanel.cs" t="Include" />
+              <e p="LvlUpPanel.cs" t="Include" />
+            </e>
             <e p="PlayerHealthUI.cs" t="Include" />
             <e p="UI.asmdef" t="Include" />
             <e p="UIMechanics.cs" t="Include" />
           </e>
         </e>
       </e>
+      <e p="GameMechanics.csproj" t="IncludeRecursive" />
       <e p="homework1.sln" t="IncludeFlat" />
-      <e p="NewAssembly.csproj" t="IncludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Temp\Bin" t="ExcludeRecursive" />

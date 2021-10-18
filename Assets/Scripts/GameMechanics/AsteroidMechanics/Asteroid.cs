@@ -1,10 +1,11 @@
 using System;
 using System.Collections;
 using GameMechanics.Behaviors;
+using GameMechanics.PlayerMechanics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace GameMechanics
+namespace GameMechanics.AsteroidMechanics
 {
     [RequireComponent(
         typeof(HealthBehavior), 
@@ -34,11 +35,8 @@ namespace GameMechanics
         private void Start()
         {
             _animation = GetComponent<Animation>();
-
             DefiningBehaviors();
-            
             spriteRenderer.sprite = asteroids[Random.Range(0, 10)];
-
             Enable = true;
         }
 
@@ -56,11 +54,8 @@ namespace GameMechanics
         private void DefiningBehaviors()
         {
             Health = GetComponent<HealthBehavior>();
-            
             Attack = GetComponent<AttackBehavior>();
-
             Movement = GetComponent<MovementBehavior>();
-
             Scale = GetComponent<ScaleBehavior>();
         }
         

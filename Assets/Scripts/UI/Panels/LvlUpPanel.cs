@@ -1,14 +1,15 @@
 using System;
 using System.Collections;
+using UI.Buttons;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI
+namespace UI.Panels
 {
     public class LvlUpPanel : MonoBehaviour
     {
         [SerializeField] private GameObject comeBackButton;
-        public ComeBack ComeBackButton { get; private set; }
+        public UIButton ComeBackButton { get; private set; }
 
         [SerializeField] private Text money;
         
@@ -49,14 +50,14 @@ namespace UI
 
         private IEnumerator Start()
         {
-            ComeBackButton = comeBackButton.GetComponent<ComeBack>();
+            ComeBackButton = comeBackButton.GetComponent<UIButton>();
             
             _improvement01 = improvementPrefab01.GetComponent<ImprovementUI>();
             _improvement01.Icon = iconImprovement01;
             _improvement01.Index = 1;
             while (!_improvement01.LvlButton)
                 yield return null;
-            _improvement01.LvlButton.ClickButton += LvlUpImprovement01;
+            _improvement01.LvlButton.Click += LvlUpImprovement01;
             SetDamageTextImprovement01();
             SetDamageUpTextImprovement01();
             SetMoneyImprovement01();
@@ -67,7 +68,7 @@ namespace UI
             _improvement02.Index = 2;
             while (!_improvement02.LvlButton)
                 yield return null;
-            _improvement02.LvlButton.ClickButton += LvlUpImprovement02;
+            _improvement02.LvlButton.Click += LvlUpImprovement02;
             SetDamageTextImprovement02();
             SetDamageUpTextImprovement02();
             SetMoneyImprovement02();
@@ -78,7 +79,7 @@ namespace UI
             _improvement03.Index = 3;
             while (!_improvement03.LvlButton)
                 yield return null;
-            _improvement03.LvlButton.ClickButton += LvlUpImprovement03;
+            _improvement03.LvlButton.Click += LvlUpImprovement03;
             SetDamageTextImprovement03();
             SetDamageUpTextImprovement03();
             SetMoneyImprovement03();
@@ -89,10 +90,10 @@ namespace UI
 
         public void LvlUpImprovement01()
         {
-            ChangeLvl?.Invoke(_damageImprovement01, _improvement01.Index, _moneyImprovement01);
+            _moneyImprovement01 += _moneyImprovement01;
+            ChangeLvl?.Invoke(_damageImprovement01, _improvement01.Index, _moneyImprovement01 / 2);
             _lvlImprovement01 += 1;
             _damageImprovement01 += 1;
-            _moneyImprovement01 += _moneyImprovement01;
             SetDamageTextImprovement01();
             SetDamageUpTextImprovement01();
             SetMoneyImprovement01();
@@ -100,10 +101,10 @@ namespace UI
 
         public void LvlUpImprovement02()
         {
-            ChangeLvl?.Invoke(_damageImprovement02, _improvement02.Index, _moneyImprovement02);
+            _moneyImprovement02 += _moneyImprovement02;
+            ChangeLvl?.Invoke(_damageImprovement02, _improvement02.Index, _moneyImprovement02 / 2);
             _lvlImprovement02 += 1;
             _damageImprovement02 *= 2;
-            _moneyImprovement02 += _moneyImprovement02;
             SetDamageTextImprovement02();
             SetDamageUpTextImprovement02();
             SetMoneyImprovement02();
@@ -111,10 +112,10 @@ namespace UI
 
         public void LvlUpImprovement03()
         {
-            ChangeLvl?.Invoke(_damageImprovement03, _improvement03.Index, _moneyImprovement03);
+            _moneyImprovement03 += _moneyImprovement03;
+            ChangeLvl?.Invoke(_damageImprovement03, _improvement03.Index, _moneyImprovement03 / 2);
             _lvlImprovement03 += 1;
             _damageImprovement03 *= 2;
-            _moneyImprovement03 += _moneyImprovement03;
             SetDamageTextImprovement03();
             SetDamageUpTextImprovement03();
             SetMoneyImprovement03();
@@ -190,9 +191,9 @@ namespace UI
 
         private void OnDestroy()
         {
-            _improvement01.LvlButton.ClickButton -= LvlUpImprovement01;
-            _improvement02.LvlButton.ClickButton -= LvlUpImprovement02;
-            _improvement03.LvlButton.ClickButton -= LvlUpImprovement03;
+            _improvement01.LvlButton.Click -= LvlUpImprovement01;
+            _improvement02.LvlButton.Click -= LvlUpImprovement02;
+            _improvement03.LvlButton.Click -= LvlUpImprovement03;
         }
     }
 }

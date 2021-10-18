@@ -1,7 +1,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace GameMechanics
+namespace GameMechanics.AsteroidMechanics
 {
     public class Explosion : MonoBehaviour
     {

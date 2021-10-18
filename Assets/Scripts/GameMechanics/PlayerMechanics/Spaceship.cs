@@ -1,9 +1,8 @@
-using System;
 using System.Collections;
 using GameMechanics.Behaviors;
 using UnityEngine;
 
-namespace GameMechanics
+namespace GameMechanics.PlayerMechanics
 {
     [RequireComponent(typeof(TurnBehavior))]
     public class Spaceship : MonoBehaviour

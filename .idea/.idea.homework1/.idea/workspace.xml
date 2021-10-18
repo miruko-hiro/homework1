@@ -19,8 +19,39 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Добавлено меню улучшений и увеличение уровня игрока и астероидов">
+    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Обновлен .gitignore">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/IButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/IButton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/UIButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/UIButton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Spaceship.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/LoserPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/LoserPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUpPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUpPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/GameMechanics.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/GameMechanics.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NewBehaviourScript.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NewBehaviourScript.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ComeBack.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ComeBack.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ContinueButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ContinueButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ExitButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ExitButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/ImprovementUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/ImprovementUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LoserPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LoserPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LvlButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LvlButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LvlUpButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/LvlUpButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LvlUpButton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/LvlUpButton.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LvlUpPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/LvlUpPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,31 +67,27 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ExitButton.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/LvlUpPanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/DamageText.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Spaceship.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PlayerHealthUI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ComeBack.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ContinueButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/19/1670f7e6/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/AttackBehavior.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/LvlButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ImprovementUI.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/LoserPanel.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Explosion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/a8/7892c479/RequireComponent.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/LvlUpButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Buttons/LvlUpButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/fc/32adf37f/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MoneyUI.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HPEntity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AttackEntity.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MovementEntity.cs" />
@@ -80,20 +107,32 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthBar.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerHealthUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ExitButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ContinueButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoserPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LvlUpButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ComeBack.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LvlButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/AttackBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/HealthBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ImprovementUI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/MoneyBehavior.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/LvlUpPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/LvlUpAsteroid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/LvlUpAsteroidMechanics.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/IButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ComeBack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ContinueButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/ExitButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/ContinueButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/ComeBack.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/UIButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/IButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ImprovementUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/LvlUpButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" />
       </list>
     </option>
   </component>
@@ -144,6 +183,7 @@
       <workItem from="1634196124972" duration="19156000" />
       <workItem from="1634282021848" duration="10694000" />
       <workItem from="1634455990589" duration="31617000" />
+      <workItem from="1634544090426" duration="4331000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1634104804696</created>
@@ -243,7 +283,21 @@
       <option name="project" value="LOCAL" />
       <updated>1634501262140</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Добавлен задний фон">
+      <created>1634544155411</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1634544155411</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Обновлен .gitignore">
+      <created>1634544323679</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1634544323679</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,17 +332,27 @@
     <MESSAGE value="Добавлена смерть игрока и отнимание жизни при столкновении планеты с астероидом" />
     <MESSAGE value="Добавлена панель проигрыша, кнопка выхода и кнопка рестарта" />
     <MESSAGE value="Добавлено меню улучшений и увеличение уровня игрока и астероидов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлено меню улучшений и увеличение уровня игрока и астероидов" />
+    <MESSAGE value="Добавлен задний фон" />
+    <MESSAGE value="Обновлен .gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Обновлен .gitignore" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1634501265305">
+    <state x="794" y="220" key="RiderGenerateDialog" timestamp="1634548425215">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1634501265305" />
+    <state x="794" y="220" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1634548425215" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1634544327688">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1634544327688" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1634284755877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1634284755877" />
+    <state x="774" y="414" key="git4idea.ui.GitResetDialog" timestamp="1634544363024">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="774" y="414" key="git4idea.ui.GitResetDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1634544363024" />
     <state x="616" y="240" key="run.anything.popup" timestamp="1634199073779">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using GameMechanics;
+using UI.Buttons;
+using UI.Panels;
 using UnityEngine;
 
 namespace UI
@@ -27,41 +29,37 @@ namespace UI
 
         private IEnumerator Start()
         {
-            _moneyUI = Instantiate(moneyUIPrefab, transform).GetComponent<MoneyUI>();
-            _playerHealthUI = Instantiate(hpPlayerUIPrefab, transform).GetComponent<PlayerHealthUI>();
-            
-            _lvlUpButton = Instantiate(lvlUpButtonPrefab, transform).GetComponent<LvlUpButton>();
-            _lvlUpButton.ClickLvlUp += ShowLvlUpPanel;
+            _mainMechanics = controller.GetComponent<MainMechanics>();
+            InitMainUIElements();
             
             _loserPanel = Instantiate(loserPanelPrefab, transform).GetComponent<LoserPanel>();
-            
             while (!_loserPanel.ContinueButton || !_loserPanel.ExitButton)
                 yield return null;
-            
-            _loserPanel.ContinueButton.ClickContinue += ReStart;
-            _loserPanel.ExitButton.ClickExit += Exit;
+            _loserPanel.ContinueButton.Click += ReStart;
+            _loserPanel.ExitButton.Click += Exit;
             _loserPanel.gameObject.SetActive(false);
-                
-            _mainMechanics = controller.GetComponent<MainMechanics>();
 
             _lvlUpPanel = Instantiate(lvlUpPanelPrefab, transform).GetComponent<LvlUpPanel>();
-
             while (!_lvlUpPanel.IsInit)
                 yield return null;
-            
             _lvlUpPanel.ChangeLvl += ChangeDamage;
-            _lvlUpPanel.ComeBackButton.ClickComeBack += HideLvlUpPanel;
-            
+            _lvlUpPanel.ComeBackButton.Click += HideLvlUpPanel;
             _lvlUpPanel.gameObject.SetActive(false);
             
             while (!_mainMechanics.Player || !_mainMechanics.Player.Money)
                 yield return null;
-            
             _mainMechanics.Player.Money.ChangeAmountOfMoney += SetAmountOfMoney;
             _mainMechanics.Player.Health.HealthDecreased += TakeAwayOneLife;
             _mainMechanics.Player.Health.HealthIncreased += RestoreOneLife;
-            
             _mainMechanics.GameOver += ShowLoserPanel;
+        }
+
+        private void InitMainUIElements()
+        {
+            _moneyUI = Instantiate(moneyUIPrefab, transform).GetComponent<MoneyUI>();
+            _playerHealthUI = Instantiate(hpPlayerUIPrefab, transform).GetComponent<PlayerHealthUI>();
+            _lvlUpButton = Instantiate(lvlUpButtonPrefab, transform).GetComponent<LvlUpButton>();
+            _lvlUpButton.Click += ShowLvlUpPanel;
         }
 
         private void ChangeDamage(int damage, int index, int money)
@@ -131,16 +129,16 @@ namespace UI
 
         private void OnDestroy()
         {
-            _lvlUpButton.ClickLvlUp -= ShowLvlUpPanel;
+            _lvlUpButton.Click -= ShowLvlUpPanel;
             _lvlUpPanel.ChangeLvl -= ChangeDamage;
-            _lvlUpPanel.ComeBackButton.ClickComeBack -= HideLvlUpPanel;
+            _lvlUpPanel.ComeBackButton.Click -= HideLvlUpPanel;
             
             _mainMechanics.Player.Money.ChangeAmountOfMoney -= SetAmountOfMoney;
             _mainMechanics.Player.Health.HealthDecreased -= TakeAwayOneLife;
             _mainMechanics.Player.Health.HealthIncreased -= RestoreOneLife;
 
-            _loserPanel.ContinueButton.ClickContinue -= ReStart;
-            _loserPanel.ExitButton.ClickExit -= Exit;
+            _loserPanel.ContinueButton.Click -= ReStart;
+            _loserPanel.ExitButton.Click -= Exit;
             
             _mainMechanics.GameOver -= ShowLoserPanel;
         }

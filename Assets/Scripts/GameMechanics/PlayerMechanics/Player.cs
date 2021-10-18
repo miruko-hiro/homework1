@@ -2,7 +2,7 @@ using System;
 using GameMechanics.Behaviors;
 using UnityEngine;
 
-namespace GameMechanics
+namespace GameMechanics.PlayerMechanics
 {
     [RequireComponent(
         typeof(HealthBehavior), 

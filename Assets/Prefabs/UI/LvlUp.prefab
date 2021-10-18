@@ -123,8 +123,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8188064454355000097}
-        m_TargetAssemblyTypeName: UI.LvlUpButton, UI
-        m_MethodName: OnClickLvlUp
+        m_TargetAssemblyTypeName: UI.Buttons.LvlUpButton, UI
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

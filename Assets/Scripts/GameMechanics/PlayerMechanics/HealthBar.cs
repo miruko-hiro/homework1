@@ -1,7 +1,7 @@
 using GameMechanics.Behaviors;
 using UnityEngine;
 
-namespace GameMechanics
+namespace GameMechanics.PlayerMechanics
 {
     public class HealthBar : MonoBehaviour
     {

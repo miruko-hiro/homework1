@@ -1,4 +1,5 @@
 using System;
+using UI.Buttons;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ namespace UI
         [SerializeField] private Text damageUpText;
         [SerializeField] private Text money;
         [SerializeField] private Button button;
-        public LvlButton LvlButton { get; private set; }
+        public UIButton LvlButton { get; private set; }
 
         private bool _isEnable;
         public bool Enable
@@ -26,7 +27,7 @@ namespace UI
 
         private void Start()
         {
-            LvlButton = button.GetComponent<LvlButton>();
+            LvlButton = button.GetComponent<UIButton>();
         }
 
         public Sprite Icon
