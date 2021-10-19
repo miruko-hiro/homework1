@@ -19,9 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Обновление структуры кода">
+    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Инициализация панели проигрыша и панели повышения уровня убрана из первого запуска игры в первый вызов панелей">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +48,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PlayerHealthUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/19/1670f7e6/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/AttackBehavior.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/homework1/Assets/Scripts/UI/UIMechanics.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/ImprovementUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/Explosion.cs" root0="FORCE_HIGHLIGHTING" />
@@ -88,7 +89,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/LvlUpAsteroid.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/LvlUpAsteroidMechanics.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Asteroid.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/IButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/ComeBack.cs" />
@@ -103,13 +103,14 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/LvlUpButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/HealthBar.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Spaceship.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/Asteroid.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/DamageText.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/Explosion.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/LvlUpAsteroidMechanics.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Player.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/Asteroid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" />
       </list>
     </option>
   </component>
@@ -160,7 +161,8 @@
       <workItem from="1634196124972" duration="19156000" />
       <workItem from="1634282021848" duration="10694000" />
       <workItem from="1634455990589" duration="31617000" />
-      <workItem from="1634544090426" duration="6079000" />
+      <workItem from="1634544090426" duration="7577000" />
+      <workItem from="1634628189353" duration="5962000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1634104804696</created>
@@ -281,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634548721780</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Инициализация панели проигрыша и панели повышения уровня убрана из первого запуска игры в первый вызов панелей">
+      <created>1634550298942</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1634550298942</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,17 +328,18 @@
     <MESSAGE value="Добавлен задний фон" />
     <MESSAGE value="Обновлен .gitignore" />
     <MESSAGE value="Обновление структуры кода" />
-    <option name="LAST_COMMIT_MESSAGE" value="Обновление структуры кода" />
+    <MESSAGE value="Инициализация панели проигрыша и панели повышения уровня убрана из первого запуска игры в первый вызов панелей" />
+    <option name="LAST_COMMIT_MESSAGE" value="Инициализация панели проигрыша и панели повышения уровня убрана из первого запуска игры в первый вызов панелей" />
   </component>
   <component name="WindowStateProjectService">
     <state x="794" y="220" key="RiderGenerateDialog" timestamp="1634548425215">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="220" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1634548425215" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1634548726283">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1634550303622">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1634548726283" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1634550303622" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1634284755877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using GameMechanics.AsteroidMechanics;
 using GameMechanics.PlayerMechanics;
 using UnityEngine;
@@ -45,9 +46,9 @@ namespace GameMechanics
         private int _numberOfLivingAsteroids = 0;
         private int _numberSpaceships = 1;
 
-        public const string Asteroid01Tag = "Asteroid0";
-        public const string Asteroid02Tag = "Asteroid1";
-        public const string Asteroid03Tag = "Asteroid2";
+        // public const string Asteroid01Tag = "Asteroid0";
+        // public const string Asteroid02Tag = "Asteroid1";
+        // public const string Asteroid03Tag = "Asteroid2";
 
         public event Action GameOver;
 
@@ -100,7 +101,6 @@ namespace GameMechanics
         {
             _asteroidArray[i] = Instantiate(asteroidPrefab, GetComponent<Transform>()).GetComponent<Asteroid>();
             _asteroidArray[i].SetPosition(new Vector2(-10f, 0f));
-            _asteroidArray[i].tag = "Asteroid" + i;
             _asteroidArray[i].Count = i;
             _asteroidArray[i].Died += DeadAsteroid;
         }
@@ -205,9 +205,14 @@ namespace GameMechanics
 
             if (hit && hit.collider)
             {
-                ChoosingAnAsteroidToTakeDamage(hit.collider.tag, _player.Attack.Amount);
-                ShowDamageText(_player.Attack.Amount, touchWorldPos);
-                SpaceshipsShoot(touchWorldPos);
+                foreach (Asteroid asteroid in _asteroidArray)
+                {
+                    if (!Equals(hit.collider.gameObject, asteroid.gameObject)) continue;
+                    asteroid.TakeDamage(_player.Attack.Amount);
+                    ShowDamageText(_player.Attack.Amount, touchWorldPos);
+                    SpaceshipsShoot(touchWorldPos);
+                    break;
+                }
             }
         }
 
@@ -216,22 +221,6 @@ namespace GameMechanics
             foreach (var spaceship in _spaceshipList)
             {
                 spaceship.ShotLaser(posEnemy);
-            }
-        }
-
-        private void ChoosingAnAsteroidToTakeDamage(string tagStr, int damage)
-        {
-            switch (tagStr)
-            {
-                case Asteroid01Tag:
-                    _asteroidArray[0].TakeDamage(damage);
-                    break;
-                case Asteroid02Tag:
-                    _asteroidArray[1].TakeDamage(damage);
-                    break;
-                case Asteroid03Tag:
-                    _asteroidArray[2].TakeDamage(damage);
-                    break;
             }
         }
 

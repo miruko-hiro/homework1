@@ -32,9 +32,7 @@ namespace GameMechanics.PlayerMechanics
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag(MainMechanics.Asteroid01Tag) 
-                || other.CompareTag(MainMechanics.Asteroid02Tag) 
-                || other.CompareTag(MainMechanics.Asteroid03Tag))
+            if (other.CompareTag("Asteroid"))
             {
                 Health.TakeDamage(1);
                 if (Health.Amount == 0)
