@@ -19,7 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Обновлен метод MainMechanics.cs CheckPosition()" />
+    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Комит перед созданием новой ветки" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +35,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Unity/homework1/ProjectSettings/ProjectSettings.asset" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/DamageText.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Spaceship.cs" root0="FORCE_HIGHLIGHTING" />
@@ -160,6 +159,7 @@
       <workItem from="1634544090426" duration="7577000" />
       <workItem from="1634628189353" duration="6023000" />
       <workItem from="1634662379542" duration="86000" />
+      <workItem from="1634891303655" duration="174000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1634104804696</created>
@@ -301,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634662452427</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="Комит перед созданием новой ветки">
+      <created>1634891438602</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1634891438602</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -342,17 +349,18 @@
     <MESSAGE value="Инициализация панели проигрыша и панели повышения уровня убрана из первого запуска игры в первый вызов панелей" />
     <MESSAGE value="Обновлен метод MainMechanics.cs CheckPosition()" />
     <MESSAGE value="Изменены настройки ориентации сборки на Portrait" />
-    <option name="LAST_COMMIT_MESSAGE" value="Изменены настройки ориентации сборки на Portrait" />
+    <MESSAGE value="Комит перед созданием новой ветки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Комит перед созданием новой ветки" />
   </component>
   <component name="WindowStateProjectService">
     <state x="794" y="220" key="RiderGenerateDialog" timestamp="1634548425215">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="220" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1634548425215" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1634662456385">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1634891441747">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1634662456385" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1634891441747" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1634284755877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
