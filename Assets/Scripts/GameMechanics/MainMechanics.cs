@@ -272,18 +272,8 @@ namespace GameMechanics
 
         public void ReStart()
         {
-            Play();
+            GameStateHelper.Play();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-
-        public void Pause()
-        {
-            Time.timeScale = 0;
-        }
-
-        public void Play()
-        {
-            Time.timeScale = 1;
         }
         //End Of Game State Control
 
@@ -293,7 +283,7 @@ namespace GameMechanics
             _planet.SetActive(false);
             yield return new WaitForSeconds(1.5f);
             GameOver?.Invoke();
-            Pause();
+            GameStateHelper.Pause();
         }
 
         private void OnDestroy()

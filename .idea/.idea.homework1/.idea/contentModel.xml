@@ -19,7 +19,9 @@
               <e p="ScaleBehavior.cs" t="Include" />
               <e p="TurnBehavior.cs" t="Include" />
             </e>
+            <e p="ExitHelper.cs" t="Include" />
             <e p="GameMechanics.asmdef" t="Include" />
+            <e p="GameStateHelper.cs" t="Include" />
             <e p="InputMechanics.cs" t="Include" />
             <e p="MainMechanics.cs" t="Include" />
             <e p="PlayerMechanics" t="Include">
@@ -37,8 +39,26 @@
             <e p="ImprovementUI.cs" t="Include" />
             <e p="MoneyUI.cs" t="Include" />
             <e p="Panels" t="Include">
+              <e p="Creators" t="Include">
+                <e p="CreatorsMenu.cs" t="Include" />
+                <e p="CreatorsMenuPresenter.cs" t="Include" />
+                <e p="ICreatorsMenu.cs" t="Include" />
+                <e p="UICreatorsMenu.cs" t="Include" />
+              </e>
               <e p="LoserPanel.cs" t="Include" />
               <e p="LvlUpPanel.cs" t="Include" />
+              <e p="Settings" t="Include">
+                <e p="ISettingsMenu.cs" t="Include" />
+                <e p="SettingsMenu.cs" t="Include" />
+                <e p="SettingsMenuPresenter.cs" t="Include" />
+                <e p="UISettingsMenu.cs" t="Include" />
+              </e>
+              <e p="StartMenu" t="Include">
+                <e p="IStartMenu.cs" t="Include" />
+                <e p="StartMenu.cs" t="Include" />
+                <e p="StartMenuPresenter.cs" t="Include" />
+                <e p="UIStartMenu.cs" t="Include" />
+              </e>
             </e>
             <e p="PlayerHealthUI.cs" t="Include" />
             <e p="UI.asmdef" t="Include" />

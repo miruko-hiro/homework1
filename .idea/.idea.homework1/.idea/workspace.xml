@@ -19,7 +19,44 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Комит перед созданием новой ветки" />
+    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Init commit">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/ExitHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/ExitHelper.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/GameStateHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/GameStateHelper.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/CreatorsMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/CreatorsMenu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/CreatorsMenuPresenter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/CreatorsMenuPresenter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/ICreatorsMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/ICreatorsMenu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/UICreatorsMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/UICreatorsMenu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/ISettingsMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/ISettingsMenu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenuPresenter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenuPresenter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/UISettingsMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/UISettingsMenu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/IStartMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/IStartMenu.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuPresenter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuPresenter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/UIStartMenu.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/UIStartMenu.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/HUD/Buttons.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/HUD/Buttons.png.meta" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +68,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -47,35 +89,16 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/Explosion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/Asteroid.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/a8/7892c479/RequireComponent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Buttons/LvlUpButton.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/fc/32adf37f/Component.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/MoneyUI.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AttackEntity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MovementEntity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/ScaleEntity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Explosion.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthEntity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/RotatingObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/InputMechanics.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/DamageText.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/AttackEntity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/HealthEntity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/MovementEntity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/RotatingObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/ScaleEntity.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MoneyUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Spaceship.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/HealthBar.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerHealthUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ExitButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/LoserPanel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/LvlUpButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/LvlButton.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/AttackBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/HealthBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/MoneyBehavior.cs" />
@@ -102,10 +125,31 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/DamageText.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/Explosion.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/LvlUpAsteroidMechanics.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/Asteroid.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/IStartMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenuPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIStartMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/SettingsMenu/Settings.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/SettingsMenu/SettingsMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/EditHelper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/ExitHelper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/GameStateHelper.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenuPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/CreatorsMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/ISettingsMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/ICreatorsMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/CreatorsMenuPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/UISettingsMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/UICreatorsMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/IStartMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/UIStartMenu.cs" />
       </list>
     </option>
   </component>
@@ -160,6 +204,7 @@
       <workItem from="1634628189353" duration="6023000" />
       <workItem from="1634662379542" duration="86000" />
       <workItem from="1634891303655" duration="174000" />
+      <workItem from="1634891494610" duration="13187000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1634104804696</created>
@@ -308,7 +353,14 @@
       <option name="project" value="LOCAL" />
       <updated>1634891438602</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Init commit">
+      <created>1634891561482</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1634891561482</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,7 +382,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Init commit" />
     <MESSAGE value="Add planet" />
     <MESSAGE value="Add asteroid" />
     <MESSAGE value="Add Entities Movement, Attack, Health, Scale" />
@@ -350,17 +401,18 @@
     <MESSAGE value="Обновлен метод MainMechanics.cs CheckPosition()" />
     <MESSAGE value="Изменены настройки ориентации сборки на Portrait" />
     <MESSAGE value="Комит перед созданием новой ветки" />
-    <option name="LAST_COMMIT_MESSAGE" value="Комит перед созданием новой ветки" />
+    <MESSAGE value="Init commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Init commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="794" y="220" key="RiderGenerateDialog" timestamp="1634548425215">
+    <state x="794" y="220" key="RiderGenerateDialog" timestamp="1634910776862">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="220" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1634548425215" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1634891441747">
+    <state x="794" y="220" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1634910776862" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1634891572993">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1634891441747" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1634891572993" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1634284755877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -373,9 +425,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1634199073779" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1634199209165">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1634896834838">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1634199209165" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1634896834838" />
   </component>
 </project>

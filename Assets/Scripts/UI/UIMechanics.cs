@@ -3,12 +3,16 @@ using System.Collections;
 using GameMechanics;
 using UI.Buttons;
 using UI.Panels;
+using UI.Panels.StartMenu;
 using UnityEngine;
 
 namespace UI
 {
+    [RequireComponent(typeof(UIStartMenu))]
     public class UIMechanics : MonoBehaviour
     {
+        private UIStartMenu _uiStartMenu;
+        
         [SerializeField] private GameObject moneyUIPrefab;
         private MoneyUI _moneyUI;
 
@@ -30,9 +34,17 @@ namespace UI
         private bool _isFirstLoserPanel = true;
         private bool _isFirstLvlUpPanel = true;
 
-        private IEnumerator Start()
+        private void Start()
         {
             _mainMechanics = controller.GetComponent<MainMechanics>();
+            _uiStartMenu = GetComponent<UIStartMenu>();
+            GameStateHelper.Pause();
+            
+            StartCoroutine(StartGame());
+        }
+
+        private IEnumerator StartGame()
+        {
             InitMainUIElements();
             
             while (!_mainMechanics.Player || !_mainMechanics.Player.Money)
@@ -58,7 +70,7 @@ namespace UI
             while (!_loserPanel.ContinueButton || !_loserPanel.ExitButton)
                 yield return null;
             _loserPanel.ContinueButton.Click += ReStart;
-            _loserPanel.ExitButton.Click += Exit;
+            _loserPanel.ExitButton.Click += ExitHelper.Exit;
         }
 
         private IEnumerator InitLvlUpPanel()
@@ -123,7 +135,7 @@ namespace UI
 
         private void ShowLvlUpPanel()
         {
-            _mainMechanics.Pause();
+            GameStateHelper.Pause();
             if (_isFirstLvlUpPanel)
             {
                 StartCoroutine(InitLvlUpPanel());
@@ -139,7 +151,7 @@ namespace UI
         private void HideLvlUpPanel()
         {
             _lvlUpPanel.gameObject.SetActive(false);
-            _mainMechanics.Play();
+            GameStateHelper.Play();
         }
 
         private void ReStart()
@@ -148,13 +160,9 @@ namespace UI
             _mainMechanics.ReStart();
         }
 
-        private void Exit()
-        {
-            Application.Quit();
-        }
-
         private void OnDestroy()
         {
+            
             _lvlUpButton.Click -= ShowLvlUpPanel;
 
             if (!_isFirstLvlUpPanel)
@@ -170,7 +178,7 @@ namespace UI
             if (!_isFirstLoserPanel)
             {
                 _loserPanel.ContinueButton.Click -= ReStart;
-                _loserPanel.ExitButton.Click -= Exit;
+                _loserPanel.ExitButton.Click -= ExitHelper.Exit;
             }
 
             _mainMechanics.GameOver -= ShowLoserPanel;
