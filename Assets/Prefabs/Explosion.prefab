@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 339057010105637821}
   - component: {fileID: 5090164536761800902}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 1111522132054855270}
   - component: {fileID: 7345589295490965978}
   - component: {fileID: 5150288733660813479}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Explosion02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,8 +120,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -666854525
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 5263944732724515155, guid: c0a33e71f303ff84187572c52c9dc3a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 1736329896469012399}
   - component: {fileID: 9118418855393386564}
   - component: {fileID: 7584376352579155195}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Explosion03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,8 +223,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -666854525
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 5056632362915681825, guid: 3ab5127604ab3674ea352b29b41c165b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 9144244729174814832}
   - component: {fileID: 6596812462481805304}
   - component: {fileID: 9054237098345579295}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Explosion01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -326,8 +326,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -666854525
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -2872193064155031137, guid: 30b98546232d7764fbede67ccc5978c2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -369,6 +369,10 @@ PrefabInstance:
     - target: {fileID: 5757389578546182226, guid: e82adff1e76331a4aab7e8171638e60e, type: 3}
       propertyPath: m_Name
       value: ExplosionBackground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757389578546182226, guid: e82adff1e76331a4aab7e8171638e60e, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5757389578546182253, guid: e82adff1e76331a4aab7e8171638e60e, type: 3}
       propertyPath: m_RootOrder
@@ -432,6 +436,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExplosionBackground
       objectReference: {fileID: 0}
+    - target: {fileID: 5757389578546182226, guid: e82adff1e76331a4aab7e8171638e60e, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5757389578546182253, guid: e82adff1e76331a4aab7e8171638e60e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -493,6 +501,10 @@ PrefabInstance:
     - target: {fileID: 5757389578546182226, guid: e82adff1e76331a4aab7e8171638e60e, type: 3}
       propertyPath: m_Name
       value: ExplosionBackground
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757389578546182226, guid: e82adff1e76331a4aab7e8171638e60e, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5757389578546182253, guid: e82adff1e76331a4aab7e8171638e60e, type: 3}
       propertyPath: m_RootOrder

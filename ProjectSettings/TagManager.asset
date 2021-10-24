@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Asteroid
   - Planet
+  - DestroyAsteroid
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - UI
   - HP Bar
   - Spaceship
-  - 
-  - 
+  - Asteroid
+  - Explosion
   - 
   - 
   - 
@@ -48,4 +49,13 @@ TagManager:
     locked: 0
   - name: Spaceship
     uniqueID: 2002387297
+    locked: 0
+  - name: Explosion
+    uniqueID: 3628112771
+    locked: 0
+  - name: Asteroid
+    uniqueID: 274583661
+    locked: 0
+  - name: UI
+    uniqueID: 3264676271
     locked: 0

@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using GameMechanics.AsteroidMechanics;
 using GameMechanics.PlayerMechanics;
 using UnityEngine;
@@ -10,16 +9,16 @@ using Random = UnityEngine.Random;
 
 namespace GameMechanics
 {
+    [RequireComponent(typeof(InputMechanics))]
     [RequireComponent(
-        typeof(InputMechanics),
-        typeof(LvlUpAsteroidMechanics)
-        )]
+        typeof(CommonAsteroidMechanics),
+        typeof(GoldenAsteroidMechanics),
+        typeof(ExplosionMechanics)
+    )]
     public class MainMechanics : MonoBehaviour
     {
         [SerializeField] private Camera mainCamera;
-
-        [SerializeField] private GameObject asteroidPrefab;
-        private Asteroid[] _asteroidArray = new Asteroid[3];
+        private Animator _animatorMainCamera;
 
         [SerializeField] private GameObject planetPrefab;
         private Player _player;
@@ -27,9 +26,6 @@ namespace GameMechanics
 
         [SerializeField] private GameObject explosionPlanetPrefab;
         private GameObject _planet;
-
-        [SerializeField] private GameObject explosionPrefab;
-        private Explosion[] _explosionArray = new Explosion[3];
 
         [SerializeField] private GameObject damageTextPrefab;
         [SerializeField] private GameObject damageTextParent;
@@ -39,39 +35,99 @@ namespace GameMechanics
         private List<Spaceship> _spaceshipList = new List<Spaceship>();
 
         private InputMechanics _inputMechanics;
-        private LvlUpAsteroidMechanics _lvlUpAsteroidMechanics;
+        private CommonAsteroidMechanics _commonAsteroidMechanics;
+        private GoldenAsteroidMechanics _goldenAsteroidMechanics;
+        private ExplosionMechanics _explosionMechanics;
 
-        private int _asteroidIndex = 0;
         private int _damageTextIndex = 0;
-        private int _numberOfLivingAsteroids = 0;
         private int _numberSpaceships = 1;
+        private int _totalKilledAsteroids = 0;
 
-        // public const string Asteroid01Tag = "Asteroid0";
-        // public const string Asteroid02Tag = "Asteroid1";
-        // public const string Asteroid03Tag = "Asteroid2";
+        private int _asteroidLayerIndex;
 
         public event Action GameOver;
+        public event Action<string> ChangeScoreGoldenMode;
+        public event Action<string, bool> ChangeTimeGoldenMode;
+
+        public event Action<int> AddedMoney;
+
+        private Coroutine _coroutineCommonAsteroid;
+        private Coroutine _coroutineGoldenAsteroid;
+        private static readonly int GoldenMode = Animator.StringToHash("GoldenMode");
+        private static readonly int IsGoldenMode = Animator.StringToHash("isGoldenMode");
 
         //Start Of Initialization
-        private IEnumerator Start()
+        private void Start()
         {
+            _asteroidLayerIndex = 1 << LayerMask.NameToLayer("Asteroid");
+            _explosionMechanics = GetComponent<ExplosionMechanics>();
+            
+            _commonAsteroidMechanics = GetComponent<CommonAsteroidMechanics>();
+            _commonAsteroidMechanics.AsteroidDroppedMoney += IncreasePlayerMoney;
+            _commonAsteroidMechanics.AsteroidExploded += _explosionMechanics.EnableExplosion;
+            _commonAsteroidMechanics.GoldenAsteroidFell += StartGoldenGameMode;
+
+            _goldenAsteroidMechanics = GetComponent<GoldenAsteroidMechanics>();
+            _goldenAsteroidMechanics.AsteroidDroppedMoney += IncreasePlayerMoneyGoldenMode;
+            _goldenAsteroidMechanics.AsteroidExploded += _explosionMechanics.EnableExplosion;
+            _goldenAsteroidMechanics.GoldenAsteroidDied += ChangeScore;
+
+            _animatorMainCamera = mainCamera.GetComponent<Animator>();
+            
             InitInputMechanics();
-            _lvlUpAsteroidMechanics = GetComponent<LvlUpAsteroidMechanics>();
             InitSpaceships();
             InitDamageText();
-            
-            for (int i = 0; i < _asteroidArray.Length; i++)
-            {
-                InitAsteroid(i);
-                while (!_asteroidArray[i].Enable)
-                    yield return null;
-                _asteroidArray[i].gameObject.SetActive(false);
-            }
-            
+
             InitPlanet();
-            InitExplosions();
-            _asteroidArray[_asteroidIndex].gameObject.SetActive(true);
-            InvokeRepeating(nameof(IncreaseAsteroidIndex), 1.5f, 3f);
+
+            _coroutineCommonAsteroid = StartCoroutine(_commonAsteroidMechanics.IncreaseAsteroidIndex());
+        }
+
+        private void StartGoldenGameMode()
+        {
+            _animatorMainCamera.SetTrigger(GoldenMode);
+            _totalKilledAsteroids = 0;
+            _commonAsteroidMechanics.DisableAsteroids();
+            StopCoroutine(_coroutineCommonAsteroid);
+            _coroutineGoldenAsteroid = StartCoroutine(_goldenAsteroidMechanics.IncreaseGoldAsteroidIndex());
+            StartCoroutine(LifeOfGoldenMode());
+        }
+
+        private void ChangeScore()
+        {
+            _totalKilledAsteroids += 1;
+            ChangeScoreGoldenMode?.Invoke(_totalKilledAsteroids.ToString());
+        }
+
+        private IEnumerator LifeOfGoldenMode()
+        {
+            _animatorMainCamera.SetBool(IsGoldenMode, true);
+            int time = 10;
+            while (time > 0)
+            {
+                ChangeTimeGoldenMode?.Invoke(time.ToString(), true);
+                time -= 1;
+                yield return new WaitForSeconds(1f);
+            }
+            ChangeTimeGoldenMode?.Invoke(time.ToString(), false);
+            _goldenAsteroidMechanics.DisableGoldenAsteroids();
+            StopCoroutine(_coroutineGoldenAsteroid);
+            _animatorMainCamera.SetBool(IsGoldenMode, false);
+            _coroutineCommonAsteroid = StartCoroutine(_commonAsteroidMechanics.IncreaseAsteroidIndex());
+        }
+
+        private void IncreasePlayerMoney(int money)
+        {
+            _player.Money.Amount += money;
+            AddedMoney?.Invoke(money);
+        }
+        
+        private void IncreasePlayerMoneyGoldenMode(int money)
+        {
+            money *= _totalKilledAsteroids;
+            _totalKilledAsteroids = 0;
+            _player.Money.Amount += money;
+            AddedMoney?.Invoke(money);
         }
 
         private void InitInputMechanics()
@@ -97,14 +153,6 @@ namespace GameMechanics
             }
         }
 
-        private void InitAsteroid(int i)
-        {
-            _asteroidArray[i] = Instantiate(asteroidPrefab, GetComponent<Transform>()).GetComponent<Asteroid>();
-            _asteroidArray[i].SetPosition(new Vector2(-10f, 0f));
-            _asteroidArray[i].Count = i;
-            _asteroidArray[i].Died += DeadAsteroid;
-        }
-
         private void InitPlanet()
         {
             _planet = Instantiate(planetPrefab);
@@ -113,78 +161,7 @@ namespace GameMechanics
             Player = _player;
             _player.Died += StopGame;
         }
-
-        private void InitExplosions()
-        {
-            for (int i = 0; i < _explosionArray.Length; i++)
-            {
-                _explosionArray[i] = Instantiate(explosionPrefab).GetComponent<Explosion>();
-                _explosionArray[i].gameObject.SetActive(false);
-            }
-        }
-
-        private void SetInitialStateOfAsteroid(Asteroid asteroid)
-        {
-            asteroid.SetPosition(new Vector2(Random.Range(-1.5f, 1.5f), Random.Range(3.5f, 4.5f)));
-            asteroid.SetLocalScale(new Vector2(0.1f, 0.1f));
-
-            _lvlUpAsteroidMechanics.HealthUp();
-            asteroid.Health.SetAmount(_lvlUpAsteroidMechanics.HealthAsteroid);
-            asteroid.Attack.Amount = 1;
-            asteroid.Movement.Move(new Vector2(-0.5f, -3f), 0.3f);
-
-            asteroid.Scale.SetScale(0.005f, 0.005f);
-            asteroid.Scale.SetMaxScale(1.7f, 1.7f);
-            asteroid.Scale.ActiveScale(true);
-        }
         //End Of Initialization
-        
-
-        //Start Of Asteroid Control
-        private void DeadAsteroid()
-        {
-            _lvlUpAsteroidMechanics.MoneyUp();
-            _player.Money.Amount += _lvlUpAsteroidMechanics.MoneyAsteroid;
-
-            foreach (Asteroid asteroid in _asteroidArray)
-            {
-                if (asteroid.Health.Amount == 0 || asteroid.IsCollision)
-                {
-                    ShowDeadAsteroid(asteroid);
-                }
-            }
-        }
-
-        private void ShowDeadAsteroid(Asteroid asteroid)
-        {
-            asteroid.Health.SetAmount(_lvlUpAsteroidMechanics.HealthAsteroid);
-            asteroid.gameObject.SetActive(false);
-
-            _explosionArray[asteroid.Count].gameObject.SetActive(true);
-            _explosionArray[asteroid.Count].SetPosition(asteroid.transform.position);
-            _numberOfLivingAsteroids -= 1;
-
-            StartCoroutine(WaitForEndOfExplosion(asteroid.Count));
-        }
-
-        private void IncreaseAsteroidIndex()
-        {
-            if (_numberOfLivingAsteroids == 3) return;
-            _lvlUpAsteroidMechanics.LvlAsteroids += 1;
-
-            _asteroidArray[_asteroidIndex].gameObject.SetActive(true);
-            SetInitialStateOfAsteroid(_asteroidArray[_asteroidIndex]);
-            _numberOfLivingAsteroids += 1;
-
-            _asteroidIndex = _asteroidIndex < 2 ? _asteroidIndex += 1 : 0;
-        }
-
-        private IEnumerator WaitForEndOfExplosion(int index)
-        {
-            yield return new WaitForSeconds(2f);
-            _explosionArray[index].gameObject.SetActive(false);
-        }
-        //End Of Asteroid Control
 
         
         //Start Of Player Click Control
@@ -201,18 +178,13 @@ namespace GameMechanics
         private void CheckPosition(Vector3 pos)
         {
             Vector3 touchWorldPos = mainCamera.ScreenToWorldPoint(pos);
-            RaycastHit2D hit = Physics2D.Raycast(touchWorldPos, Vector2.zero);
+            RaycastHit2D hit = Physics2D.Raycast(touchWorldPos, Vector2.zero, Mathf.Infinity, _asteroidLayerIndex);
 
             if (hit && hit.collider)
             {
-                foreach (Asteroid asteroid in _asteroidArray)
-                {
-                    if (!Equals(hit.collider.gameObject, asteroid.gameObject)) continue;
-                    asteroid.TakeDamage(_player.Attack.Amount);
-                    ShowDamageText(_player.Attack.Amount, touchWorldPos);
-                    SpaceshipsShoot(touchWorldPos);
-                    break;
-                }
+                hit.collider.GetComponent<Asteroid>().TakeDamage(_player.Attack.Amount);
+                ShowDamageText(_player.Attack.Amount, touchWorldPos);
+                SpaceshipsShoot(touchWorldPos);
             }
         }
 
@@ -288,10 +260,14 @@ namespace GameMechanics
 
         private void OnDestroy()
         {
-            foreach (Asteroid asteroid in _asteroidArray)
-            {
-                asteroid.Died -= DeadAsteroid;
-            }
+            _commonAsteroidMechanics.AsteroidDroppedMoney -= IncreasePlayerMoney;
+            _commonAsteroidMechanics.AsteroidExploded -= _explosionMechanics.EnableExplosion;
+            _commonAsteroidMechanics.GoldenAsteroidFell -= StartGoldenGameMode;
+            
+            _goldenAsteroidMechanics.AsteroidDroppedMoney -= IncreasePlayerMoneyGoldenMode;
+            _goldenAsteroidMechanics.AsteroidExploded -= _explosionMechanics.EnableExplosion;
+            _goldenAsteroidMechanics.GoldenAsteroidDied -= ChangeScore;
+            
             _player.Died -= StopGame;
             _inputMechanics.OnTouch -= CheckTouchPosition;
             _inputMechanics.OnClick -= CheckClickPosition;

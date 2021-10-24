@@ -28,7 +28,8 @@ namespace GameMechanics.AsteroidMechanics
         public int Count { get; set; }
         public bool IsCollision { get; private set; }
 
-        public event Action Died;
+        public event Action<Asteroid> Died;
+        public event Action<Asteroid> ReachedLineOfDestroy;
         
         public bool Enable{ get; private set; }
 
@@ -36,7 +37,7 @@ namespace GameMechanics.AsteroidMechanics
         {
             _animation = GetComponent<Animation>();
             DefiningBehaviors();
-            spriteRenderer.sprite = asteroids[Random.Range(0, 10)];
+            spriteRenderer.sprite = asteroids[Random.Range(0, asteroids.Length)];
             Enable = true;
         }
 
@@ -63,8 +64,11 @@ namespace GameMechanics.AsteroidMechanics
         {
             if (Health.Amount > 0)
             {
-                _animation.Stop();
-                _animation.Play();
+                if (_animation)
+                {
+                    _animation.Stop();
+                    _animation.Play();
+                }
                 Health.TakeDamage(hit);
                 
                 if (Health.Amount == 0)
@@ -79,7 +83,10 @@ namespace GameMechanics.AsteroidMechanics
             if (other.CompareTag(Player.Tag))
             {
                 IsCollision = true;
-                Died?.Invoke();
+                Died?.Invoke(this);
+            } else if (other.CompareTag("DestroyAsteroid"))
+            {
+                ReachedLineOfDestroy?.Invoke(this);
             }
         }
 
@@ -87,7 +94,7 @@ namespace GameMechanics.AsteroidMechanics
         {
             yield return new WaitForSeconds(0.3f);
             Movement.StopMove();
-            Died?.Invoke();
+            Died?.Invoke(this);
         }
     }
 }

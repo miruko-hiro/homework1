@@ -3,6 +3,7 @@ using System.Collections;
 using GameMechanics;
 using UI.Buttons;
 using UI.Panels;
+using UI.Panels.GoldenMode;
 using UI.Panels.StartMenu;
 using UnityEngine;
 
@@ -12,6 +13,10 @@ namespace UI
     public class UIMechanics : MonoBehaviour
     {
         private UIStartMenu _uiStartMenu;
+
+        [SerializeField] private GameObject goldenModeUIPrefab;
+        private UIGoldenMode _uiGoldenMode;
+        private Animator _animatorGoldenMode;
         
         [SerializeField] private GameObject moneyUIPrefab;
         private MoneyUI _moneyUI;
@@ -33,6 +38,7 @@ namespace UI
 
         private bool _isFirstLoserPanel = true;
         private bool _isFirstLvlUpPanel = true;
+        private static readonly int Disable = Animator.StringToHash("Disable");
 
         private void Start()
         {
@@ -53,6 +59,37 @@ namespace UI
             _mainMechanics.Player.Health.HealthDecreased += TakeAwayOneLife;
             _mainMechanics.Player.Health.HealthIncreased += RestoreOneLife;
             _mainMechanics.GameOver += ShowLoserPanel;
+            _mainMechanics.ChangeScoreGoldenMode += ChangeScoreGoldenMode;
+            _mainMechanics.ChangeTimeGoldenMode += ChangeTimeGoldenMode;
+            _mainMechanics.AddedMoney += SetAmountOfAddedMoney;
+        }
+
+        private void ChangeScoreGoldenMode(string score)
+        {
+            _uiGoldenMode.Score = score;
+        }
+
+
+        private void ChangeTimeGoldenMode(string time, bool isEnable)
+        {
+            if (!isEnable)
+            {
+                if (_uiGoldenMode)
+                {
+                    _uiGoldenMode.Time = "0";
+                    _animatorGoldenMode.SetTrigger(Disable);
+                    Destroy(_uiGoldenMode.gameObject, 1f);
+                }
+                   
+                return;
+            }
+
+            if (!_uiGoldenMode)
+            {
+                _uiGoldenMode = Instantiate(goldenModeUIPrefab, transform).GetComponent<UIGoldenMode>();
+                _animatorGoldenMode = _uiGoldenMode.gameObject.GetComponent<Animator>();
+            }
+            _uiGoldenMode.Time = time;
         }
 
         private void InitMainUIElements()
@@ -102,7 +139,12 @@ namespace UI
 
         private void SetAmountOfMoney()
         {
-            _moneyUI.SetTextAmountOFMoney(_mainMechanics.Player.Money.Amount.ToString());
+            _moneyUI.AmountOfMoney = _mainMechanics.Player.Money.Amount.ToString();
+        }
+
+        private void SetAmountOfAddedMoney(int addedMoney)
+        {
+            _moneyUI.AmountOfAddedMoney = addedMoney.ToString();
         }
 
         private void TakeAwayOneLife()
@@ -182,6 +224,9 @@ namespace UI
             }
 
             _mainMechanics.GameOver -= ShowLoserPanel;
+            _mainMechanics.ChangeScoreGoldenMode -= ChangeScoreGoldenMode;
+            _mainMechanics.ChangeTimeGoldenMode -= ChangeTimeGoldenMode;
+            _mainMechanics.AddedMoney -= SetAmountOfAddedMoney;
         }
     }
 }

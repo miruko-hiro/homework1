@@ -7,8 +7,11 @@
           <e p="GameMechanics" t="Include">
             <e p="AsteroidMechanics" t="Include">
               <e p="Asteroid.cs" t="Include" />
+              <e p="CommonAsteroidMechanics.cs" t="Include" />
               <e p="DamageText.cs" t="Include" />
               <e p="Explosion.cs" t="Include" />
+              <e p="ExplosionMechanics.cs" t="Include" />
+              <e p="GoldenAsteroidMechanics.cs" t="Include" />
               <e p="LvlUpAsteroidMechanics.cs" t="Include" />
             </e>
             <e p="Behaviors" t="Include">
@@ -44,6 +47,9 @@
                 <e p="CreatorsMenuPresenter.cs" t="Include" />
                 <e p="ICreatorsMenu.cs" t="Include" />
                 <e p="UICreatorsMenu.cs" t="Include" />
+              </e>
+              <e p="GoldenMode" t="Include">
+                <e p="UIGoldenMode.cs" t="Include" />
               </e>
               <e p="LoserPanel.cs" t="Include" />
               <e p="LvlUpPanel.cs" t="Include" />
