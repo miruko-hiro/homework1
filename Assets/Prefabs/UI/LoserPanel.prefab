@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7136218373065860353}
   - component: {fileID: 7136218373065860359}
   - component: {fileID: 7136218373065860358}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 7136218373307207093}
   - component: {fileID: 7136218373307207092}
   - component: {fileID: 6225198196763365870}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 7136218374323391493}
   - component: {fileID: 7136218374323391492}
   - component: {fileID: 7788978271001902758}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Continue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -381,7 +381,7 @@ GameObject:
   - component: {fileID: 7136218374950275683}
   - component: {fileID: 7136218374950275682}
   - component: {fileID: 4842287812654691020}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: LoserPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}

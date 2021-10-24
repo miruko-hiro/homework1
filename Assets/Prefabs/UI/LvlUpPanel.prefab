@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7167043078368965894}
   - component: {fileID: 7167043078368965893}
   - component: {fileID: 7167043078368965895}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: LvlUpPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 7167043078414852703}
   - component: {fileID: 7167043078414852697}
   - component: {fileID: 7167043078414852696}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 7167043078453280131}
   - component: {fileID: 7167043078453280130}
   - component: {fileID: 6530151511925685435}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 7167043078488556757}
   - component: {fileID: 7167043078488556759}
   - component: {fileID: 7167043078488556758}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -418,7 +418,7 @@ GameObject:
   - component: {fileID: 7167043078522186188}
   - component: {fileID: 7167043078522186190}
   - component: {fileID: 7167043078522186189}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +494,7 @@ GameObject:
   - component: {fileID: 7167043078619758635}
   - component: {fileID: 7167043078619758645}
   - component: {fileID: 7167043078619758644}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,7 +569,7 @@ GameObject:
   - component: {fileID: 7167043078788641885}
   - component: {fileID: 7167043078788641887}
   - component: {fileID: 7167043078788641886}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: DamageUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -650,7 +650,7 @@ GameObject:
   - component: {fileID: 7167043078800587924}
   - component: {fileID: 7167043078800587915}
   - component: {fileID: 1507862639892422071}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -795,7 +795,7 @@ GameObject:
   - component: {fileID: 7167043078988413874}
   - component: {fileID: 7167043078988413884}
   - component: {fileID: 7167043078988413875}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -873,7 +873,7 @@ GameObject:
   - component: {fileID: 7167043078989568647}
   - component: {fileID: 7167043078989568646}
   - component: {fileID: 5896951027632927071}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Up
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1018,7 +1018,7 @@ GameObject:
   - component: {fileID: 7167043079080926175}
   - component: {fileID: 7167043079080926169}
   - component: {fileID: 7167043079080926168}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1093,7 +1093,7 @@ GameObject:
   - component: {fileID: 7167043079082756335}
   - component: {fileID: 7167043079082756329}
   - component: {fileID: 7167043079082756328}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1172,7 +1172,7 @@ GameObject:
   - component: {fileID: 7167043079101755736}
   - component: {fileID: 7167043079101755738}
   - component: {fileID: 7167043079101755737}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: DamageUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1252,7 +1252,7 @@ GameObject:
   - component: {fileID: 7167043079609849204}
   - component: {fileID: 7167043079609849195}
   - component: {fileID: 7167043079609849194}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Improvement03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1348,7 +1348,7 @@ GameObject:
   - component: {fileID: 7167043079638661484}
   - component: {fileID: 7167043079638661486}
   - component: {fileID: 7167043079638661485}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: IconAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1423,7 +1423,7 @@ GameObject:
   - component: {fileID: 7167043079689702905}
   - component: {fileID: 7167043079689702907}
   - component: {fileID: 7167043079689702906}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: IconAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1500,7 +1500,7 @@ GameObject:
   - component: {fileID: 7167043079719905818}
   - component: {fileID: 7167043079719905817}
   - component: {fileID: 7596628846718403992}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: ComeBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1643,7 +1643,7 @@ GameObject:
   - component: {fileID: 7167043079825378098}
   - component: {fileID: 7167043079825378108}
   - component: {fileID: 7167043079825378099}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1722,7 +1722,7 @@ GameObject:
   - component: {fileID: 7167043079851083219}
   - component: {fileID: 7167043079851083229}
   - component: {fileID: 7167043079851083228}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1797,7 +1797,7 @@ GameObject:
   - component: {fileID: 7167043079933160653}
   - component: {fileID: 7167043079933160655}
   - component: {fileID: 7167043079933160654}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: DamageUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1876,7 +1876,7 @@ GameObject:
   - component: {fileID: 7167043079979955903}
   - component: {fileID: 7167043079979955897}
   - component: {fileID: 7167043079979955896}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1955,7 +1955,7 @@ GameObject:
   - component: {fileID: 7167043080016414801}
   - component: {fileID: 7167043080016414803}
   - component: {fileID: 7167043080016414802}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2031,7 +2031,7 @@ GameObject:
   - component: {fileID: 7167043080211861806}
   - component: {fileID: 7167043080211861800}
   - component: {fileID: 7167043080211861807}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2110,7 +2110,7 @@ GameObject:
   - component: {fileID: 7167043080282650998}
   - component: {fileID: 7167043080282650992}
   - component: {fileID: 7167043080282650999}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2186,7 +2186,7 @@ GameObject:
   - component: {fileID: 7167043080321436778}
   - component: {fileID: 7167043080321436777}
   - component: {fileID: 7167043080321436776}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Improvement01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2282,7 +2282,7 @@ GameObject:
   - component: {fileID: 7167043080344916785}
   - component: {fileID: 7167043080344916787}
   - component: {fileID: 7167043080344916786}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: IconAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2358,7 +2358,7 @@ GameObject:
   - component: {fileID: 7167043080379893797}
   - component: {fileID: 7167043080379893796}
   - component: {fileID: 7167043080379893787}
-  m_Layer: 5
+  m_Layer: 10
   m_Name: Improvement02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2450,6 +2450,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7167043078368965892}
     m_Modifications:
+    - target: {fileID: 2150090442769353266, guid: ef5f70aabf9787945b7203160e7ccc3d, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3067010862403804338, guid: ef5f70aabf9787945b7203160e7ccc3d, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5507988895912052701, guid: ef5f70aabf9787945b7203160e7ccc3d, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6149162013478778255, guid: ef5f70aabf9787945b7203160e7ccc3d, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6149162015288212838, guid: ef5f70aabf9787945b7203160e7ccc3d, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2537,6 +2553,10 @@ PrefabInstance:
     - target: {fileID: 6149162015288212839, guid: ef5f70aabf9787945b7203160e7ccc3d, type: 3}
       propertyPath: m_Name
       value: Money
+      objectReference: {fileID: 0}
+    - target: {fileID: 6149162015288212839, guid: ef5f70aabf9787945b7203160e7ccc3d, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef5f70aabf9787945b7203160e7ccc3d, type: 3}

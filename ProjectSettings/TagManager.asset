@@ -18,7 +18,7 @@ TagManager:
   - Spaceship
   - Asteroid
   - Explosion
-  - 
+  - MainUI
   - 
   - 
   - 
@@ -52,6 +52,9 @@ TagManager:
     locked: 0
   - name: Explosion
     uniqueID: 3628112771
+    locked: 0
+  - name: MainUI
+    uniqueID: 3045849491
     locked: 0
   - name: Asteroid
     uniqueID: 274583661
