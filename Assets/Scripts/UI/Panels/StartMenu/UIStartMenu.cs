@@ -1,4 +1,6 @@
-﻿using GameMechanics;
+﻿using System;
+using GameMechanics;
+using GameMechanics.Helpers;
 using UI.Panels.Creators;
 using UI.Panels.Settings;
 using UnityEngine;
@@ -16,6 +18,8 @@ namespace UI.Panels.StartMenu
         private UISettingsMenu _uiSettingsMenu;
         private UICreatorsMenu _uiCreatorsMenu;
 
+        public event Action StartGame;
+
         private void Start()
         {
             _startMenu = Instantiate(startMenuPrefab, transform).GetComponent<StartMenu>();
@@ -29,13 +33,14 @@ namespace UI.Panels.StartMenu
             _uiCreatorsMenu.ClickReturn += EnableStartMenu;
         }
 
-        private void EnableStartMenu()
+        public void EnableStartMenu()
         {
             _startMenu.gameObject.SetActive(true);
         }
 
         private void PlayGame()
         {
+            StartGame?.Invoke();
             _startMenu.gameObject.SetActive(false);
             GameStateHelper.Play();
         }

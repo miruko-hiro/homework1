@@ -5,8 +5,17 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="GameMechanics" t="Include">
-            <e p="AsteroidMechanics" t="Include">
-              <e p="CommonAsteroid" t="Include">
+            <e p="Behaviors" t="Include">
+              <e p="AttackBehavior.cs" t="Include" />
+              <e p="HealthBehavior.cs" t="Include" />
+              <e p="IEntityParameter.cs" t="Include" />
+              <e p="MoneyBehavior.cs" t="Include" />
+              <e p="MovementBehavior.cs" t="Include" />
+              <e p="ScaleBehavior.cs" t="Include" />
+              <e p="TurnBehavior.cs" t="Include" />
+            </e>
+            <e p="Enemy" t="Include">
+              <e p="Asteroid" t="Include">
                 <e p="AsteroidController.cs" t="Include" />
                 <e p="AsteroidFactory.cs" t="Include" />
                 <e p="AsteroidManager.cs" t="Include" />
@@ -18,6 +27,7 @@
               <e p="CommonAsteroidMechanics.cs" t="Include" />
               <e p="DamageDisplay" t="Include">
                 <e p="DamageText.cs" t="Include" />
+                <e p="DamageTextMechanics.cs" t="Include" />
               </e>
               <e p="ExplosionOfAsteroid" t="Include">
                 <e p="Explosion.cs" t="Include" />
@@ -26,21 +36,14 @@
               <e p="GoldenAsteroidMechanics.cs" t="Include" />
               <e p="LvlUpAsteroidMechanics.cs" t="Include" />
             </e>
-            <e p="Behaviors" t="Include">
-              <e p="AttackBehavior.cs" t="Include" />
-              <e p="HealthBehavior.cs" t="Include" />
-              <e p="IEntityParameter.cs" t="Include" />
-              <e p="MoneyBehavior.cs" t="Include" />
-              <e p="MovementBehavior.cs" t="Include" />
-              <e p="ScaleBehavior.cs" t="Include" />
-              <e p="TurnBehavior.cs" t="Include" />
-            </e>
-            <e p="ExitHelper.cs" t="Include" />
             <e p="GameMechanics.asmdef" t="Include" />
-            <e p="GameStateHelper.cs" t="Include" />
+            <e p="Helpers" t="Include">
+              <e p="ExitHelper.cs" t="Include" />
+              <e p="GameStateHelper.cs" t="Include" />
+            </e>
             <e p="InputMechanics.cs" t="Include" />
             <e p="MainMechanics.cs" t="Include" />
-            <e p="PlayerMechanics" t="Include">
+            <e p="Player" t="Include">
               <e p="Planet" t="Include">
                 <e p="PlayerController.cs" t="Include" />
                 <e p="PlayerFactory.cs" t="Include" />
@@ -48,7 +51,11 @@
                 <e p="PlayerModel.cs" t="Include" />
                 <e p="PlayerView.cs" t="Include" />
               </e>
-              <e p="Spaceship.cs" t="Include" />
+              <e p="PlayerMechanics.cs" t="Include" />
+              <e p="Weapon" t="Include">
+                <e p="Spaceship.cs" t="Include" />
+                <e p="SpaceshipMechanics.cs" t="Include" />
+              </e>
             </e>
           </e>
           <e p="UI" t="Include">
@@ -57,8 +64,6 @@
               <e p="LvlUpButton.cs" t="Include" />
               <e p="UIButton.cs" t="Include" />
             </e>
-            <e p="ImprovementUI.cs" t="Include" />
-            <e p="MoneyUI.cs" t="Include" />
             <e p="Panels" t="Include">
               <e p="Creators" t="Include">
                 <e p="CreatorsMenu.cs" t="Include" />
@@ -69,8 +74,17 @@
               <e p="GoldenMode" t="Include">
                 <e p="UIGoldenMode.cs" t="Include" />
               </e>
-              <e p="LoserPanel.cs" t="Include" />
-              <e p="LvlUpPanel.cs" t="Include" />
+              <e p="LoserPanel" t="Include">
+                <e p="LoserMenu.cs" t="Include" />
+                <e p="LoserMenuPresenter.cs" t="Include" />
+                <e p="UILoserMenu.cs" t="Include" />
+              </e>
+              <e p="LvlUpPanel" t="Include">
+                <e p="ImprovementUI.cs" t="Include" />
+                <e p="LvlUpMenu.cs" t="Include" />
+                <e p="LvlUpMenuPresenter.cs" t="Include" />
+                <e p="UILvlUpMenu.cs" t="Include" />
+              </e>
               <e p="Settings" t="Include">
                 <e p="ISettingsMenu.cs" t="Include" />
                 <e p="SettingsMenu.cs" t="Include" />
@@ -84,8 +98,13 @@
                 <e p="UIStartMenu.cs" t="Include" />
               </e>
             </e>
-            <e p="PlayerHealthUI.cs" t="Include" />
             <e p="PlayerUI" t="Include">
+              <e p="PlayerHealth" t="Include">
+                <e p="PlayerHealthUI.cs" t="Include" />
+              </e>
+              <e p="PlayerMoney" t="Include">
+                <e p="MoneyUI.cs" t="Include" />
+              </e>
               <e p="PlayerPresenter.cs" t="Include" />
             </e>
             <e p="UI.asmdef" t="Include" />

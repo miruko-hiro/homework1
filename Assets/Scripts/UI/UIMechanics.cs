@@ -1,19 +1,28 @@
 using System.Collections;
 using GameMechanics;
+using GameMechanics.Helpers;
 using UI.Buttons;
 using UI.Panels;
 using UI.Panels.GoldenMode;
+using UI.Panels.LoserPanel;
+using UI.Panels.LvlUpPanel;
 using UI.Panels.StartMenu;
 using UI.PlayerUI;
+using UI.PlayerUI.PlayerHealth;
+using UI.PlayerUI.PlayerMoney;
 using UnityEngine;
 
 namespace UI
 {
-    [RequireComponent(typeof(UIStartMenu))]
+    [RequireComponent(typeof(UIStartMenu),
+        typeof(UILoserMenu),
+        typeof(UILvlUpMenu))]
     public class UIMechanics : MonoBehaviour
     {
         private UIStartMenu _uiStartMenu;
-
+        private UILoserMenu _uiLoserMenu;
+        private UILvlUpMenu _uiLvlUpMenu;
+        
         [SerializeField] private GameObject goldenModeUIPrefab;
         private UIGoldenMode _uiGoldenMode;
         private Animator _animatorGoldenMode;
@@ -24,30 +33,35 @@ namespace UI
         [SerializeField] private GameObject hpPlayerUIPrefab;
         private PlayerHealthUI _playerHealthUI;
 
-        [SerializeField] private GameObject lvlUpButtonPrefab;
-        private LvlUpButton _lvlUpButton;
-
-        [SerializeField] private GameObject loserPanelPrefab;
-        private LoserPanel _loserPanel;
-
-        [SerializeField] private GameObject lvlUpPanelPrefab;
-        private LvlUpPanel _lvlUpPanel;
-
         [SerializeField] private GameObject controller;
         private MainMechanics _mainMechanics;
         private PlayerPresenter _playerPresenter;
+        
+        [SerializeField] private GameObject lvlUpButtonPrefab;
+        private LvlUpButton _lvlUpButton;
+        
+        [SerializeField] private GameObject _startMenuButton;
 
-        private bool _isFirstLoserPanel = true;
-        private bool _isFirstLvlUpPanel = true;
         private static readonly int Disable = Animator.StringToHash("Disable");
 
         private void Start()
         {
             _mainMechanics = controller.GetComponent<MainMechanics>();
+            _uiLoserMenu = GetComponent<UILoserMenu>();
+            _uiLvlUpMenu = GetComponent<UILvlUpMenu>();
             _uiStartMenu = GetComponent<UIStartMenu>();
-            GameStateHelper.Pause();
             
             StartCoroutine(StartGame());
+
+            _uiStartMenu.StartGame += EnableMainUIElements;
+
+            _uiLoserMenu.IncludedLoserMenu += DisableMainUIElements;
+            _uiLoserMenu.ReStart += ReStart;
+
+            _uiLvlUpMenu.Init(_mainMechanics.PlayerManager.Model);
+            _uiLvlUpMenu.SelectSpaceship += SelectSpaceship;
+            
+            GameStateHelper.Pause();
         }
 
         private IEnumerator StartGame()
@@ -58,11 +72,21 @@ namespace UI
                 yield return null;
            
             _playerPresenter = new PlayerPresenter(_mainMechanics.PlayerManager.Model);
-            _playerPresenter.OnOpen(SetAmountOfMoney, SetAmountOfAddedMoney, TakeAwayOneLife, RestoreOneLife);
+            _playerPresenter.OnOpen(SetAmountOfMoney, 
+                SetAmountOfAddedMoney, 
+                _playerHealthUI.TakeOneLifeAway, 
+                _playerHealthUI.RestoreOneLife);
             
-            _mainMechanics.GameOver += ShowLoserPanel;
+            _mainMechanics.PlayerMechanics.GameOver += _uiLoserMenu.ShowLoserPanel;
             _mainMechanics.ChangeScoreGoldenMode += ChangeScoreGoldenMode;
             _mainMechanics.ChangeTimeGoldenMode += ChangeTimeGoldenMode;
+        }
+
+        public void OnClickStartMenu()
+        {
+            GameStateHelper.Pause();
+            DisableMainUIElements();
+            _uiStartMenu.EnableStartMenu();
         }
 
         private void ChangeScoreGoldenMode(string score)
@@ -70,6 +94,18 @@ namespace UI
             _uiGoldenMode.Score = score;
         }
 
+        private void SelectSpaceship(int index)
+        {
+            switch (index)
+            {
+                case 2:
+                    _mainMechanics.SpaceshipMechanics.SpaceshipLvlUp();
+                    break;
+                case 3:
+                    _mainMechanics.SpaceshipMechanics.AddSpaceship();
+                    break;
+            }
+        }
 
         private void ChangeTimeGoldenMode(string time, bool isEnable)
         {
@@ -98,44 +134,24 @@ namespace UI
             _moneyUI = Instantiate(moneyUIPrefab, transform).GetComponent<MoneyUI>();
             _playerHealthUI = Instantiate(hpPlayerUIPrefab, transform).GetComponent<PlayerHealthUI>();
             _lvlUpButton = Instantiate(lvlUpButtonPrefab, transform).GetComponent<LvlUpButton>();
-            _lvlUpButton.Click += ShowLvlUpPanel;
+            _lvlUpButton.Click += _uiLvlUpMenu.ShowLvlUpPanel;
+            DisableMainUIElements();
         }
 
-        private IEnumerator InitLoserPanel()
+        private void DisableMainUIElements()
         {
-            _loserPanel = Instantiate(loserPanelPrefab, transform).GetComponent<LoserPanel>();
-            _loserPanel.gameObject.SetActive(true);
-            while (!_loserPanel.ContinueButton || !_loserPanel.ExitButton)
-                yield return null;
-            _loserPanel.ContinueButton.Click += ReStart;
-            _loserPanel.ExitButton.Click += ExitHelper.Exit;
+            _moneyUI.gameObject.SetActive(false);
+            _playerHealthUI.gameObject.SetActive(false);
+            _lvlUpButton.gameObject.SetActive(false);
+            _startMenuButton.gameObject.SetActive(false);
         }
 
-        private IEnumerator InitLvlUpPanel()
+        private void EnableMainUIElements()
         {
-            _lvlUpPanel = Instantiate(lvlUpPanelPrefab, transform).GetComponent<LvlUpPanel>();
-            _lvlUpPanel.gameObject.SetActive(true);
-            while (!_lvlUpPanel.IsInit)
-                yield return null;
-            _lvlUpPanel.ChangeLvl += ChangeDamage;
-            _lvlUpPanel.ComeBackButton.Click += HideLvlUpPanel;
-            _lvlUpPanel.SetMoney(_mainMechanics.PlayerManager.Model.Money.Amount);
-        }
-
-        private void ChangeDamage(int damage, int index, int money)
-        {
-            _mainMechanics.PlayerManager.Model.Attack.Increase(damage);
-            _mainMechanics.PlayerManager.Model.Money.Decrease(money);
-            if (_lvlUpPanel.enabled) _lvlUpPanel.SetMoney(_mainMechanics.PlayerManager.Model.Money.Amount);
-            switch (index)
-            {
-                case 2:
-                    _mainMechanics.SpaceshipLvlUp();
-                    break;
-                case 3:
-                    _mainMechanics.AddSpaceship();
-                    break;
-            }
+            _moneyUI.gameObject.SetActive(true);
+            _playerHealthUI.gameObject.SetActive(true);
+            _lvlUpButton.gameObject.SetActive(true);
+            _startMenuButton.gameObject.SetActive(true);
         }
 
         private void SetAmountOfMoney(int money)
@@ -148,82 +164,29 @@ namespace UI
             _moneyUI.AmountOfAddedMoney = addedMoney.ToString();
         }
 
-        private void TakeAwayOneLife(int health)
-        {
-            _playerHealthUI.TakeOneLifeAway();
-        }
-
-        private void RestoreOneLife(int health)
-        {
-            _playerHealthUI.RestoreOneLife();
-        }
-
-        private void RestoreAllLife()
-        {
-            _playerHealthUI.RestoreAllLife();
-        }
-
-        private void ShowLoserPanel()
-        {
-            if (_isFirstLoserPanel)
-            {
-                StartCoroutine(InitLoserPanel());
-                _isFirstLoserPanel = false;
-            }
-            else
-            {
-                _loserPanel.gameObject.SetActive(true);
-            }
-        }
-
-        private void ShowLvlUpPanel()
-        {
-            GameStateHelper.Pause();
-            if (_isFirstLvlUpPanel)
-            {
-                StartCoroutine(InitLvlUpPanel());
-                _isFirstLvlUpPanel = false;
-            }
-            else
-            {
-                _lvlUpPanel.gameObject.SetActive(true);
-                _lvlUpPanel.SetMoney(_mainMechanics.PlayerManager.Model.Money.Amount);
-            }
-        }
-
-        private void HideLvlUpPanel()
-        {
-            _lvlUpPanel.gameObject.SetActive(false);
-            GameStateHelper.Play();
-        }
-
         private void ReStart()
         {
-            _loserPanel.gameObject.SetActive(false);
+            _uiLoserMenu.DisableMenu();
             _mainMechanics.ReStart();
         }
 
         private void OnDestroy()
         {
             
-            _lvlUpButton.Click -= ShowLvlUpPanel;
+            _lvlUpButton.Click -=  _uiLvlUpMenu.ShowLvlUpPanel;
 
-            if (!_isFirstLvlUpPanel)
-            {
-                _lvlUpPanel.ChangeLvl -= ChangeDamage;
-                _lvlUpPanel.ComeBackButton.Click -= HideLvlUpPanel;
-            }
+            _playerPresenter.OnClose(SetAmountOfMoney, 
+                SetAmountOfAddedMoney, 
+                _playerHealthUI.TakeOneLifeAway, 
+                _playerHealthUI.RestoreOneLife);
             
 
-            if (!_isFirstLoserPanel)
-            {
-                _loserPanel.ContinueButton.Click -= ReStart;
-                _loserPanel.ExitButton.Click -= ExitHelper.Exit;
-            }
-
-            _playerPresenter.OnClose(SetAmountOfMoney, SetAmountOfAddedMoney, TakeAwayOneLife, RestoreOneLife);
+            _uiStartMenu.StartGame -= EnableMainUIElements;
+            _uiLoserMenu.IncludedLoserMenu -= DisableMainUIElements;
+            _uiLoserMenu.ReStart -= ReStart;
+            _uiLvlUpMenu.SelectSpaceship -= SelectSpaceship;
             
-            _mainMechanics.GameOver -= ShowLoserPanel;
+            _mainMechanics.PlayerMechanics.GameOver -= _uiLoserMenu.ShowLoserPanel;
             _mainMechanics.ChangeScoreGoldenMode -= ChangeScoreGoldenMode;
             _mainMechanics.ChangeTimeGoldenMode -= ChangeTimeGoldenMode;
         }

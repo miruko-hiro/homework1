@@ -1,5 +1,5 @@
 ﻿using System;
-using GameMechanics.PlayerMechanics.Planet;
+using GameMechanics.Player.Planet;
 
 namespace UI.PlayerUI
 {
