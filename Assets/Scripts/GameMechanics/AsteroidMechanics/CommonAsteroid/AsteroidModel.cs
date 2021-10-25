@@ -1,10 +1,16 @@
 ﻿using System;
+using GameMechanics.Behaviors;
 using UnityEngine;
 
 namespace GameMechanics.AsteroidMechanics.CommonAsteroid
 {
     public class AsteroidModel
     {
+        public HealthBar HpBar { get; set; }
+        public HealthBehavior Health { get; set; }
+        public AttackBehavior Attack { get; set; }
+        public MovementBehavior Movement { get; set; }
+        public ScaleBehavior Scale  { get; set; }
         public event Action<Vector2> ChangePosition;
         public event Action Died;
         public event Action<Vector2> ChangeLocalScale;

@@ -23,7 +23,7 @@ namespace GameMechanics.Behaviors
             }
         }
 
-        public void Move(Vector3 endPosition, float speed, Transform tf)
+        public void Run(Vector3 endPosition, float speed, Transform tf)
         {
             _endPosition = endPosition;
             _speed = speed;

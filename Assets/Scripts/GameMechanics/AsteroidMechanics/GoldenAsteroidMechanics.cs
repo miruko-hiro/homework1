@@ -56,16 +56,16 @@ namespace GameMechanics.AsteroidMechanics
         
         private void SetInitialStateOfAsteroid(AsteroidManager asteroidManager)
         {
-            asteroidManager.SetPosition(new Vector2(Random.Range(-1f, 1.5f), Random.Range(3.5f, 4f)));
-            asteroidManager.SetLocalScale(new Vector2(0.1f, 0.1f));
+            asteroidManager.Model.Position = new Vector2(Random.Range(-1f, 1.5f), Random.Range(3.5f, 4f));
+            asteroidManager.Model.LocalScale = new Vector2(0.1f, 0.1f);
 
-            asteroidManager.SetHealth(1);
-            asteroidManager.SetAttack(0);
-            asteroidManager.SetMotionParameters(new Vector2(-0.5f, -3f), 0.4f);
-            
-            asteroidManager.SetScale(new Vector2(0.01f, 0.01f));
-            asteroidManager.SetMaxScale(new Vector2(1.4f, 1.4f));
-            asteroidManager.ActiveScale();
+            asteroidManager.Model.Health.SetAmount(1);
+            asteroidManager.Model.Attack.SetAmount(0);
+            asteroidManager.Model.Movement.Run(new Vector2(-0.5f, -3f), 0.4f, asteroidManager.View.transform);
+
+            asteroidManager.Model.Scale.Scale = new Vector2(0.01f, 0.01f);
+            asteroidManager.Model.Scale.MaxScale = new Vector2(1.4f, 1.4f);
+            asteroidManager.Model.Scale.Run(asteroidManager.View.transform);
         }
         
         public int GetNumberOfDeadAsteroids()
@@ -87,7 +87,7 @@ namespace GameMechanics.AsteroidMechanics
         
         private void ShowDeadAsteroid(AsteroidManager asteroidManager)
         {
-            AsteroidExploded?.Invoke(asteroidManager.GetPosition());
+            AsteroidExploded?.Invoke(asteroidManager.View.transform.position);
             asteroidManager.gameObject.SetActive(false);
             
             _numberOfLivingAsteroids -= 1;
@@ -99,7 +99,7 @@ namespace GameMechanics.AsteroidMechanics
             
             foreach (AsteroidManager asteroidManager in _asteroidManagers)
             {
-                AsteroidExploded?.Invoke(asteroidManager.GetPosition());
+                AsteroidExploded?.Invoke(asteroidManager.View.transform.position);
                 asteroidManager.gameObject.SetActive(false);
             }
 

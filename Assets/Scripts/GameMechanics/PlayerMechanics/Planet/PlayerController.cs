@@ -11,7 +11,7 @@ namespace GameMechanics.PlayerMechanics.Planet
     public class PlayerController : MonoBehaviour
     {
         public PlayerModel Model { get; private set; }
-        private PlayerView View { get; set; }
+        public PlayerView View { get; private set; }
         
         public void OnOpen(PlayerModel model, PlayerView view)
         {

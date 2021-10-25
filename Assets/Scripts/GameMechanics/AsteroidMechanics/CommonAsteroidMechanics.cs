@@ -58,17 +58,17 @@ namespace GameMechanics.AsteroidMechanics
         
         private void SetInitialStateOfAsteroid(AsteroidManager asteroidManager)
         {
-            asteroidManager.SetPosition(new Vector2(Random.Range(-1.5f, 1.5f), Random.Range(3.5f, 4.5f)));
-            asteroidManager.SetLocalScale(new Vector2(0.1f, 0.1f));
+            asteroidManager.Model.Position = new Vector2(Random.Range(-1.5f, 1.5f), Random.Range(3.5f, 4.5f));
+            asteroidManager.Model.LocalScale = new Vector2(0.1f, 0.1f);
             
             _lvlUpAsteroidMechanics.HealthUp();
-            asteroidManager.SetHealth(_lvlUpAsteroidMechanics.HealthAsteroid);
-            asteroidManager.SetAttack(1);
-            asteroidManager.SetMotionParameters(new Vector2(-0.5f, -3f), 0.3f);
+            asteroidManager.Model.Health.SetAmount(_lvlUpAsteroidMechanics.HealthAsteroid);
+            asteroidManager.Model.Attack.SetAmount(1);
+            asteroidManager.Model.Movement.Run(new Vector2(-0.5f, -3f), 0.3f, asteroidManager.View.transform);
 
-            asteroidManager.SetScale(new Vector2(0.005f, 0.005f));
-            asteroidManager.SetMaxScale(new Vector2(1.7f, 1.7f));
-            asteroidManager.ActiveScale();
+            asteroidManager.Model.Scale.Scale = new Vector2(0.005f, 0.005f);
+            asteroidManager.Model.Scale.MaxScale = new Vector2(1.7f, 1.7f);
+            asteroidManager.Model.Scale.Run(asteroidManager.View.transform);
         }
 
         public void DisableAsteroids()
@@ -88,8 +88,8 @@ namespace GameMechanics.AsteroidMechanics
 
         private void ShowDeadAsteroid(AsteroidManager asteroidManager)
         {
-            asteroidManager.SetHealth(_lvlUpAsteroidMechanics.HealthAsteroid);
-            AsteroidExploded?.Invoke(asteroidManager.GetPosition());
+            asteroidManager.Model.Health.SetAmount(_lvlUpAsteroidMechanics.HealthAsteroid);
+            AsteroidExploded?.Invoke(asteroidManager.View.transform.position);
             asteroidManager.gameObject.SetActive(false);
             
             _numberOfLivingAsteroids -= 1;

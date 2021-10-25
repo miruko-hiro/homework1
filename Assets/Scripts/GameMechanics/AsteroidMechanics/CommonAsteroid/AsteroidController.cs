@@ -15,11 +15,6 @@ namespace GameMechanics.AsteroidMechanics.CommonAsteroid
     {
         public AsteroidModel Model { get; private set; }
         public AsteroidView View { get; private set; }
-        public HealthBar HPBar { get; private set; }
-        public HealthBehavior Health { get; private set; }
-        public AttackBehavior Attack { get; private set; }
-        public MovementBehavior Movement { get; private set; }
-        public ScaleBehavior Scale  { get; private set; }
 
         public void OnOpen(AsteroidModel model, AsteroidView view, HealthBar hpBar)
         {
@@ -27,7 +22,7 @@ namespace GameMechanics.AsteroidMechanics.CommonAsteroid
             View = view;
             if (hpBar)
             {
-                HPBar = hpBar;
+                Model.HpBar = hpBar;
                 InitHpBar();
             }
             
@@ -53,22 +48,22 @@ namespace GameMechanics.AsteroidMechanics.CommonAsteroid
         
         private void InitHealth()
         {
-            if (!Health)
-                Health = GetComponent<HealthBehavior>();
-            Health.Decreased += View.ReAnimation;
-            Health.ChangeAmount += ChangeHealth;
+            if (!Model.Health)
+                Model.Health = GetComponent<HealthBehavior>();
+            Model.Health.Decreased += View.ReAnimation;
+            Model.Health.ChangeAmount += ChangeHealth;
         }
         
         private void InitHpBar()
         {
-            if (!Health)
-                Health = GetComponent<HealthBehavior>();
-            Health.ChangeAmount += HPBar.RefreshHealth;
+            if (!Model.Health)
+                Model.Health = GetComponent<HealthBehavior>();
+            Model.Health.ChangeAmount += Model.HpBar.RefreshHealth;
         }
 
         private void TakeDamage(int hit)
         {
-            Health.Decrease(hit);
+            Model.Health.Decrease(hit);
         }
 
         private void ReachedLineOfDestroy()
@@ -78,9 +73,9 @@ namespace GameMechanics.AsteroidMechanics.CommonAsteroid
         
         private void DefiningBehaviors()
         {
-            Attack = GetComponent<AttackBehavior>();
-            Movement = GetComponent<MovementBehavior>();
-            Scale = GetComponent<ScaleBehavior>();
+            Model.Attack = GetComponent<AttackBehavior>();
+            Model.Movement = GetComponent<MovementBehavior>();
+            Model.Scale = GetComponent<ScaleBehavior>();
         }
 
         private void ChangeHealth(int health)
@@ -97,19 +92,19 @@ namespace GameMechanics.AsteroidMechanics.CommonAsteroid
         private IEnumerator Death()
         {
             yield return new WaitForSeconds(0.3f);
-            Movement.StopMove();
+            Model.Movement.StopMove();
             Model.IsLive = false;
         }
 
         public void OnClose()
         {
-            if (Health)
+            if (Model.Health)
             {
-                Health.Decreased -= View.ReAnimation;
-                Health.ChangeAmount -= ChangeHealth;
-                if (HPBar)
+                Model.Health.Decreased -= View.ReAnimation;
+                Model.Health.ChangeAmount -= ChangeHealth;
+                if (Model.HpBar)
                 {
-                    Health.ChangeAmount -= HPBar.RefreshHealth;
+                    Model.Health.ChangeAmount -= Model.HpBar.RefreshHealth;
                 }
             }
             

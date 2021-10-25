@@ -87,14 +87,14 @@ namespace GameMechanics
 
         private void IncreasePlayerMoney(int money)
         {
-            PlayerManager.IncreaseMoney(money);
+            PlayerManager.Model.Money.Increase(money);
         }
         
         private void IncreasePlayerMoneyGoldenMode(int money)
         {
             money *= _goldenAsteroidMechanics.GetNumberOfDeadAsteroids();
             _goldenAsteroidMechanics.ResetNumberOfDeadAsteroids();
-            PlayerManager.IncreaseMoney(money);
+            PlayerManager.Model.Money.Increase(money);
         }
 
         private void StartGoldenGameMode()
@@ -183,9 +183,9 @@ namespace GameMechanics
             PlayerManager.Init();
             PlayerManager.transform.position = new Vector2(-1.5f, -3.7f);
             PlayerManager.Died += StopGame;
-            PlayerManager.SetHealth(3);
-            PlayerManager.SetMoney(0);
-            PlayerManager.SetAttack(1);
+            PlayerManager.Model.Health.SetAmount(3);
+            PlayerManager.Model.Money.SetAmount(0);
+            PlayerManager.Model.Attack.SetAmount(1);
         }
         
         private void StopGame(PlayerManager playerManager)
@@ -225,8 +225,8 @@ namespace GameMechanics
 
             if (hit && hit.collider)
             {
-                hit.collider.GetComponent<AsteroidView>().TakeDamage(PlayerManager.GetAttack());
-                ShowDamageText(PlayerManager.GetAttack(), touchWorldPos);
+                hit.collider.GetComponent<AsteroidView>().TakeDamage(PlayerManager.Model.Attack.Amount);
+                ShowDamageText(PlayerManager.Model.Attack.Amount, touchWorldPos);
                 SpaceshipsShoot(touchWorldPos);
             }
         }

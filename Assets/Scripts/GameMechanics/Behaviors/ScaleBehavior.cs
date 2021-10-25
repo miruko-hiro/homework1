@@ -26,10 +26,10 @@ namespace GameMechanics.Behaviors
             }
         }
 
-        public void Active(bool isActive, Transform tf)
+        public void Run(Transform tf)
         {
             _transform = tf;
-            _isActive = isActive;
+            _isActive = true;
         }
     }
 }

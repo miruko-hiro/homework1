@@ -57,7 +57,7 @@ namespace UI
             while (!_mainMechanics.PlayerManager.Enable)
                 yield return null;
            
-            _playerPresenter = new PlayerPresenter(_mainMechanics.PlayerManager.GetPlayerModel());
+            _playerPresenter = new PlayerPresenter(_mainMechanics.PlayerManager.Model);
             _playerPresenter.OnOpen(SetAmountOfMoney, SetAmountOfAddedMoney, TakeAwayOneLife, RestoreOneLife);
             
             _mainMechanics.GameOver += ShowLoserPanel;
@@ -119,14 +119,14 @@ namespace UI
                 yield return null;
             _lvlUpPanel.ChangeLvl += ChangeDamage;
             _lvlUpPanel.ComeBackButton.Click += HideLvlUpPanel;
-            _lvlUpPanel.SetMoney(_mainMechanics.PlayerManager.GetMoney());
+            _lvlUpPanel.SetMoney(_mainMechanics.PlayerManager.Model.Money.Amount);
         }
 
         private void ChangeDamage(int damage, int index, int money)
         {
-            _mainMechanics.PlayerManager.IncreaseAttack(damage);
-            _mainMechanics.PlayerManager.DecreaseMoney(money);
-            if (_lvlUpPanel.enabled) _lvlUpPanel.SetMoney(_mainMechanics.PlayerManager.GetMoney());
+            _mainMechanics.PlayerManager.Model.Attack.Increase(damage);
+            _mainMechanics.PlayerManager.Model.Money.Decrease(money);
+            if (_lvlUpPanel.enabled) _lvlUpPanel.SetMoney(_mainMechanics.PlayerManager.Model.Money.Amount);
             switch (index)
             {
                 case 2:
@@ -187,7 +187,7 @@ namespace UI
             else
             {
                 _lvlUpPanel.gameObject.SetActive(true);
-                _lvlUpPanel.SetMoney(_mainMechanics.PlayerManager.GetMoney());
+                _lvlUpPanel.SetMoney(_mainMechanics.PlayerManager.Model.Money.Amount);
             }
         }
 
