@@ -6,17 +6,30 @@
         <e p="Scripts" t="Include">
           <e p="GameMechanics" t="Include">
             <e p="AsteroidMechanics" t="Include">
-              <e p="Asteroid.cs" t="Include" />
+              <e p="CommonAsteroid" t="Include">
+                <e p="AsteroidController.cs" t="Include" />
+                <e p="AsteroidFactory.cs" t="Include" />
+                <e p="AsteroidManager.cs" t="Include" />
+                <e p="AsteroidModel.cs" t="Include" />
+                <e p="AsteroidView.cs" t="Include" />
+                <e p="HealthBar.cs" t="Include" />
+                <e p="IAsteroidMechanics.cs" t="Include" />
+              </e>
               <e p="CommonAsteroidMechanics.cs" t="Include" />
-              <e p="DamageText.cs" t="Include" />
-              <e p="Explosion.cs" t="Include" />
-              <e p="ExplosionMechanics.cs" t="Include" />
+              <e p="DamageDisplay" t="Include">
+                <e p="DamageText.cs" t="Include" />
+              </e>
+              <e p="ExplosionOfAsteroid" t="Include">
+                <e p="Explosion.cs" t="Include" />
+                <e p="ExplosionMechanics.cs" t="Include" />
+              </e>
               <e p="GoldenAsteroidMechanics.cs" t="Include" />
               <e p="LvlUpAsteroidMechanics.cs" t="Include" />
             </e>
             <e p="Behaviors" t="Include">
               <e p="AttackBehavior.cs" t="Include" />
               <e p="HealthBehavior.cs" t="Include" />
+              <e p="IEntityParameter.cs" t="Include" />
               <e p="MoneyBehavior.cs" t="Include" />
               <e p="MovementBehavior.cs" t="Include" />
               <e p="ScaleBehavior.cs" t="Include" />
@@ -28,8 +41,13 @@
             <e p="InputMechanics.cs" t="Include" />
             <e p="MainMechanics.cs" t="Include" />
             <e p="PlayerMechanics" t="Include">
-              <e p="HealthBar.cs" t="Include" />
-              <e p="Player.cs" t="Include" />
+              <e p="Planet" t="Include">
+                <e p="PlayerController.cs" t="Include" />
+                <e p="PlayerFactory.cs" t="Include" />
+                <e p="PlayerManager.cs" t="Include" />
+                <e p="PlayerModel.cs" t="Include" />
+                <e p="PlayerView.cs" t="Include" />
+              </e>
               <e p="Spaceship.cs" t="Include" />
             </e>
           </e>
@@ -67,6 +85,9 @@
               </e>
             </e>
             <e p="PlayerHealthUI.cs" t="Include" />
+            <e p="PlayerUI" t="Include">
+              <e p="PlayerPresenter.cs" t="Include" />
+            </e>
             <e p="UI.asmdef" t="Include" />
             <e p="UIMechanics.cs" t="Include" />
           </e>

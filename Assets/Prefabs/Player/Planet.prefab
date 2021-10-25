@@ -13,9 +13,7 @@ GameObject:
   - component: {fileID: 449306960137386473}
   - component: {fileID: 449306960137386470}
   - component: {fileID: 2076121516385641479}
-  - component: {fileID: 5841007351367409016}
-  - component: {fileID: 6325914336655667675}
-  - component: {fileID: 1811999692520751775}
+  - component: {fileID: 7639736452911885945}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Planet
@@ -144,7 +142,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.26
---- !u!114 &5841007351367409016
+--- !u!114 &7639736452911885945
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,30 +151,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 449306960137386474}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d335cbe14ede73428f580575f3536b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6325914336655667675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449306960137386474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 562c6eb1c878a1844885ffcddc41d2c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1811999692520751775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 449306960137386474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 231b428ec20d673448c01435bc9341ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 4786a6d0257949a38915173f30f882c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

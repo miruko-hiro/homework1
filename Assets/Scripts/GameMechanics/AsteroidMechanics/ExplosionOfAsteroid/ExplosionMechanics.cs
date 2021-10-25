@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
-namespace GameMechanics.AsteroidMechanics
+namespace GameMechanics.AsteroidMechanics.ExplosionOfAsteroid
 {
     public class ExplosionMechanics : MonoBehaviour
     {
         [SerializeField] private GameObject explosionPrefab;
+        [SerializeField] private GameObject explosionParent;
         private Explosion[] _explosionArray = new Explosion[5];
         private int _index = 0;
 
@@ -19,7 +19,7 @@ namespace GameMechanics.AsteroidMechanics
         {
             for (int i = 0; i < _explosionArray.Length; i++)
             {
-                _explosionArray[i] = Instantiate(explosionPrefab).GetComponent<Explosion>();
+                _explosionArray[i] = Instantiate(explosionPrefab, explosionParent.transform).GetComponent<Explosion>();
                 _explosionArray[i].gameObject.SetActive(false);
             }
         }

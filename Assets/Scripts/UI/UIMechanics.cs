@@ -1,10 +1,10 @@
-using System;
 using System.Collections;
 using GameMechanics;
 using UI.Buttons;
 using UI.Panels;
 using UI.Panels.GoldenMode;
 using UI.Panels.StartMenu;
+using UI.PlayerUI;
 using UnityEngine;
 
 namespace UI
@@ -35,6 +35,7 @@ namespace UI
 
         [SerializeField] private GameObject controller;
         private MainMechanics _mainMechanics;
+        private PlayerPresenter _playerPresenter;
 
         private bool _isFirstLoserPanel = true;
         private bool _isFirstLvlUpPanel = true;
@@ -53,15 +54,15 @@ namespace UI
         {
             InitMainUIElements();
             
-            while (!_mainMechanics.Player || !_mainMechanics.Player.Money)
+            while (!_mainMechanics.PlayerManager.Enable)
                 yield return null;
-            _mainMechanics.Player.Money.ChangeAmountOfMoney += SetAmountOfMoney;
-            _mainMechanics.Player.Health.HealthDecreased += TakeAwayOneLife;
-            _mainMechanics.Player.Health.HealthIncreased += RestoreOneLife;
+           
+            _playerPresenter = new PlayerPresenter(_mainMechanics.PlayerManager.GetPlayerModel());
+            _playerPresenter.OnOpen(SetAmountOfMoney, SetAmountOfAddedMoney, TakeAwayOneLife, RestoreOneLife);
+            
             _mainMechanics.GameOver += ShowLoserPanel;
             _mainMechanics.ChangeScoreGoldenMode += ChangeScoreGoldenMode;
             _mainMechanics.ChangeTimeGoldenMode += ChangeTimeGoldenMode;
-            _mainMechanics.AddedMoney += SetAmountOfAddedMoney;
         }
 
         private void ChangeScoreGoldenMode(string score)
@@ -118,14 +119,14 @@ namespace UI
                 yield return null;
             _lvlUpPanel.ChangeLvl += ChangeDamage;
             _lvlUpPanel.ComeBackButton.Click += HideLvlUpPanel;
-            _lvlUpPanel.SetMoney(_mainMechanics.Player.Money.Amount);
+            _lvlUpPanel.SetMoney(_mainMechanics.PlayerManager.GetMoney());
         }
 
         private void ChangeDamage(int damage, int index, int money)
         {
-            _mainMechanics.Player.Attack.Amount += damage;
-            _mainMechanics.Player.Money.Amount -= money;
-            if (_lvlUpPanel.enabled) _lvlUpPanel.SetMoney(_mainMechanics.Player.Money.Amount);
+            _mainMechanics.PlayerManager.IncreaseAttack(damage);
+            _mainMechanics.PlayerManager.DecreaseMoney(money);
+            if (_lvlUpPanel.enabled) _lvlUpPanel.SetMoney(_mainMechanics.PlayerManager.GetMoney());
             switch (index)
             {
                 case 2:
@@ -137,9 +138,9 @@ namespace UI
             }
         }
 
-        private void SetAmountOfMoney()
+        private void SetAmountOfMoney(int money)
         {
-            _moneyUI.AmountOfMoney = _mainMechanics.Player.Money.Amount.ToString();
+            _moneyUI.AmountOfMoney = money.ToString();
         }
 
         private void SetAmountOfAddedMoney(int addedMoney)
@@ -147,12 +148,12 @@ namespace UI
             _moneyUI.AmountOfAddedMoney = addedMoney.ToString();
         }
 
-        private void TakeAwayOneLife()
+        private void TakeAwayOneLife(int health)
         {
             _playerHealthUI.TakeOneLifeAway();
         }
 
-        private void RestoreOneLife()
+        private void RestoreOneLife(int health)
         {
             _playerHealthUI.RestoreOneLife();
         }
@@ -186,7 +187,7 @@ namespace UI
             else
             {
                 _lvlUpPanel.gameObject.SetActive(true);
-                _lvlUpPanel.SetMoney(_mainMechanics.Player.Money.Amount);
+                _lvlUpPanel.SetMoney(_mainMechanics.PlayerManager.GetMoney());
             }
         }
 
@@ -213,9 +214,6 @@ namespace UI
                 _lvlUpPanel.ComeBackButton.Click -= HideLvlUpPanel;
             }
             
-            _mainMechanics.Player.Money.ChangeAmountOfMoney -= SetAmountOfMoney;
-            _mainMechanics.Player.Health.HealthDecreased -= TakeAwayOneLife;
-            _mainMechanics.Player.Health.HealthIncreased -= RestoreOneLife;
 
             if (!_isFirstLoserPanel)
             {
@@ -223,10 +221,11 @@ namespace UI
                 _loserPanel.ExitButton.Click -= ExitHelper.Exit;
             }
 
+            _playerPresenter.OnClose(SetAmountOfMoney, SetAmountOfAddedMoney, TakeAwayOneLife, RestoreOneLife);
+            
             _mainMechanics.GameOver -= ShowLoserPanel;
             _mainMechanics.ChangeScoreGoldenMode -= ChangeScoreGoldenMode;
             _mainMechanics.ChangeTimeGoldenMode -= ChangeTimeGoldenMode;
-            _mainMechanics.AddedMoney -= SetAmountOfAddedMoney;
         }
     }
 }

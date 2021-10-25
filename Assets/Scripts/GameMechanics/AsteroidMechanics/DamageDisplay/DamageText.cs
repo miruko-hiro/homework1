@@ -1,7 +1,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace GameMechanics.AsteroidMechanics
+namespace GameMechanics.AsteroidMechanics.DamageDisplay
 {
     public class DamageText : MonoBehaviour
     {

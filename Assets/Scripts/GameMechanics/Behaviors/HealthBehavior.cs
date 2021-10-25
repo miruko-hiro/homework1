@@ -3,27 +3,36 @@ using UnityEngine;
 
 namespace GameMechanics.Behaviors
 {
-    public class HealthBehavior : MonoBehaviour
+    public class HealthBehavior : MonoBehaviour, IEntityParameter
     {
         public int MaxAmount { get; private set; }
         public int Amount { get; private set; }
-
-        public event Action HealthIncreased;
-        public event Action HealthDecreased;
+        public event Action<int> ChangeAmount;
+        public event Action<int> Increased;
+        public event Action<int> Decreased;
 
         public void SetAmount(int health)
         {
             MaxAmount = health;
             Amount = health;
-            HealthIncreased?.Invoke();
+            ChangeAmount?.Invoke(Amount);
         }
 
-        public void TakeDamage(int hit)
+        public void Increase(int increase)
         {
-            if (Amount <= 0) return;
-            if (Amount - hit < 0) Amount = 0;
-            else Amount -= hit;
-            HealthDecreased?.Invoke();
+            if (increase <= 0) return;
+            Amount += increase;
+            Increased?.Invoke(increase);
+            ChangeAmount?.Invoke(Amount);
+        }
+
+        public void Decrease(int decrease)
+        {
+            if (decrease <= 0) return;
+            if (Amount - decrease < 0) Amount = 0;
+            else Amount -= decrease;
+            Decreased?.Invoke(decrease);
+            ChangeAmount?.Invoke(Amount);
         }
     }
 }

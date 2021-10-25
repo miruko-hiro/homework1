@@ -1,25 +1,26 @@
 ﻿using System;
 using System.Collections;
+using GameMechanics.AsteroidMechanics.CommonAsteroid;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace GameMechanics.AsteroidMechanics
 {
     [RequireComponent(typeof(LvlUpAsteroidMechanics))]
-    public class CommonAsteroidMechanics : MonoBehaviour
+    public class CommonAsteroidMechanics : MonoBehaviour, IAsteroidMechanics
     {
-        [SerializeField] private GameObject asteroidPrefab;
-        private Asteroid[] _asteroidArray = new Asteroid[3];
+        [SerializeField] private GameObject asteroidManagerPrefab;
+        private AsteroidManager[] _asteroidManagers = new AsteroidManager[3];
         
         private LvlUpAsteroidMechanics _lvlUpAsteroidMechanics;
         
         private int _asteroidIndex = 0;
         private int _numberOfLivingAsteroids = 0;
-        private bool wasAlreadyGoldenMode = false;
-
+        
         public event Action<int> AsteroidDroppedMoney;
         public event Action<Vector2> AsteroidExploded;
-        public event Action GoldenAsteroidFell;
+        
+        public bool Enable { get; set; } = false;
 
         private void Start()
         {
@@ -29,92 +30,76 @@ namespace GameMechanics.AsteroidMechanics
         
         private IEnumerator InitAsteroids()
         {
-            for (int i = 0; i < _asteroidArray.Length; i++)
+            for (int i = 0; i < _asteroidManagers.Length; i++)
             {
-                InitAsteroid(i, out _asteroidArray[i]);
-                while (!_asteroidArray[i].Enable)
+                _asteroidManagers[i] = Instantiate(asteroidManagerPrefab, transform).GetComponent<AsteroidManager>();
+                _asteroidManagers[i].transform.position = new Vector2(-10f, 0f);
+                while (!_asteroidManagers[i].Enable)
                     yield return null;
-                _asteroidArray[i].gameObject.SetActive(false);
+                _asteroidManagers[i].Died += DeadAsteroid;
+                _asteroidManagers[i].transform.position = new Vector2(0f, 0f);
+                _asteroidManagers[i].gameObject.SetActive(false);
             }
-        }
 
-        private void InitAsteroid(int i, out Asteroid asteroid)
+            Enable = true;
+        }
+        public void LaunchAsteroid()
         {
-            asteroid = Instantiate(asteroidPrefab, transform).GetComponent<Asteroid>();
-            asteroid.SetPosition(new Vector2(-10f, 0f));
-            asteroid.Count = i;
-            asteroid.Died += DeadAsteroid;
+            if (_numberOfLivingAsteroids == 3) return;
+                
+            _lvlUpAsteroidMechanics.LvlAsteroids += 1;
+
+            _asteroidManagers[_asteroidIndex].gameObject.SetActive(true);
+            SetInitialStateOfAsteroid(_asteroidManagers[_asteroidIndex]);
+            _numberOfLivingAsteroids += 1;
+
+            _asteroidIndex = _asteroidIndex < _asteroidManagers.Length - 1 ? _asteroidIndex += 1 : 0;
         }
         
-        public IEnumerator IncreaseAsteroidIndex()
+        private void SetInitialStateOfAsteroid(AsteroidManager asteroidManager)
         {
-            while (true)
-            {
-                yield return new WaitForSeconds(3f);
-                
-                if (_numberOfLivingAsteroids == 3) continue;
-
-                if (_lvlUpAsteroidMechanics.LvlAsteroids == 6 && !wasAlreadyGoldenMode)
-                {
-                    GoldenAsteroidFell!.Invoke();
-                    wasAlreadyGoldenMode = true;
-                    continue;
-                }
-                
-                _lvlUpAsteroidMechanics.LvlAsteroids += 1;
-
-                _asteroidArray[_asteroidIndex].gameObject.SetActive(true);
-                SetInitialStateOfAsteroid(_asteroidArray[_asteroidIndex]);
-                _numberOfLivingAsteroids += 1;
-
-                _asteroidIndex = _asteroidIndex < 2 ? _asteroidIndex += 1 : 0;
-            }
-        }
-
-        private void SetInitialStateOfAsteroid(Asteroid asteroid)
-        {
-            asteroid.SetPosition(new Vector2(Random.Range(-1.5f, 1.5f), Random.Range(3.5f, 4.5f)));
-            asteroid.SetLocalScale(new Vector2(0.1f, 0.1f));
-
+            asteroidManager.SetPosition(new Vector2(Random.Range(-1.5f, 1.5f), Random.Range(3.5f, 4.5f)));
+            asteroidManager.SetLocalScale(new Vector2(0.1f, 0.1f));
+            
             _lvlUpAsteroidMechanics.HealthUp();
-            asteroid.Health.SetAmount(_lvlUpAsteroidMechanics.HealthAsteroid);
-            asteroid.Attack.Amount = 1;
-            asteroid.Movement.Move(new Vector2(-0.5f, -3f), 0.3f);
+            asteroidManager.SetHealth(_lvlUpAsteroidMechanics.HealthAsteroid);
+            asteroidManager.SetAttack(1);
+            asteroidManager.SetMotionParameters(new Vector2(-0.5f, -3f), 0.3f);
 
-            asteroid.Scale.SetScale(0.005f, 0.005f);
-            asteroid.Scale.SetMaxScale(1.7f, 1.7f);
-            asteroid.Scale.ActiveScale(true);
+            asteroidManager.SetScale(new Vector2(0.005f, 0.005f));
+            asteroidManager.SetMaxScale(new Vector2(1.7f, 1.7f));
+            asteroidManager.ActiveScale();
         }
 
         public void DisableAsteroids()
         {
-            foreach (Asteroid asteroid in _asteroidArray)
+            foreach (AsteroidManager asteroidManager in _asteroidManagers)
             {
-                asteroid.gameObject.SetActive(false);
+                asteroidManager.gameObject.SetActive(false);
             }
         }
-        
-        private void DeadAsteroid(Asteroid asteroid)
+            
+        private void DeadAsteroid(AsteroidManager asteroidManager)
         {
             _lvlUpAsteroidMechanics.MoneyUp();
             AsteroidDroppedMoney?.Invoke(_lvlUpAsteroidMechanics.MoneyAsteroid);
-            ShowDeadAsteroid(asteroid);
+            ShowDeadAsteroid(asteroidManager);
         }
 
-        private void ShowDeadAsteroid(Asteroid asteroid)
+        private void ShowDeadAsteroid(AsteroidManager asteroidManager)
         {
-            asteroid.Health.SetAmount(_lvlUpAsteroidMechanics.HealthAsteroid);
-            AsteroidExploded?.Invoke(asteroid.transform.position);
-            asteroid.gameObject.SetActive(false);
+            asteroidManager.SetHealth(_lvlUpAsteroidMechanics.HealthAsteroid);
+            AsteroidExploded?.Invoke(asteroidManager.GetPosition());
+            asteroidManager.gameObject.SetActive(false);
             
             _numberOfLivingAsteroids -= 1;
         }
 
         private void OnDestroy()
         {
-            foreach (Asteroid asteroid in _asteroidArray)
+            foreach (AsteroidManager asteroidManager in _asteroidManagers)
             {
-                asteroid.Died -= DeadAsteroid;
+                asteroidManager.Died -= DeadAsteroid;
             }
         }
     }

@@ -9,16 +9,11 @@ namespace GameMechanics.Behaviors
         private Vector2 _endPosition;
         private Transform _transform;
 
-        private void Start()
-        {
-            _transform = GetComponent<Transform>();
-        }
-
         private void FixedUpdate()
         {
             if (_isMove)
             {
-                if (Vector2.Distance(_transform.position, _endPosition) < 0.001f)
+                if (Vector2.Distance(transform.position, _endPosition) < 0.001f)
                 {
                     _isMove = false;
                     return;
@@ -28,10 +23,11 @@ namespace GameMechanics.Behaviors
             }
         }
 
-        public void Move(Vector3 endPosition, float speed)
+        public void Move(Vector3 endPosition, float speed, Transform tf)
         {
             _endPosition = endPosition;
             _speed = speed;
+            _transform = tf;
             _isMove = true;
         }
 

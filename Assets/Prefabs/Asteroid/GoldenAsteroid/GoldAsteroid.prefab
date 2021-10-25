@@ -10,12 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8402723726052423028}
   - component: {fileID: 8402723726052423029}
-  - component: {fileID: 8402723726052423030}
-  - component: {fileID: 8402723726052423031}
-  - component: {fileID: 8402723726052423032}
-  - component: {fileID: 8402723726052423033}
-  - component: {fileID: 8402723726052423034}
   - component: {fileID: 8402723726052423035}
+  - component: {fileID: 1785174658194320411}
   m_Layer: 8
   m_Name: GoldAsteroid
   m_TagString: Untagged
@@ -88,73 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8402723726052423030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8402723726052423036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d335cbe14ede73428f580575f3536b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8402723726052423031
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8402723726052423036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 562c6eb1c878a1844885ffcddc41d2c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8402723726052423032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8402723726052423036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35a440f21b08de44098a415dcbc251b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8402723726052423033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8402723726052423036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06c76ce739064554e8ff58d2ff01f3e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &8402723726052423034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8402723726052423036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81b875389ae974440a171b926c218a51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 8402723726052423029}
-  asteroids:
-  - {fileID: 21300000, guid: f4c1f3aaae7c8674994758b5f7dd3386, type: 3}
-  - {fileID: 21300000, guid: 7bfaac681de75c64db3747bdcad24689, type: 3}
-  - {fileID: 21300000, guid: b2729b93c29a88a4ca51ded1a236f570, type: 3}
-  - {fileID: 21300000, guid: 8b06f12874bf8ca469341160e9c2f3c1, type: 3}
-  - {fileID: 21300000, guid: fd2f65e32d8e0114c99d6ce91cc4f88b, type: 3}
 --- !u!58 &8402723726052423035
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -171,3 +100,22 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1785174658194320411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8402723726052423036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ec1bc28131643a2a47be64840356f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 8402723726052423029}
+  asteroids:
+  - {fileID: 21300000, guid: f4c1f3aaae7c8674994758b5f7dd3386, type: 3}
+  - {fileID: 21300000, guid: 7bfaac681de75c64db3747bdcad24689, type: 3}
+  - {fileID: 21300000, guid: b2729b93c29a88a4ca51ded1a236f570, type: 3}
+  - {fileID: 21300000, guid: 8b06f12874bf8ca469341160e9c2f3c1, type: 3}
+  - {fileID: 21300000, guid: fd2f65e32d8e0114c99d6ce91cc4f88b, type: 3}

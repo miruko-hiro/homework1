@@ -4,50 +4,32 @@ namespace GameMechanics.Behaviors
 {
     public class ScaleBehavior : MonoBehaviour
     {
-        private float _scalseX;
-        private float _scalseY;
-        private float _maxX;
-        private float _maxY;
-        private bool _isMaxScale;
-        private bool _isScale;
-        private Transform _transform;
+        public Vector2 Scale { get; set; }
+        public Vector2 MaxScale { get; set; }
 
-        private void Start()
-        {
-            _transform = GetComponent<Transform>();
-        }
+        private bool _isActive;
+
+        private Transform _transform;
 
         private void FixedUpdate()
         {
-            if (_isScale)
+            if (_isActive)
             {
                 Vector2 localScale = _transform.localScale;
-                if (_isMaxScale && (localScale.x >= _maxX || localScale.y >= _maxY))
+                if (localScale.x >= MaxScale.x || localScale.y >= MaxScale.y)
                 {
-                    _isScale = false;
+                    _isActive = false;
                     return;
                 }
                 
-                _transform.localScale = new Vector2(localScale.x + _scalseX, localScale.y + _scalseY);
+                _transform.localScale = new Vector2(localScale.x + Scale.x, localScale.y + Scale.y);
             }
         }
 
-        public void SetScale(float scaleX, float scaleY)
+        public void Active(bool isActive, Transform tf)
         {
-            _scalseX = scaleX;
-            _scalseY = scaleY;
-        }
-
-        public void SetMaxScale(float maxX, float maxY)
-        {
-            _maxX = maxX;
-            _maxY = maxY;
-            _isMaxScale = true;
-        }
-
-        public void ActiveScale(bool value)
-        {
-            _isScale = value;
+            _transform = tf;
+            _isActive = isActive;
         }
     }
 }
