@@ -188,7 +188,7 @@ namespace GameMechanics
                 SpaceshipMechanics.SpaceshipsShoot(touchWorldPos);
             }
         }
-        
+
         private void ChangeScore()
         {
             ChangeScoreGoldenMode?.Invoke(_goldenAsteroidMechanics.GetNumberOfDeadAsteroids().ToString());

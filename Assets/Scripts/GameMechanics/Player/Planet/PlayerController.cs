@@ -8,6 +8,7 @@ namespace GameMechanics.Player.Planet
         typeof(AttackBehavior),
         typeof(MoneyBehavior)
     )]
+    [RequireComponent(typeof(CooldownBehavior))]
     public class PlayerController : MonoBehaviour
     {
         public PlayerModel Model { get; private set; }
@@ -31,6 +32,7 @@ namespace GameMechanics.Player.Planet
         {
             Model.Money = GetComponent<MoneyBehavior>();
             Model.Attack = GetComponent<AttackBehavior>();
+            Model.Cooldown = GetComponent<CooldownBehavior>();
         }
         
         private void InitHealth()

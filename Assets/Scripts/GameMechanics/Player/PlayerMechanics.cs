@@ -20,6 +20,7 @@ namespace GameMechanics.Player
             _playerManager.Model.Health.SetAmount(3);
             _playerManager.Model.Money.SetAmount(0);
             _playerManager.Model.Attack.SetAmount(1);
+            _playerManager.Model.Cooldown.SetAmount(5);
             _playerManager.Died += StopGame;
             return _playerManager;
         }

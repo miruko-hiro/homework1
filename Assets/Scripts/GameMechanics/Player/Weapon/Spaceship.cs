@@ -43,22 +43,21 @@ namespace GameMechanics.Player.Weapon
 
         public void ShotLaser(Vector2 posEnemy)
         {
-            if(!laserRenderer.enabled)
-                laserRenderer.enabled = true;
-            if (!shotEffect.enabled)
-                shotEffect.enabled = true;
-            
             laserRenderer.SetPositions(new Vector3[]{transform.position, posEnemy});
             
             transform.rotation = _turn.GetRotationRelativeToAnotherObject(
                 transform.position,
                 posEnemy);
 
-            StartCoroutine(StopLaser());
+            StartCoroutine(LaserEffect());
         }
 
-        private IEnumerator StopLaser()
+        private IEnumerator LaserEffect()
         {
+            if(!laserRenderer.enabled)
+                laserRenderer.enabled = true;
+            if (!shotEffect.enabled)
+                shotEffect.enabled = true;
             yield return new WaitForSeconds(0.1f);
             if(laserRenderer.enabled)
                 laserRenderer.enabled = false;

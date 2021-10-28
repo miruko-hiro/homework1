@@ -60,6 +60,7 @@ namespace UI
 
             _uiLvlUpMenu.Init(_mainMechanics.PlayerManager.Model);
             _uiLvlUpMenu.SelectSpaceship += SelectSpaceship;
+            _uiLvlUpMenu.AddRocket += AddRocket;
             
             GameStateHelper.Pause();
         }
@@ -105,6 +106,11 @@ namespace UI
                     _mainMechanics.SpaceshipMechanics.AddSpaceship();
                     break;
             }
+        }
+
+        private void AddRocket()
+        {
+            _mainMechanics.SpaceshipMechanics.AddSpaceshipWithRocket(_mainMechanics.PlayerManager.Model.Cooldown);
         }
 
         private void ChangeTimeGoldenMode(string time, bool isEnable)

@@ -11,15 +11,17 @@ namespace UI.Panels.LvlUpPanel
             _lvlUpMenu = lvlUpMenu;
         }
 
-        public void OnOpen(Action<int, int, int> actionChangeLvl, Action actionClickComeBackButton)
+        public void OnOpen(Action<int, int, int> actionChangeLvl, Action<int, int> actionChangeLvlRocket, Action actionClickComeBackButton)
         {
             _lvlUpMenu.ChangeLvl += actionChangeLvl;
+            _lvlUpMenu.ChangeLvlRocket += actionChangeLvlRocket;
             _lvlUpMenu.ComeBackButton.Click += actionClickComeBackButton;
         }
 
-        public void OnClose(Action<int, int, int> actionChangeLvl, Action actionClickComeBackButton)
+        public void OnClose(Action<int, int, int> actionChangeLvl, Action<int, int> actionChangeLvlRocket, Action actionClickComeBackButton)
         {
             _lvlUpMenu.ChangeLvl -= actionChangeLvl;
+            _lvlUpMenu.ChangeLvlRocket -= actionChangeLvlRocket;
             _lvlUpMenu.ComeBackButton.Click -= actionClickComeBackButton;
         }
     }

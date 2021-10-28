@@ -7,6 +7,7 @@
           <e p="GameMechanics" t="Include">
             <e p="Behaviors" t="Include">
               <e p="AttackBehavior.cs" t="Include" />
+              <e p="CooldownBehavior.cs" t="Include" />
               <e p="HealthBehavior.cs" t="Include" />
               <e p="IEntityParameter.cs" t="Include" />
               <e p="MoneyBehavior.cs" t="Include" />
@@ -53,8 +54,10 @@
               </e>
               <e p="PlayerMechanics.cs" t="Include" />
               <e p="Weapon" t="Include">
+                <e p="Rocket.cs" t="Include" />
                 <e p="Spaceship.cs" t="Include" />
                 <e p="SpaceshipMechanics.cs" t="Include" />
+                <e p="SpaceshipWithRockets.cs" t="Include" />
               </e>
             </e>
           </e>

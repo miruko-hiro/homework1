@@ -334,6 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spaceshipPrefab: {fileID: 2992461135999930834, guid: 15413977ffa4fe047bdaea7a3236f208, type: 3}
+  spaceshipWithRocketsPrefab: {fileID: 1732008107114774343, guid: 7c950d08e846036409b154dc58542770, type: 3}
 --- !u!114 &243379670
 MonoBehaviour:
   m_ObjectHideFlags: 0

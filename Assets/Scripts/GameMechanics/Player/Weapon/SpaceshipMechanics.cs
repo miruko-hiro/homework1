@@ -1,4 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using GameMechanics.Behaviors;
+using GameMechanics.Player.Planet;
 using UnityEngine;
 
 namespace GameMechanics.Player.Weapon
@@ -8,19 +11,22 @@ namespace GameMechanics.Player.Weapon
         [SerializeField] private GameObject spaceshipPrefab;
         private List<Spaceship> _spaceshipList = new List<Spaceship>();
         private int _numberSpaceships = 1;
+
+        [SerializeField] private GameObject spaceshipWithRocketsPrefab;
+        private SpaceshipWithRockets _spaceshipWithRockets;
+
+        private event Action<Vector2> Shoot;
         public void Init()
         {
             _spaceshipList.Add(Instantiate(spaceshipPrefab).GetComponent<Spaceship>());
             _spaceshipList[0].UpLvl();
             _spaceshipList[0].SetPosition(new Vector2(-2f, -1.1f));
+            Shoot += _spaceshipList[0].ShotLaser;
         }
 
         public void SpaceshipsShoot(Vector2 posEnemy)
         {
-            foreach (var spaceship in _spaceshipList)
-            {
-                spaceship.ShotLaser(posEnemy);
-            }
+            Shoot?.Invoke(posEnemy);
         }
 
         public void SpaceshipLvlUp()
@@ -41,7 +47,32 @@ namespace GameMechanics.Player.Weapon
                     _spaceshipList[_numberSpaceships].SetPosition(new Vector2(1f, -2.5f));
                 if (_numberSpaceships == 2)
                     _spaceshipList[_numberSpaceships].SetPosition(new Vector2(-0.3f, -1.3f));
+                
+                Shoot += _spaceshipList[_numberSpaceships].ShotLaser;
                 _numberSpaceships += 1;
+            }
+        }
+
+        public void AddSpaceshipWithRocket(CooldownBehavior cooldownBehavior)
+        {
+            _spaceshipWithRockets = Instantiate(spaceshipWithRocketsPrefab).GetComponent<SpaceshipWithRockets>();
+            _spaceshipWithRockets.Init(new Vector2(-1f, -1.3f), cooldownBehavior);
+            Shoot += _spaceshipWithRockets.ShotRacket;
+        }
+
+        private void OnDestroy()
+        {
+            if (_spaceshipList.Count > 0)
+            {
+                foreach (Spaceship spaceship in _spaceshipList)
+                {
+                    Shoot -= spaceship.ShotLaser;
+                }
+            }
+
+            if (_spaceshipWithRockets)
+            {
+                Shoot -= _spaceshipWithRockets.ShotRacket;
             }
         }
     }

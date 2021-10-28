@@ -14,8 +14,10 @@ namespace UI.Panels.LvlUpPanel
         private LvlUpMenuPresenter _lvlUpMenuPresenter;
         private PlayerModel _model;
         private bool _isFirstLvlUpPanel = true;
+        private bool _isAddRocket;
 
         public event Action<int> SelectSpaceship;
+        public event Action AddRocket;
         public void Init(PlayerModel model)
         {
             _model = model;
@@ -27,7 +29,7 @@ namespace UI.Panels.LvlUpPanel
             while (!_lvlUpMenu.IsInit)
                 yield return null;
             _lvlUpMenuPresenter = new LvlUpMenuPresenter(_lvlUpMenu);
-            _lvlUpMenuPresenter.OnOpen(ChangeDamage, HideLvlUpPanel);
+            _lvlUpMenuPresenter.OnOpen(ChangeDamage, ChangeCooldownRocket, HideLvlUpPanel);
             _lvlUpMenu.SetMoney(_model.Money.Amount);
         }
 
@@ -53,6 +55,18 @@ namespace UI.Panels.LvlUpPanel
             if (_lvlUpMenu.enabled) _lvlUpMenu.SetMoney(_model.Money.Amount);
             SelectSpaceship?.Invoke(index);
         }
+        
+        private void ChangeCooldownRocket(int time, int money)
+        {
+            if (!_isAddRocket)
+            {
+                AddRocket?.Invoke();
+                _isAddRocket = true;
+            }
+            _model.Cooldown.SetAmount(time);
+            _model.Money.Decrease(money);
+            if (_lvlUpMenu.enabled) _lvlUpMenu.SetMoney(_model.Money.Amount);
+        }
 
         private void HideLvlUpPanel()
         {
@@ -64,7 +78,7 @@ namespace UI.Panels.LvlUpPanel
         {
             if (!_isFirstLvlUpPanel)
             {
-                _lvlUpMenuPresenter.OnClose(ChangeDamage, HideLvlUpPanel);
+                _lvlUpMenuPresenter.OnClose(ChangeDamage, ChangeCooldownRocket, HideLvlUpPanel);
             }
         }
     }

@@ -22,6 +22,7 @@ namespace GameMechanics.Player.Planet
         
         public HealthBehavior Health { get; set; }
         public AttackBehavior Attack { get; set; }
+        public CooldownBehavior Cooldown { get; set; }
         public MoneyBehavior Money { get; set; }
     }
 }
