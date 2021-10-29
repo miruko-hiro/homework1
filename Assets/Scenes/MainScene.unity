@@ -941,6 +941,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ea2161f169db3c4f9b3f00ae4bccb4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cooldownPanelPrefab: {fileID: 3115814669465117292, guid: 661f7a7d4ece45948a7b4111b09d9be2, type: 3}
   goldenModeUIPrefab: {fileID: 4047835018900817285, guid: 0a236fc32d8f1f644a99f5559485f0d0, type: 3}
   moneyUIPrefab: {fileID: 6149162015288212839, guid: ef5f70aabf9787945b7203160e7ccc3d, type: 3}
   hpPlayerUIPrefab: {fileID: 8920555547061910434, guid: 07f4b0e06aac6fb4dbb18dd2e142a8c1, type: 3}

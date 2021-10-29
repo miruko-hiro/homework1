@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d9e3d8f5e4148e2a780d75c7a9a800d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionPrefab: {fileID: 8551338543878668447, guid: 703b77db19faabb48877fd9787e73897, type: 3}
+  flightEffectPrefab: {fileID: 5577631945606221157, guid: 1d2fe646211330a4da1ae17869e07526, type: 3}
 --- !u!58 &5874953713644485639
 CircleCollider2D:
   m_ObjectHideFlags: 0

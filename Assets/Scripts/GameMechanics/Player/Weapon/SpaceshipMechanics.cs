@@ -57,7 +57,7 @@ namespace GameMechanics.Player.Weapon
         public void AddSpaceshipWithRocket(CooldownBehavior cooldownBehavior)
         {
             _spaceshipWithRockets = Instantiate(spaceshipWithRocketsPrefab).GetComponent<SpaceshipWithRockets>();
-            _spaceshipWithRockets.Init(new Vector2(-1f, -1.3f), cooldownBehavior);
+            _spaceshipWithRockets.Init(new Vector2(-1f, -1.2f), cooldownBehavior);
             _spaceshipWithRockets.RocketCooldown += RocketCooldown;
             Shoot += _spaceshipWithRockets.ShotRacket;
         }

@@ -22,23 +22,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Добавлено оружие в виде физической ракеты">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerCooldown.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerCooldown/SkillCooldown.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerCooldown/SkillCooldown.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" afterDir="false" />
+    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Добавлен кулдаун ракеты и урон от нее, добавлен эффект попадания лазером">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spaceships/Spaceship.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spaceships/Spaceship.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Spaceship/RocketAnimation.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Spaceship/RocketAnimation.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Asteroid/Asteroid.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Asteroid/Asteroid.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Asteroid/GoldenAsteroid/GoldAsteroid.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Asteroid/GoldenAsteroid/GoldAsteroid.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spaceships/SpaceshipsWithRockets/Rocket.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spaceships/SpaceshipsWithRockets/Rocket.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spaceships/SpaceshipsWithRockets/SpaceshipWithRockets.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spaceships/SpaceshipsWithRockets/SpaceshipWithRockets.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/CommonAsteroidMechanics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/CommonAsteroidMechanics.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/GoldenAsteroidMechanics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/GoldenAsteroidMechanics.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Rocket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Rocket.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Spaceship.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Spaceship.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/SpaceshipMechanics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/SpaceshipMechanics.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/SpaceshipWithRockets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/SpaceshipWithRockets.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Spaceships/Missiles 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Spaceships/Missiles 1.png.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,8 +96,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/DamageDisplay/DamageTextMechanics.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/SpaceshipMechanics/SpaceshipMechanics.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/CommonAsteroidMechanics.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/GoldenAsteroidMechanics.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserMenu/LoserPanel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserMenu/LoserMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenu.cs" />
@@ -128,14 +122,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Spaceship.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidModel.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerCooldown/UICooldown.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainMechanics.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/SpaceshipWithRockets.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/SpaceshipMechanics.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerCooldown/SkillCooldown.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/CommonAsteroidMechanics.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/GoldenAsteroidMechanics.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/SpaceshipWithRockets.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Rocket.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/SpaceshipMechanics.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidView.cs" />
       </list>
     </option>
   </component>
@@ -196,7 +192,8 @@
       <workItem from="1635142405257" duration="37978000" />
       <workItem from="1635321993427" duration="1655000" />
       <workItem from="1635410265045" duration="17113000" />
-      <workItem from="1635493751453" duration="6629000" />
+      <workItem from="1635493751453" duration="6839000" />
+      <workItem from="1635507744401" duration="7495000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1634104804696</created>
@@ -408,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635430478291</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Добавлен кулдаун ракеты и урон от нее, добавлен эффект попадания лазером">
+      <created>1635503605408</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1635503605408</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +434,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Added asteroid destruction mechanic" />
     <MESSAGE value="Add spaceship" />
     <MESSAGE value="Обновлена анимация поворота космического коробля" />
     <MESSAGE value="Behaviors выделены в одну папку" />
@@ -455,7 +458,8 @@
     <MESSAGE value="Добавлена кнопка меню" />
     <MESSAGE value="Init Commit" />
     <MESSAGE value="Добавлено оружие в виде физической ракеты" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлено оружие в виде физической ракеты" />
+    <MESSAGE value="Добавлен кулдаун ракеты и урон от нее, добавлен эффект попадания лазером" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен кулдаун ракеты и урон от нее, добавлен эффект попадания лазером" />
   </component>
   <component name="WindowStateProjectService">
     <state x="794" y="220" key="RiderGenerateDialog" timestamp="1635418733169">
@@ -466,10 +470,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1635084361042" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1635430486395">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1635503609089">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1635430486395" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1635503609089" />
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1634284755877">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -478,10 +482,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="774" y="414" key="git4idea.ui.GitResetDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1634544363024" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1634199073779">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1635511940719">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1634199073779" />
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1635511940719" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1635419881213">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

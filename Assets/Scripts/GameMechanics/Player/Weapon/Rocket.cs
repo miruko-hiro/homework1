@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections;
-using GameMechanics.Enemy.Asteroid;
 using UnityEngine;
 
 namespace GameMechanics.Player.Weapon
@@ -9,9 +8,8 @@ namespace GameMechanics.Player.Weapon
         typeof(CircleCollider2D))]
     public class Rocket : MonoBehaviour
     {
-        private SpriteRenderer _spriteRenderer;
-        [SerializeField] private GameObject explosionPrefab;
-        private Transform _transformExplosion;
+        [SerializeField] private GameObject flightEffectPrefab;
+        private ParticleSystem _flightEffect;
         private Rigidbody2D _rigidbody2D;
         private Vector2 _basePosition;
         private Vector2 _enemyPosition;
@@ -23,10 +21,8 @@ namespace GameMechanics.Player.Weapon
         public void Init()
         {
             _rigidbody2D = GetComponent<Rigidbody2D>();
-            _spriteRenderer = GetComponent<SpriteRenderer>();
-            _transformExplosion = Instantiate(explosionPrefab).GetComponent<Transform>();
-            _transformExplosion.position = new Vector2(-10f, 0f);
-            _transformExplosion.gameObject.SetActive(false);
+            _flightEffect = Instantiate(flightEffectPrefab).GetComponent<ParticleSystem>();
+            _flightEffect.gameObject.SetActive(false);
         }
 
         public void SetBasicPosition(Vector2 pos)
@@ -37,19 +33,18 @@ namespace GameMechanics.Player.Weapon
 
         public void Shot(Vector2 pos, Quaternion rotation)
         {
-            DefaultAppearance();
+            transform.position = _basePosition;
+            _flightEffect.transform.position = _basePosition;
             transform.rotation = rotation;
             _enemyPosition = pos;
+            _flightEffect.gameObject.SetActive(true);
             _isShot = true;
         }    
 
-        private IEnumerator CallExplosion()
+        private void CallExplosion()
         {
             _rigidbody2D.velocity = Vector2.zero;
-            ExplosionAppearance(transform.position);
-            yield return new WaitForSeconds(0.3f);
-            transform.position = _basePosition;
-            DefaultAppearance();
+            _flightEffect.gameObject.SetActive(false);
             gameObject.SetActive(false);
         }
 
@@ -57,34 +52,24 @@ namespace GameMechanics.Player.Weapon
         {
             if (_isShot)
             {
-                _rigidbody2D.AddForce(_enemyPosition - (Vector2) transform.position, ForceMode2D.Force);
+                var position = transform.position;
+                _rigidbody2D.AddForce(_enemyPosition - (Vector2) position, ForceMode2D.Force);
+                _flightEffect.transform.position = position;
                 if (Vector2.Distance(transform.position,_enemyPosition) < 0.01f)
                 {
                     _isShot = false;
-                    StartCoroutine(CallExplosion());
+                    Exploded?.Invoke(0, transform.position);
+                    CallExplosion();
                 }
             }
-        }
-
-        private void DefaultAppearance()
-        {
-            _transformExplosion.gameObject.SetActive(false);
-            _spriteRenderer.enabled = true;
-        }
-
-        private void ExplosionAppearance(Vector2 pos)
-        {
-            _spriteRenderer.enabled = false;
-            _transformExplosion.position = pos;
-            _transformExplosion.gameObject.SetActive(true);
         }
         private void OnCollisionEnter2D(Collision2D other)
         {
             if (other.gameObject.CompareTag("Asteroid"))
             {
                 _isShot = false;
+                CallExplosion();
                 Exploded?.Invoke(Damage, transform.position);
-                StartCoroutine(CallExplosion());
             }
         }
     }

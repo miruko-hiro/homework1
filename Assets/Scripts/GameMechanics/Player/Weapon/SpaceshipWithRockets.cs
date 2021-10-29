@@ -14,6 +14,8 @@ namespace GameMechanics.Player.Weapon
         private List<Rocket> _arrRigidbodyOfRocket = new List<Rocket>();
         [SerializeField] private SpriteRenderer shotEffect;
         [SerializeField] private GameObject damageTextPrefab;
+        [SerializeField] private GameObject explosionPrefab;
+        private List<Transform> _arrTransformOfExplosion = new List<Transform>();
         private DamageText _damageText;
         private CooldownBehavior _cooldown;
         private TurnBehavior _turn;
@@ -36,14 +38,27 @@ namespace GameMechanics.Player.Weapon
             Rocket rocket = Instantiate(rocketPrefab).GetComponent<Rocket>();
             rocket.SetBasicPosition(transform.position);
             rocket.Init();
-            rocket.Exploded += ShowDamageText;
+            rocket.Exploded += ShowDamage;
             rocket.gameObject.SetActive(false);
             _arrRigidbodyOfRocket.Add(rocket);
+            AddExplosion();
         }
 
-        private void ShowDamageText(int damage, Vector2 pos)
+        private void AddExplosion()
         {
-            _damageText.EnableAnimation(damage.ToString(), pos);
+            Transform transformExplosion = Instantiate(explosionPrefab).GetComponent<Transform>();
+            transformExplosion.position = new Vector2(-10f, 0f);
+            transformExplosion.gameObject.SetActive(false);
+            _arrTransformOfExplosion.Add(transformExplosion);
+        }
+
+        private void ShowDamage(int damage, Vector2 pos)
+        {
+            if(damage > 0)
+                _damageText.EnableAnimation(damage.ToString(), pos);
+            _arrTransformOfExplosion[_indexShot].position = pos;
+            _arrTransformOfExplosion[_indexShot].gameObject.SetActive(false);
+            _arrTransformOfExplosion[_indexShot].gameObject.SetActive(true);
         }
 
         public void ShotRacket(Vector2 posClick)
@@ -86,7 +101,7 @@ namespace GameMechanics.Player.Weapon
         {
             foreach (Rocket rocket in _arrRigidbodyOfRocket)
             {
-                rocket.Exploded -= ShowDamageText;
+                rocket.Exploded -= ShowDamage;
             }
         }
     }

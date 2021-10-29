@@ -55,7 +55,7 @@ namespace GameMechanics.Enemy
         
         private void SetInitialStateOfAsteroid(AsteroidManager asteroidManager)
         {
-            asteroidManager.Model.Position = new Vector2(Random.Range(-1f, 1.5f), Random.Range(3.5f, 4f));
+            asteroidManager.Model.Position = new Vector2(Random.Range(-0.5f, 1.5f), Random.Range(2.5f, 4f));
             asteroidManager.Model.LocalScale = new Vector2(0.1f, 0.1f);
 
             asteroidManager.Model.Health.SetAmount(1);
