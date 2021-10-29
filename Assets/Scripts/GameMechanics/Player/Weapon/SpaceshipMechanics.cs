@@ -16,6 +16,7 @@ namespace GameMechanics.Player.Weapon
         private SpaceshipWithRockets _spaceshipWithRockets;
 
         private event Action<Vector2> Shoot;
+        public event Action<int> RocketCooldown;
         public void Init()
         {
             _spaceshipList.Add(Instantiate(spaceshipPrefab).GetComponent<Spaceship>());
@@ -57,6 +58,7 @@ namespace GameMechanics.Player.Weapon
         {
             _spaceshipWithRockets = Instantiate(spaceshipWithRocketsPrefab).GetComponent<SpaceshipWithRockets>();
             _spaceshipWithRockets.Init(new Vector2(-1f, -1.3f), cooldownBehavior);
+            _spaceshipWithRockets.RocketCooldown += RocketCooldown;
             Shoot += _spaceshipWithRockets.ShotRacket;
         }
 
@@ -73,6 +75,7 @@ namespace GameMechanics.Player.Weapon
             if (_spaceshipWithRockets)
             {
                 Shoot -= _spaceshipWithRockets.ShotRacket;
+                _spaceshipWithRockets.RocketCooldown -= RocketCooldown;
             }
         }
     }

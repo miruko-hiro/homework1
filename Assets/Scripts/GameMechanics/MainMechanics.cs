@@ -44,6 +44,7 @@ namespace GameMechanics
         
         public event Action<string> ChangeScoreGoldenMode;
         public event Action<string, bool> ChangeTimeGoldenMode;
+
         private void Start()
         {
             _asteroidLayerIndex = 1 << LayerMask.NameToLayer("Asteroid");

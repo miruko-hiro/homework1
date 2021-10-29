@@ -111,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocketPrefab: {fileID: 5949103438363332495, guid: 69e01ae92c4af9648a12dc0561da05b8, type: 3}
   shotEffect: {fileID: 7374264743540518426}
+  damageTextPrefab: {fileID: 1902362266123226123, guid: 623aa133314863d4586d36165c0c1f8f, type: 3}
 --- !u!1 &6819428778782445903
 GameObject:
   m_ObjectHideFlags: 0

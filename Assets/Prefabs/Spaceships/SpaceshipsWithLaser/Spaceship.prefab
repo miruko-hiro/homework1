@@ -223,6 +223,7 @@ MonoBehaviour:
   - {fileID: 219072141966478415}
   laserRenderer: {fileID: 1448001644473850475}
   shotEffect: {fileID: 5308253860619329559}
+  hitEffectPrefab: {fileID: 3529574857045121534, guid: 00c30f22e47bc7e46a6c4e791e38f006, type: 3}
 --- !u!114 &3739096460606736896
 MonoBehaviour:
   m_ObjectHideFlags: 0

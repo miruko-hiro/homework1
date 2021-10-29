@@ -10,12 +10,16 @@ namespace GameMechanics.Player.Weapon
         [SerializeField] private GameObject[] spaceships = new GameObject[5];
         [SerializeField] private LineRenderer laserRenderer;
         [SerializeField] private SpriteRenderer shotEffect;
+        [SerializeField] private GameObject hitEffectPrefab;
+        private GameObject _hitEffect;
         private TurnBehavior _turn;
         
         private int _lvlIndex = -1;
 
         private void Start()
         {
+            _hitEffect = Instantiate(hitEffectPrefab);
+            _hitEffect.SetActive(false);
             _turn = GetComponent<TurnBehavior>();
             laserRenderer.useWorldSpace = true;
             shotEffect.enabled = false;
@@ -49,6 +53,7 @@ namespace GameMechanics.Player.Weapon
                 transform.position,
                 posEnemy);
 
+            _hitEffect.transform.position = posEnemy;
             StartCoroutine(LaserEffect());
         }
 
@@ -58,11 +63,13 @@ namespace GameMechanics.Player.Weapon
                 laserRenderer.enabled = true;
             if (!shotEffect.enabled)
                 shotEffect.enabled = true;
+            _hitEffect.SetActive(true);
             yield return new WaitForSeconds(0.1f);
             if(laserRenderer.enabled)
                 laserRenderer.enabled = false;
             if (shotEffect.enabled)
                 shotEffect.enabled = false;
+            _hitEffect.SetActive(false);
         }
     }
 }

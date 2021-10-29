@@ -1,25 +1,28 @@
 fileFormatVersion: 2
-guid: ae221c8dee07e314b845f719420facf5
+guid: 4b89db331df82a1438ec6ccb40054d68
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4612517995356434617
-    second: Missiles 1_0
+      213: 854859913611388676
+    second: turret_02_explosion_01_anim_0
   - first:
-      213: 3513780254445721700
-    second: Missiles 1_1
+      213: -7838799373823173826
+    second: turret_02_explosion_01_anim_1
   - first:
-      213: -3511137785317319692
-    second: Missiles 1_2
+      213: 6029172569734380455
+    second: turret_02_explosion_01_anim_2
   - first:
-      213: 2284991955342923679
-    second: Missiles 1_3
+      213: -9138400301338952482
+    second: turret_02_explosion_01_anim_3
   - first:
-      213: 5456152931496719898
-    second: Missiles 1_4
+      213: 2062897871788817270
+    second: turret_02_explosion_01_anim_4
   - first:
-      213: -6162007307471610383
-    second: Missiles 1_5
+      213: -7708823174756282945
+    second: turret_02_explosion_01_anim_5
+  - first:
+      213: 631145380285282449
+    second: turret_02_explosion_01_anim_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -121,106 +124,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Missiles 1_0
+      name: turret_02_explosion_01_anim_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
-        width: 96
-        height: 96
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b03159bda4f20040800000000000000
-      internalID: 4612517995356434617
+      spriteID: 407278bef821ddb00800000000000000
+      internalID: 854859913611388676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Missiles 1_1
+      name: turret_02_explosion_01_anim_1
       rect:
         serializedVersion: 2
-        x: 240
-        y: 48
-        width: 96
-        height: 96
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 468d40d468473c030800000000000000
-      internalID: 3513780254445721700
+      spriteID: e3b17b1508df63390800000000000000
+      internalID: -7838799373823173826
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Missiles 1_2
+      name: turret_02_explosion_01_anim_2
       rect:
         serializedVersion: 2
-        x: 432
-        y: 48
-        width: 96
-        height: 96
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fb95bc79cee54fc0800000000000000
-      internalID: -3511137785317319692
+      spriteID: 7abfb8c128ceba350800000000000000
+      internalID: 6029172569734380455
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Missiles 1_3
+      name: turret_02_explosion_01_anim_3
       rect:
         serializedVersion: 2
-        x: 624
-        y: 48
-        width: 96
-        height: 96
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f9717d4b31ce5bf10800000000000000
-      internalID: 2284991955342923679
+      spriteID: edc7e5fd751ed2180800000000000000
+      internalID: -9138400301338952482
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Missiles 1_4
+      name: turret_02_explosion_01_anim_4
       rect:
         serializedVersion: 2
-        x: 816
-        y: 48
-        width: 96
-        height: 96
+        x: 128
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a16711aee2628bb40800000000000000
-      internalID: 5456152931496719898
+      spriteID: 67bb1e74fa2e0ac10800000000000000
+      internalID: 2062897871788817270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: turret_02_explosion_01_anim_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbd4a586a22c40590800000000000000
+      internalID: -7708823174756282945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: turret_02_explosion_01_anim_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1987881216742c800800000000000000
+      internalID: 631145380285282449
       vertices: []
       indices: 
       edges: []

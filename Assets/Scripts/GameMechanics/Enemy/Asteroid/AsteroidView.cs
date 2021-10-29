@@ -1,5 +1,6 @@
 ﻿using System;
 using GameMechanics.Player.Planet;
+using GameMechanics.Player.Weapon;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -47,7 +48,15 @@ namespace GameMechanics.Enemy.Asteroid
             _animation.Stop();
             _animation.Play();
         }
-        
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (other.gameObject.CompareTag("Rocket"))
+            {
+                TakeDamage(other.gameObject.GetComponent<Rocket>().Damage);
+            }
+        }
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.CompareTag(PlayerModel.Tag))

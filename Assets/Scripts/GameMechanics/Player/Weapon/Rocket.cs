@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using GameMechanics.Enemy.Asteroid;
 using UnityEngine;
 
 namespace GameMechanics.Player.Weapon
@@ -14,6 +16,9 @@ namespace GameMechanics.Player.Weapon
         private Vector2 _basePosition;
         private Vector2 _enemyPosition;
         private bool _isShot;
+
+        public event Action<int, Vector2> Exploded;
+        public int Damage { get; private set; } = 10; 
 
         public void Init()
         {
@@ -78,6 +83,7 @@ namespace GameMechanics.Player.Weapon
             if (other.gameObject.CompareTag("Asteroid"))
             {
                 _isShot = false;
+                Exploded?.Invoke(Damage, transform.position);
                 StartCoroutine(CallExplosion());
             }
         }

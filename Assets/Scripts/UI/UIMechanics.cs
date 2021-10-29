@@ -8,6 +8,7 @@ using UI.Panels.LoserPanel;
 using UI.Panels.LvlUpPanel;
 using UI.Panels.StartMenu;
 using UI.PlayerUI;
+using UI.PlayerUI.PlayerCooldown;
 using UI.PlayerUI.PlayerHealth;
 using UI.PlayerUI.PlayerMoney;
 using UnityEngine;
@@ -22,6 +23,9 @@ namespace UI
         private UIStartMenu _uiStartMenu;
         private UILoserMenu _uiLoserMenu;
         private UILvlUpMenu _uiLvlUpMenu;
+
+        [SerializeField] private GameObject cooldownPanelPrefab;
+        private SkillCooldown _skillCooldown;
         
         [SerializeField] private GameObject goldenModeUIPrefab;
         private UIGoldenMode _uiGoldenMode;
@@ -79,6 +83,7 @@ namespace UI
                 _playerHealthUI.RestoreOneLife);
             
             _mainMechanics.PlayerMechanics.GameOver += _uiLoserMenu.ShowLoserPanel;
+            _mainMechanics.SpaceshipMechanics.RocketCooldown += StartRocketCooldown;
             _mainMechanics.ChangeScoreGoldenMode += ChangeScoreGoldenMode;
             _mainMechanics.ChangeTimeGoldenMode += ChangeTimeGoldenMode;
         }
@@ -133,6 +138,13 @@ namespace UI
                 _animatorGoldenMode = _uiGoldenMode.gameObject.GetComponent<Animator>();
             }
             _uiGoldenMode.Time = time;
+        }
+
+        private void StartRocketCooldown(int numericCountdown)
+        {
+            if(!_skillCooldown)
+                _skillCooldown = Instantiate(cooldownPanelPrefab, transform).GetComponent<SkillCooldown>();
+            _skillCooldown.EnableAnimation(numericCountdown);
         }
 
         private void InitMainUIElements()
@@ -193,6 +205,7 @@ namespace UI
             _uiLvlUpMenu.SelectSpaceship -= SelectSpaceship;
             
             _mainMechanics.PlayerMechanics.GameOver -= _uiLoserMenu.ShowLoserPanel;
+            _mainMechanics.SpaceshipMechanics.RocketCooldown -= StartRocketCooldown;
             _mainMechanics.ChangeScoreGoldenMode -= ChangeScoreGoldenMode;
             _mainMechanics.ChangeTimeGoldenMode -= ChangeTimeGoldenMode;
         }
