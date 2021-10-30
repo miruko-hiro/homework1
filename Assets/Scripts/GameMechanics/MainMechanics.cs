@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using GameMechanics.CameraScripts;
 using GameMechanics.Enemy;
 using GameMechanics.Enemy.Asteroid;
 using GameMechanics.Enemy.DamageDisplay;
@@ -19,11 +20,10 @@ namespace GameMechanics
     [RequireComponent(typeof(CommonAsteroidMechanics),
         typeof(GoldenAsteroidMechanics),
         typeof(ExplosionMechanics))]
-    [RequireComponent(typeof(SpaceshipMechanics))]
+    [RequireComponent(typeof(SpaceshipMechanics),
+        typeof(CameraMechanics))]
     public class MainMechanics : MonoBehaviour
     {
-        [SerializeField] private Camera mainCamera;
-        private Animator _animatorMainCamera;
         public PlayerManager PlayerManager { get; private set; }
         
         private int _asteroidLayerIndex;
@@ -36,11 +36,10 @@ namespace GameMechanics
         private CommonAsteroidMechanics _commonAsteroidMechanics;
         private GoldenAsteroidMechanics _goldenAsteroidMechanics;
         private ExplosionMechanics _explosionMechanics;
+        private CameraMechanics _cameraMechanics;
         
         private Coroutine _coroutineCommonAsteroid;
         private Coroutine _coroutineGoldenAsteroid;
-        private static readonly int GoldenMode = Animator.StringToHash("GoldenMode");
-        private static readonly int IsGoldenMode = Animator.StringToHash("isGoldenMode");
         
         public event Action<string> ChangeScoreGoldenMode;
         public event Action<string, bool> ChangeTimeGoldenMode;
@@ -50,10 +49,11 @@ namespace GameMechanics
             _asteroidLayerIndex = 1 << LayerMask.NameToLayer("Asteroid");
             _explosionMechanics = GetComponent<ExplosionMechanics>();
 
+            _cameraMechanics = GetComponent<CameraMechanics>();
+            _cameraMechanics.Init();
+
             InitCommonAsteroidMechanics();
             InitGoldenAsteroidMechanics();
-
-            _animatorMainCamera = mainCamera.GetComponent<Animator>();
             
             InitInputMechanics();
 
@@ -75,6 +75,7 @@ namespace GameMechanics
             _commonAsteroidMechanics.Init();
             _commonAsteroidMechanics.AsteroidDroppedMoney += IncreasePlayerMoney;
             _commonAsteroidMechanics.AsteroidExploded += _explosionMechanics.EnableExplosion;
+            _commonAsteroidMechanics.AsteroidExploded += _cameraMechanics.CameraShakeDueToAsteroidExplosion;
         }
 
         private void InitGoldenAsteroidMechanics()
@@ -83,6 +84,7 @@ namespace GameMechanics
             _goldenAsteroidMechanics.Init();
             _goldenAsteroidMechanics.AsteroidDroppedMoney += IncreasePlayerMoneyGoldenMode;
             _goldenAsteroidMechanics.AsteroidExploded += _explosionMechanics.EnableExplosion;
+            _goldenAsteroidMechanics.AsteroidExploded += _cameraMechanics.CameraShakeDueToGoldenAsteroidExplosion;
             _goldenAsteroidMechanics.AsteroidDied += ChangeScore;
         }
 
@@ -100,7 +102,7 @@ namespace GameMechanics
 
         private void StartGoldenGameMode()
         {
-            _animatorMainCamera.SetTrigger(GoldenMode);
+            _cameraMechanics.SwitchToGoldMode();
             _goldenAsteroidMechanics.ResetNumberOfDeadAsteroids();
             _commonAsteroidMechanics.DisableAsteroids();
             StopCoroutine(_coroutineCommonAsteroid);
@@ -139,7 +141,7 @@ namespace GameMechanics
         
         private IEnumerator LifeOfGoldenMode()
         {
-            _animatorMainCamera.SetBool(IsGoldenMode, true);
+            _cameraMechanics.EnableGoldenModeAnimation(true);
             int time = 10;
             while (time > 0)
             {
@@ -150,7 +152,7 @@ namespace GameMechanics
             ChangeTimeGoldenMode?.Invoke(time.ToString(), false);
             _goldenAsteroidMechanics.DisableAsteroids();
             StopCoroutine(_coroutineGoldenAsteroid);
-            _animatorMainCamera.SetBool(IsGoldenMode, false);
+            _cameraMechanics.EnableGoldenModeAnimation(false);
             _coroutineCommonAsteroid = StartCoroutine(SpawnAsteroids());
         }
         
@@ -179,13 +181,13 @@ namespace GameMechanics
         
         private void CheckPosition(Vector3 pos)
         {
-            Vector3 touchWorldPos = mainCamera.ScreenToWorldPoint(pos);
+            Vector3 touchWorldPos = _cameraMechanics.GetValueToWorldPoint(pos);
             RaycastHit2D hit = Physics2D.Raycast(touchWorldPos, Vector2.zero, Mathf.Infinity, _asteroidLayerIndex);
 
             if (hit && hit.collider)
             {
-                hit.collider.GetComponent<AsteroidView>().TakeDamage(PlayerManager.Model.Attack.Amount);
-                _damageTextMechanics.ShowDamageText(PlayerManager.Model.Attack.Amount, touchWorldPos);
+                hit.collider.GetComponent<AsteroidView>().TakeDamage(PlayerManager.Model.LaserAttack.Amount);
+                _damageTextMechanics.ShowDamageText(PlayerManager.Model.LaserAttack.Amount, touchWorldPos);
                 SpaceshipMechanics.SpaceshipsShoot(touchWorldPos);
             }
         }
@@ -199,8 +201,10 @@ namespace GameMechanics
         {
             _commonAsteroidMechanics.AsteroidDroppedMoney -= IncreasePlayerMoney;
             _commonAsteroidMechanics.AsteroidExploded -= _explosionMechanics.EnableExplosion;
+            _commonAsteroidMechanics.AsteroidExploded -= _cameraMechanics.CameraShakeDueToAsteroidExplosion;
             _goldenAsteroidMechanics.AsteroidDroppedMoney -= IncreasePlayerMoneyGoldenMode;
             _goldenAsteroidMechanics.AsteroidExploded -= _explosionMechanics.EnableExplosion;
+            _goldenAsteroidMechanics.AsteroidExploded -= _cameraMechanics.CameraShakeDueToGoldenAsteroidExplosion;
             _goldenAsteroidMechanics.AsteroidDied -= ChangeScore;
         }
     }

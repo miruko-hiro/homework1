@@ -3,12 +3,6 @@ using UnityEngine;
 
 namespace GameMechanics.Player.Planet
 {
-    [RequireComponent(
-        typeof(HealthBehavior), 
-        typeof(AttackBehavior),
-        typeof(MoneyBehavior)
-    )]
-    [RequireComponent(typeof(CooldownBehavior))]
     public class PlayerController : MonoBehaviour
     {
         public PlayerModel Model { get; private set; }
@@ -30,14 +24,13 @@ namespace GameMechanics.Player.Planet
             
         private void DefiningBehaviors()
         {
-            Model.Money = GetComponent<MoneyBehavior>();
-            Model.Attack = GetComponent<AttackBehavior>();
-            Model.Cooldown = GetComponent<CooldownBehavior>();
+            Model.Money = new MoneyBehavior();
+            Model.LaserAttack = new AttackBehavior();
         }
         
         private void InitHealth()
         {
-            Model.Health = GetComponent<HealthBehavior>();
+            Model.Health = new HealthBehavior();
             Model.Health.ChangeAmount += ChangeHealth;
         }
 

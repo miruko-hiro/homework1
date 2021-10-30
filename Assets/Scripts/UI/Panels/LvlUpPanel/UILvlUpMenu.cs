@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections;
-using GameMechanics;
 using GameMechanics.Helpers;
 using GameMechanics.Player.Planet;
+using GameMechanics.Player.Weapon.Rocket;
 using UnityEngine;
 
 namespace UI.Panels.LvlUpPanel
@@ -12,15 +12,16 @@ namespace UI.Panels.LvlUpPanel
         [SerializeField] private GameObject lvlUpPanelPrefab;
         private LvlUpMenu _lvlUpMenu;
         private LvlUpMenuPresenter _lvlUpMenuPresenter;
-        private PlayerModel _model;
+        private PlayerModel _playerModel;
+        private RocketModel _rocketModel;
         private bool _isFirstLvlUpPanel = true;
         private bool _isAddRocket;
 
         public event Action<int> SelectSpaceship;
         public event Action AddRocket;
-        public void Init(PlayerModel model)
+        public void Init(PlayerModel playerModel)
         {
-            _model = model;
+            _playerModel = playerModel;
         }
         private IEnumerator InitLvlUpPanel()
         {
@@ -30,7 +31,12 @@ namespace UI.Panels.LvlUpPanel
                 yield return null;
             _lvlUpMenuPresenter = new LvlUpMenuPresenter(_lvlUpMenu);
             _lvlUpMenuPresenter.OnOpen(ChangeDamage, ChangeCooldownRocket, HideLvlUpPanel);
-            _lvlUpMenu.SetMoney(_model.Money.Amount);
+            _lvlUpMenu.SetMoney(_playerModel.Money.Amount);
+        }
+
+        public void RocketInit(RocketModel rocketModel)
+        {
+            _rocketModel = rocketModel;
         }
 
         public void ShowLvlUpPanel()
@@ -44,15 +50,15 @@ namespace UI.Panels.LvlUpPanel
             else
             {
                 _lvlUpMenu.gameObject.SetActive(true);
-                _lvlUpMenu.SetMoney(_model.Money.Amount);
+                _lvlUpMenu.SetMoney(_playerModel.Money.Amount);
             }
         }
         
         private void ChangeDamage(int damage, int index, int money)
         {
-            _model.Attack.Increase(damage);
-            _model.Money.Decrease(money);
-            if (_lvlUpMenu.enabled) _lvlUpMenu.SetMoney(_model.Money.Amount);
+            _playerModel.LaserAttack.Increase(damage);
+            _playerModel.Money.Decrease(money);
+            if (_lvlUpMenu.enabled) _lvlUpMenu.SetMoney(_playerModel.Money.Amount);
             SelectSpaceship?.Invoke(index);
         }
         
@@ -63,9 +69,9 @@ namespace UI.Panels.LvlUpPanel
                 AddRocket?.Invoke();
                 _isAddRocket = true;
             }
-            _model.Cooldown.SetAmount(time);
-            _model.Money.Decrease(money);
-            if (_lvlUpMenu.enabled) _lvlUpMenu.SetMoney(_model.Money.Amount);
+            _rocketModel.Cooldown.SetAmount(time);
+            _playerModel.Money.Decrease(money);
+            if (_lvlUpMenu.enabled) _lvlUpMenu.SetMoney(_playerModel.Money.Amount);
         }
 
         private void HideLvlUpPanel()

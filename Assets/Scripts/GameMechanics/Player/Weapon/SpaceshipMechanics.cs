@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using GameMechanics.Behaviors;
-using GameMechanics.Player.Planet;
+using GameMechanics.Player.Weapon.Rocket;
 using UnityEngine;
 
 namespace GameMechanics.Player.Weapon
@@ -17,6 +16,9 @@ namespace GameMechanics.Player.Weapon
 
         private event Action<Vector2> Shoot;
         public event Action<int> RocketCooldown;
+
+        public event Action<RocketModel> AddSpaceshipRocket;
+
         public void Init()
         {
             _spaceshipList.Add(Instantiate(spaceshipPrefab).GetComponent<Spaceship>());
@@ -54,11 +56,12 @@ namespace GameMechanics.Player.Weapon
             }
         }
 
-        public void AddSpaceshipWithRocket(CooldownBehavior cooldownBehavior)
+        public void AddSpaceshipWithRocket()
         {
             _spaceshipWithRockets = Instantiate(spaceshipWithRocketsPrefab).GetComponent<SpaceshipWithRockets>();
-            _spaceshipWithRockets.Init(new Vector2(-1f, -1.2f), cooldownBehavior);
+            _spaceshipWithRockets.Init(new Vector2(-1f, -1.2f));
             _spaceshipWithRockets.RocketCooldown += RocketCooldown;
+            AddSpaceshipRocket?.Invoke(_spaceshipWithRockets.GetRocketManager().Model);
             Shoot += _spaceshipWithRockets.ShotRacket;
         }
 

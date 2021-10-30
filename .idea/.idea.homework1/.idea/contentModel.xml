@@ -15,6 +15,10 @@
               <e p="ScaleBehavior.cs" t="Include" />
               <e p="TurnBehavior.cs" t="Include" />
             </e>
+            <e p="CameraScripts" t="Include">
+              <e p="CameraMechanics.cs" t="Include" />
+              <e p="CameraShake.cs" t="Include" />
+            </e>
             <e p="Enemy" t="Include">
               <e p="Asteroid" t="Include">
                 <e p="AsteroidController.cs" t="Include" />
@@ -54,7 +58,13 @@
               </e>
               <e p="PlayerMechanics.cs" t="Include" />
               <e p="Weapon" t="Include">
-                <e p="Rocket.cs" t="Include" />
+                <e p="Rocket" t="Include">
+                  <e p="RocketController.cs" t="Include" />
+                  <e p="RocketFactory.cs" t="Include" />
+                  <e p="RocketManager.cs" t="Include" />
+                  <e p="RocketModel.cs" t="Include" />
+                  <e p="RocketView.cs" t="Include" />
+                </e>
                 <e p="Spaceship.cs" t="Include" />
                 <e p="SpaceshipMechanics.cs" t="Include" />
                 <e p="SpaceshipWithRockets.cs" t="Include" />

@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace GameMechanics.Behaviors
 {
-    public class TurnBehavior : MonoBehaviour
+    public class TurnBehavior
     {
         public Quaternion GetRotationRelativeToAnotherObject(Vector3 positionRotatedObject, Vector3 positionRelativeToAnotherObject)
         {

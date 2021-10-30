@@ -174,7 +174,6 @@ GameObject:
   m_Component:
   - component: {fileID: 284706529768975610}
   - component: {fileID: 7542854168397745117}
-  - component: {fileID: 3739096460606736896}
   m_Layer: 0
   m_Name: Spaceship
   m_TagString: Untagged
@@ -224,18 +223,6 @@ MonoBehaviour:
   laserRenderer: {fileID: 1448001644473850475}
   shotEffect: {fileID: 5308253860619329559}
   hitEffectPrefab: {fileID: 3529574857045121534, guid: 00c30f22e47bc7e46a6c4e791e38f006, type: 3}
---- !u!114 &3739096460606736896
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2992461135999930834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f537af8a74bd63c4f87c43f6353fd276, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3432957145870371869
 GameObject:
   m_ObjectHideFlags: 0

@@ -63,6 +63,7 @@ namespace UI
             _uiLoserMenu.ReStart += ReStart;
 
             _uiLvlUpMenu.Init(_mainMechanics.PlayerManager.Model);
+            _mainMechanics.SpaceshipMechanics.AddSpaceshipRocket += _uiLvlUpMenu.RocketInit;
             _uiLvlUpMenu.SelectSpaceship += SelectSpaceship;
             _uiLvlUpMenu.AddRocket += AddRocket;
             
@@ -115,7 +116,7 @@ namespace UI
 
         private void AddRocket()
         {
-            _mainMechanics.SpaceshipMechanics.AddSpaceshipWithRocket(_mainMechanics.PlayerManager.Model.Cooldown);
+            _mainMechanics.SpaceshipMechanics.AddSpaceshipWithRocket();
         }
 
         private void ChangeTimeGoldenMode(string time, bool isEnable)
@@ -204,6 +205,7 @@ namespace UI
             _uiLoserMenu.ReStart -= ReStart;
             _uiLvlUpMenu.SelectSpaceship -= SelectSpaceship;
             
+            _mainMechanics.SpaceshipMechanics.AddSpaceshipRocket -= _uiLvlUpMenu.RocketInit;
             _mainMechanics.PlayerMechanics.GameOver -= _uiLoserMenu.ShowLoserPanel;
             _mainMechanics.SpaceshipMechanics.RocketCooldown -= StartRocketCooldown;
             _mainMechanics.ChangeScoreGoldenMode -= ChangeScoreGoldenMode;

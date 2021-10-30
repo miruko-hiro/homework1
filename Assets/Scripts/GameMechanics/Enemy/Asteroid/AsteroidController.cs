@@ -5,11 +5,9 @@ using UnityEngine;
 namespace GameMechanics.Enemy.Asteroid
 {
     [RequireComponent(
-        typeof(HealthBehavior), 
-        typeof(AttackBehavior),
-        typeof(MovementBehavior)
+        typeof(MovementBehavior),
+        typeof(ScaleBehavior)
     )]
-    [RequireComponent(typeof(ScaleBehavior))]
     public class AsteroidController: MonoBehaviour
     {
         public AsteroidModel Model { get; private set; }
@@ -19,16 +17,17 @@ namespace GameMechanics.Enemy.Asteroid
         {
             Model = model;
             View = view;
+            
+            InitModel();
+            InitView();
+            DefiningBehaviors();
+            InitHealth();
+            
             if (hpBar)
             {
                 Model.HpBar = hpBar;
                 InitHpBar();
             }
-            
-            InitHealth();
-            InitModel();
-            InitView();
-            DefiningBehaviors();
         }
 
         private void InitView()
@@ -47,16 +46,13 @@ namespace GameMechanics.Enemy.Asteroid
         
         private void InitHealth()
         {
-            if (!Model.Health)
-                Model.Health = GetComponent<HealthBehavior>();
+            Model.Health = new HealthBehavior();
             Model.Health.Decreased += View.ReAnimation;
             Model.Health.ChangeAmount += ChangeHealth;
         }
         
         private void InitHpBar()
         {
-            if (!Model.Health)
-                Model.Health = GetComponent<HealthBehavior>();
             Model.Health.ChangeAmount += Model.HpBar.RefreshHealth;
         }
 
@@ -72,7 +68,7 @@ namespace GameMechanics.Enemy.Asteroid
         
         private void DefiningBehaviors()
         {
-            Model.Attack = GetComponent<AttackBehavior>();
+            Model.Attack = new AttackBehavior();
             Model.Movement = GetComponent<MovementBehavior>();
             Model.Scale = GetComponent<ScaleBehavior>();
         }
@@ -97,14 +93,11 @@ namespace GameMechanics.Enemy.Asteroid
 
         public void OnClose()
         {
-            if (Model.Health)
+            Model.Health.Decreased -= View.ReAnimation;
+            Model.Health.ChangeAmount -= ChangeHealth;
+            if (Model.HpBar)
             {
-                Model.Health.Decreased -= View.ReAnimation;
-                Model.Health.ChangeAmount -= ChangeHealth;
-                if (Model.HpBar)
-                {
-                    Model.Health.ChangeAmount -= Model.HpBar.RefreshHealth;
-                }
+                Model.Health.ChangeAmount -= Model.HpBar.RefreshHealth;
             }
             
             Model.ChangePosition -= View.SetPosition;

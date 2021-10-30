@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 243379671}
   - component: {fileID: 243379670}
   - component: {fileID: 243379669}
+  - component: {fileID: 243379672}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -242,7 +243,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2402b4a7de384991a110b037fa483f2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 519420031}
 --- !u!4 &243379663
 Transform:
   m_ObjectHideFlags: 0
@@ -363,6 +363,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerManagerPrefab: {fileID: 3196959253474933562, guid: f1471b0dc64511840a635dc0f8b6c6b9, type: 3}
   explosionPlanetPrefab: {fileID: 3717305693762005740, guid: 259419db911f9e94786431d9743b0a84, type: 3}
+--- !u!114 &243379672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243379661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86ca8a4e3f954c1399f0bc9be37e2bb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 519420031}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,6 +388,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -466,6 +480,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e51773bf16924de6aeab8ae217edfeae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &566866193
 GameObject:
   m_ObjectHideFlags: 0

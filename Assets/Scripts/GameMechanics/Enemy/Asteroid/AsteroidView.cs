@@ -1,6 +1,7 @@
 ﻿using System;
 using GameMechanics.Player.Planet;
 using GameMechanics.Player.Weapon;
+using GameMechanics.Player.Weapon.Rocket;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -53,7 +54,7 @@ namespace GameMechanics.Enemy.Asteroid
         {
             if (other.gameObject.CompareTag("Rocket"))
             {
-                TakeDamage(other.gameObject.GetComponent<Rocket>().Damage);
+                TakeDamage(other.gameObject.GetComponent<RocketView>().GetDamage());
             }
         }
 
