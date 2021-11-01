@@ -1,4 +1,5 @@
 ﻿using System;
+using UI.Panels.LvlUpPanel.Improvement;
 
 namespace UI.Panels.LvlUpPanel
 {
@@ -11,17 +12,17 @@ namespace UI.Panels.LvlUpPanel
             _lvlUpMenu = lvlUpMenu;
         }
 
-        public void OnOpen(Action<int, int, int> actionChangeLvl, Action<int, int> actionChangeLvlRocket, Action actionClickComeBackButton)
+        public void OnOpen(Action<int, ImprovementType, int> actionChangeLvl, Action<int, int, int> actionChangeLvlRocket, Action actionClickComeBackButton)
         {
-            _lvlUpMenu.ChangeLvl += actionChangeLvl;
-            _lvlUpMenu.ChangeLvlRocket += actionChangeLvlRocket;
+            _lvlUpMenu.ChangeLvlTypeOne += actionChangeLvl;
+            _lvlUpMenu.ChangeLvlTypeFour += actionChangeLvlRocket;
             _lvlUpMenu.ComeBackButton.Click += actionClickComeBackButton;
         }
 
-        public void OnClose(Action<int, int, int> actionChangeLvl, Action<int, int> actionChangeLvlRocket, Action actionClickComeBackButton)
+        public void OnClose(Action<int, ImprovementType, int> actionChangeLvl, Action<int, int, int> actionChangeLvlRocket, Action actionClickComeBackButton)
         {
-            _lvlUpMenu.ChangeLvl -= actionChangeLvl;
-            _lvlUpMenu.ChangeLvlRocket -= actionChangeLvlRocket;
+            _lvlUpMenu.ChangeLvlTypeOne -= actionChangeLvl;
+            _lvlUpMenu.ChangeLvlTypeFour -= actionChangeLvlRocket;
             _lvlUpMenu.ComeBackButton.Click -= actionClickComeBackButton;
         }
     }

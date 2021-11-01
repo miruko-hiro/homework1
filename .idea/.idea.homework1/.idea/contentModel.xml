@@ -93,7 +93,14 @@
                 <e p="UILoserMenu.cs" t="Include" />
               </e>
               <e p="LvlUpPanel" t="Include">
-                <e p="ImprovementUI.cs" t="Include" />
+                <e p="Improvement" t="Include">
+                  <e p="ImprovementData.cs" t="Include" />
+                  <e p="ImprovementLevel.cs" t="Include" />
+                  <e p="ImprovementModel.cs" t="Include" />
+                  <e p="ImprovementPresenter.cs" t="Include" />
+                  <e p="ImprovementType.cs" t="Include" />
+                  <e p="ImprovementView.cs" t="Include" />
+                </e>
                 <e p="LvlUpMenu.cs" t="Include" />
                 <e p="LvlUpMenuPresenter.cs" t="Include" />
                 <e p="UILvlUpMenu.cs" t="Include" />

@@ -6,6 +6,7 @@ using UI.Panels;
 using UI.Panels.GoldenMode;
 using UI.Panels.LoserPanel;
 using UI.Panels.LvlUpPanel;
+using UI.Panels.LvlUpPanel.Improvement;
 using UI.Panels.StartMenu;
 using UI.PlayerUI;
 using UI.PlayerUI.PlayerCooldown;
@@ -101,14 +102,14 @@ namespace UI
             _uiGoldenMode.Score = score;
         }
 
-        private void SelectSpaceship(int index)
+        private void SelectSpaceship(ImprovementType type)
         {
-            switch (index)
+            switch (type)
             {
-                case 2:
+                case ImprovementType.Two:
                     _mainMechanics.SpaceshipMechanics.SpaceshipLvlUp();
                     break;
-                case 3:
+                case ImprovementType.Three:
                     _mainMechanics.SpaceshipMechanics.AddSpaceship();
                     break;
             }

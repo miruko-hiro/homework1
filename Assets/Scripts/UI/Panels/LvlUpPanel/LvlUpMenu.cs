@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UI.Buttons;
+using UI.Panels.LvlUpPanel.Improvement;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,234 +21,119 @@ namespace UI.Panels.LvlUpPanel
         [SerializeField] private Sprite iconImprovement04;
 
         [Space(10)] 
-        [SerializeField] private GameObject improvementPrefab01;
-        [SerializeField] private GameObject improvementPrefab02;
-        [SerializeField] private GameObject improvementPrefab03;
-        [SerializeField] private GameObject improvementPrefab04;
+        [SerializeField] private GameObject improvementPrefab;
         
-        private ImprovementUI _improvement01;
-        private string _damageTextImprovement01 = "Lvl {0}: {1} damage";
-        private string _damageUpTextImprovement01 = "Next {0}: {1} damage";
-        private int _lvlImprovement01 = 1;
-        private int _damageImprovement01 = 1;
-        private int _moneyImprovement01 = 5;
-        
-        private ImprovementUI _improvement02;
-        private string _damageTextImprovement02 = "Lvl {0}: x{1} damage";
-        private string _damageUpTextImprovement02  = "Next {0}: x{1} damage";
-        private int _lvlImprovement02 = 1;
-        private int _damageImprovement02 = 1;
-        private int _moneyImprovement02 = 10;
-        
-        private ImprovementUI _improvement03;
-        private string _damageTextImprovement03 = "Lvl {0}: x{1} damage";
-        private string _damageUpTextImprovement03  = "Next {0}: x{1} damage";
-        private int _lvlImprovement03 = 1;
-        private int _damageImprovement03 = 1;
-        private int _moneyImprovement03 = 20;
-        
-        private ImprovementUI _improvement04;
-        private string _damageTextImprovement04 = "Lvl {0}: {1}s reload";
-        private string _damageUpTextImprovement04  = "Next {0}: {1}s reload";
-        private int _lvlImprovement04 = 1;
-        private int _damageImprovement04 = 4;
-        private int _moneyImprovement04 = 0;
-        
+        private ImprovementPresenter _improvement01;
+        private ImprovementPresenter _improvement02;
+        private ImprovementPresenter _improvement03;
+        private ImprovementPresenter _improvement04;
+
+        private readonly ImprovementLevel _improvementLevel = new ImprovementLevel();
+
+        public event Action<int, ImprovementType, int> ChangeLvlTypeOne;
+        public event Action<int, int, int> ChangeLvlTypeFour;
         
         public bool IsInit { get; private set; }
-        public event Action<int, int, int> ChangeLvl;
-        public event Action<int, int> ChangeLvlRocket;
 
-        private IEnumerator Start()
+        private void Start()
         {
             ComeBackButton = comeBackButton.GetComponent<UIButton>();
+
+            _improvement01 = new ImprovementPresenter(new ImprovementModel(), Instantiate(improvementPrefab, transform).GetComponent<ImprovementView>());
+            _improvement01.OnOpen(LvlUpImprovement01);
+            _improvement01.Model.Icon = iconImprovement01;
+            _improvement01.Model.Type = ImprovementType.One;
+            InitImprovement(_improvement01.Model);
             
-            _improvement01 = improvementPrefab01.GetComponent<ImprovementUI>();
-            _improvement01.Icon = iconImprovement01;
-            _improvement01.Index = 1;
-            while (!_improvement01.LvlButton)
-                yield return null;
-            _improvement01.LvlButton.Click += LvlUpImprovement01;
-            SetDamageTextImprovement01();
-            SetDamageUpTextImprovement01();
-            SetMoneyImprovement01();
-            EnableImprovement01(false);
+            _improvement02 = new ImprovementPresenter(new ImprovementModel(), Instantiate(improvementPrefab, transform).GetComponent<ImprovementView>());
+            _improvement02.OnOpen(LvlUpImprovement02);
+            _improvement02.Model.Icon = iconImprovement02;
+            _improvement02.Model.Type = ImprovementType.Two;
+            _improvement02.View.transform.localPosition += new Vector3(0f, -200f, 0f);
+            InitImprovement(_improvement02.Model);
             
-            _improvement02 = improvementPrefab02.GetComponent<ImprovementUI>();
-            _improvement02.Icon = iconImprovement02;
-            _improvement02.Index = 2;
-            while (!_improvement02.LvlButton)
-                yield return null;
-            _improvement02.LvlButton.Click += LvlUpImprovement02;
-            SetDamageTextImprovement02();
-            SetDamageUpTextImprovement02();
-            SetMoneyImprovement02();
-            EnableImprovement02(false);
+            _improvement03 = new ImprovementPresenter(new ImprovementModel(), Instantiate(improvementPrefab, transform).GetComponent<ImprovementView>());
+            _improvement03.OnOpen(LvlUpImprovement03);
+            _improvement03.Model.Icon = iconImprovement03;
+            _improvement03.Model.Type = ImprovementType.Three;
+            _improvement03.View.transform.localPosition += new Vector3(0f, -400f, 0f);
+            InitImprovement(_improvement03.Model);
             
-            _improvement03 = improvementPrefab03.GetComponent<ImprovementUI>();
-            _improvement03.Icon = iconImprovement03;
-            _improvement03.Index = 3;
-            while (!_improvement03.LvlButton)
-                yield return null;
-            _improvement03.LvlButton.Click += LvlUpImprovement03;
-            SetDamageTextImprovement03();
-            SetDamageUpTextImprovement03();
-            SetMoneyImprovement03();
-            EnableImprovement03(false);
-            
-            _improvement04 = improvementPrefab04.GetComponent<ImprovementUI>();
-            _improvement04.Icon = iconImprovement04;
-            _improvement04.Index = 4;
-            while (!_improvement04.LvlButton)
-                yield return null;
-            _improvement04.LvlButton.Click += LvlUpImprovement04;
-            SetDamageTextImprovement04();
-            SetDamageUpTextImprovement04();
-            SetMoneyImprovement04();
-            EnableImprovement04(false);
+            _improvement04 = new ImprovementPresenter(new ImprovementModel(), Instantiate(improvementPrefab, transform).GetComponent<ImprovementView>());
+            _improvement04.OnOpen(LvlUpImprovement04);
+            _improvement04.Model.Icon = iconImprovement04;
+            _improvement04.Model.Type = ImprovementType.Four;
+            _improvement04.View.transform.localPosition += new Vector3(0f, -600f, 0f);
+            InitImprovement(_improvement04.Model);
 
             IsInit = true;
         }
 
-        public void LvlUpImprovement01()
+        private void InitImprovement(ImprovementModel model)
         {
-            _moneyImprovement01 += _moneyImprovement01;
-            ChangeLvl?.Invoke(_damageImprovement01, _improvement01.Index, _moneyImprovement01 / 2);
-            _lvlImprovement01 += 1;
-            _damageImprovement01 += 1;
-            SetDamageTextImprovement01();
-            SetDamageUpTextImprovement01();
-            SetMoneyImprovement01();
+            model.Level = 0;
+            model.Enable = false;
+            SaveData(model);
         }
 
-        public void LvlUpImprovement02()
+        private void LvlUp(ImprovementModel model)
         {
-            _moneyImprovement02 += _moneyImprovement02;
-            ChangeLvl?.Invoke(_damageImprovement02, _improvement02.Index, _moneyImprovement02 / 2);
-            _lvlImprovement02 += 1;
-            _damageImprovement02 *= 2;
-            SetDamageTextImprovement02();
-            SetDamageUpTextImprovement02();
-            SetMoneyImprovement02();
+            model.Level += 1;
+            SaveData(model);
         }
 
-        public void LvlUpImprovement03()
+        private void SaveData(ImprovementModel model)
         {
-            _moneyImprovement03 += _moneyImprovement03;
-            ChangeLvl?.Invoke(_damageImprovement03, _improvement03.Index, _moneyImprovement03 / 2);
-            _lvlImprovement03 += 1;
-            _damageImprovement03 *= 2;
-            SetDamageTextImprovement03();
-            SetDamageUpTextImprovement03();
-            SetMoneyImprovement03();
+            ImprovementData improvementData =_improvementLevel.GetImprovementData(model.Type, model.Level);
+            model.Text = improvementData.Text;
+            model.UpText = improvementData.UpText;
+            model.Money = improvementData.Money;
+            model.SpentMoney = improvementData.SpentMoney;
+            model.Damage = improvementData.Damage;
+            model.Cooldown = improvementData.Cooldown;
         }
 
-        public void LvlUpImprovement04()
+        private void LvlUpImprovement01()
         {
-            _moneyImprovement04 += _moneyImprovement04;
-            ChangeLvlRocket?.Invoke(_damageImprovement04, _moneyImprovement04 / 2);
-            _lvlImprovement04 += 1;
-            _damageImprovement04 -= 1;
-            SetDamageTextImprovement04();
-            SetDamageUpTextImprovement04();
-            SetMoneyImprovement04();
+            LvlUp(_improvement01.Model);
+            ChangeLvlTypeOne?.Invoke(_improvement01.Model.Damage, _improvement01.Model.Type, _improvement01.Model.SpentMoney);
         }
 
-        public void SetDamageTextImprovement01()
+
+        private void LvlUpImprovement02()
         {
-            _improvement01.DamageText = string.Format(_damageTextImprovement01, _lvlImprovement01, _damageImprovement01);
+            LvlUp(_improvement02.Model);
+            ChangeLvlTypeOne?.Invoke(_improvement02.Model.Damage, _improvement02.Model.Type, _improvement02.Model.SpentMoney);
         }
 
-        public void SetDamageUpTextImprovement01()
+
+        private void LvlUpImprovement03()
         {
-            _improvement01.DamageUpText = string.Format(_damageUpTextImprovement01, _lvlImprovement01 + 1, _damageImprovement01 + 1);
+            LvlUp(_improvement03.Model);
+            ChangeLvlTypeOne?.Invoke(_improvement03.Model.Damage, _improvement03.Model.Type, _improvement03.Model.SpentMoney);
         }
 
-        public void SetMoneyImprovement01()
-        {
-            _improvement01.Money = _moneyImprovement01.ToString();
-        }
 
-        public void EnableImprovement01(bool value)
+        private void LvlUpImprovement04()
         {
-            _improvement01.Enable = value;
+            LvlUp(_improvement04.Model);
+            ChangeLvlTypeFour?.Invoke(_improvement04.Model.Damage, _improvement04.Model.Cooldown, _improvement04.Model.SpentMoney);
         }
-
-        public void SetDamageTextImprovement02()
-        {
-            _improvement02.DamageText = string.Format(_damageTextImprovement02, _lvlImprovement02, _damageImprovement02);
-        }
-
-        public void SetDamageUpTextImprovement02()
-        {
-            _improvement02.DamageUpText = string.Format(_damageUpTextImprovement02, _lvlImprovement02 + 1, _damageImprovement02 * 2);
-        }
-
-        public void SetMoneyImprovement02()
-        {
-            _improvement02.Money = _moneyImprovement02.ToString();
-        }
-
-        public void EnableImprovement02(bool value)
-        {
-            _improvement02.Enable = value;
-        }
-
-        public void SetDamageTextImprovement03()
-        {
-            _improvement03.DamageText = string.Format(_damageTextImprovement03, _lvlImprovement03, _damageImprovement03);
-        }
-
-        public void SetDamageUpTextImprovement03()
-        {
-            _improvement03.DamageUpText = string.Format(_damageUpTextImprovement03, _lvlImprovement03 + 1, _damageImprovement03 * 2);
-        }
-
-        public void SetMoneyImprovement03()
-        {
-            _improvement03.Money = _moneyImprovement03.ToString();;
-        }
-
-        public void EnableImprovement03(bool value)
-        {
-            _improvement03.Enable = value;
-        }
-        
-        public void SetDamageTextImprovement04()
-        {
-            _improvement04.DamageText = string.Format(_damageTextImprovement04, _lvlImprovement04, _damageImprovement04);
-        }
-
-        public void SetDamageUpTextImprovement04()
-        {
-            _improvement04.DamageUpText = string.Format(_damageUpTextImprovement04, _lvlImprovement04 + 1, _damageImprovement04 - 2);
-        }
-
-        public void SetMoneyImprovement04()
-        {
-            _improvement04.Money = _moneyImprovement04.ToString();;
-        }
-
-        public void EnableImprovement04(bool value)
-        {
-            _improvement04.Enable = value;
-        }
-
         public void SetMoney(int amount)
         {
-            EnableImprovement01(_moneyImprovement01 <= amount);
-            EnableImprovement02(_moneyImprovement02 <= amount);
-            EnableImprovement03(_moneyImprovement03 <= amount);
-            EnableImprovement04(_moneyImprovement04 <= amount);
+            _improvement01.Model.Enable = _improvement01.Model.Money <= amount;
+            _improvement02.Model.Enable = _improvement02.Model.Money <= amount;
+            _improvement03.Model.Enable = _improvement03.Model.Money <= amount;
+            _improvement04.Model.Enable = _improvement04.Model.Money <= amount;
             money.text = amount.ToString();
         }
 
         private void OnDestroy()
         {
-            _improvement01.LvlButton.Click -= LvlUpImprovement01;
-            _improvement02.LvlButton.Click -= LvlUpImprovement02;
-            _improvement03.LvlButton.Click -= LvlUpImprovement03;
-            _improvement04.LvlButton.Click -= LvlUpImprovement04;
+            _improvement01.OnClose(LvlUpImprovement01);
+            _improvement02.OnClose(LvlUpImprovement02);
+            _improvement03.OnClose(LvlUpImprovement03);
+            _improvement04.OnClose(LvlUpImprovement04);
         }
     }
 }

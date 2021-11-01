@@ -3,6 +3,7 @@ using System.Collections;
 using GameMechanics.Helpers;
 using GameMechanics.Player.Planet;
 using GameMechanics.Player.Weapon.Rocket;
+using UI.Panels.LvlUpPanel.Improvement;
 using UnityEngine;
 
 namespace UI.Panels.LvlUpPanel
@@ -17,7 +18,7 @@ namespace UI.Panels.LvlUpPanel
         private bool _isFirstLvlUpPanel = true;
         private bool _isAddRocket;
 
-        public event Action<int> SelectSpaceship;
+        public event Action<ImprovementType> SelectSpaceship;
         public event Action AddRocket;
         public void Init(PlayerModel playerModel)
         {
@@ -54,22 +55,23 @@ namespace UI.Panels.LvlUpPanel
             }
         }
         
-        private void ChangeDamage(int damage, int index, int money)
+        private void ChangeDamage(int damage, ImprovementType type, int money)
         {
             _playerModel.LaserAttack.Increase(damage);
             _playerModel.Money.Decrease(money);
             if (_lvlUpMenu.enabled) _lvlUpMenu.SetMoney(_playerModel.Money.Amount);
-            SelectSpaceship?.Invoke(index);
+            SelectSpaceship?.Invoke(type);
         }
         
-        private void ChangeCooldownRocket(int time, int money)
+        private void ChangeCooldownRocket(int damage, int time, int money)
         {
             if (!_isAddRocket)
             {
                 AddRocket?.Invoke();
                 _isAddRocket = true;
             }
-            _rocketModel.Cooldown.SetAmount(time);
+            _rocketModel.Cooldown.Decrease(_rocketModel.Cooldown.Amount - time);
+            _rocketModel.Attack.Increase(damage);
             _playerModel.Money.Decrease(money);
             if (_lvlUpMenu.enabled) _lvlUpMenu.SetMoney(_playerModel.Money.Amount);
         }

@@ -20,7 +20,9 @@ namespace UI.PlayerUI.PlayerCooldown
 
         private IEnumerator StartCooldown()
         {
-            countdownAnimation["CooldownAnimation"].speed = 1f / _numericCountdown;
+            if (_numericCountdown != 0)
+                countdownAnimation["CooldownAnimation"].speed = 1f / _numericCountdown;
+            
             countdownAnimation.Play();
             while (_numericCountdown > 0)
             {

@@ -33,7 +33,7 @@ namespace GameMechanics.Player.Weapon
             _rocketManager = Instantiate(rocketManagerPrefab, transform).GetComponent<RocketManager>();
             _rocketManager.Exploded += ShowDamage;
             _rocketManager.Init(transform.position);
-            _rocketManager.Model.Attack.SetAmount(10);
+            _rocketManager.Model.Attack.SetAmount(0);
             _rocketManager.Model.Cooldown.SetAmount(5);
         }
 
