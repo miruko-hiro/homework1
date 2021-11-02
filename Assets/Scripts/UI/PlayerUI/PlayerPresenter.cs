@@ -12,7 +12,10 @@ namespace UI.PlayerUI
             _playerModel = playerModel;
         }
 
-        public void OnOpen(Action<int> actionChangeAmountOfMoney, Action<int> actionIncreasedMoney, Action<int> actionHealthDecreased, Action<int> actionHealthIncreased)
+        public void OnOpen(Action<int> actionChangeAmountOfMoney, 
+            Action<int> actionIncreasedMoney, 
+            Action<int> actionHealthDecreased, 
+            Action<int> actionHealthIncreased)
         {
             _playerModel.Money.ChangeAmount += actionChangeAmountOfMoney;
             _playerModel.Money.Increased += actionIncreasedMoney;
@@ -20,7 +23,10 @@ namespace UI.PlayerUI
             _playerModel.Health.Increased += actionHealthIncreased;
         }
 
-        public void OnClose(Action<int> actionChangeAmountOfMoney, Action<int> actionIncreasedMoney, Action<int> actionHealthDecreased, Action<int> actionHealthIncreased)
+        public void OnClose(Action<int> actionChangeAmountOfMoney, 
+            Action<int> actionIncreasedMoney, 
+            Action<int> actionHealthDecreased, 
+            Action<int> actionHealthIncreased)
         {
             _playerModel.Money.ChangeAmount -= actionChangeAmountOfMoney;
             _playerModel.Money.Increased -= actionIncreasedMoney;

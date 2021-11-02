@@ -90,6 +90,16 @@ namespace UI
             _mainMechanics.ChangeTimeGoldenMode += ChangeTimeGoldenMode;
         }
 
+        public void TakeOneLifeAway(int health)
+        {
+            _playerHealthUI.TakeOneLifeAway(health);
+        }
+
+        public void RestoreOneLife(int health)
+        {
+            _playerHealthUI.RestoreOneLife(health);
+        }
+
         public void OnClickStartMenu()
         {
             GameStateHelper.Pause();
@@ -174,12 +184,12 @@ namespace UI
             _startMenuButton.gameObject.SetActive(true);
         }
 
-        private void SetAmountOfMoney(int money)
+        public void SetAmountOfMoney(int money)
         {
             _moneyUI.AmountOfMoney = money.ToString();
         }
 
-        private void SetAmountOfAddedMoney(int addedMoney)
+        public void SetAmountOfAddedMoney(int addedMoney)
         {
             _moneyUI.AmountOfAddedMoney = addedMoney.ToString();
         }
