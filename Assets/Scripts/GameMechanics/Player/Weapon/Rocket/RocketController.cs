@@ -55,8 +55,8 @@ namespace GameMechanics.Player.Weapon.Rocket
         
         private void DefiningBehaviors()
         {
-            Model.Attack = new AttackBehavior();
-            Model.Cooldown = new CooldownBehavior();
+            Model.Attack = new Attack();
+            Model.Cooldown = new Cooldown();
         }
 
         private int GetDamage()

@@ -46,7 +46,7 @@ namespace GameMechanics.Enemy.Asteroid
         
         private void InitHealth()
         {
-            Model.Health = new HealthBehavior();
+            Model.Health = new Health();
             Model.Health.Decreased += View.ReAnimation;
             Model.Health.ChangeAmount += ChangeHealth;
         }
@@ -68,7 +68,7 @@ namespace GameMechanics.Enemy.Asteroid
         
         private void DefiningBehaviors()
         {
-            Model.Attack = new AttackBehavior();
+            Model.Attack = new Attack();
             Model.Movement = GetComponent<MovementBehavior>();
             Model.Scale = GetComponent<ScaleBehavior>();
         }

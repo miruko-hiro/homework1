@@ -24,13 +24,13 @@ namespace GameMechanics.Player.Planet
             
         private void DefiningBehaviors()
         {
-            Model.Money = new MoneyBehavior();
-            Model.LaserAttack = new AttackBehavior();
+            Model.Money = new Money();
+            Model.LaserAttack = new Attack();
         }
         
         private void InitHealth()
         {
-            Model.Health = new HealthBehavior();
+            Model.Health = new Health();
             Model.Health.ChangeAmount += ChangeHealth;
         }
 

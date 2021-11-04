@@ -20,8 +20,8 @@ namespace GameMechanics.Player.Planet
             }
         }
         
-        public HealthBehavior Health { get; set; }
-        public AttackBehavior LaserAttack { get; set; }
-        public MoneyBehavior Money { get; set; }
+        public Health Health { get; set; }
+        public Attack LaserAttack { get; set; }
+        public Money Money { get; set; }
     }
 }

@@ -1,16 +1,16 @@
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace GameMechanics.Behaviors
 {
-    public class AttackBehavior
+    public class Cooldown
     {
         public int Amount { get; private set; }
-
+        
         public event Action<int> ChangeAmount;
         public event Action<int> Increased;
         public event Action<int> Decreased;
-
+        
         public void SetAmount(int amount)
         {
             Amount = amount;

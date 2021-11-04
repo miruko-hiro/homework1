@@ -5,8 +5,8 @@ namespace GameMechanics.Player.Weapon.Rocket
 {
     public class RocketModel
     {
-        public AttackBehavior Attack { get; set; }
-        public CooldownBehavior Cooldown { get; set; }
+        public Attack Attack { get; set; }
+        public Cooldown Cooldown { get; set; }
         public Vector2 Position { get; set; }
     }
 }

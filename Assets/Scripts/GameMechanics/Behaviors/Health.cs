@@ -1,9 +1,9 @@
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace GameMechanics.Behaviors
 {
-    public class HealthBehavior
+    public class Health
     {
         public int MaxAmount { get; private set; }
         public int Amount { get; private set; }

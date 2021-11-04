@@ -7,8 +7,8 @@ namespace GameMechanics.Enemy.Asteroid
     public class AsteroidModel
     {
         public HealthBar HpBar { get; set; }
-        public HealthBehavior Health { get; set; }
-        public AttackBehavior Attack { get; set; }
+        public Health Health { get; set; }
+        public Attack Attack { get; set; }
         public MovementBehavior Movement { get; set; }
         public ScaleBehavior Scale  { get; set; }
         public event Action<Vector2> ChangePosition;

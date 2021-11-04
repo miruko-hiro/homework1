@@ -15,7 +15,6 @@ namespace GameMechanics.Player.Weapon
         [SerializeField] private GameObject damageTextPrefab;
         private DamageText _damageText;
         private TurnBehavior _turn;
-        private int _indexShot = 0;
         private bool _isEndCooldown = true;
         public event Action<int> RocketCooldown;
         
