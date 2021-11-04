@@ -20,72 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Лишние методы убраны из менеджеров">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/DamageDisplay/DamageTextMechanics.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/DamageDisplay/DamageTextMechanics.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/PlayerMechanics.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/SpaceshipMechanics.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenuPresenter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenuPresenter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/UILoserMenu.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/UILoserMenu.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenuPresenter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/UILvlUpMenu.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerHealth.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerMoney.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUp.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUp.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/CommonAsteroid.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/CommonAsteroid/AsteroidController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/CommonAsteroid/AsteroidFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/CommonAsteroid/AsteroidFactory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidFactory.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/CommonAsteroid/AsteroidManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/CommonAsteroid/AsteroidManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/CommonAsteroid/AsteroidModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/CommonAsteroid/AsteroidModel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidModel.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/CommonAsteroid/AsteroidView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidView.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/CommonAsteroid/HealthBar.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/HealthBar.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/CommonAsteroid/HealthBar.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/HealthBar.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/CommonAsteroid/IAsteroidMechanics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/IAsteroidMechanics.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/CommonAsteroid/IAsteroidMechanics.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/IAsteroidMechanics.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/CommonAsteroidMechanics.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/CommonAsteroidMechanics.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/DamageDisplay.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/DamageDisplay.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/DamageDisplay/DamageText.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/DamageDisplay/DamageText.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/DamageDisplay/DamageText.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/DamageDisplay/DamageText.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/ExplosionOfAsteroid.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/ExplosionOfAsteroid.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/ExplosionOfAsteroid/Explosion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/ExplosionOfAsteroid/Explosion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/ExplosionOfAsteroid/Explosion.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/ExplosionOfAsteroid/Explosion.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/ExplosionOfAsteroid/ExplosionMechanics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/ExplosionOfAsteroid/ExplosionMechanics.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/ExplosionOfAsteroid/ExplosionMechanics.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/ExplosionOfAsteroid/ExplosionMechanics.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/GoldenAsteroidMechanics.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/GoldenAsteroidMechanics.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/LvlUpAsteroidMechanics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/LvlUpAsteroidMechanics.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/AsteroidMechanics/LvlUpAsteroidMechanics.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/LvlUpAsteroidMechanics.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/ExitHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/ExitHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/ExitHelper.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/ExitHelper.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/GameStateHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/GameStateHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/GameStateHelper.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/GameStateHelper.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Planet.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Planet.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Planet/PlayerController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Planet/PlayerController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Planet/PlayerFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Planet/PlayerFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Planet/PlayerFactory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Planet/PlayerFactory.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Planet/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Planet/PlayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Planet/PlayerManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Planet/PlayerManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Planet/PlayerModel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Planet/PlayerModel.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Planet/PlayerView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Planet/PlayerView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Planet/PlayerView.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Planet/PlayerView.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PlayerMechanics/Spaceship.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Spaceship.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MoneyUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerMoney/MoneyUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MoneyUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerMoney/MoneyUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenu.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenu.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/UIStartMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/UIStartMenu.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerHealthUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerHealth/PlayerHealthUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerHealthUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerHealth/PlayerHealthUI.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/Icons/HUD/ButtonsBluish-gray.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Icons/HUD/ButtonsBluish-gray.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,13 +53,14 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Buttons/LvlUpButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/CommonAsteroidMechanics.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/ImprovementUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Unity/homework1/Assets/Scenes/MainScene.unity" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/ed/41adc166/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/DamageDisplay/DamageText.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerHealth/PlayerHealthUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/89/f24d8032/Action`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/AttackBehavior.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/ImprovementUI.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/ExplosionOfAsteroid/Explosion.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/a8/7892c479/RequireComponent.cs" root0="SKIP_HIGHLIGHTING" />
