@@ -7,17 +7,12 @@
           <e p="GameMechanics" t="Include">
             <e p="Behaviors" t="Include">
               <e p="AttackBehavior.cs" t="Include" />
-              <e p="CooldownBehavior.cs" t="Include" />
               <e p="HealthBehavior.cs" t="Include" />
               <e p="IEntityParameter.cs" t="Include" />
               <e p="MoneyBehavior.cs" t="Include" />
               <e p="MovementBehavior.cs" t="Include" />
               <e p="ScaleBehavior.cs" t="Include" />
               <e p="TurnBehavior.cs" t="Include" />
-            </e>
-            <e p="CameraScripts" t="Include">
-              <e p="CameraMechanics.cs" t="Include" />
-              <e p="CameraShake.cs" t="Include" />
             </e>
             <e p="Enemy" t="Include">
               <e p="Asteroid" t="Include">
@@ -58,16 +53,8 @@
               </e>
               <e p="PlayerMechanics.cs" t="Include" />
               <e p="Weapon" t="Include">
-                <e p="Rocket" t="Include">
-                  <e p="RocketController.cs" t="Include" />
-                  <e p="RocketFactory.cs" t="Include" />
-                  <e p="RocketManager.cs" t="Include" />
-                  <e p="RocketModel.cs" t="Include" />
-                  <e p="RocketView.cs" t="Include" />
-                </e>
                 <e p="Spaceship.cs" t="Include" />
                 <e p="SpaceshipMechanics.cs" t="Include" />
-                <e p="SpaceshipWithRockets.cs" t="Include" />
               </e>
             </e>
           </e>
@@ -93,14 +80,7 @@
                 <e p="UILoserMenu.cs" t="Include" />
               </e>
               <e p="LvlUpPanel" t="Include">
-                <e p="Improvement" t="Include">
-                  <e p="ImprovementData.cs" t="Include" />
-                  <e p="ImprovementLevel.cs" t="Include" />
-                  <e p="ImprovementModel.cs" t="Include" />
-                  <e p="ImprovementPresenter.cs" t="Include" />
-                  <e p="ImprovementType.cs" t="Include" />
-                  <e p="ImprovementView.cs" t="Include" />
-                </e>
+                <e p="ImprovementUI.cs" t="Include" />
                 <e p="LvlUpMenu.cs" t="Include" />
                 <e p="LvlUpMenuPresenter.cs" t="Include" />
                 <e p="UILvlUpMenu.cs" t="Include" />
@@ -119,9 +99,6 @@
               </e>
             </e>
             <e p="PlayerUI" t="Include">
-              <e p="PlayerCooldown" t="Include">
-                <e p="SkillCooldown.cs" t="Include" />
-              </e>
               <e p="PlayerHealth" t="Include">
                 <e p="PlayerHealthUI.cs" t="Include" />
               </e>
