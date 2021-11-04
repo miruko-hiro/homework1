@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GameMechanics.Behaviors
 {
-    public class HealthBehavior : MonoBehaviour, IEntityParameter
+    public class HealthBehavior : MonoBehaviour
     {
         public int MaxAmount { get; private set; }
         public int Amount { get; private set; }
