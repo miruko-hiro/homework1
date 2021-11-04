@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GameMechanics.Behaviors
 {
-    public class MoneyBehavior : IEntityParameter
+    public class MoneyBehavior
     {
         public int Amount { get; private set; }
         public event Action<int> ChangeAmount;

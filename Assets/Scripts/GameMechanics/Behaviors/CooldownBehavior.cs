@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GameMechanics.Behaviors
 {
-    public class CooldownBehavior : IEntityParameter
+    public class CooldownBehavior
     {
         public int Amount { get; private set; }
         

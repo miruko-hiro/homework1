@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace GameMechanics.Behaviors
 {
-    public class AttackBehavior : IEntityParameter
+    public class AttackBehavior
     {
         public int Amount { get; private set; }
 
