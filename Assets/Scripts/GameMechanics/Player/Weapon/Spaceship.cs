@@ -11,7 +11,7 @@ namespace GameMechanics.Player.Weapon
         [SerializeField] private SpriteRenderer shotEffect;
         [SerializeField] private GameObject hitEffectPrefab;
         private GameObject _hitEffect;
-        private TurnBehavior _turn;
+        private Turn _turn;
         
         private int _lvlIndex = -1;
 
@@ -19,7 +19,7 @@ namespace GameMechanics.Player.Weapon
         {
             _hitEffect = Instantiate(hitEffectPrefab);
             _hitEffect.SetActive(false);
-            _turn = new TurnBehavior();
+            _turn = new Turn();
             laserRenderer.useWorldSpace = true;
             shotEffect.enabled = false;
         }

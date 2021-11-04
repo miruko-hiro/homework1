@@ -14,14 +14,14 @@ namespace GameMechanics.Player.Weapon
         [SerializeField] private SpriteRenderer shotEffect;
         [SerializeField] private GameObject damageTextPrefab;
         private DamageText _damageText;
-        private TurnBehavior _turn;
+        private Turn _turn;
         private bool _isEndCooldown = true;
         public event Action<int> RocketCooldown;
         
         public void Init(Vector2 pos)
         {
             transform.position = pos;
-            _turn = new TurnBehavior();
+            _turn = new Turn();
             _damageText = Instantiate(damageTextPrefab).GetComponent<DamageText>();
             InitRocketManager();
             shotEffect.enabled = false;
