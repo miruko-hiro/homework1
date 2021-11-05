@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 8869183787268431525}
   - component: {fileID: 6140211214205506787}
   - component: {fileID: 8793412668068572969}
-  - component: {fileID: 5011114636913394573}
+  - component: {fileID: 6751969633374569862}
   m_Layer: 5
   m_Name: RocketCooldown
   m_TagString: Untagged
@@ -263,23 +263,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdown: {fileID: 3066663504230174370}
-  countdownAnimation: {fileID: 4199941407683112410}
---- !u!111 &5011114636913394573
-Animation:
+  countdownAnimation: {fileID: 0}
+--- !u!95 &6751969633374569862
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3115814669465117292}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 1161ffd6b37aac6429521d7c96c2c752, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 1161ffd6b37aac6429521d7c96c2c752, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3869322168347894aa82a02ce4c55230, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8322602142815250439
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,7 +294,7 @@ GameObject:
   - component: {fileID: 3961103186289620022}
   - component: {fileID: 8940677905603742970}
   - component: {fileID: 389599003951674085}
-  - component: {fileID: 4199941407683112410}
+  - component: {fileID: 3241197243286565585}
   m_Layer: 5
   m_Name: Cooldown
   m_TagString: Untagged
@@ -356,7 +359,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!111 &4199941407683112410
+--- !u!111 &3241197243286565585
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

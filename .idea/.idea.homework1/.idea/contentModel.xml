@@ -1001,6 +1001,7 @@
               <e p="LvlUpButton.cs" t="Include" />
               <e p="UIButton.cs" t="Include" />
             </e>
+            <e p="IMainUIManager.cs" t="Include" />
             <e p="MainUIManager.cs" t="Include" />
             <e p="Panels" t="Include">
               <e p="Creators" t="Include">
@@ -1043,17 +1044,24 @@
                 <e p="StartMenuPresenter.cs" t="Include" />
               </e>
             </e>
-            <e p="PlayerUI" t="Include">
+            <e p="Player" t="Include">
               <e p="PlayerCooldown" t="Include">
-                <e p="SkillCooldown.cs" t="Include" />
+                <e p="ISkillCooldownView.cs" t="Include" />
+                <e p="SkillCooldownPresenter.cs" t="Include" />
+                <e p="SkillCooldownView.cs" t="Include" />
               </e>
               <e p="PlayerHealth" t="Include">
-                <e p="PlayerHealthUI.cs" t="Include" />
+                <e p="HealthUIModel.cs" t="Include" />
+                <e p="HealthUIPresenter.cs" t="Include" />
+                <e p="HealthUIView.cs" t="Include" />
+                <e p="IHealthUIView.cs" t="Include" />
               </e>
               <e p="PlayerMoney" t="Include">
-                <e p="MoneyUI.cs" t="Include" />
+                <e p="IMoneyUIView.cs" t="Include" />
+                <e p="MoneyUIPresenter.cs" t="Include" />
+                <e p="MoneyUIView.cs" t="Include" />
               </e>
-              <e p="PlayerPresenter.cs" t="Include" />
+              <e p="PlayerUIManager.cs" t="Include" />
             </e>
             <e p="UI.asmdef" t="Include" />
           </e>

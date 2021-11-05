@@ -22,5 +22,10 @@ namespace GameMechanics
         {
             return _container.InstantiatePrefab(prefab, position, rotation, parent);
         }
+
+        public GameObject Spawn(GameObject prefab, Transform parent)
+        {
+            return _container.InstantiatePrefab(prefab, parent);
+        }
     }
 }

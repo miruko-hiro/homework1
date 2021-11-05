@@ -1175,10 +1175,9 @@ MonoBehaviour:
   startMenuManager: {fileID: 2035568804}
   loserMenuManager: {fileID: 1664536090}
   lvlUpMenuManager: {fileID: 1184499493}
+  playerUIManagerPrefab: {fileID: 2310375243644581950, guid: 9c8900a7bc624dd489d6d413c2dd489d, type: 3}
   cooldownPanelPrefab: {fileID: 3115814669465117292, guid: 661f7a7d4ece45948a7b4111b09d9be2, type: 3}
   goldenModeUIPrefab: {fileID: 4047835018900817285, guid: 0a236fc32d8f1f644a99f5559485f0d0, type: 3}
-  moneyUIPrefab: {fileID: 6149162015288212839, guid: ef5f70aabf9787945b7203160e7ccc3d, type: 3}
-  hpPlayerUIPrefab: {fileID: 8920555547061910434, guid: 07f4b0e06aac6fb4dbb18dd2e142a8c1, type: 3}
   controller: {fileID: 243379661}
   lvlUpButtonPrefab: {fileID: 8188064454355000100, guid: 906c93208865e1a4994b928514b12a2e, type: 3}
   startMenuButton: {fileID: 2489106327557233096}

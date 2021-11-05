@@ -3,49 +3,38 @@ using GameMechanics.Enemy;
 using GameMechanics.Helpers;
 using GameMechanics.Player.Planet;
 using GameMechanics.Player.Weapon;
-using UI.Buttons;
 using UI.Panels.GoldenMode;
 using UI.Panels.LoserPanel;
 using UI.Panels.LvlUpPanel;
 using UI.Panels.LvlUpPanel.Improvement;
 using UI.Panels.StartMenu;
-using UI.PlayerUI;
-using UI.PlayerUI.PlayerCooldown;
-using UI.PlayerUI.PlayerHealth;
-using UI.PlayerUI.PlayerMoney;
+using UI.Player;
+using UI.Player.PlayerCooldown;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Zenject;
 
 namespace UI
 {
-    public class MainUIManager : MonoBehaviour
+    public class MainUIManager : MonoBehaviour, IMainUIManager
     {
         [SerializeField] private StartMenuManager startMenuManager;
         [SerializeField] private LoserMenuManager loserMenuManager;
         [SerializeField] private LvlUpMenuManager lvlUpMenuManager;
-        
-        [Space(10)]
+
+        [Space(10)] 
+        [SerializeField] private GameObject playerUIManagerPrefab;
+        private PlayerUIManager _playerUIManager;
 
         [SerializeField] private GameObject cooldownPanelPrefab;
-        private SkillCooldown _skillCooldown;
+        private SkillCooldownView _skillCooldownView;
+        private SkillCooldownPresenter _skillCooldownPresenter;
         
         [SerializeField] private GameObject goldenModeUIPrefab;
         private UIGoldenMode _uiGoldenMode;
         private Animator _animatorGoldenMode;
-        
-        [SerializeField] private GameObject moneyUIPrefab;
-        private MoneyUI _moneyUI;
-
-        [SerializeField] private GameObject hpPlayerUIPrefab;
-        private PlayerHealthUI _playerHealthUI;
 
         [SerializeField] private GameObject controller;
         private MainManager _mainManager;
-        private PlayerPresenter _playerPresenter;
-        
-        [SerializeField] private GameObject lvlUpButtonPrefab;
-        private LvlUpButton _lvlUpButton;
         
         [SerializeField] private GameObject startMenuButton;
 
@@ -54,6 +43,7 @@ namespace UI
         private PlayerManager _playerManager;
         private SpaceshipManager _spaceshipManager;
         private GoldenAsteroidManager _goldenAsteroidManager;
+        private PrefabFactory _prefabFactory;
 
         private void Start()
         {
@@ -64,25 +54,20 @@ namespace UI
         [Inject]
         private void Construct(PlayerManager playerManager, 
             SpaceshipManager spaceshipManager, 
-            GoldenAsteroidManager goldenAsteroidManager)
+            GoldenAsteroidManager goldenAsteroidManager,
+            PrefabFactory prefabFactory)
         {
             _playerManager = playerManager;
             _spaceshipManager = spaceshipManager;
             _goldenAsteroidManager = goldenAsteroidManager;
+            _prefabFactory = prefabFactory;
         }
 
         private void StartGame()
         {
             InitMainUIElements();
             
-            _playerPresenter = new PlayerPresenter(_playerManager.Model, this);
-            _playerPresenter.OnOpen(SetAmountOfMoney, 
-                SetAmountOfAddedMoney, 
-                _playerHealthUI.TakeOneLifeAway, 
-                _playerHealthUI.RestoreOneLife);
-            
             _playerManager.GameOver += loserMenuManager.ShowLoserPanel;
-            _spaceshipManager.RocketCooldown += StartRocketCooldown;
             _spaceshipManager.AddSpaceshipRocket += lvlUpMenuManager.RocketInit;
             _goldenAsteroidManager.AsteroidDied += ChangeScoreGoldenMode;
             _mainManager.ChangeTimeGoldenMode += ChangeTimeGoldenMode;
@@ -96,17 +81,6 @@ namespace UI
             lvlUpMenuManager.AddRocket += AddRocket;
             lvlUpMenuManager.ContinueGame += EnableMainElements;
         }
-
-        public void TakeOneLifeAway(int health)
-        {
-            _playerHealthUI.TakeOneLifeAway(health);
-        }
-
-        public void RestoreOneLife(int health)
-        {
-            _playerHealthUI.RestoreOneLife(health);
-        }
-
         public void OnClickStartMenu()
         {
             GameStateHelper.Pause();
@@ -135,6 +109,10 @@ namespace UI
         private void AddRocket()
         {
             _spaceshipManager.AddSpaceshipWithRocket();
+            if (_skillCooldownPresenter != null) return;
+            _skillCooldownView = Instantiate(cooldownPanelPrefab, transform).GetComponent<SkillCooldownView>();
+            _skillCooldownPresenter = new SkillCooldownPresenter(_spaceshipManager, _skillCooldownView);
+            _skillCooldownPresenter.OnOpen();
         }
 
         private void ChangeTimeGoldenMode(string time, bool isEnable)
@@ -159,19 +137,11 @@ namespace UI
             _uiGoldenMode.Time = time;
         }
 
-        private void StartRocketCooldown(int numericCountdown)
-        {
-            if(!_skillCooldown)
-                _skillCooldown = Instantiate(cooldownPanelPrefab, transform).GetComponent<SkillCooldown>();
-            _skillCooldown.EnableAnimation(numericCountdown);
-        }
-
         private void InitMainUIElements()
         {
-            _moneyUI = Instantiate(moneyUIPrefab, transform).GetComponent<MoneyUI>();
-            _playerHealthUI = Instantiate(hpPlayerUIPrefab, transform).GetComponent<PlayerHealthUI>();
-            _lvlUpButton = Instantiate(lvlUpButtonPrefab, transform).GetComponent<LvlUpButton>();
-            _lvlUpButton.Click += LvlUpButtonClick;
+            _playerUIManager = _prefabFactory.Spawn(playerUIManagerPrefab, transform).GetComponent<PlayerUIManager>();
+            _playerUIManager.Init();
+            _playerUIManager.LvlUpButtonClick += LvlUpButtonClick;
             DisableMainElements();
         }
 
@@ -183,28 +153,14 @@ namespace UI
 
         private void DisableMainElements()
         {
-            _moneyUI.gameObject.SetActive(false);
-            _playerHealthUI.gameObject.SetActive(false);
-            _lvlUpButton.gameObject.SetActive(false);
+            _playerUIManager.DisableElements();
             startMenuButton.gameObject.SetActive(false);
         }
 
         private void EnableMainElements()
         {
-            _moneyUI.gameObject.SetActive(true);
-            _playerHealthUI.gameObject.SetActive(true);
-            _lvlUpButton.gameObject.SetActive(true);
+            _playerUIManager.EnableElements();
             startMenuButton.gameObject.SetActive(true);
-        }
-
-        public void SetAmountOfMoney(int money)
-        {
-            _moneyUI.AmountOfMoney = money.ToString();
-        }
-
-        public void SetAmountOfAddedMoney(int addedMoney)
-        {
-            _moneyUI.AmountOfAddedMoney = addedMoney.ToString();
         }
 
         private void ReStart()
@@ -215,16 +171,9 @@ namespace UI
 
         private void OnDestroy()
         {
-            
-            _lvlUpButton.Click -=  LvlUpButtonClick;
-
-            _playerPresenter.OnClose(SetAmountOfMoney, 
-                SetAmountOfAddedMoney, 
-                _playerHealthUI.TakeOneLifeAway, 
-                _playerHealthUI.RestoreOneLife);
-            
 
             _mainManager.MainMechanicsCreate -= StartGame;
+            _playerUIManager.LvlUpButtonClick -= LvlUpButtonClick;
             startMenuManager.StartGame -= EnableMainElements;
             loserMenuManager.IncludedLoserMenu -= DisableMainElements;
             loserMenuManager.ReStart -= ReStart;
@@ -232,9 +181,10 @@ namespace UI
             
             _playerManager.GameOver -= loserMenuManager.ShowLoserPanel;
             _spaceshipManager.AddSpaceshipRocket -= lvlUpMenuManager.RocketInit;
-            _spaceshipManager.RocketCooldown -= StartRocketCooldown;
             _goldenAsteroidManager.AsteroidDied -= ChangeScoreGoldenMode;
             _mainManager.ChangeTimeGoldenMode -= ChangeTimeGoldenMode;
+            
+            _skillCooldownPresenter?.OnClose();
         }
     }
 }

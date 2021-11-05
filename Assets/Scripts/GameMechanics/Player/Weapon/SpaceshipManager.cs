@@ -59,9 +59,14 @@ namespace GameMechanics.Player.Weapon
         {
             _spaceshipWithRockets = Instantiate(spaceshipWithRocketsPrefab).GetComponent<SpaceshipWithRockets>();
             _spaceshipWithRockets.Init(new Vector2(-1f, -1.2f));
-            _spaceshipWithRockets.RocketCooldown += RocketCooldown;
+            _spaceshipWithRockets.RocketCooldown += StartRocketCooldown;
             AddSpaceshipRocket?.Invoke(_spaceshipWithRockets.GetRocketManager().Model);
             Shoot += _spaceshipWithRockets.ShotRacket;
+        }
+
+        private void StartRocketCooldown(int numericCountdown)
+        {
+            RocketCooldown?.Invoke(numericCountdown);
         }
 
         private void OnDestroy()
@@ -77,7 +82,7 @@ namespace GameMechanics.Player.Weapon
             if (_spaceshipWithRockets)
             {
                 Shoot -= _spaceshipWithRockets.ShotRacket;
-                _spaceshipWithRockets.RocketCooldown -= RocketCooldown;
+                _spaceshipWithRockets.RocketCooldown -= StartRocketCooldown;
             }
         }
     }

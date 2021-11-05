@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 6149162015288212857}
   - component: {fileID: 4469952425943888269}
   m_Layer: 10
-  m_Name: Money
+  m_Name: MoneyUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -378,5 +378,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountOfMoney: {fileID: 6149162013478778241}
-  _animation: {fileID: 8932285735088812212}
+  animationAddedMoney: {fileID: 8932285735088812212}
   amountOfAddedMoney: {fileID: 5965346609374760997}
