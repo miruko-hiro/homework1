@@ -22,57 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Добавлен плагин Zenject, заменены прокидывания объектов на inject. Классы Mechanics разбиты на отдельные Managers.">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/IMainUIManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/IMainUIManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/ISkillCooldownView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/ISkillCooldownView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/SkillCooldownPresenter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/SkillCooldownPresenter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerHealth/HealthUIModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerHealth/HealthUIModel.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerHealth/HealthUIPresenter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerHealth/HealthUIPresenter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerHealth/HealthUIView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerHealth/IHealthUIView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerHealth/IHealthUIView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/IMoneyUIView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/IMoneyUIView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/MoneyUIPresenter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/MoneyUIPresenter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/MoneyUIView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerUIManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerUIManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Cooldown/EnableCooldownAnimation.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/Cooldown/EnableCooldownAnimation.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUp/LvlUp.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUp/LvlUp.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/MainUI.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/MainUI/Money.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/MainUI/Money.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/MainUI/OneLifePlayer.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/MainUI/OneLifePlayer.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/MainUI/PlayerHP.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/MainUI/PlayerHP.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/RocketCooldown.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/RocketCooldown.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/SpaceshipManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/SpaceshipManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PrefabFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PrefabFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MainUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainUIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerCooldown.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerCooldown/SkillCooldown.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/SkillCooldownView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerCooldown/SkillCooldown.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/SkillCooldownView.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerHealth.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerHealth.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerHealth/PlayerHealthUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerHealth/PlayerHealthUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerHealth/HealthUIView.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerMoney.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerMoney/MoneyUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerMoney/MoneyUI.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/MoneyUIView.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerPresenter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerPresenter.cs.meta" beforeDir="false" />
-    </list>
+    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Добавлен плагин Zenject, заменены прокидывания объектов на inject. Классы Mechanics разбиты на отдельные Managers." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -239,7 +189,7 @@
       <workItem from="1635766492806" duration="18371000" />
       <workItem from="1635835905635" duration="507000" />
       <workItem from="1636100751215" duration="7475000" />
-      <workItem from="1636124247862" duration="11586000" />
+      <workItem from="1636124247862" duration="11960000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1634104804696</created>
@@ -493,7 +443,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636114044339</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="UI разбит на MVP">
+      <created>1636136299835</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1636136299835</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -515,7 +472,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Rename behaviors" />
     <MESSAGE value="Добавлена смерть игрока и отнимание жизни при столкновении планеты с астероидом" />
     <MESSAGE value="Добавлена панель проигрыша, кнопка выхода и кнопка рестарта" />
     <MESSAGE value="Добавлено меню улучшений и увеличение уровня игрока и астероидов" />
@@ -540,7 +496,8 @@
     <MESSAGE value="Добавлена тряска камеры после уничтожения астероида, Camera вынесена в отдельную Mechanics" />
     <MESSAGE value="Переписан LvlUpMenu" />
     <MESSAGE value="Добавлен плагин Zenject, заменены прокидывания объектов на inject. Классы Mechanics разбиты на отдельные Managers." />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен плагин Zenject, заменены прокидывания объектов на inject. Классы Mechanics разбиты на отдельные Managers." />
+    <MESSAGE value="UI разбит на MVP" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI разбит на MVP" />
   </component>
   <component name="WindowStateProjectService">
     <state x="794" y="220" key="RiderGenerateDialog" timestamp="1636131876872">
@@ -551,10 +508,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1635084361042" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1636114065362">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1636136302330">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1636114065362" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1636136302330" />
     <state x="562" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1635767247892">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
