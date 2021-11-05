@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 namespace GameMechanics.Enemy
 {
     [RequireComponent(typeof(LvlUpAsteroidMechanics))]
-    public class CommonAsteroidMechanics : MonoBehaviour, IAsteroidMechanics
+    public class CommonAsteroidManager : MonoBehaviour, IAsteroidMechanics
     {
         [SerializeField] private GameObject asteroidManagerPrefab;
         private AsteroidManager[] _asteroidManagers = new AsteroidManager[3];

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace UI.Panels.LoserPanel
 {
-    public class UILoserMenu : MonoBehaviour
+    public class LoserMenuManager : MonoBehaviour
     {
         [SerializeField] private GameObject loserPanelPrefab;
         private LoserMenu _loserMenu;

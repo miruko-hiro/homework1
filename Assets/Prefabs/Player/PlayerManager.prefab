@@ -45,3 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerController: {fileID: 8094008105565362382, guid: 672a48617240e1f4e9e337ada3b7b7a7, type: 3}
   playerPrefab: {fileID: 449306960137386474, guid: 396e1d0e651171a4b8f2d35f2e765f51, type: 3}
+  explosionPlanetPrefab: {fileID: 3717305693762005740, guid: 259419db911f9e94786431d9743b0a84, type: 3}

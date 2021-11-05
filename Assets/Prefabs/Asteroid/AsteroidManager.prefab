@@ -45,4 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asteroidController: {fileID: 5982583492534150439, guid: 1343802b0a28ec9429679dc8380218dc, type: 3}
   asteroidPrefab: {fileID: 3200001526204944396, guid: 2ade28757c60cd641a04d7a729cb9324, type: 3}
+  goldenAsteroidPrefab: {fileID: 8402723726052423036, guid: 695a02149a348f64aa70ceaf70767f60, type: 3}
   healthBarPrefab: {fileID: 2238645166617158734, guid: 38526d7001fa3424a8d2ecd8e7fa42e1, type: 3}

@@ -2,7 +2,7 @@
 
 namespace GameMechanics.CameraScripts
 {
-    public class CameraMechanics : MonoBehaviour
+    public class CameraManager : MonoBehaviour
     {
         [SerializeField] private Camera mainCamera;
         private Animator _animatorMainCamera;

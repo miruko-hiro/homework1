@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace UI.Panels.Creators
 {
-    public class UICreatorsMenu : MonoBehaviour
+    public class CreatorsMenuManager : MonoBehaviour
     {
         [SerializeField] private GameObject creatorsMenuPrefab;
         private CreatorsMenu _creatorsMenu;

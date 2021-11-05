@@ -3,19 +3,13 @@ using UnityEngine;
 
 namespace GameMechanics.Enemy.ExplosionOfAsteroid
 {
-    public class ExplosionMechanics : MonoBehaviour
+    public class ExplosionManager : MonoBehaviour
     {
         [SerializeField] private GameObject explosionPrefab;
         [SerializeField] private GameObject explosionParent;
         private Explosion[] _explosionArray = new Explosion[5];
         private int _index = 0;
-
-        private void Start()
-        {
-            InitExplosions();
-        }
-
-        private void InitExplosions()
+        public void Init()
         {
             for (int i = 0; i < _explosionArray.Length; i++)
             {

@@ -7,6 +7,7 @@ namespace GameMechanics.Enemy.Asteroid
     {
         [SerializeField] private GameObject asteroidController;
         [SerializeField] private GameObject asteroidPrefab;
+        [SerializeField] private GameObject goldenAsteroidPrefab;
         [SerializeField] private GameObject healthBarPrefab;
         private AsteroidController _controller;
         public AsteroidModel Model { get; private set; }
@@ -16,6 +17,15 @@ namespace GameMechanics.Enemy.Asteroid
         public void Init()
         {
             _controller = new AsteroidFactory().Load(asteroidController, asteroidPrefab, healthBarPrefab, transform);
+            Model = _controller.Model;
+            View = _controller.View;
+            Model.Died += NotifyAboutDeath;
+            Model.ReachedLineOfDestroy += NotifyAboutEndOfCard;
+        }
+        
+        public void GoldenInit()
+        {
+            _controller = new AsteroidFactory().Load(asteroidController, goldenAsteroidPrefab, transform);
             Model = _controller.Model;
             View = _controller.View;
             Model.Died += NotifyAboutDeath;

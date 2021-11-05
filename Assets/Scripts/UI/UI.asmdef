@@ -2,7 +2,8 @@
     "name": "UI",
     "rootNamespace": "",
     "references": [
-        "GUID:95d05336e8ebe3f4ebfc0c7b787abe79"
+        "GUID:95d05336e8ebe3f4ebfc0c7b787abe79",
+        "GUID:0d8beb7f090555447a6cf5ce9e54dbb4"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -13,9 +13,7 @@ namespace GameMechanics
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 OnTouch?.Invoke();
-            }
-
-            if (Input.GetMouseButtonDown(0))
+            } else if (Input.GetMouseButtonDown(0))
             {
                 OnClick?.Invoke();
             }

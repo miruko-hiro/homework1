@@ -2,7 +2,7 @@
 
 namespace GameMechanics.Enemy.DamageDisplay
 {
-    public class DamageTextMechanics : MonoBehaviour
+    public class DamageTextManager : MonoBehaviour
     {
         [SerializeField] private GameObject damageTextPrefab;
         [SerializeField] private GameObject damageTextParent;

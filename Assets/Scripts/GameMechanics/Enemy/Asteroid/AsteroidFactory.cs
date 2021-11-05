@@ -10,13 +10,24 @@ namespace GameMechanics.Enemy.Asteroid
             
             AsteroidView view = Object.Instantiate(asteroidPrefab, controller.transform).GetComponent<AsteroidView>();
 
-            HealthBar hpBar = null;
-            if (healthBarPrefab)
-                hpBar = Object.Instantiate(healthBarPrefab, view.transform).GetComponent<HealthBar>();
+            HealthBar hpBar  = Object.Instantiate(healthBarPrefab, view.transform).GetComponent<HealthBar>();
             
             AsteroidModel model = new AsteroidModel();
             
             controller.OnOpen(model, view, hpBar);
+
+            return controller;
+        }
+        
+        public AsteroidController Load(GameObject asteroidController, GameObject asteroidPrefab, Transform transform)
+        {
+            AsteroidController controller = Object.Instantiate(asteroidController, transform).GetComponent<AsteroidController>();
+            
+            AsteroidView view = Object.Instantiate(asteroidPrefab, controller.transform).GetComponent<AsteroidView>();
+            
+            AsteroidModel model = new AsteroidModel();
+            
+            controller.OnOpen(model, view);
 
             return controller;
         }

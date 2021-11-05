@@ -6,10 +6,12 @@ namespace UI.PlayerUI
     public class PlayerPresenter
     {
         private readonly PlayerModel _playerModel;
+        private readonly MainUIManager _mainUIManager;
 
-        public PlayerPresenter(PlayerModel playerModel)
+        public PlayerPresenter(PlayerModel playerModel, MainUIManager mainUIManager)
         {
             _playerModel = playerModel;
+            _mainUIManager = mainUIManager;
         }
 
         public void OnOpen(Action<int> actionChangeAmountOfMoney, 

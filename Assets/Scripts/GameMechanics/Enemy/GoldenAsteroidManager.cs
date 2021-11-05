@@ -7,9 +7,9 @@ using Random = UnityEngine.Random;
 namespace GameMechanics.Enemy
 {
     [RequireComponent(typeof(LvlUpAsteroidMechanics))]
-    public class GoldenAsteroidMechanics : MonoBehaviour, IAsteroidMechanics
+    public class GoldenAsteroidManager : MonoBehaviour, IAsteroidMechanics
     {
-        [SerializeField] private GameObject goldenAsteroidManagerPrefab;
+        [SerializeField] private GameObject asteroidManagerPrefab;
         private AsteroidManager[] _asteroidManagers = new AsteroidManager[5];
 
         private LvlUpAsteroidMechanics _lvlUpAsteroidMechanics;
@@ -20,7 +20,7 @@ namespace GameMechanics.Enemy
         
         public event Action<int> AsteroidDroppedMoney;
         public event Action<Vector2> AsteroidExploded;
-        public event Action AsteroidDied;
+        public event Action<int> AsteroidDied;
 
         public void Init()
         {
@@ -32,8 +32,8 @@ namespace GameMechanics.Enemy
         {
             for (int i = 0; i < _asteroidManagers.Length; i++)
             {
-                _asteroidManagers[i] = Instantiate(goldenAsteroidManagerPrefab, transform).GetComponent<AsteroidManager>();
-                _asteroidManagers[i].Init();
+                _asteroidManagers[i] = Instantiate(asteroidManagerPrefab, transform).GetComponent<AsteroidManager>();
+                _asteroidManagers[i].GoldenInit();
                 _asteroidManagers[i].transform.position = new Vector2(-10f, 0f);
                 _asteroidManagers[i].Died += DeadAsteroid;
                 _asteroidManagers[i].ReachedLineOfDestroy += ReachedLineOfDestroy;
@@ -80,7 +80,7 @@ namespace GameMechanics.Enemy
         private void DeadAsteroid(AsteroidManager asteroidManager)
         {
             _totalKilledAsteroids += 1;
-            AsteroidDied?.Invoke();
+            AsteroidDied?.Invoke(_totalKilledAsteroids);
             ShowDeadAsteroid(asteroidManager);
         }
         

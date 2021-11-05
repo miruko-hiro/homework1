@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace GameMechanics.Player.Weapon
 {
-    public class SpaceshipMechanics : MonoBehaviour
+    public class SpaceshipManager : MonoBehaviour
     {
         [SerializeField] private GameObject spaceshipPrefab;
         private List<Spaceship> _spaceshipList = new List<Spaceship>();
@@ -16,7 +16,6 @@ namespace GameMechanics.Player.Weapon
 
         private event Action<Vector2> Shoot;
         public event Action<int> RocketCooldown;
-
         public event Action<RocketModel> AddSpaceshipRocket;
 
         public void Init()

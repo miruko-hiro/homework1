@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace UI.Panels.Settings
 {
-    public class UISettingsMenu : MonoBehaviour
+    public class SettingsMenuManager : MonoBehaviour
     {
         [SerializeField] private GameObject settingsMenuPrefab;
         private SettingsMenu _settingsMenu;

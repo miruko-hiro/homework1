@@ -30,6 +30,17 @@ namespace GameMechanics.Enemy.Asteroid
             }
         }
 
+        public void OnOpen(AsteroidModel model, AsteroidView view)
+        {
+            Model = model;
+            View = view;
+            
+            InitModel();
+            InitView();
+            DefiningBehaviors();
+            InitHealth();
+        }
+
         private void InitView()
         {
             View.Died += KillAsteroid;
