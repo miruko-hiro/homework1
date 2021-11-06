@@ -5,9 +5,9 @@ using UnityEngine;
 
 namespace GameMechanics.Helpers
 {
-    public static class ExitHelper
+    public class ExitHelper
     {
-        public static void Exit()
+        public void Exit()
         {
 #if UNITY_EDITOR
             EditorApplication.ExitPlaymode();

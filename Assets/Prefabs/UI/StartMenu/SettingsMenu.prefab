@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 362208769879103182}
   - component: {fileID: 362208769879103183}
   - component: {fileID: 362208769879103180}
+  - component: {fileID: 1849321689386390266}
   m_Layer: 5
   m_Name: SoundButton
   m_TagString: Untagged
@@ -120,9 +121,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 362208771678499880}
-        m_TargetAssemblyTypeName: UI.Panels.Settings.SettingsMenu, UI
-        m_MethodName: OnClickSound
+      - m_Target: {fileID: 1849321689386390266}
+        m_TargetAssemblyTypeName: UI.Panels.StartMenu.SettingsButton.SoundButton.SoundButtonView,
+          UI
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -132,6 +134,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1849321689386390266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362208769879103178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b156ed5352457f9cebb4d8c9a8b334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 362208769879103183}
 --- !u!1 &362208770564093025
 GameObject:
   m_ObjectHideFlags: 0
@@ -144,6 +159,7 @@ GameObject:
   - component: {fileID: 362208770564093029}
   - component: {fileID: 362208770564093026}
   - component: {fileID: 362208770564093027}
+  - component: {fileID: 6343444357767956700}
   m_Layer: 5
   m_Name: MusicButton
   m_TagString: Untagged
@@ -252,9 +268,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 362208771678499880}
-        m_TargetAssemblyTypeName: UI.Panels.Settings.SettingsMenu, UI
-        m_MethodName: OnClickMusic
+      - m_Target: {fileID: 6343444357767956700}
+        m_TargetAssemblyTypeName: UI.Panels.StartMenu.SettingsButton.MusicButton.MusicButtonView,
+          UI
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -264,6 +281,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6343444357767956700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362208770564093025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbb2e5c260764161a5e720b266d1865d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 362208770564093026}
 --- !u!1 &362208770616800223
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,6 +560,7 @@ GameObject:
   - component: {fileID: 362208771385940753}
   - component: {fileID: 362208771385940750}
   - component: {fileID: 362208771385940751}
+  - component: {fileID: 5773887969673478680}
   m_Layer: 5
   m_Name: ReturnButton
   m_TagString: Untagged
@@ -638,9 +669,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 362208771678499880}
-        m_TargetAssemblyTypeName: UI.Panels.Settings.SettingsMenu, UI
-        m_MethodName: OnClickReturn
+      - m_Target: {fileID: 5773887969673478680}
+        m_TargetAssemblyTypeName: UI.Buttons.UIButton, UI
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -650,6 +681,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5773887969673478680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362208771385940749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1d6eba76aa415ca8aba1206078c9af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &362208771678499878
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +704,7 @@ GameObject:
   - component: {fileID: 362208771678499881}
   - component: {fileID: 362208771678499882}
   - component: {fileID: 362208771678499883}
-  - component: {fileID: 362208771678499880}
+  - component: {fileID: 3416633450707612701}
   m_Layer: 5
   m_Name: SettingsMenu
   m_TagString: Untagged
@@ -727,7 +770,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &362208771678499880
+--- !u!114 &3416633450707612701
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -736,9 +779,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 362208771678499878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecbdcbdf5918483684513117f6bc03b4, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f6d731ac3ea4cf48f888137b2c0da66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundButtonView: {fileID: 1849321689386390266}
+  musicButtonView: {fileID: 6343444357767956700}
+  backButtonView: {fileID: 5773887969673478680}
 --- !u!1 &362208771865047839
 GameObject:
   m_ObjectHideFlags: 0

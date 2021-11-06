@@ -11,7 +11,7 @@ namespace UI.Panels.LoserPanel
         [SerializeField] private GameObject exitButtonGameObject;
         public UIButton ExitButton { get; private set; }
 
-        private void Start()
+        public void Init()
         {
             ContinueButton = continueButtonGameObject.GetComponent<UIButton>();
             ExitButton = exitButtonGameObject.GetComponent<UIButton>();

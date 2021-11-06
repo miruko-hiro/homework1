@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 928229985710917972}
   - component: {fileID: 928229985710917974}
   - component: {fileID: 928229985710917975}
-  - component: {fileID: 5848795848766367758}
   m_Layer: 10
   m_Name: StartMenu
   m_TagString: Untagged
@@ -77,18 +76,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5848795848766367758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 928229985710917973}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f237ff53ec2a3e45be566280683cc4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &928229985921408113
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +480,7 @@ GameObject:
   - component: {fileID: 928229986546686383}
   - component: {fileID: 928229986546686380}
   - component: {fileID: 928229986546686381}
+  - component: {fileID: 3859710612664097350}
   m_Layer: 10
   m_Name: SettingsButton
   m_TagString: Untagged
@@ -602,9 +590,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5848795848766367758}
-        m_TargetAssemblyTypeName: UI.Panels.StartMenu.StartMenu, UI
-        m_MethodName: OnClickSettings
+      - m_Target: {fileID: 3859710612664097350}
+        m_TargetAssemblyTypeName: UI.Buttons.UIButton, UI
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -614,6 +602,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3859710612664097350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928229986546686371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1d6eba76aa415ca8aba1206078c9af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &928229986698790765
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,6 +626,7 @@ GameObject:
   - component: {fileID: 928229986698790761}
   - component: {fileID: 928229986698790766}
   - component: {fileID: 928229986698790767}
+  - component: {fileID: 5188227444742307870}
   m_Layer: 10
   m_Name: CreatorsButton
   m_TagString: Untagged
@@ -735,9 +736,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5848795848766367758}
-        m_TargetAssemblyTypeName: UI.Panels.StartMenu.StartMenu, UI
-        m_MethodName: OnClickCreators
+      - m_Target: {fileID: 5188227444742307870}
+        m_TargetAssemblyTypeName: UI.Buttons.UIButton, UI
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -747,6 +748,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5188227444742307870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928229986698790765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1d6eba76aa415ca8aba1206078c9af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &928229987179370173
 GameObject:
   m_ObjectHideFlags: 0
@@ -854,6 +867,7 @@ GameObject:
   - component: {fileID: 928229987240151556}
   - component: {fileID: 928229987240151557}
   - component: {fileID: 928229987240151610}
+  - component: {fileID: 1326060365367046622}
   m_Layer: 10
   m_Name: ExitButton
   m_TagString: Untagged
@@ -963,9 +977,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5848795848766367758}
-        m_TargetAssemblyTypeName: UI.Panels.StartMenu.StartMenu, UI
-        m_MethodName: OnClickExit
+      - m_Target: {fileID: 1326060365367046622}
+        m_TargetAssemblyTypeName: UI.Buttons.UIButton, UI
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -975,6 +989,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1326060365367046622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928229987240151608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1d6eba76aa415ca8aba1206078c9af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &928229987453151038
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,8 +1013,9 @@ GameObject:
   - component: {fileID: 928229987453151034}
   - component: {fileID: 928229987453151035}
   - component: {fileID: 928229987453151032}
+  - component: {fileID: 6181635752008625697}
   m_Layer: 10
-  m_Name: PlayButton
+  m_Name: LaunchButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1096,9 +1123,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5848795848766367758}
-        m_TargetAssemblyTypeName: UI.Panels.StartMenu.StartMenu, UI
-        m_MethodName: OnClickPlay
+      - m_Target: {fileID: 6181635752008625697}
+        m_TargetAssemblyTypeName: UI.Buttons.UIButton, UI
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1108,6 +1135,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6181635752008625697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 928229987453151038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1d6eba76aa415ca8aba1206078c9af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5990527603126416907
 GameObject:
   m_ObjectHideFlags: 0

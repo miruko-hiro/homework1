@@ -2,14 +2,14 @@
 
 namespace GameMechanics.Helpers
 {
-    public static class GameStateHelper
+    public class GameStateHelper
     {
-        public static void Pause()
+        public void Pause()
         {
             Time.timeScale = 0;
         }
 
-        public static void Play()
+        public void Play()
         {
             Time.timeScale = 1;
         }

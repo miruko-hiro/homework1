@@ -32,10 +32,8 @@ namespace UI.Panels.LvlUpPanel
 
         public event Action<int, ImprovementType, int> ChangeLvlTypeOne;
         public event Action<int, int, int> ChangeLvlTypeFour;
-        
-        public bool IsInit { get; private set; }
 
-        private void Start()
+        public void Init()
         {
             ComeBackButton = comeBackButton.GetComponent<UIButton>();
 
@@ -65,8 +63,6 @@ namespace UI.Panels.LvlUpPanel
             _improvement04.Model.Type = ImprovementType.Four;
             _improvement04.View.transform.localPosition += new Vector3(0f, -600f, 0f);
             InitImprovement(_improvement04.Model);
-
-            IsInit = true;
         }
 
         private void InitImprovement(ImprovementModel model)

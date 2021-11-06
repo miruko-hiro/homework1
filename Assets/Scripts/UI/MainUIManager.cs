@@ -44,6 +44,7 @@ namespace UI
         private SpaceshipManager _spaceshipManager;
         private GoldenAsteroidManager _goldenAsteroidManager;
         private PrefabFactory _prefabFactory;
+        private GameStateHelper _gameStateHelper;
 
         private void Start()
         {
@@ -55,12 +56,14 @@ namespace UI
         private void Construct(PlayerManager playerManager, 
             SpaceshipManager spaceshipManager, 
             GoldenAsteroidManager goldenAsteroidManager,
-            PrefabFactory prefabFactory)
+            PrefabFactory prefabFactory,
+            GameStateHelper gameStateHelper)
         {
             _playerManager = playerManager;
             _spaceshipManager = spaceshipManager;
             _goldenAsteroidManager = goldenAsteroidManager;
             _prefabFactory = prefabFactory;
+            _gameStateHelper = gameStateHelper;
         }
 
         private void StartGame()
@@ -71,8 +74,9 @@ namespace UI
             _spaceshipManager.AddSpaceshipRocket += lvlUpMenuManager.RocketInit;
             _goldenAsteroidManager.AsteroidDied += ChangeScoreGoldenMode;
             _mainManager.ChangeTimeGoldenMode += ChangeTimeGoldenMode;
-            
-            startMenuManager.StartGame += EnableMainElements;
+
+            startMenuManager.Init();
+            startMenuManager.LaunchManager.LaunchGame += EnableMainElements;
 
             loserMenuManager.IncludedLoserMenu += DisableMainElements;
             loserMenuManager.ReStart += ReStart;
@@ -83,9 +87,9 @@ namespace UI
         }
         public void OnClickStartMenu()
         {
-            GameStateHelper.Pause();
+            _gameStateHelper.Pause();
             DisableMainElements();
-            startMenuManager.EnableStartMenuManagerManager();
+            startMenuManager.EnableStartMenu();
         }
 
         private void ChangeScoreGoldenMode(int score)
@@ -174,7 +178,7 @@ namespace UI
 
             _mainManager.MainMechanicsCreate -= StartGame;
             _playerUIManager.LvlUpButtonClick -= LvlUpButtonClick;
-            startMenuManager.StartGame -= EnableMainElements;
+            startMenuManager.LaunchManager.LaunchGame -= EnableMainElements;
             loserMenuManager.IncludedLoserMenu -= DisableMainElements;
             loserMenuManager.ReStart -= ReStart;
             lvlUpMenuManager.SelectSpaceship -= SelectSpaceship;

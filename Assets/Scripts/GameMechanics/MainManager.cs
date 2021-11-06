@@ -21,6 +21,7 @@ namespace GameMechanics
         private PlayerManager _playerManager;
         private SpaceshipManager _spaceshipManager;
         private GoldenAsteroidManager _goldenAsteroidManager;
+        private GameStateHelper _gameStateHelper;
         [SerializeField] private CommonAsteroidManager commonAsteroidManager;
         [SerializeField] private DamageTextManager damageTextManager;
         [SerializeField] private ExplosionManager explosionManager;
@@ -51,18 +52,20 @@ namespace GameMechanics
             
             _coroutineCommonAsteroid = StartCoroutine(SpawnAsteroids());
             MainMechanicsCreate?.Invoke();
-            GameStateHelper.Pause();
+            _gameStateHelper.Pause();
         }
 
 
         [Inject]
         private void Construct(PlayerManager playerManager, 
             SpaceshipManager spaceshipManager, 
-            GoldenAsteroidManager goldenAsteroidManager)
+            GoldenAsteroidManager goldenAsteroidManager,
+            GameStateHelper gameStateHelper)
         {
             _playerManager = playerManager;
             _spaceshipManager = spaceshipManager;
             _goldenAsteroidManager = goldenAsteroidManager;
+            _gameStateHelper = gameStateHelper;
         }
         
         private void InitCommonAsteroidMechanics()
@@ -158,7 +161,7 @@ namespace GameMechanics
 
         public void ReStart()
         {
-            GameStateHelper.Play();
+            _gameStateHelper.Play();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         

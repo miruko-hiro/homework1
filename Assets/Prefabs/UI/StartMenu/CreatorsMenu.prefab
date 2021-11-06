@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 6204821490007141111}
   - component: {fileID: 7859808612238121340}
   - component: {fileID: 6536344511216952018}
+  - component: {fileID: 3529082001721412029}
   m_Layer: 10
   m_Name: ReturnButton
   m_TagString: Untagged
@@ -275,9 +276,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2781578119176383062}
-        m_TargetAssemblyTypeName: UI.Panels.Creators.CreatorsMenu, UI
-        m_MethodName: OnClickReturn
+      - m_Target: {fileID: 3529082001721412029}
+        m_TargetAssemblyTypeName: UI.Buttons.UIButton, UI
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -307,6 +308,18 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &3529082001721412029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2984426040036433927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1d6eba76aa415ca8aba1206078c9af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5309978850203190806
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +506,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58cf17f9721e464584d1fda410a4d571, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  googlePlayButton: {fileID: 4369069451200345598}
+  backButtonView: {fileID: 3529082001721412029}
 --- !u!1 &5940718848157972663
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,6 +626,7 @@ GameObject:
   - component: {fileID: 3824649631786239990}
   - component: {fileID: 7375434277091824247}
   - component: {fileID: 6692684772260233226}
+  - component: {fileID: 4369069451200345598}
   m_Layer: 10
   m_Name: GooglePlayButton
   m_TagString: Untagged
@@ -721,9 +737,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2781578119176383062}
-        m_TargetAssemblyTypeName: UI.Panels.Creators.CreatorsMenu, UI
-        m_MethodName: OnClickGooglePlay
+      - m_Target: {fileID: 4369069451200345598}
+        m_TargetAssemblyTypeName: UI.Buttons.UIButton, UI
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -733,6 +749,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4369069451200345598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6259444285050950644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1d6eba76aa415ca8aba1206078c9af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8599312951416869961
 GameObject:
   m_ObjectHideFlags: 0

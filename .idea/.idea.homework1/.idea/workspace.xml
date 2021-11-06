@@ -22,7 +22,124 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Добавлен плагин Zenject, заменены прокидывания объектов на inject. Классы Mechanics разбиты на отдельные Managers." />
+    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Добавлен плагин Zenject, заменены прокидывания объектов на inject. Классы Mechanics разбиты на отдельные Managers.">
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/CreatorsMenuSpawner.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/CreatorsMenuSpawner.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/SettingsMenuSpawner.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/SettingsMenuSpawner.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/StartMenuManager.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/StartMenuManager.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/InjectionObjectFactory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/InjectionObjectFactory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IPresenter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IPresenter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/ISpawner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/ISpawner.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/SwitchButton.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/SwitchButton/ISwitchButtonModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/SwitchButton/ISwitchButtonModel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/SwitchButton/ISwitchButtonView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/SwitchButton/ISwitchButtonView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuSpawner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuSpawner.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonModel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonPresenter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonPresenter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/ExitButton.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/ExitButton/ExitManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/ExitButton/ExitManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/LaunchButton.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/LaunchButton/LaunchManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/LaunchButton/LaunchManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonModel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonPresenter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonPresenter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuSpawner.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuView.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonModel.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonPresenter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonPresenter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonView.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUp/Improvement01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUp/Improvement.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUp/Improvement01.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUp/Improvement.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUp/LvlUpPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUp/LvlUpPanel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/CreatorsMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/CreatorsMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/SettingsMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/SettingsMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/StartMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/StartMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/ExitHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/ExitHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/GameStateHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/GameStateHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Planet/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Planet/PlayerManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PrefabFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/PrefabFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PrefabFactory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/PrefabFactory.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/ProjectInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/ProjectInstaller.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/IButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/IButton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IButton.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/LvlUpButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/LvlUpButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/UIButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/UIButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MainUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainUIManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/CreatorsMenu.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/CreatorsMenu.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuView.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/CreatorsMenuManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/CreatorsMenuManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/CreatorsMenuPresenter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/CreatorsMenuPresenter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/ICreatorsMenu.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/ICreatorsMenu.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenuPresenter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenuPresenter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenuPresenter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenuPresenter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/ISettingsMenu.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/ISettingsMenu.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenu.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenu.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenuManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenuManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuSpawner.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenuPresenter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenuPresenter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/IStartMenu.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/IStartMenu.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenu.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenu.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuPresenter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuPresenter.cs.meta" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,19 +159,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/SwitchButton/ISwitchButtonModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/Improvement/ImprovementView.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/HealthBar.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Spaceship.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/Improvement/ImprovementData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/Improvement/ImprovementLevel.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/Improvement/ImprovementLevel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/c3/f2fea8e0/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/19/1670f7e6/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/b1/b6197262/Coroutine.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Rocket/RocketModel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/B0E795E4-8CF0-4D7A-9193-EA9447AF406A/ea/340b554f/Physics2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/85/d292bade/Action.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Buttons/LvlUpButton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/CommonAsteroidManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/SpaceshipWithRockets.cs" root0="FORCE_HIGHLIGHTING" />
@@ -63,66 +181,69 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/Attack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/DamageDisplay/DamageText.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/eb/bfe6336f/Type.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/89/f24d8032/Action`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/64/abff2b56/Color.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/ExplosionOfAsteroid/Explosion.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/16/5512f74f/Color32.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/a8/7892c479/RequireComponent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD3EAA08-78D9-4CBE-8E45-F9C494D71647/fc/32adf37f/Component.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F5B293C7-4049-457C-ABC2-8437C5A76392/a8/abba1cda/IInitializable.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Planet/PlayerManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/GoldenAsteroidManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/CommonAsteroidManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/DamageDisplay/DamageTextManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/ExplosionOfAsteroid/ExplosionManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/CameraScripts/CameraMechanics.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/CameraScripts/CameraManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIMechanics.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenuManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/UILvlUpMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/CreatorsMenuManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenuManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenuManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/InputMechanics.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI/PlayerPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUIv.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/SkillCooldown.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerHealth/PlayerHealthUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/IMoney.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/MoneyUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/IMoneyUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/MoneyUIUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/MoneyPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerHealth/HelthUIPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/MoneyUIPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerHealth/IHealthUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerHealth/HealthUIModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerHealth/HealthUI.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerHealth/HealthUIPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerHealth/IHealthUIView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/IMoneyUIView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/IMainUIManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PrefabFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/PlayerUIManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/LvlUpButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerUIManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/SkillCooldownModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/SpaceshipManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Planet/PlayerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/IEnableButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SwitchButton/ISwitchButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/SwitchButton/ISwitchButtonModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/SwitchButton/ISwitchButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/SwitchButton/IEnableButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/IPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ISpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/ISpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IButton.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/SwitchButton/ISwitchButtonView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/SwitchButton/ISwitchButtonModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/SettingsMenuSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuSpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuView.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainUIManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/ISkillCooldownView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/SkillCooldownPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/SkillCooldownView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/ObjectInjectionFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/LaunchButton/LaunchManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/ExitButton/ExitManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/Improvements/Improvement04.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/Improvements/Improvement03.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/Improvements/Improvement02.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/Improvements/Improvement01.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/Improvements/ImprovementN.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenuPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenu.cs" />
       </list>
     </option>
   </component>
@@ -190,6 +311,9 @@
       <workItem from="1635835905635" duration="507000" />
       <workItem from="1636100751215" duration="7475000" />
       <workItem from="1636124247862" duration="11960000" />
+      <workItem from="1636136341387" duration="19000" />
+      <workItem from="1636194683348" duration="10896000" />
+      <workItem from="1636208046788" duration="15587000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1634104804696</created>
@@ -450,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636136299835</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="UI разбит на MVP">
+      <created>1636136352308</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1636136352308</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -500,18 +631,18 @@
     <option name="LAST_COMMIT_MESSAGE" value="UI разбит на MVP" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="794" y="220" key="RiderGenerateDialog" timestamp="1636131876872">
+    <state x="794" y="220" key="RiderGenerateDialog" timestamp="1636227154557">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="220" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1636131876872" />
+    <state x="794" y="220" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1636227154557" />
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1635084361042">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1635084361042" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1636136302330">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1636136354556">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1636136302330" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1636136354556" />
     <state x="562" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1635767247892">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -524,6 +655,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="777" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1634284755877" />
+    <state x="735" y="227" width="1441" height="1027" key="dock-window-1" timestamp="1636207793189">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="735" y="227" width="1441" height="1027" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1636207793189" />
     <state x="774" y="414" key="git4idea.ui.GitResetDialog" timestamp="1634544363024">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -532,9 +667,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1635604957653" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1636055947900">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1636213105050">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1636055947900" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1636213105050" />
   </component>
 </project>

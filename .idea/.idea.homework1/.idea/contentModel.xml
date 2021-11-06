@@ -965,6 +965,8 @@
             <e p="Helpers" t="Include">
               <e p="ExitHelper.cs" t="Include" />
               <e p="GameStateHelper.cs" t="Include" />
+              <e p="InjectionObjectFactory.cs" t="Include" />
+              <e p="PrefabFactory.cs" t="Include" />
             </e>
             <e p="InputMechanics.cs" t="Include" />
             <e p="MainManager.cs" t="Include" />
@@ -989,7 +991,6 @@
                 <e p="SpaceshipWithRockets.cs" t="Include" />
               </e>
             </e>
-            <e p="PrefabFactory.cs" t="Include" />
           </e>
           <e p="Installers" t="Include">
             <e p="GameInstaller.cs" t="Include" />
@@ -997,26 +998,28 @@
           </e>
           <e p="UI" t="Include">
             <e p="Buttons" t="Include">
-              <e p="IButton.cs" t="Include" />
               <e p="LvlUpButton.cs" t="Include" />
               <e p="UIButton.cs" t="Include" />
             </e>
             <e p="IMainUIManager.cs" t="Include" />
+            <e p="Interfaces" t="Include">
+              <e p="IButton.cs" t="Include" />
+              <e p="IManager.cs" t="Include" />
+              <e p="IPresenter.cs" t="Include" />
+              <e p="ISpawner.cs" t="Include" />
+              <e p="SwitchButton" t="Include">
+                <e p="ISwitchButtonModel.cs" t="Include" />
+                <e p="ISwitchButtonView.cs" t="Include" />
+              </e>
+            </e>
             <e p="MainUIManager.cs" t="Include" />
             <e p="Panels" t="Include">
-              <e p="Creators" t="Include">
-                <e p="CreatorsMenu.cs" t="Include" />
-                <e p="CreatorsMenuManager.cs" t="Include" />
-                <e p="CreatorsMenuPresenter.cs" t="Include" />
-                <e p="ICreatorsMenu.cs" t="Include" />
-              </e>
               <e p="GoldenMode" t="Include">
                 <e p="UIGoldenMode.cs" t="Include" />
               </e>
               <e p="LoserPanel" t="Include">
                 <e p="LoserMenu.cs" t="Include" />
                 <e p="LoserMenuManager.cs" t="Include" />
-                <e p="LoserMenuPresenter.cs" t="Include" />
               </e>
               <e p="LvlUpPanel" t="Include">
                 <e p="Improvement" t="Include">
@@ -1029,19 +1032,42 @@
                 </e>
                 <e p="LvlUpMenu.cs" t="Include" />
                 <e p="LvlUpMenuManager.cs" t="Include" />
-                <e p="LvlUpMenuPresenter.cs" t="Include" />
-              </e>
-              <e p="Settings" t="Include">
-                <e p="ISettingsMenu.cs" t="Include" />
-                <e p="SettingsMenu.cs" t="Include" />
-                <e p="SettingsMenuManager.cs" t="Include" />
-                <e p="SettingsMenuPresenter.cs" t="Include" />
               </e>
               <e p="StartMenu" t="Include">
-                <e p="IStartMenu.cs" t="Include" />
-                <e p="StartMenu.cs" t="Include" />
+                <e p="CreatorsButton" t="Include">
+                  <e p="CreatorsMenuManager.cs" t="Include" />
+                  <e p="CreatorsMenuSpawner.cs" t="Include" />
+                  <e p="CreatorsMenuView.cs" t="Include" />
+                  <e p="GooglePlayButton" t="Include">
+                    <e p="GooglePlayButtonManager.cs" t="Include" />
+                    <e p="GooglePlayButtonModel.cs" t="Include" />
+                    <e p="GooglePlayButtonPresenter.cs" t="Include" />
+                  </e>
+                </e>
+                <e p="ExitButton" t="Include">
+                  <e p="ExitManager.cs" t="Include" />
+                </e>
+                <e p="LaunchButton" t="Include">
+                  <e p="LaunchManager.cs" t="Include" />
+                </e>
+                <e p="SettingsButton" t="Include">
+                  <e p="MusicButton" t="Include">
+                    <e p="MusicButtonManager.cs" t="Include" />
+                    <e p="MusicButtonModel.cs" t="Include" />
+                    <e p="MusicButtonPresenter.cs" t="Include" />
+                    <e p="MusicButtonView.cs" t="Include" />
+                  </e>
+                  <e p="SettingsMenuManager.cs" t="Include" />
+                  <e p="SettingsMenuSpawner.cs" t="Include" />
+                  <e p="SettingsMenuView.cs" t="Include" />
+                  <e p="SoundButton" t="Include">
+                    <e p="SoundButtonManager.cs" t="Include" />
+                    <e p="SoundButtonModel.cs" t="Include" />
+                    <e p="SoundButtonPresenter.cs" t="Include" />
+                    <e p="SoundButtonView.cs" t="Include" />
+                  </e>
+                </e>
                 <e p="StartMenuManager.cs" t="Include" />
-                <e p="StartMenuPresenter.cs" t="Include" />
               </e>
             </e>
             <e p="Player" t="Include">

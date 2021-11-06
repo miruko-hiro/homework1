@@ -95,7 +95,7 @@ MonoBehaviour:
   money: {fileID: 3900194177885684472}
   iconImprovement01: {fileID: -4802986099108858167, guid: 5a3ef17df19dee143b5276bbee177556, type: 3}
   iconImprovement02: {fileID: 6537989418358455831, guid: 9d6754f3502b62d43be18b0df88e9eea, type: 3}
-  iconImprovement03: {fileID: 8582686340986660072, guid: b0cce84ec17c6c848b4dbbca94ee494f, type: 3}
+  iconImprovement03: {fileID: 5485286226054493474, guid: b0cce84ec17c6c848b4dbbca94ee494f, type: 3}
   iconImprovement04: {fileID: 4392405203925259722, guid: b0cce84ec17c6c848b4dbbca94ee494f, type: 3}
   improvementPrefab: {fileID: 4745907166713905154, guid: f974c0f689565f94b90d186d3c2a6262, type: 3}
 --- !u!1 &7167043078619758634

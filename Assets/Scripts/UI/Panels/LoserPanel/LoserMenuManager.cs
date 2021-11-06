@@ -2,27 +2,33 @@
 using System.Collections;
 using GameMechanics;
 using GameMechanics.Helpers;
+using GameMechanics.Player.Planet;
+using UI.Interfaces;
 using UnityEngine;
+using Zenject;
 
 namespace UI.Panels.LoserPanel
 {
-    public class LoserMenuManager : MonoBehaviour
+    public class LoserMenuManager : MonoBehaviour, IManager
     {
         [SerializeField] private GameObject loserPanelPrefab;
         private LoserMenu _loserMenu;
         private bool _isFirstLoserPanel = true;
-        private LoserMenuPresenter _loserMenuPresenter;
+        private ExitHelper _exitHelper;
         public event Action IncludedLoserMenu;
         public event Action ReStart;
         
-        private IEnumerator InitLoserPanel()
+        [Inject]
+        private void Construct(ExitHelper exitHelper)
+        {
+            _exitHelper = exitHelper;
+        }
+        private void InitLoserPanel()
         {
             _loserMenu = Instantiate(loserPanelPrefab, transform).GetComponent<LoserMenu>();
             _loserMenu.gameObject.SetActive(true);
-            while (!_loserMenu.ContinueButton || !_loserMenu.ExitButton)
-                yield return null;
-            _loserMenuPresenter = new LoserMenuPresenter(_loserMenu);
-            _loserMenuPresenter.OnOpen(ReStart, ExitHelper.Exit);
+            _loserMenu.Init();
+            OnOpen();
             IncludedLoserMenu?.Invoke();
         }
         
@@ -30,7 +36,7 @@ namespace UI.Panels.LoserPanel
         {
             if (_isFirstLoserPanel)
             {
-                StartCoroutine(InitLoserPanel());
+                InitLoserPanel();
                 _isFirstLoserPanel = false;
             }
             else
@@ -44,11 +50,23 @@ namespace UI.Panels.LoserPanel
             _loserMenu.gameObject.SetActive(false);
         }
 
+        public void OnOpen()
+        {
+            _loserMenu.ContinueButton.Click += ReStart;
+            _loserMenu.ExitButton.Click += _exitHelper.Exit;
+        }
+
+        public void OnClose()
+        {
+            _loserMenu.ContinueButton.Click -= ReStart;
+            _loserMenu.ExitButton.Click -= _exitHelper.Exit;
+        }
+
         private void OnDestroy()
         {
             if (!_isFirstLoserPanel)
             {
-                _loserMenuPresenter.OnClose(ReStart, ExitHelper.Exit);
+                OnClose();
             }
         }
     }

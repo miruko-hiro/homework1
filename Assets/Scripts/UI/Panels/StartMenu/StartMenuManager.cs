@@ -1,62 +1,95 @@
-﻿using System;
-using GameMechanics;
-using GameMechanics.Helpers;
-using UI.Panels.Creators;
-using UI.Panels.Settings;
+﻿using GameMechanics.Helpers;
+using UI.Buttons;
+using UI.Panels.StartMenu.CreatorsButton;
+using UI.Panels.StartMenu.ExitButton;
+using UI.Panels.StartMenu.LaunchButton;
+using UI.Panels.StartMenu.SettingsButton;
 using UnityEngine;
+using Zenject;
 
 namespace UI.Panels.StartMenu
 {
     public class StartMenuManager : MonoBehaviour
     {
-        [SerializeField] private GameObject startMenuPrefab;
-        private StartMenu _startMenu;
-        private StartMenuPresenter _startMenuPresenter;
+        [SerializeField] private GameObject startMenu;
+        [Space(10)] 
+        [SerializeField] private UIButton launchButton;
+        [SerializeField] private UIButton exitButton;
+        [Space(10)] 
+        [SerializeField] private UIButton settingsButton;
+        [SerializeField] private SettingsMenuSpawner settingsSpawner;
+        [Space(10)] 
+        [SerializeField] private UIButton creatorsButton;
+        [SerializeField] private CreatorsMenuSpawner creatorsSpawner;
 
-        [SerializeField] private SettingsMenuManager settingsMenuManager;
-        [SerializeField] private CreatorsMenuManager creatorsMenuManager;
-
-        public event Action StartGame;
-
-        private void Start()
-        {
-            _startMenu = Instantiate(startMenuPrefab, transform).GetComponent<StartMenu>();
-            _startMenuPresenter = new StartMenuPresenter(_startMenu);
-            _startMenuPresenter.OnOpen(PlayGame, EnableSettingsMenu, EnableCreatorsMenu, ExitHelper.Exit);
-            
-            settingsMenuManager.ClickReturn += EnableStartMenuManagerManager;
-            creatorsMenuManager.ClickReturn += EnableStartMenuManagerManager;
-        }
-    
-        public void EnableStartMenuManagerManager()
-        {
-            _startMenu.gameObject.SetActive(true);
-        }
-
-        private void PlayGame()
-        {
-            StartGame?.Invoke();
-            _startMenu.gameObject.SetActive(false);
-            GameStateHelper.Play();
-        }
+        private InjectionObjectFactory _factory;
         
-        private void EnableSettingsMenu()
+        public LaunchManager LaunchManager { get; private set; }
+        public SettingsMenuManager SettingsMenuManager { get; private set; }
+        public CreatorsMenuManager CreatorsMenuManager { get; private set; }
+        public ExitManager ExitManager { get; private set; }
+
+        [Inject]
+        private void Construct(InjectionObjectFactory factory)
         {
-            _startMenu.gameObject.SetActive(false);
-            settingsMenuManager.EnableSettingsMenu();
+            _factory = factory;
+        }
+        public void Init()
+        {
+            InitLaunchButton();
+            InitSettingsButton();
+            InitCreatorsButton();
+            InitExitButton();
         }
 
-        private void EnableCreatorsMenu()
+        private void InitLaunchButton()
         {
-            _startMenu.gameObject.SetActive(false);
-            creatorsMenuManager.EnableCreatorsMenu();
+            LaunchManager = _factory.Create<LaunchManager>();
+            LaunchManager.SetView(launchButton);
+            LaunchManager.LaunchGame += DisableStartMenu;
+            LaunchManager.OnOpen();
+        }
+
+        private void InitSettingsButton()
+        {
+            SettingsMenuManager = new SettingsMenuManager(settingsSpawner, settingsButton);
+            SettingsMenuManager.ComeBack += EnableStartMenu;
+            SettingsMenuManager.OnOpen();
+        }
+
+        private void InitCreatorsButton()
+        {
+            CreatorsMenuManager = new CreatorsMenuManager(creatorsSpawner, creatorsButton);
+            CreatorsMenuManager.ComeBack += EnableStartMenu;
+            CreatorsMenuManager.OnOpen();
+        }
+
+        private void InitExitButton()
+        {
+            ExitManager = _factory.Create<ExitManager>();
+            ExitManager.SetView(exitButton);
+            ExitManager.OnOpen();
+        }
+
+        private void DisableStartMenu()
+        {
+            startMenu.SetActive(false);
+        }
+
+        public void EnableStartMenu()
+        {
+            startMenu.SetActive(true);
         }
 
         private void OnDestroy()
         {
-            _startMenuPresenter.OnClose(PlayGame, EnableSettingsMenu, EnableCreatorsMenu, ExitHelper.Exit);
-            settingsMenuManager.ClickReturn -= EnableStartMenuManagerManager;
-            creatorsMenuManager.ClickReturn -= EnableStartMenuManagerManager;
+            ExitManager?.OnClose();
+            CreatorsMenuManager?.OnClose();
+            SettingsMenuManager?.OnClose();
+
+            if (LaunchManager == null) return;
+            LaunchManager.LaunchGame -= DisableStartMenu;
+            LaunchManager.OnClose();
         }
     }
 }

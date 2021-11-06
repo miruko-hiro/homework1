@@ -8,6 +8,7 @@ namespace GameMechanics.Player.Planet
 {
     public class PlayerManager : MonoBehaviour
     {
+        private GameStateHelper _gameStateHelper;
         [SerializeField] private GameObject playerController;
         [SerializeField] private GameObject playerPrefab;
         [SerializeField] private GameObject explosionPlanetPrefab;
@@ -27,6 +28,12 @@ namespace GameMechanics.Player.Planet
             Model.Money.SetAmount(0);
             Model.LaserAttack.SetAmount(1);
         }
+
+        [Inject]
+        private void Construct(GameStateHelper gameStateHelper)
+        {
+            _gameStateHelper = gameStateHelper;
+        }
         
         private void StopGame()
         {
@@ -39,7 +46,7 @@ namespace GameMechanics.Player.Planet
             View.gameObject.SetActive(false);
             yield return new WaitForSeconds(1.5f);
             GameOver?.Invoke();
-            GameStateHelper.Pause();
+            _gameStateHelper.Pause();
         }
 
         private void OnDestroy()

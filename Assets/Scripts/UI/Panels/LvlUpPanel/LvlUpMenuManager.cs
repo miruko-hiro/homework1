@@ -3,18 +3,19 @@ using System.Collections;
 using GameMechanics.Helpers;
 using GameMechanics.Player.Planet;
 using GameMechanics.Player.Weapon.Rocket;
+using UI.Interfaces;
 using UI.Panels.LvlUpPanel.Improvement;
 using UnityEngine;
 using Zenject;
 
 namespace UI.Panels.LvlUpPanel
 {
-    public class LvlUpMenuManager : MonoBehaviour
+    public class LvlUpMenuManager : MonoBehaviour, IManager
     {
         [SerializeField] private GameObject lvlUpPanelPrefab;
         private LvlUpMenu _lvlUpMenu;
-        private LvlUpMenuPresenter _lvlUpMenuPresenter;
         private PlayerManager _playerManager;
+        private GameStateHelper _gameStateHelper;
         private RocketModel _rocketModel;
         private bool _isFirstLvlUpPanel = true;
         private bool _isAddRocket;
@@ -24,18 +25,17 @@ namespace UI.Panels.LvlUpPanel
         public event Action ContinueGame;
 
         [Inject]
-        private void Construct(PlayerManager playerManager)
+        private void Construct(PlayerManager playerManager, GameStateHelper gameStateHelper)
         {
             _playerManager = playerManager;
+            _gameStateHelper = gameStateHelper;
         }
-        private IEnumerator InitLvlUpPanel()
+        private void InitLvlUpPanel()
         {
             _lvlUpMenu = Instantiate(lvlUpPanelPrefab, transform).GetComponent<LvlUpMenu>();
             _lvlUpMenu.gameObject.SetActive(true);
-            while (!_lvlUpMenu.IsInit)
-                yield return null;
-            _lvlUpMenuPresenter = new LvlUpMenuPresenter(_lvlUpMenu);
-            _lvlUpMenuPresenter.OnOpen(ChangeDamage, ChangeCooldownRocket, HideLvlUpPanel);
+            _lvlUpMenu.Init();
+            OnOpen();
             _lvlUpMenu.SetMoney(_playerManager.Model.Money.Amount);
         }
 
@@ -46,10 +46,10 @@ namespace UI.Panels.LvlUpPanel
 
         public void ShowLvlUpPanel()
         {
-            GameStateHelper.Pause();
+            _gameStateHelper.Pause();
             if (_isFirstLvlUpPanel)
             {
-                StartCoroutine(InitLvlUpPanel());
+                InitLvlUpPanel();
                 _isFirstLvlUpPanel = false;
             }
             else
@@ -84,14 +84,28 @@ namespace UI.Panels.LvlUpPanel
         {
             _lvlUpMenu.gameObject.SetActive(false);
             ContinueGame?.Invoke();
-            GameStateHelper.Play();
+            _gameStateHelper.Play();
+        }
+
+        public void OnOpen()
+        {
+            _lvlUpMenu.ChangeLvlTypeOne += ChangeDamage;
+            _lvlUpMenu.ChangeLvlTypeFour += ChangeCooldownRocket;
+            _lvlUpMenu.ComeBackButton.Click += HideLvlUpPanel;
+        }
+
+        public void OnClose()
+        {
+            _lvlUpMenu.ChangeLvlTypeOne -= ChangeDamage;
+            _lvlUpMenu.ChangeLvlTypeFour -= ChangeCooldownRocket;
+            _lvlUpMenu.ComeBackButton.Click -= HideLvlUpPanel;
         }
 
         private void OnDestroy()
         {
             if (!_isFirstLvlUpPanel)
             {
-                _lvlUpMenuPresenter.OnClose(ChangeDamage, ChangeCooldownRocket, HideLvlUpPanel);
+                OnClose();
             }
         }
     }
