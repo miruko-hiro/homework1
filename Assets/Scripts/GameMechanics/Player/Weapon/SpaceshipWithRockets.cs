@@ -2,13 +2,16 @@
 using System.Collections;
 using GameMechanics.Behaviors;
 using GameMechanics.Enemy.DamageDisplay;
+using GameMechanics.Helpers;
 using GameMechanics.Player.Weapon.Rocket;
 using UnityEngine;
+using Zenject;
 
 namespace GameMechanics.Player.Weapon
 {
     public class SpaceshipWithRockets : MonoBehaviour
     {
+        private PrefabFactory _prefabFactory;
         [SerializeField] private GameObject rocketManagerPrefab;
         private RocketManager _rocketManager;
         [SerializeField] private SpriteRenderer shotEffect;
@@ -26,10 +29,16 @@ namespace GameMechanics.Player.Weapon
             InitRocketManager();
             shotEffect.enabled = false;
         }
+        
+        [Inject]
+        private void Construct(PrefabFactory prefabFactory)
+        {
+            _prefabFactory = prefabFactory;
+        }
 
         private void InitRocketManager()
         {
-            _rocketManager = Instantiate(rocketManagerPrefab, transform).GetComponent<RocketManager>();
+            _rocketManager = _prefabFactory.Spawn(rocketManagerPrefab, transform).GetComponent<RocketManager>();
             _rocketManager.Exploded += ShowDamage;
             _rocketManager.Init(transform.position);
             _rocketManager.Model.Attack.SetAmount(0);

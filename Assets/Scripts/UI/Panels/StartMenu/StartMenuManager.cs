@@ -1,9 +1,12 @@
-﻿using GameMechanics.Helpers;
+﻿using System;
+using GameMechanics.Helpers;
+using GameMechanics.Sound;
 using UI.Buttons;
 using UI.Panels.StartMenu.CreatorsButton;
 using UI.Panels.StartMenu.ExitButton;
 using UI.Panels.StartMenu.LaunchButton;
 using UI.Panels.StartMenu.SettingsButton;
+using UI.Sound;
 using UnityEngine;
 using Zenject;
 
@@ -16,30 +19,46 @@ namespace UI.Panels.StartMenu
         [SerializeField] private UIButton launchButton;
         [SerializeField] private UIButton exitButton;
         [Space(10)] 
+        [SerializeField] private SettingsMenuManager settingsMenuManager;
         [SerializeField] private UIButton settingsButton;
-        [SerializeField] private SettingsMenuSpawner settingsSpawner;
         [Space(10)] 
+        [SerializeField] private CreatorsMenuManager creatorsMenuManager;
         [SerializeField] private UIButton creatorsButton;
-        [SerializeField] private CreatorsMenuSpawner creatorsSpawner;
+        [Space(10)] 
+        [SerializeField] private AudioClip clickSound;
+        [SerializeField] private AudioClip menuMusic;
 
         private InjectionObjectFactory _factory;
+        private SoundClaspRepository _soundClaspRepository;
+        private MusicClaspRepository _musicClaspRepository;
         
         public LaunchManager LaunchManager { get; private set; }
-        public SettingsMenuManager SettingsMenuManager { get; private set; }
-        public CreatorsMenuManager CreatorsMenuManager { get; private set; }
         public ExitManager ExitManager { get; private set; }
 
         [Inject]
-        private void Construct(InjectionObjectFactory factory)
+        private void Construct(InjectionObjectFactory factory, MusicClaspRepository musicClaspRepository)
         {
             _factory = factory;
+            _musicClaspRepository = musicClaspRepository;
         }
         public void Init()
         {
+            InitSound();
             InitLaunchButton();
             InitSettingsButton();
             InitCreatorsButton();
             InitExitButton();
+            InitMusic();
+        }
+
+        private void InitSound()
+        {
+            _soundClaspRepository = _factory.Create<SoundClaspRepository>();
+        }
+
+        private void InitMusic()
+        {
+            _musicClaspRepository.AddMusic(menuMusic);
         }
 
         private void InitLaunchButton()
@@ -48,20 +67,21 @@ namespace UI.Panels.StartMenu
             LaunchManager.SetView(launchButton);
             LaunchManager.LaunchGame += DisableStartMenu;
             LaunchManager.OnOpen();
+            _soundClaspRepository.AddSoundToButton(clickSound, launchButton);
         }
 
         private void InitSettingsButton()
         {
-            SettingsMenuManager = new SettingsMenuManager(settingsSpawner, settingsButton);
-            SettingsMenuManager.ComeBack += EnableStartMenu;
-            SettingsMenuManager.OnOpen();
+            settingsMenuManager.ComeBack += EnableStartMenu;
+            settingsMenuManager.OnOpen();
+            _soundClaspRepository.AddSoundToButton(clickSound, settingsButton);
         }
 
         private void InitCreatorsButton()
         {
-            CreatorsMenuManager = new CreatorsMenuManager(creatorsSpawner, creatorsButton);
-            CreatorsMenuManager.ComeBack += EnableStartMenu;
-            CreatorsMenuManager.OnOpen();
+            creatorsMenuManager.ComeBack += EnableStartMenu;
+            creatorsMenuManager.OnOpen();
+            _soundClaspRepository.AddSoundToButton(clickSound, creatorsButton);
         }
 
         private void InitExitButton()
@@ -69,6 +89,7 @@ namespace UI.Panels.StartMenu
             ExitManager = _factory.Create<ExitManager>();
             ExitManager.SetView(exitButton);
             ExitManager.OnOpen();
+            _soundClaspRepository.AddSoundToButton(clickSound, exitButton);
         }
 
         private void DisableStartMenu()
@@ -79,17 +100,20 @@ namespace UI.Panels.StartMenu
         public void EnableStartMenu()
         {
             startMenu.SetActive(true);
+            InitMusic();
         }
 
         private void OnDestroy()
         {
             ExitManager?.OnClose();
-            CreatorsMenuManager?.OnClose();
-            SettingsMenuManager?.OnClose();
 
-            if (LaunchManager == null) return;
-            LaunchManager.LaunchGame -= DisableStartMenu;
-            LaunchManager.OnClose();
+            if (LaunchManager != null)
+            {
+                LaunchManager.LaunchGame -= DisableStartMenu;
+                LaunchManager.OnClose();
+            }
+            
+            _soundClaspRepository?.OnClose();
         }
     }
 }

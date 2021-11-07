@@ -1,6 +1,8 @@
 using System.Collections;
 using GameMechanics.Behaviors;
+using GameMechanics.Sound;
 using UnityEngine;
+using Zenject;
 
 namespace GameMechanics.Player.Weapon
 {
@@ -10,6 +12,8 @@ namespace GameMechanics.Player.Weapon
         [SerializeField] private LineRenderer laserRenderer;
         [SerializeField] private SpriteRenderer shotEffect;
         [SerializeField] private GameObject hitEffectPrefab;
+        [SerializeField] private AudioClip shotAudioEffect;
+        private SoundManager _soundManager;
         private GameObject _hitEffect;
         private Turn _turn;
         
@@ -22,6 +26,12 @@ namespace GameMechanics.Player.Weapon
             _turn = new Turn();
             laserRenderer.useWorldSpace = true;
             shotEffect.enabled = false;
+        }
+
+        [Inject]
+        private void Construct(SoundManager soundManager)
+        {
+            _soundManager = soundManager;
         }
 
         public void UpLvl()
@@ -63,6 +73,7 @@ namespace GameMechanics.Player.Weapon
             if (!shotEffect.enabled)
                 shotEffect.enabled = true;
             _hitEffect.SetActive(true);
+            _soundManager.CreateSoundObjectDontDestroy()?.Play(shotAudioEffect);
             yield return new WaitForSeconds(0.1f);
             if(laserRenderer.enabled)
                 laserRenderer.enabled = false;

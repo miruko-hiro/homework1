@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using GameMechanics.Sound;
 using UnityEngine;
+using Zenject;
 
 namespace GameMechanics.Player.Weapon.Rocket
 {
@@ -8,6 +10,9 @@ namespace GameMechanics.Player.Weapon.Rocket
     {
         [SerializeField] private GameObject rocketPrefab;
         [SerializeField] private GameObject explosionPrefab;
+        [SerializeField] private AudioClip flightSound;
+        [SerializeField] private AudioClip explosionSound;
+        private SoundManager _soundManager;
         
         public RocketModel Model { get; private set; }
         public List<RocketView> Views { get; private set; }
@@ -15,10 +20,16 @@ namespace GameMechanics.Player.Weapon.Rocket
         private RocketController _controller;
 
         public event Action<int, Vector2> Exploded;
+
+        [Inject]
+        private void Construct(SoundManager soundManager)
+        {
+            _soundManager = soundManager;
+        }
         
         public void Init(Vector2 pos)
         {
-            _controller = new RocketFactory().Load(rocketPrefab, pos, explosionPrefab);
+            _controller = new RocketFactory().Load(rocketPrefab, pos, explosionPrefab, _soundManager, explosionSound);
             Model = _controller.Model;
             Views = _controller.Views;
             foreach (RocketView view in Views)
@@ -44,6 +55,7 @@ namespace GameMechanics.Player.Weapon.Rocket
                 {
                     _controller.AddView(new RocketFactory().LoadView(rocketPrefab, Model.Position));
                 }
+                _soundManager.CreateSoundObjectDontDestroy()?.Play(flightSound);
             }
         }
 

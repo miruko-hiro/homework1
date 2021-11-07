@@ -4,7 +4,7 @@ namespace UI.Interfaces.SwitchButton
 {
     public interface ISwitchButtonModel
     {
-        public event Action ChangeEnable;
-        public bool Enable { get; set; }
+        public event Action ChangeEnabled;
+        public bool Enabled { get; set; }
     }
 }

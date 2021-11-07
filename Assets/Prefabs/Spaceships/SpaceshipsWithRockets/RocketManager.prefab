@@ -45,3 +45,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rocketPrefab: {fileID: 5949103438363332495, guid: 69e01ae92c4af9648a12dc0561da05b8, type: 3}
   explosionPrefab: {fileID: 8551338543878668447, guid: 703b77db19faabb48877fd9787e73897, type: 3}
+  flightSound: {fileID: 8300000, guid: 6d6c9e2ec028c054db7af3938ffe9e5a, type: 3}
+  explosionSound: {fileID: 8300000, guid: dbc2982c8bbe1b64caa361512cbf5e82, type: 3}

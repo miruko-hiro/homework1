@@ -1,5 +1,8 @@
-﻿using UI.Interfaces;
+﻿using GameMechanics.Interfaces;
+using GameMechanics.Sound;
+using UI.Interfaces;
 using UI.Interfaces.SwitchButton;
+using UI.Sound;
 
 namespace UI.Panels.StartMenu.SettingsButton.MusicButton
 {
@@ -8,9 +11,9 @@ namespace UI.Panels.StartMenu.SettingsButton.MusicButton
         private readonly IPresenter _presenter;
         public ISwitchButtonModel MusicButtonModel { get; }
 
-        public MusicButtonManager(ISwitchButtonView view)
+        public MusicButtonManager(MusicClaspRepository musicClaspRepository, MusicManager musicManager, ISwitchButtonView view)
         {
-            MusicButtonModel = new MusicButtonModel();
+            MusicButtonModel = new MusicButtonModel(musicClaspRepository, musicManager);
             _presenter = new MusicButtonPresenter(MusicButtonModel, view);
         }
 

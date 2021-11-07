@@ -1,5 +1,7 @@
 ﻿using System.Collections;
+using GameMechanics.Sound;
 using UnityEngine;
+using Zenject;
 
 namespace GameMechanics.Enemy.ExplosionOfAsteroid
 {
@@ -7,8 +9,17 @@ namespace GameMechanics.Enemy.ExplosionOfAsteroid
     {
         [SerializeField] private GameObject explosionPrefab;
         [SerializeField] private GameObject explosionParent;
+        [SerializeField] private AudioClip explosionSound;
         private Explosion[] _explosionArray = new Explosion[5];
+        private SoundManager _soundManager;
         private int _index = 0;
+
+        [Inject]
+        private void Construct(SoundManager soundManager)
+        {
+            _soundManager = soundManager;
+        }
+        
         public void Init()
         {
             for (int i = 0; i < _explosionArray.Length; i++)
@@ -25,6 +36,7 @@ namespace GameMechanics.Enemy.ExplosionOfAsteroid
             
             explosion.gameObject.SetActive(true);
             explosion.SetPosition(pos);
+            _soundManager.CreateSoundObjectDontDestroy()?.Play(explosionSound);
             
             yield return new WaitForSeconds(2f);
             

@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdown: {fileID: 3066663504230174370}
-  countdownAnimation: {fileID: 0}
+  countdownAnimation: {fileID: 3241197243286565585}
 --- !u!95 &6751969633374569862
 Animator:
   serializedVersion: 3

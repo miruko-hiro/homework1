@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using GameMechanics.Behaviors;
+using GameMechanics.Sound;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -12,11 +13,15 @@ namespace GameMechanics.Player.Weapon.Rocket
         public List<RocketView> Views { get; private set; }
         private List<Transform> _transformsOfRocketExplosion = new List<Transform>();
         private GameObject _explosionPrefab;
+        private SoundManager _soundManager;
+        private AudioClip _explosionSound;
         private int _indexShot = 0;
 
-        public void OnOpen(RocketModel model, RocketView view, GameObject explosionPrefab)
+        public void OnOpen(RocketModel model, RocketView view, GameObject explosionPrefab, SoundManager soundManager, AudioClip explosionSound)
         {
             _explosionPrefab = explosionPrefab;
+            _soundManager = soundManager;
+            _explosionSound = explosionSound;
             Model = model;
             Views = new List<RocketView> {InitView(view)};
             AddExplosion();
@@ -29,6 +34,7 @@ namespace GameMechanics.Player.Weapon.Rocket
             _transformsOfRocketExplosion[_indexShot].gameObject.SetActive(false);
             _transformsOfRocketExplosion[_indexShot].gameObject.SetActive(true);
             _indexShot = _indexShot < _transformsOfRocketExplosion.Count - 1 ? _indexShot += 1 : 0;
+            _soundManager.CreateSoundObjectDontDestroy()?.Play(_explosionSound);
         }
 
         private RocketView InitView(RocketView view)

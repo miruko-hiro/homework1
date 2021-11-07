@@ -1,34 +1,49 @@
 ﻿using System;
+using GameMechanics.Helpers;
+using GameMechanics.Interfaces;
+using UI.Buttons;
 using UI.Interfaces;
 using UI.Panels.StartMenu.CreatorsButton.GooglePlayButton;
+using UI.Sound;
+using UnityEngine;
+using Zenject;
 
 namespace UI.Panels.StartMenu.CreatorsButton
 {
-    public class CreatorsMenuManager: IManager
+    public class CreatorsMenuManager: MonoBehaviour, IManager
     {
-        private readonly ISpawner<CreatorsMenuView> _spawner;
-        private readonly IButton _button;
+        [SerializeField] private CreatorsMenuSpawner spawner;
+        [SerializeField] private UIButton button;
+        [Space(10)] 
+        [SerializeField] private AudioClip clickSound;
+        [SerializeField] private AudioClip backSound;
+        
         private CreatorsMenuView _creatorsMenu;
         private IButton _backButton;
+        private SoundClaspRepository _soundClaspRepository;
+        private InjectionObjectFactory _factory;
          
         public GooglePlayButtonManager GooglePlayButtonManager { get; private set; }
 
         public event Action ComeBack;
-        public CreatorsMenuManager(ISpawner<CreatorsMenuView> spawner, IButton button)
+        
+        [Inject]
+        private void Construct(InjectionObjectFactory factory)
         {
-            _spawner = spawner;
-            _button = button;
+            _factory = factory;
         }
+        
         public void OnOpen()
         {
-            _button.Click += Init;
+            button.Click += Init;
         }
 
         private void Init()
         {
             if (_creatorsMenu != null) return;
             
-            _creatorsMenu = _spawner.Spawn();
+            _creatorsMenu = spawner.Spawn();
+            InitMenuSoundManager();
             InitGooglePlayButton(_creatorsMenu.GetGooglePlayButtonView());
             InitBackButton(_creatorsMenu.GetBackButton());
         }
@@ -37,18 +52,25 @@ namespace UI.Panels.StartMenu.CreatorsButton
         {
             GooglePlayButtonManager = new GooglePlayButtonManager(view);
             GooglePlayButtonManager.OnOpen();
+            _soundClaspRepository.AddSoundToButton(clickSound, view);
         }
 
         private void InitBackButton(IButton view)
         {
             _backButton = view;
             _backButton.Click += Deinit;
+            _soundClaspRepository.AddSoundToButton(backSound, view);
+        }
+
+        private void InitMenuSoundManager()
+        {
+            _soundClaspRepository = _factory.Create<SoundClaspRepository>();
         }
 
         private void Deinit()
         {
             ComeBack?.Invoke();
-            UnityEngine.Object.Destroy(_creatorsMenu.gameObject);
+            Destroy(_creatorsMenu.gameObject);
             GooglePlayButtonManager?.OnClose();
         }
 
@@ -56,7 +78,12 @@ namespace UI.Panels.StartMenu.CreatorsButton
         {
             if(_backButton != null) _backButton.Click -= Deinit;
             GooglePlayButtonManager?.OnClose();
-            _button.Click -= Init;
+            button.Click -= Init;
+        }
+
+        private void OnDestroy()
+        {
+            OnClose();
         }
     }
 }

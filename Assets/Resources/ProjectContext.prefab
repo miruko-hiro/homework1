@@ -73,3 +73,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7206dffe04e9b7747a7351de93a74915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SoundManager: {fileID: 5654666668010011935, guid: 3a74d8a7642321b45858c2794cf3966a, type: 3}
+  MusicManager: {fileID: 8016567845255274376, guid: a6dd671fd57c31b42b045a1d1f6053cb, type: 3}

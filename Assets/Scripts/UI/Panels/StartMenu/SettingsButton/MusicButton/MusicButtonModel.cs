@@ -1,27 +1,32 @@
 ﻿using System;
+using GameMechanics.Sound;
 using UI.Interfaces.SwitchButton;
+using UI.Sound;
 
 namespace UI.Panels.StartMenu.SettingsButton.MusicButton
 {
     public class MusicButtonModel: ISwitchButtonModel
     {
-        public event Action ChangeEnable;
+        public event Action ChangeEnabled;
 
-        private bool _enable;
-        
-        public bool Enable
+        private readonly MusicManager _musicManager;
+        private readonly MusicClaspRepository _musicClaspRepository;
+        public bool Enabled
         {
-            get => _enable;
+            get => _musicManager.OnMusic;
             set
             {
-                _enable = value;
-                ChangeEnable?.Invoke();
+                _musicManager.OnMusic = value;
+                if(_musicManager.OnMusic) _musicClaspRepository.OnOpen();
+                else _musicClaspRepository.OnClose();
+                ChangeEnabled?.Invoke();
             }
         }
 
-        public MusicButtonModel()
+        public MusicButtonModel(MusicClaspRepository musicClaspRepository, MusicManager musicManager)
         {
-            _enable = true;
+            _musicClaspRepository = musicClaspRepository;
+            _musicManager = musicManager;
         }
     }
 }

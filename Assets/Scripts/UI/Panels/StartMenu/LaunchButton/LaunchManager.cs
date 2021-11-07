@@ -1,5 +1,6 @@
 ﻿using System;
 using GameMechanics.Helpers;
+using GameMechanics.Interfaces;
 using UI.Interfaces;
 using Zenject;
 
@@ -31,7 +32,6 @@ namespace UI.Panels.StartMenu.LaunchButton
         private void Launch()
         {
             LaunchGame?.Invoke();
-            _gameStateHelper.Play();
         }
 
         public void OnClose()

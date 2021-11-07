@@ -1,27 +1,28 @@
 ﻿using System;
+using GameMechanics.Sound;
 using UI.Interfaces.SwitchButton;
 
 namespace UI.Panels.StartMenu.SettingsButton.SoundButton
 {
     public class SoundButtonModel: ISwitchButtonModel
     {
-        public event Action ChangeEnable;
+        public event Action ChangeEnabled;
 
-        private bool _enable;
+        private readonly SoundManager _soundManager;
         
-        public bool Enable
+        public bool Enabled
         {
-            get => _enable;
+            get => _soundManager.OnSound;
             set
             {
-                _enable = value;
-                ChangeEnable?.Invoke();
+                _soundManager.OnSound = value;
+                ChangeEnabled?.Invoke();
             }
         }
 
-        public SoundButtonModel()
+        public SoundButtonModel(SoundManager soundManager)
         {
-            _enable = true;
+            _soundManager = soundManager;
         }
     }
 }

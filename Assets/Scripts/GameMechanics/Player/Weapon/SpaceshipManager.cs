@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using GameMechanics.Helpers;
 using GameMechanics.Player.Weapon.Rocket;
+using GameMechanics.Sound;
 using UnityEngine;
+using Zenject;
 
 namespace GameMechanics.Player.Weapon
 {
     public class SpaceshipManager : MonoBehaviour
     {
+        private PrefabFactory _prefabFactory;
         [SerializeField] private GameObject spaceshipPrefab;
         private List<Spaceship> _spaceshipList = new List<Spaceship>();
         private int _numberSpaceships = 1;
@@ -20,10 +24,16 @@ namespace GameMechanics.Player.Weapon
 
         public void Init()
         {
-            _spaceshipList.Add(Instantiate(spaceshipPrefab).GetComponent<Spaceship>());
+            _spaceshipList.Add(_prefabFactory.Spawn(spaceshipPrefab).GetComponent<Spaceship>());
             _spaceshipList[0].UpLvl();
             _spaceshipList[0].SetPosition(new Vector2(-2f, -1.1f));
             Shoot += _spaceshipList[0].ShotLaser;
+        }
+        
+        [Inject]
+        private void Construct(PrefabFactory prefabFactory)
+        {
+            _prefabFactory = prefabFactory;
         }
 
         public void SpaceshipsShoot(Vector2 posEnemy)
@@ -43,7 +53,7 @@ namespace GameMechanics.Player.Weapon
         {
             if (_numberSpaceships == 1 || _numberSpaceships == 2)
             {
-                _spaceshipList.Add(Instantiate(spaceshipPrefab).GetComponent<Spaceship>());
+                _spaceshipList.Add(_prefabFactory.Spawn(spaceshipPrefab).GetComponent<Spaceship>());
                 _spaceshipList[_numberSpaceships].UpLvl();
                 if (_numberSpaceships == 1)
                     _spaceshipList[_numberSpaceships].SetPosition(new Vector2(1f, -2.5f));
@@ -57,7 +67,7 @@ namespace GameMechanics.Player.Weapon
 
         public void AddSpaceshipWithRocket()
         {
-            _spaceshipWithRockets = Instantiate(spaceshipWithRocketsPrefab).GetComponent<SpaceshipWithRockets>();
+            _spaceshipWithRockets = _prefabFactory.Spawn(spaceshipWithRocketsPrefab).GetComponent<SpaceshipWithRockets>();
             _spaceshipWithRockets.Init(new Vector2(-1f, -1.2f));
             _spaceshipWithRockets.RocketCooldown += StartRocketCooldown;
             AddSpaceshipRocket?.Invoke(_spaceshipWithRockets.GetRocketManager().Model);

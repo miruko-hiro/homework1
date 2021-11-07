@@ -16,25 +16,26 @@ namespace UI.Panels.StartMenu.SettingsButton.MusicButton
 
         public void OnOpen()
         {
+            ChangeEnableView();
             _view.Click += ChangeEnableModel;
-            _model.ChangeEnable += ChangeEnableView;
+            _model.ChangeEnabled += ChangeEnableView;
         }
 
         private void ChangeEnableModel()
         {
-            _model.Enable = !_model.Enable;
+            _model.Enabled = !_model.Enabled;
         }
 
         private void ChangeEnableView()
         {
-            if(_model.Enable) _view.Enable();
+            if(_model.Enabled) _view.Enable();
             else _view.Disable();
         }
 
         public void OnClose()
         {
             _view.Click -= ChangeEnableModel;
-            _model.ChangeEnable -= ChangeEnableView;
+            _model.ChangeEnabled -= ChangeEnableView;
         }
     }
 }

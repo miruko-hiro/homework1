@@ -223,6 +223,7 @@ MonoBehaviour:
   laserRenderer: {fileID: 1448001644473850475}
   shotEffect: {fileID: 5308253860619329559}
   hitEffectPrefab: {fileID: 3529574857045121534, guid: 00c30f22e47bc7e46a6c4e791e38f006, type: 3}
+  shotAudioEffect: {fileID: 8300000, guid: 29dd9f2145df1e543a5277dffd5701e5, type: 3}
 --- !u!1 &3432957145870371869
 GameObject:
   m_ObjectHideFlags: 0

@@ -969,6 +969,9 @@
               <e p="PrefabFactory.cs" t="Include" />
             </e>
             <e p="InputMechanics.cs" t="Include" />
+            <e p="Interfaces" t="Include">
+              <e p="IManager.cs" t="Include" />
+            </e>
             <e p="MainManager.cs" t="Include" />
             <e p="Player" t="Include">
               <e p="Planet" t="Include">
@@ -991,6 +994,14 @@
                 <e p="SpaceshipWithRockets.cs" t="Include" />
               </e>
             </e>
+            <e p="Sound" t="Include">
+              <e p="MusicClasp.cs" t="Include" />
+              <e p="MusicClaspRepository.cs" t="Include" />
+              <e p="MusicManager.cs" t="Include" />
+              <e p="MusicObject.cs" t="Include" />
+              <e p="SoundManager.cs" t="Include" />
+              <e p="SoundObject.cs" t="Include" />
+            </e>
           </e>
           <e p="Installers" t="Include">
             <e p="GameInstaller.cs" t="Include" />
@@ -1004,7 +1015,6 @@
             <e p="IMainUIManager.cs" t="Include" />
             <e p="Interfaces" t="Include">
               <e p="IButton.cs" t="Include" />
-              <e p="IManager.cs" t="Include" />
               <e p="IPresenter.cs" t="Include" />
               <e p="ISpawner.cs" t="Include" />
               <e p="SwitchButton" t="Include">
@@ -1088,6 +1098,10 @@
                 <e p="MoneyUIView.cs" t="Include" />
               </e>
               <e p="PlayerUIManager.cs" t="Include" />
+            </e>
+            <e p="Sound" t="Include">
+              <e p="SoundClasp.cs" t="Include" />
+              <e p="SoundClaspRepository.cs" t="Include" />
             </e>
             <e p="UI.asmdef" t="Include" />
           </e>

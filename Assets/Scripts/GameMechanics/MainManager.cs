@@ -8,6 +8,7 @@ using GameMechanics.Enemy.ExplosionOfAsteroid;
 using GameMechanics.Helpers;
 using GameMechanics.Player.Planet;
 using GameMechanics.Player.Weapon;
+using GameMechanics.Sound;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
@@ -22,10 +23,13 @@ namespace GameMechanics
         private SpaceshipManager _spaceshipManager;
         private GoldenAsteroidManager _goldenAsteroidManager;
         private GameStateHelper _gameStateHelper;
+        private MusicClaspRepository _musicClaspRepository;
         [SerializeField] private CommonAsteroidManager commonAsteroidManager;
         [SerializeField] private DamageTextManager damageTextManager;
         [SerializeField] private ExplosionManager explosionManager;
         [SerializeField] private CameraManager cameraManager;
+        [Space(10)] 
+        [SerializeField] private AudioClip gameMusic;
         
         private int _asteroidLayerIndex;
         private int _goldenModeIndex = 0;
@@ -55,17 +59,23 @@ namespace GameMechanics
             _gameStateHelper.Pause();
         }
 
-
         [Inject]
         private void Construct(PlayerManager playerManager, 
             SpaceshipManager spaceshipManager, 
             GoldenAsteroidManager goldenAsteroidManager,
-            GameStateHelper gameStateHelper)
+            GameStateHelper gameStateHelper,
+            MusicClaspRepository musicClaspRepository)
         {
             _playerManager = playerManager;
             _spaceshipManager = spaceshipManager;
             _goldenAsteroidManager = goldenAsteroidManager;
             _gameStateHelper = gameStateHelper;
+            _musicClaspRepository = musicClaspRepository;
+        }
+        
+        private void InitMusic()
+        {
+            _musicClaspRepository.AddMusic(gameMusic);
         }
         
         private void InitCommonAsteroidMechanics()
@@ -159,10 +169,16 @@ namespace GameMechanics
             _inputMechanics.OnClick += CheckClickPosition;
         }
 
-        public void ReStart()
+        public void GameReStart()
         {
             _gameStateHelper.Play();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        public void GameStart()
+        {
+            _gameStateHelper.Play();
+            InitMusic();
         }
         
         private void CheckTouchPosition()

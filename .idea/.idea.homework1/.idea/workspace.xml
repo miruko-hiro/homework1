@@ -22,123 +22,70 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Добавлен плагин Zenject, заменены прокидывания объектов на inject. Классы Mechanics разбиты на отдельные Managers.">
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/CreatorsMenuSpawner.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/CreatorsMenuSpawner.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/SettingsMenuSpawner.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/SettingsMenuSpawner.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/StartMenuManager.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/StartMenuManager.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/InjectionObjectFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/InjectionObjectFactory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IPresenter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IPresenter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/ISpawner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/ISpawner.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/SwitchButton.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/SwitchButton/ISwitchButtonModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/SwitchButton/ISwitchButtonModel.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/SwitchButton/ISwitchButtonView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/SwitchButton/ISwitchButtonView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuSpawner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuSpawner.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonModel.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonPresenter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonPresenter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/ExitButton.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/ExitButton/ExitManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/ExitButton/ExitManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/LaunchButton.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/LaunchButton/LaunchManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/LaunchButton/LaunchManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonModel.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonPresenter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonPresenter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuSpawner.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuView.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonModel.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonPresenter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonPresenter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonView.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonView.cs.meta" afterDir="false" />
+    <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Декомпозированно главное стартовое меню на менеджеры, спавнеры, модели, вью и презенторы">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Interfaces.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/MusicClasp.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/MusicClasp.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/MusicClaspRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/MusicClaspRepository.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/MusicManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/MusicManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/MusicObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/MusicObject.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/SoundManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/SoundManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/SoundObject.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/SoundObject.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Sound.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Sound/SoundClasp.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Sound/SoundClasp.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Sound/SoundClaspRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Sound/SoundClaspRepository.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUp/Improvement01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUp/Improvement.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUp/Improvement01.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUp/Improvement.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUp/LvlUpPanel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/LvlUp/LvlUpPanel.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/CreatorsMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/CreatorsMenu.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/SettingsMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/SettingsMenu.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/StartMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/StartMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spaceships/SpaceshipsWithLaser/Spaceship.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spaceships/SpaceshipsWithLaser/Spaceship.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Spaceships/SpaceshipsWithRockets/RocketManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Spaceships/SpaceshipsWithRockets/RocketManager.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/RocketCooldown.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/RocketCooldown.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/CreatorsMenu.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/CreatorsMenu.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/CreatorsMenuSpawner.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/CreatorsMenuSpawner.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/SettingsMenu.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/SettingsMenu.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/SettingsMenuSpawner.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/SettingsMenuSpawner.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/StartMenuManager.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/StartMenuManager.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ProjectContext.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ProjectContext.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/ExitHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/ExitHelper.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/GameStateHelper.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/GameStateHelper.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/ExplosionOfAsteroid/ExplosionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/ExplosionOfAsteroid/ExplosionManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Planet/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Planet/PlayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PrefabFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/PrefabFactory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/PrefabFactory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/PrefabFactory.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Rocket/RocketController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Rocket/RocketController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Rocket/RocketFactory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Rocket/RocketFactory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Rocket/RocketManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Rocket/RocketManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Spaceship.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Spaceship.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/SpaceshipManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/SpaceshipManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/SpaceshipWithRockets.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/SpaceshipWithRockets.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/ProjectInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/ProjectInstaller.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/IButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/IButton.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IButton.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/LvlUpButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/LvlUpButton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/UIButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/UIButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Interfaces/IManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Interfaces/IManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/SwitchButton/ISwitchButtonModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/SwitchButton/ISwitchButtonModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MainUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainUIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/CreatorsMenu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/CreatorsMenu.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuView.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/CreatorsMenuManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/CreatorsMenuManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/CreatorsMenuPresenter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/CreatorsMenuPresenter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/ICreatorsMenu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Creators/ICreatorsMenu.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenuPresenter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenuPresenter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenuPresenter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenuPresenter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/ISettingsMenu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/ISettingsMenu.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenu.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenuManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenuManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuSpawner.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenuPresenter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/Settings/SettingsMenuPresenter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/IStartMenu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/IStartMenu.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenu.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenu.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/ExitButton/ExitManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/ExitButton/ExitManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/LaunchButton/LaunchManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/LaunchButton/LaunchManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonPresenter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuPresenter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuPresenter.cs.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,47 +140,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Planet/PlayerManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/IEnableButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SwitchButton/ISwitchButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/SwitchButton/ISwitchButtonModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/SwitchButton/ISwitchButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Buttons/SwitchButton/IEnableButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/IPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/ISpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/ISpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IButton.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/SwitchButton/ISwitchButtonView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/SwitchButton/ISwitchButtonModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/SettingsMenuSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuSpawner.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonModel.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/GooglePlayButton/GooglePlayButtonManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuView.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainUIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Helpers/ObjectInjectionFactory.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/LaunchButton/LaunchManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/ExitButton/ExitManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Interfaces/IManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/Improvements/Improvement04.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/Improvements/Improvement03.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/Improvements/Improvement02.cs" />
@@ -244,6 +155,42 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenuManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenu.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/MenuSoundManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SoundClapsRepository.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SoundClaspRepository.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/SoundObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SoundClasp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Sound/SoundClaspRepository.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/SoundManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SoundButton/SoundButtonPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/MusicObject.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Sound/SoundClasp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/ProjectInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Sound/MusicClaspRepository.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/SettingsMenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonModel.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/MusicManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Sound/MusicClasp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Interfaces/IManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainUIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/LaunchButton/LaunchManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/MusicClasp.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/MusicClaspRepository.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Spaceship.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/ExplosionOfAsteroid/ExplosionManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/SpaceshipManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/SpaceshipWithRockets.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Rocket/RocketController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Rocket/RocketFactory.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Player/Weapon/Rocket/RocketManager.cs" />
       </list>
     </option>
   </component>
@@ -313,7 +260,8 @@
       <workItem from="1636124247862" duration="11960000" />
       <workItem from="1636136341387" duration="19000" />
       <workItem from="1636194683348" duration="10896000" />
-      <workItem from="1636208046788" duration="15587000" />
+      <workItem from="1636208046788" duration="15659000" />
+      <workItem from="1636272036654" duration="19410000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1634104804696</created>
@@ -581,7 +529,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636136352308</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Декомпозированно главное стартовое меню на менеджеры, спавнеры, модели, вью и презенторы">
+      <created>1636227373518</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1636227373518</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,7 +558,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Добавлена смерть игрока и отнимание жизни при столкновении планеты с астероидом" />
     <MESSAGE value="Добавлена панель проигрыша, кнопка выхода и кнопка рестарта" />
     <MESSAGE value="Добавлено меню улучшений и увеличение уровня игрока и астероидов" />
     <MESSAGE value="Добавлен задний фон" />
@@ -628,21 +582,22 @@
     <MESSAGE value="Переписан LvlUpMenu" />
     <MESSAGE value="Добавлен плагин Zenject, заменены прокидывания объектов на inject. Классы Mechanics разбиты на отдельные Managers." />
     <MESSAGE value="UI разбит на MVP" />
-    <option name="LAST_COMMIT_MESSAGE" value="UI разбит на MVP" />
+    <MESSAGE value="Декомпозированно главное стартовое меню на менеджеры, спавнеры, модели, вью и презенторы" />
+    <option name="LAST_COMMIT_MESSAGE" value="Декомпозированно главное стартовое меню на менеджеры, спавнеры, модели, вью и презенторы" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="794" y="220" key="RiderGenerateDialog" timestamp="1636227154557">
+    <state x="794" y="220" key="RiderGenerateDialog" timestamp="1636276395976">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="220" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1636227154557" />
+    <state x="794" y="220" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1636276395976" />
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1635084361042">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1635084361042" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1636136354556">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1636227384088">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1636136354556" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1636227384088" />
     <state x="562" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1635767247892">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

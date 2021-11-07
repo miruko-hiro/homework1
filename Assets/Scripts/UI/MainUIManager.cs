@@ -33,7 +33,6 @@ namespace UI
         private UIGoldenMode _uiGoldenMode;
         private Animator _animatorGoldenMode;
 
-        [SerializeField] private GameObject controller;
         private MainManager _mainManager;
         
         [SerializeField] private GameObject startMenuButton;
@@ -46,24 +45,21 @@ namespace UI
         private PrefabFactory _prefabFactory;
         private GameStateHelper _gameStateHelper;
 
-        private void Start()
-        {
-            _mainManager = controller.GetComponent<MainManager>();
-            _mainManager.MainMechanicsCreate += StartGame;
-        }
-
         [Inject]
         private void Construct(PlayerManager playerManager, 
             SpaceshipManager spaceshipManager, 
             GoldenAsteroidManager goldenAsteroidManager,
             PrefabFactory prefabFactory,
-            GameStateHelper gameStateHelper)
+            GameStateHelper gameStateHelper,
+            MainManager mainManager)
         {
             _playerManager = playerManager;
             _spaceshipManager = spaceshipManager;
             _goldenAsteroidManager = goldenAsteroidManager;
             _prefabFactory = prefabFactory;
             _gameStateHelper = gameStateHelper;
+            _mainManager = mainManager;
+            _mainManager.MainMechanicsCreate += StartGame;
         }
 
         private void StartGame()
@@ -76,6 +72,7 @@ namespace UI
             _mainManager.ChangeTimeGoldenMode += ChangeTimeGoldenMode;
 
             startMenuManager.Init();
+            startMenuManager.LaunchManager.LaunchGame += _mainManager.GameStart;
             startMenuManager.LaunchManager.LaunchGame += EnableMainElements;
 
             loserMenuManager.IncludedLoserMenu += DisableMainElements;
@@ -170,7 +167,7 @@ namespace UI
         private void ReStart()
         {
             loserMenuManager.DisableMenu();
-            _mainManager.ReStart();
+            _mainManager.GameReStart();
         }
 
         private void OnDestroy()
@@ -178,6 +175,7 @@ namespace UI
 
             _mainManager.MainMechanicsCreate -= StartGame;
             _playerUIManager.LvlUpButtonClick -= LvlUpButtonClick;
+            startMenuManager.LaunchManager.LaunchGame -= _mainManager.GameStart;
             startMenuManager.LaunchManager.LaunchGame -= EnableMainElements;
             loserMenuManager.IncludedLoserMenu -= DisableMainElements;
             loserMenuManager.ReStart -= ReStart;

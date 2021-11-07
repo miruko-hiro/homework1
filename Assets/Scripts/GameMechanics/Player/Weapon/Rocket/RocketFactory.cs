@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using GameMechanics.Sound;
+using UnityEngine;
 
 namespace GameMechanics.Player.Weapon.Rocket
 {
     public class RocketFactory
     {
-        public RocketController Load(GameObject rocketPrefab, Vector2 pos, GameObject explosionPrefab)
+        public RocketController Load(GameObject rocketPrefab, Vector2 pos, GameObject explosionPrefab, SoundManager soundManager, AudioClip sound)
         {
             RocketController controller = new RocketController();
             
@@ -15,7 +16,7 @@ namespace GameMechanics.Player.Weapon.Rocket
             RocketModel model = new RocketModel();
             model.Position = pos;
             
-            controller.OnOpen(model, view, explosionPrefab);
+            controller.OnOpen(model, view, explosionPrefab, soundManager, sound);
 
             return controller;
         }
