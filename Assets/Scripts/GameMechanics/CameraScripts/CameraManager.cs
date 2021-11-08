@@ -5,25 +5,23 @@ namespace GameMechanics.CameraScripts
     public class CameraManager : MonoBehaviour
     {
         [SerializeField] private Camera mainCamera;
-        private Animator _animatorMainCamera;
         private CameraShake _cameraShake;
-        private static readonly int GoldenMode = Animator.StringToHash("GoldenMode");
-        private static readonly int IsGoldenMode = Animator.StringToHash("isGoldenMode");
+        private CameraAnimation _cameraAnimation;
 
         public void Init()
         {
-            _animatorMainCamera = mainCamera.GetComponent<Animator>();
             _cameraShake = mainCamera.GetComponent<CameraShake>();
+            _cameraAnimation = mainCamera.GetComponent<CameraAnimation>();
         }
 
-        public void SwitchToGoldMode()
+        public void CameraToDefaultPosition()
         {
-            _animatorMainCamera.SetTrigger(GoldenMode);
+            _cameraAnimation.GameLaunchAnimation();
         }
 
-        public void EnableGoldenModeAnimation(bool isValue)
+        public void CameraToGoldenModePosition()
         {
-            _animatorMainCamera.SetBool(IsGoldenMode, isValue);
+            _cameraAnimation.EnableGoldenMode();
         }
 
         public Vector3 GetValueToWorldPoint(Vector3 pos)
@@ -33,12 +31,12 @@ namespace GameMechanics.CameraScripts
 
         public void CameraShakeDueToAsteroidExplosion(Vector2 pos)
         {
-            _cameraShake.StartShaking(0.4f, 0.025f);
+            _cameraShake.StartShaking(0.6f, 0.05f);
         }
 
         public void CameraShakeDueToGoldenAsteroidExplosion(Vector2 pos)
         {
-            _cameraShake.StartShaking(0.4f, 0.02f);
+            _cameraShake.StartShaking(0.6f, 0.04f);
         }
     }
 }

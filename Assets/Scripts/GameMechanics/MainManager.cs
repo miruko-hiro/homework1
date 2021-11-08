@@ -33,6 +33,7 @@ namespace GameMechanics
         
         private int _asteroidLayerIndex;
         private int _goldenModeIndex = 0;
+        private bool _isInitAsteroids;
         
         private Coroutine _coroutineCommonAsteroid;
         private Coroutine _coroutineGoldenAsteroid;
@@ -54,9 +55,7 @@ namespace GameMechanics
             _playerManager.Init();
             explosionManager.Init();
             
-            _coroutineCommonAsteroid = StartCoroutine(SpawnAsteroids());
             MainMechanicsCreate?.Invoke();
-            _gameStateHelper.Pause();
         }
 
         [Inject]
@@ -71,6 +70,11 @@ namespace GameMechanics
             _goldenAsteroidManager = goldenAsteroidManager;
             _gameStateHelper = gameStateHelper;
             _musicClaspRepository = musicClaspRepository;
+        }
+
+        private void InitSpawnAsteroids()
+        {
+            _coroutineCommonAsteroid = StartCoroutine(SpawnAsteroids());
         }
         
         private void InitMusic()
@@ -108,7 +112,7 @@ namespace GameMechanics
 
         private void StartGoldenGameMode()
         {
-            cameraManager.SwitchToGoldMode();
+            cameraManager.CameraToGoldenModePosition();
             _goldenAsteroidManager.ResetNumberOfDeadAsteroids();
             commonAsteroidManager.DisableAsteroids();
             StopCoroutine(_coroutineCommonAsteroid);
@@ -147,7 +151,6 @@ namespace GameMechanics
         
         private IEnumerator LifeOfGoldenMode()
         {
-            cameraManager.EnableGoldenModeAnimation(true);
             int time = 10;
             while (time > 0)
             {
@@ -158,7 +161,7 @@ namespace GameMechanics
             ChangeTimeGoldenMode?.Invoke(time.ToString(), false);
             _goldenAsteroidManager.DisableAsteroids();
             StopCoroutine(_coroutineGoldenAsteroid);
-            cameraManager.EnableGoldenModeAnimation(false);
+            cameraManager.CameraToDefaultPosition();
             _coroutineCommonAsteroid = StartCoroutine(SpawnAsteroids());
         }
         
@@ -177,6 +180,12 @@ namespace GameMechanics
 
         public void GameStart()
         {
+            if (!_isInitAsteroids)
+            {
+                _isInitAsteroids = true;
+                cameraManager.CameraToDefaultPosition();
+                InitSpawnAsteroids();
+            }
             _gameStateHelper.Play();
             InitMusic();
         }

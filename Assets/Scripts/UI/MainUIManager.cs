@@ -1,3 +1,4 @@
+using System;
 using GameMechanics;
 using GameMechanics.Enemy;
 using GameMechanics.Helpers;
@@ -61,7 +62,7 @@ namespace UI
             _mainManager = mainManager;
             _mainManager.MainMechanicsCreate += StartGame;
         }
-
+        
         private void StartGame()
         {
             InitMainUIElements();
@@ -82,6 +83,7 @@ namespace UI
             lvlUpMenuManager.AddRocket += AddRocket;
             lvlUpMenuManager.ContinueGame += EnableMainElements;
         }
+
         public void OnClickStartMenu()
         {
             _gameStateHelper.Pause();

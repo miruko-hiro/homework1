@@ -10,17 +10,18 @@ namespace GameMechanics.Enemy.Asteroid
     public class AsteroidView : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer spriteRenderer;
-        private Animation _animation;
         
         [Space(10)]
         [SerializeField] private Sprite[] asteroids = new Sprite[10];
+
+        private AsteroidAnimation _animation;
         
         public event Action Died;
         public event Action ReachedLineOfDestroy;
         public event Action<int> ReceivedDamage;
         private void Start()
         {
-            _animation = GetComponent<Animation>();
+            _animation = GetComponent<AsteroidAnimation>();
         }
 
         private void OnEnable()
@@ -46,8 +47,7 @@ namespace GameMechanics.Enemy.Asteroid
         public void ReAnimation(int health)
         {
             if (!_animation) return;
-            _animation.Stop();
-            _animation.Play();
+            _animation.Hit();
         }
 
         private void OnCollisionEnter2D(Collision2D other)

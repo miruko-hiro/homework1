@@ -1,5 +1,4 @@
-﻿using System;
-using GameMechanics.Helpers;
+﻿using GameMechanics.Helpers;
 using GameMechanics.Sound;
 using UI.Buttons;
 using UI.Panels.StartMenu.CreatorsButton;

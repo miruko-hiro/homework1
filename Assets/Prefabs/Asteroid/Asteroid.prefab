@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3200001526204944386}
-  - component: {fileID: 1600940122576996336}
   - component: {fileID: 510623144076221531}
   - component: {fileID: 6118568635422535641}
+  - component: {fileID: 3568029249813482365}
   m_Layer: 8
   m_Name: Asteroid
   m_TagString: Asteroid
@@ -35,22 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!111 &1600940122576996336
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3200001526204944396}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 8986156d0d1388e43a100dd2bc934037, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 8986156d0d1388e43a100dd2bc934037, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!58 &510623144076221531
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -91,6 +75,19 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5392912066d4a024b805130cfc9ccb18, type: 3}
   - {fileID: 21300000, guid: 1420227c72a67894babfbf2afcfb3633, type: 3}
   - {fileID: 21300000, guid: 970e9cb78ad9a944ca9c56f9670d8ba0, type: 3}
+--- !u!114 &3568029249813482365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3200001526204944396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8f7488d668479fb1abf5e75511757c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rendererImage: {fileID: 3200001528032368280}
 --- !u!1 &3200001528032368282
 GameObject:
   m_ObjectHideFlags: 0
@@ -121,7 +118,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3200001526204944386}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0.52}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 5}
 --- !u!212 &3200001528032368280
 SpriteRenderer:
   m_ObjectHideFlags: 0
