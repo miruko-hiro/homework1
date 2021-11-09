@@ -23,82 +23,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55c3a047-5188-453a-9297-37fc52eb8f2a" name="Default Changelist" comment="Декомпозированно главное стартовое меню на менеджеры, спавнеры, модели, вью и презенторы">
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.XML" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.XML.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/DOTween.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.XML" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.XML.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/DOTweenEditor.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenIcon.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenMiniIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/DOTweenMiniIcon.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer_dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Footer_dark.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Header.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Editor/Imgs/Header.jpg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTween.Modules.asmdef" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTween.Modules.asmdef.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleAudio.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleAudio.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleEPOOutline.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleEPOOutline.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics2D.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModulePhysics2D.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleSprite.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleSprite.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUnityVersion.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUnityVersion.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUtils.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/Modules/DOTweenModuleUtils.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/Demigiant/DOTween/readme.txt.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/DOTweenSettings.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/CameraScripts/CameraAnimation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/CameraScripts/CameraAnimation.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidAnimation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidAnimation.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuAnimation.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuAnimation.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/PlayerUI/AddedMoneyManager.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/PlayerUI/Money.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/GoldenMode/GoldenModePanelAnimation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/GoldenMode/GoldenModePanelAnimation.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/CooldownAnimation.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/CooldownAnimation.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/AddedMoney.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/AddedMoney.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/AddedMoneyManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/AddedMoneyManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TranslatorWorldToScreen.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/UI/TranslatorWorldToScreen.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Music/Juhani Junkala [Retro Game Music Pack] Ending.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Sounds/Music/Juhani Junkala [Retro Game Music Pack] Ending.wav.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.homework1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Asteroid.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Asteroid/HitAnimation.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Asteroid/HitAnimation.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Camera.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Camera/DisableGoldenModeMainCameraAnimation.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Camera/DisableGoldenModeMainCameraAnimation.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Camera/EnableGoldenModeMainCameraAnimation.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Camera/EnableGoldenModeMainCameraAnimation.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Camera/MainCameraController.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Camera/MainCameraController.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Camera/StartGameMainCameraAnimation.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Camera/StartGameMainCameraAnimation.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Asteroid/Asteroid.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Asteroid/Asteroid.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/StartMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/StartMenu/StartMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Cooldown.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/PlayerUI/AddedMoneyManager.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Cooldown/CooldownAnimation.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Cooldown/CooldownAnimation.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Cooldown/DisableCooldownAnimation.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Cooldown/DisableCooldownAnimation.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Cooldown/EnableCooldownAnimation.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Cooldown/EnableCooldownAnimation.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Cooldown/RocketCooldown.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Cooldown/RocketCooldown.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/GoldenModePanel.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/PlayerUI/Money.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/GoldenModePanel/DisableGoldenModeAnimation.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/GoldenModePanel/DisableGoldenModeAnimation.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/GoldenModePanel/EnableGoldenModeAnimation.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/GoldenModePanel/EnableGoldenModeAnimation.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/GoldenModePanel/GoldenModeController.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/GoldenModePanel/GoldenModeController.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Money.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Money/AddMoneyAnimation.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Money/AddMoneyAnimation.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Damage Text.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Damage Text.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/GoldenMode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/GoldenMode.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/PlayerUI/MoneyUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/PlayerUI/MoneyUI.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/RocketCooldown.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/RocketCooldown.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/CameraScripts/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/CameraScripts/CameraManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/CameraScripts/CameraShake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/CameraScripts/CameraShake.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidView.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/GameMechanics.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/GameMechanics.asmdef" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/MainUIManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/MainUIManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UI.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UI.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/SkillCooldownPresenter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/SkillCooldownPresenter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/SkillCooldownView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/SkillCooldownView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/MoneyUIView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/MoneyUIView.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,6 +113,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Behaviors/Attack.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/DamageDisplay/DamageText.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/AD0A7939-8190-48A0-A161-F66558C98867/9f/d7e7f88a/Animation.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/eb/bfe6336f/Type.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/F2625FD8-44AA-4DD5-B6A3-882F24F14D79/89/f24d8032/Action`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/DE1F8EF4-975B-4EAC-BEB0-ACCC1B22C9B0/f7/12649c0b/ShortcutExtensions.cs" root0="SKIP_HIGHLIGHTING" />
@@ -156,18 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/Improvements/ImprovementN.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenuPresenter.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenuManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LvlUpPanel/LvlUpMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenuManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/LoserPanel/LoserMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/MenuSoundManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SoundClapsRepository.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SoundClaspRepository.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/SoundObject.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SoundClasp.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Sound/SoundClaspRepository.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/CreatorsButton/CreatorsMenuManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/SoundManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/SettingsButton/MusicButton/MusicButtonPresenter.cs" />
@@ -184,7 +143,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/MusicManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Sound/MusicClasp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Interfaces/IManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/LaunchButton/LaunchManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/MusicClasp.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Sound/MusicClaspRepository.cs" />
@@ -199,14 +157,27 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuEnabledAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuEnableAnimation.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainUIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/MainManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/CameraScripts/CameraShake.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/CameraScripts/CameraManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/CameraScripts/CameraAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/StartMenu/StartMenuAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Panels/GoldenMode/GoldenModePanelAnimation.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/Asteroid/AsteroidAnimation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/SkillCooldownView.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/SkillCooldownPresenter.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerCooldown/CooldownAnimation.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/GameMechanics/Enemy/DamageDisplay/DamageText.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/MainUIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Installers/GameInstaller.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerUIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/MoneyManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/TranslatorWorldCoordinatesToScreen.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/TranslatorWorldToScreen.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/AddedMoney.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/AddedMoneyManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Player/PlayerMoney/MoneyUIView.cs" />
       </list>
     </option>
   </component>
@@ -278,7 +249,8 @@
       <workItem from="1636194683348" duration="10896000" />
       <workItem from="1636208046788" duration="15659000" />
       <workItem from="1636272036654" duration="19831000" />
-      <workItem from="1636360803539" duration="20625000" />
+      <workItem from="1636360803539" duration="20719000" />
+      <workItem from="1636443282957" duration="15045000" />
     </task>
     <task id="LOCAL-00001" summary="Init commit">
       <created>1634104804696</created>
@@ -560,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636302945929</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Добавлен DOTween, анимационные клипы заменены на DOTween анимацию">
+      <created>1636403328338</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1636403328338</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +561,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="Добавлено меню улучшений и увеличение уровня игрока и астероидов" />
     <MESSAGE value="Добавлен задний фон" />
     <MESSAGE value="Обновлен .gitignore" />
     <MESSAGE value="Обновление структуры кода" />
@@ -607,21 +585,22 @@
     <MESSAGE value="UI разбит на MVP" />
     <MESSAGE value="Декомпозированно главное стартовое меню на менеджеры, спавнеры, модели, вью и презенторы" />
     <MESSAGE value="Добавлена система звуков и система музыки, добавлены звуки на интерфейс и игровые объекты, добавлена музыка" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлена система звуков и система музыки, добавлены звуки на интерфейс и игровые объекты, добавлена музыка" />
+    <MESSAGE value="Добавлен DOTween, анимационные клипы заменены на DOTween анимацию" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен DOTween, анимационные клипы заменены на DOTween анимацию" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="794" y="220" key="RiderGenerateDialog" timestamp="1636276395976">
+    <state x="794" y="220" key="RiderGenerateDialog" timestamp="1636457664865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="220" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1636276395976" />
+    <state x="794" y="220" key="RiderGenerateDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1636457664865" />
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog" timestamp="1636375573653">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="92" y="92" width="1736" height="856" key="VCS.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1636375573653" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1636302953685">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1636403336380">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1636302953685" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1636403336380" />
     <state x="562" y="130" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1635767247892">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -646,9 +625,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1635604957653" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1636400215925">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1636461920530">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1636400215925" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1636461920530" />
   </component>
 </project>

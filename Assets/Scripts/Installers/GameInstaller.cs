@@ -14,6 +14,7 @@ namespace Installers
         public MainManager MainManager;
         public SpaceshipManager SpaceshipManager;
         public GoldenAsteroidManager GoldenAsteroidManager;
+        public CommonAsteroidManager CommonAsteroidManager;
         public override void InstallBindings()
         {
             Container.Bind<PrefabFactory>().AsSingle();
@@ -24,6 +25,7 @@ namespace Installers
             Container.Bind<MainManager>().FromInstance(MainManager).AsSingle();
             Container.Bind<SpaceshipManager>().FromInstance(SpaceshipManager).AsSingle();
             Container.Bind<GoldenAsteroidManager>().FromInstance(GoldenAsteroidManager).AsSingle();
+            Container.Bind<CommonAsteroidManager>().FromInstance(CommonAsteroidManager).AsSingle();
         }
     }
 }

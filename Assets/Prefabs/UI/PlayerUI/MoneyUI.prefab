@@ -378,5 +378,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountOfMoney: {fileID: 6149162013478778241}
-  animationAddedMoney: {fileID: 8932285735088812212}
   amountOfAddedMoney: {fileID: 5965346609374760997}
+  imageAddedMoney: {fileID: 7441445166231320193}

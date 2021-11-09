@@ -32,13 +32,11 @@ namespace UI
         
         [SerializeField] private GameObject goldenModeUIPrefab;
         private UIGoldenMode _uiGoldenMode;
-        private Animator _animatorGoldenMode;
+        private GoldenModePanelAnimation _animationGoldenMode;
 
         private MainManager _mainManager;
         
         [SerializeField] private GameObject startMenuButton;
-
-        private static readonly int Disable = Animator.StringToHash("Disable");
 
         private PlayerManager _playerManager;
         private SpaceshipManager _spaceshipManager;
@@ -125,7 +123,7 @@ namespace UI
                 if (_uiGoldenMode)
                 {
                     _uiGoldenMode.Time = "0";
-                    _animatorGoldenMode.SetTrigger(Disable);
+                    _animationGoldenMode.DisableAnimation();
                     Destroy(_uiGoldenMode.gameObject, 1f);
                 }
                    
@@ -135,7 +133,7 @@ namespace UI
             if (!_uiGoldenMode)
             {
                 _uiGoldenMode = Instantiate(goldenModeUIPrefab, transform).GetComponent<UIGoldenMode>();
-                _animatorGoldenMode = _uiGoldenMode.gameObject.GetComponent<Animator>();
+                _animationGoldenMode = _uiGoldenMode.gameObject.GetComponent<GoldenModePanelAnimation>();
             }
             _uiGoldenMode.Time = time;
         }

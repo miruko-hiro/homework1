@@ -1042,6 +1042,7 @@
             <e p="MainUIManager.cs" t="Include" />
             <e p="Panels" t="Include">
               <e p="GoldenMode" t="Include">
+                <e p="GoldenModePanelAnimation.cs" t="Include" />
                 <e p="UIGoldenMode.cs" t="Include" />
               </e>
               <e p="LoserPanel" t="Include">
@@ -1100,6 +1101,7 @@
             </e>
             <e p="Player" t="Include">
               <e p="PlayerCooldown" t="Include">
+                <e p="CooldownAnimation.cs" t="Include" />
                 <e p="ISkillCooldownView.cs" t="Include" />
                 <e p="SkillCooldownPresenter.cs" t="Include" />
                 <e p="SkillCooldownView.cs" t="Include" />
@@ -1111,6 +1113,8 @@
                 <e p="IHealthUIView.cs" t="Include" />
               </e>
               <e p="PlayerMoney" t="Include">
+                <e p="AddedMoney.cs" t="Include" />
+                <e p="AddedMoneyManager.cs" t="Include" />
                 <e p="IMoneyUIView.cs" t="Include" />
                 <e p="MoneyUIPresenter.cs" t="Include" />
                 <e p="MoneyUIView.cs" t="Include" />
@@ -1121,6 +1125,7 @@
               <e p="SoundClasp.cs" t="Include" />
               <e p="SoundClaspRepository.cs" t="Include" />
             </e>
+            <e p="TranslatorWorldToScreen.cs" t="Include" />
             <e p="UI.asmdef" t="Include" />
           </e>
         </e>

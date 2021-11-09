@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using UnityEngine;
 
 namespace GameMechanics.Enemy.Asteroid
@@ -31,6 +32,11 @@ namespace GameMechanics.Enemy.Asteroid
                 .Insert(Duration, _transform.DOScale(Vector3.one, Duration))
                 .Insert(Duration, rendererImage.DOColor(new Color(255f, 255f, 255f), Duration))
                 .SetAutoKill(false);
+        }
+
+        private void OnDestroy()
+        {
+            _sequence?.Kill();
         }
     }
 }

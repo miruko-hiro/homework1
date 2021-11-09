@@ -26,7 +26,7 @@ namespace UI.Player.PlayerCooldown
 
         public void OnClose()
         {
-            _spaceshipManager.RocketCooldown += StartRocketCooldown;
+            _spaceshipManager.RocketCooldown -= StartRocketCooldown;
         }
     }
 }
